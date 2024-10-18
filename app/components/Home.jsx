@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import useGeolocation from '../hooks/useGeolocation';
-import translations from '../../public/translations.json';
+// import translations from '../../public/translations';
 
 
 function Home() {
@@ -17,29 +17,40 @@ function Home() {
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const country = useGeolocation();
-  const [texts, setTexts] = useState(translations.EN)
+  // const [texts, setTexts] = useState(translations.EN)
+  const [texts, setTexts] = useState({});
+
+  const loadTranslations = async (langCode) => {
+    try {
+      const translations = await import(`../../public/translations/${langCode}.json`);
+      setTexts(translations); 
+    } catch (error) {
+      console.error(`Could not load translations for ${langCode}:`, error);
+    }
+  };
+
   
   useEffect(() => {
     switch (country) {
-        case "DE":
-            setTexts(translations.DE);
-            break;
-        case "PT":
-            setTexts(translations.PT);
-            break;
-        case "FR":
-            setTexts(translations.FR);
-            break;
-        case "NL":
-            setTexts(translations.NL);
-            break;
-        case "IT":
-            setTexts(translations.IT);
-            break;
-        default:
-            setTexts(translations.EN);
+      case "DE":
+        loadTranslations('de');
+        break;
+      case "PT":
+        loadTranslations('pt');
+        break;
+      case "FR":
+        loadTranslations('fr');
+        break;
+      case "NL":
+        loadTranslations('nl');
+        break;
+      case "IT":
+        loadTranslations('it');
+        break;
+      default:
+        loadTranslations('en'); 
     }
-}, [country]);
+  }, [country]);
 
 
   const toggleAccordion = (index) => {
@@ -113,7 +124,8 @@ function Home() {
     style={{ animationDelay: "0s" }}
   >
     <span className="online h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    {texts.online.treading}
+    {texts.online?.treading || "Loading..."}
+
       </div>
   <h1
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
