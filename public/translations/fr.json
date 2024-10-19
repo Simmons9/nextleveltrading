@@ -1,6 +1,126 @@
 {
-    "online": {
-      "treading": "Cours de Trading Gratuit"
-    }
+  "online": {
+    "treading": "Cours de Trading Gratuit",
+    "learnTrading": "Apprends le trading sérieux en tant que débutant en seulement 7 jours et lance ta carrière de Day Trader",
+    "downloads": "Déjà <strong>68.134+</strong> téléchargements",
+    "orders": "Déjà <strong>2.145+</strong> commandes",
+    "training": "Formation de Trading Gratuite",
+    "description2": "Avec notre guide étape par étape, des conseils pratiques, des recommandations de courtiers, des analyses de graphiques et une stratégie éprouvée, tu établiras les bases pour un trading rentable à long terme et la liberté financière. Obtiens dès maintenant notre cours de trading gratuit au format PDF et profite de l'occasion pour élever tes connaissances en trading, y compris un entretien gratuit avec un spécialiste du trading !",
+    "downloadButton": "Télécharger maintenant gratuitement",
+    "downloadCount": "Déjà 68.134+ téléchargements",
+    "lifeChange": "Comment le trading réussi",
+    "lifeChange2": "peut changer ta vie",
+    "timeInvestment": "Avec seulement 30 à 60 minutes d'engagement par jour !",
+    "financialIndependence": "Indépendance financière totale",
+    "tradingCourse": "Notre cours de trading",
+    "successTrader": "De débutant à trader à succès en seulement 7 jours",
+    "chapter1": "Chapitre 1",
+    "chapter2": "Chapitre 2",
+    "chapter3": "Chapitre 3",
+    "chapter4": "Chapitre 4",
+    "chapter5": "Chapitre 5",
+    "chapter6": "Chapitre 6",
+    "chapter7": "Chapitre 7",
+    "marketStructures": "Structures de marché",
+    "riskManagement": "Gestion des risques",
+    "strategy": "Stratégie",
+    "traderPath": "Ton chemin en tant que trader",
+    "technicalAnalysis": "Apprends les bases de l'analyse technique et de l'observation du marché pour comprendre l'évolution d'une action.",
+    "riskManagementDescription": "Nous te montrerons à quoi ressemble une gestion des risques correcte en pratique et comment protéger ton capital contre les pertes inutiles.",
+    "checklistDefinition": "Nous te montrons comment définir des entrées et sorties claires avec notre check-list. Avec cette stratégie, tu pourras alors créer et mettre en œuvre tes propres idées de trading.",
+    "incomeLimits": "En trading, il n'y a pas de limites de revenus. Nous te montrerons quels facteurs détermineront tes premiers 100.000 €.",
+    "trustpilot": "Trustpilot",
+    "number": "68.134+",
+    "satisfied": "Satisfaits",
+    "participants": "participants",
+    "moreThan": "Plus de",
+    "topExperts": "12 experts de haut niveau",
+    "onTeam": "dans l'équipe",
+    "weAre": "Nous sommes une",
+    "german": "entreprise allemande",
+    "company": "entreprise",
+    "number2": "15.000+",
+    "conducted": "Trades effectués",
+    "trades": "trades",
+    "fifteenYears": "15 ans",
+    "trading": "trading",
+    "experience": "d'expérience",
+    "recognizeYourself": "Te reconnais-tu ici ?",
+    "whoIsTrainingFor": "Pour qui est notre formation ?",
+    "hundredPercentCorrect": "100% CORRECT",
+    "interestedInTrading": "Tu t'intéresses au trading",
+    "wantToLearnNewSkills": "Tu souhaites acquérir de nouvelles compétences",
+    "wantFinancialFreedom": "Tu souhaites atteindre la liberté financière",
+    "readyToInvest": "Tu es prêt à investir 250 € pour tes premiers trades",
+    "willingToLearn": "Tu es prêt à apprendre et fais confiance à nos stratégies de trading",
+    "definitelyNot": "DÉFINITIVEMENT PAS",
+    "notInterested": "Le trading ne t'intéresse pas",
+    "notWillingToLearn": "Tu n'es pas prêt à apprendre",
+    "noFinancialGoals": "Tu n'as pas d'objectifs financiers",
+    "noMoneyToInvest": "Tu ne souhaites pas investir d'argent",
+    "noTimeToInvest": "Tu ne souhaites pas investir de temps",
+    "easiestWay": "Le moyen le plus simple de commencer à trader",
+    "minimalTimeInvestment": "avec un investissement temporel minimal",
+    "completelyFree": "et totalement gratuit",
+    "dayTradingTrainingDescription": "Dans cette formation de 7 jours, tu apprendras les bases du day trading de manière claire et divertissante, et tu recevras également <br /> des instructions claires et des stratégies que tu pourras ensuite mettre en œuvre de manière autonome et sécurisée. <br /><br /> En plus de 15 ans en tant que trader, j'ai beaucoup appris, mais j'ai aussi fait quelques erreurs. Je sais à quel point le trading peut être complexe pour un débutant. Pour te faciliter au maximum le démarrage, j'ai créé cette <br /> formation gratuite en ligne. C'est le type de formation que j'aurais souhaité avoir à l'époque. <br /><br /> Amuse-toi à apprendre cette compétence unique ! <br /> <strong className='text-[#fff]'>Ton Tim</strong> <br /><br />",
+    "faq": "Questions Fréquemment Posées",
+    "faq2": "Questions Fréquemment <br /> Posées",
+    "ourMethod": "Notre Méthode",
+    "rightBroker": "Le bon courtier",
+    "tradingPlatforms": "Plateformes de trading",
+    "learnIn7Steps": "Tu apprendras à trader de manière rentable en seulement 7 étapes avec notre méthode au cours des 7 prochains jours.",
+    "cfBrokerSelection": "Apprends sur quoi tu dois faire attention lors du choix d'un courtier CFD adapté et quelle est la plus grande différence lorsque tu trades avec effet de levier.",
+    "tradingPlatformsIntro": "Tu recevras une introduction aux 2 plateformes de trading les plus courantes, afin que tu te sentes en sécurité et que tu saches exactement quoi surveiller.",
+    "nurNochEinSchritt": "Il ne reste plus que",
+    "nurNochEinSchritt2": "1 étape...",
+    "transformYourselfToAdvanced": "Transforme-toi d'un complet débutant à un ",
+    "accessToThisUniqueAndFreeOnline": "trader avancé qui a accès à cette formation en ligne unique et gratuite.",
+    "transformYourselfToAdvancedIn7Days": "d'un complet débutant à un trader avancé en seulement 7 jours.",
+    "training1": "Formation",
+    "traderTraining": "Formation Trader",
+    "career": "Carrière",
+    "introductoryTalk": "Entretien d'introduction",
+    "customerReviews": "Avis clients",
+    "privacyPolicy": "Politique de confidentialité",
+    "imprint": "Mentions légales",
+    "riskNotice": "Avertissement sur les risques",
+    "riskNoticeDetails": "Le trading avec des produits à effet de levier (par ex. CFD et Forex) ou d'autres instruments financiers comporte un risque énorme et n'est pas adapté à tout le monde. Il existe un risque de perte totale ou même de pertes dépassant tes investissements. Avant de trader des produits à effet de levier ou d'autres instruments financiers, tu dois t'assurer que tu as bien compris tous les risques associés. De plus, nous renvoyons à nos avertissements sur les risques. Il est explicitement précisé que nous ne proposons pas et ne menons pas de conseils d'investissement et, en particulier, que nous ne donnons aucune recommandation concrète sur un titre, un produit ou un instrument financier. La mention de certains titres ou produits d'investissement ne constitue en aucun cas une recommandation d'achat, de vente ou de conservation. Tu trades à tes propres risques. Toute responsabilité est exclue.",
+    "justOneStep": "Il ne reste plus qu'une étape...",
+    "firstNamePlaceholder": "Prénom",
+    "lastNamePlaceholder": "Nom de famille",
+    "emailPlaceholder": "Adresse e-mail",
+    "secureAccess": "Sécuriser l'accès maintenant",
+    "acceptPrivacyPolicy": "J'accepte la politique de confidentialité",
+    
+    "faqs": [
+      {
+        "question": "Pourquoi la formation est-elle gratuite ?",
+        "answer": "Il est important pour nous de dire que l'adhésion et la formation sont 100 % gratuites. Notre partenaire courtier couvre les coûts, donc tu ne dois rien payer. Nous travaillons avec l'une des plateformes de trading les plus reconnues et primées au monde, qui sponsorise notre service et finance ton adhésion. Tant que tu utilises leur plateforme, nous pouvons offrir notre service à tous les membres totalement gratuitement. Nous avons donc créé une véritable situation gagnant-gagnant – et c'est précisément pourquoi nous sommes devenus si populaires au cours des dernières années et que nous nous sommes établis en tant que marque de trading reconnue dans le monde entier."
+      },
+      {
+        "question": "Ai-je besoin d'expérience en trading ?",
+        "answer": "Tu n'as pas besoin de connaissances préalables en trading. Nous te guiderons pas à pas à travers le sujet avec notre PDF de trading. Avec le cours, nous nous assurons de donner aux débutants une chance équitable et de faciliter leur entrée dans le trading."
+      },
+      {
+        "question": "Combien de temps dure la formation ?",
+        "answer": "La formation au trading dure 7 jours, pendant lesquels tu peux organiser ton emploi du temps. Tu auras accès à tous les contenus de formation dans la première semaine suivant ton inscription. Et ne t'inquiète pas : la formation ne prend pas longtemps, nous la maintenons à un maximum de 30 à 60 minutes par jour afin que tu puisses utiliser ton temps aussi efficacement que possible."
+      },
+      {
+        "question": "Comment puis-je m'inscrire ?",
+        "answer": "Pour t'inscrire, il te suffit de remplir le formulaire sur cette page pour télécharger notre PDF de trading et convenir d'un entretien de découverte avec un expert en trading."
+      },
+      {
+        "question": "Quelles sont les conditions requises ?",
+        "answer": "Tu auras besoin d'un smartphone ou d'un ordinateur avec un accès Internet. Pour commencer le trading, tu devrais être prêt à investir au moins 250 € pour tes premiers trades et à suivre les instructions des experts en trading."
+      },
+      {
+        "question": "Y a-t-il une garantie de succès ?",
+        "answer": "Il n'y a aucune garantie de succès dans le trading. Le trading comporte toujours des risques, et il n'y a aucune certitude que tu réaliseras un profit. Tu devrais être conscient que tu peux également perdre de l'argent. Cependant, nous proposons des formations et un soutien pour augmenter tes chances de succès."
+      },
+      {
+        "question": "Comment fonctionne l'entretien de découverte ?",
+        "answer": "L'entretien de découverte se déroule en ligne, généralement via Zoom ou une plateforme similaire. L'expert en trading répondra à tes questions, te donnera des conseils précieux et t'acceptera dans tes débuts en trading."
+      }
+    ]
   }
-  
+}

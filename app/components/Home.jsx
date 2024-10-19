@@ -57,28 +57,7 @@ function Home() {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Wie lange habe ich Zugang zum Kurs?",
-      answer: "Du hast mindestens 12 Monate Zugang zum Kursmaterial. Das heißt, du kannst den Kurs in deinem eigenen Tempo durcharbeiten und jederzeit Inhalte erneut ansehen."
-    },
-    {
-      question: "Brauche ich bereits Erfahrung im Trading?",
-      answer: "Nein, der Kurs ist sowohl für Anfänger als auch für Fortgeschrittene geeignet. Du wirst Schritt für Schritt durch den gesamten Prozess geführt."
-    },
-    {
-      question: "Wie viel Zeit muss ich in das Trading investieren?",
-      answer: "Das hängt von deinen Zielen und deinem aktuellen Wissensstand ab. Es wird empfohlen, täglich mindestens 1 Stunde zu investieren, um die besten Ergebnisse zu erzielen."
-    },
-    {
-      question: "Ist der Kurs auch für Fortgeschrittene sinnvoll?",
-      answer: "Ja, auch Fortgeschrittene können von fortgeschrittenen Strategien und Techniken im Kurs profitieren."
-    },
-    {
-      question: "Gibt es aktiven Support?",
-      answer: "Ja, wir bieten aktiven Support durch unser Team, das dir bei Fragen oder Problemen zur Seite steht."
-    }
-  ];
+
   const handleShowColumns = () => {
     setShowColumns(true); 
   };
@@ -107,8 +86,8 @@ function Home() {
         className="w-[118px] sm:w-[114px]"  
       />
       <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
-          Beretis <strong>2.145+</strong> Mal bestellt
-        </div>
+      <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading orders..." }} />
+         </div>
 
     </div>
   </nav>
@@ -131,7 +110,7 @@ function Home() {
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
   style={{ animationDelay: "0.2s", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}
 >
-  In nur 7 Tagen seriös <br /> Trading lernen
+<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Loading..." }} />
 </h1>
 
 
@@ -141,8 +120,8 @@ function Home() {
     className="desc1 text-center w-[90%] max-w-[30rem] text-[14px] sm:text-[16px] text-[#728291] tracking-[-.32px] leading-[1.5] my-4 px-4 sm:tracking-[.2px] sm:px-2 fadeInUp"
     style={{ animationDelay: "0.4s" }}
   >
-    Dein Start ins Daytrading mit Schritt für Schritt Anleitungen, sofort umsetzbaren Tipps, Brokerempfehlungen, Chartanalyse und DAX
-    Strategie für nachhaltig profitables Trading.
+       <div>{texts.online?.description2 || "Loading description..."}</div>
+
   </div>
 
   <div className="relative z-[1000]">
@@ -155,7 +134,8 @@ function Home() {
         height={30.19}
       />
       <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
-        Beretis <strong>2.145+</strong> Mal bestellt
+      <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
+        
       </div>
     </div>
   </div>
@@ -207,12 +187,12 @@ function Home() {
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
   <h1 className="w-[27.9rem] sm:w-[40.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
-    Wie ergologreiches Trading deine
-    <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>Zuknfit Verandern kann</span>
+  <div>{texts.online?.lifeChange || "Loading life change message..."}</div>
+  <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Loading life change message..."}</span>
   </h1>
 
   <div className="desc flex justify-center mt-4 text-[#728291] text-[16px] sm:text-[16px] fadeInUp" style={{ animationDelay: "0.9s" }}>
-    mit nur 30-50 Minuten Zitaufawnd am Tag.
+  <div>{texts.online?.timeInvestment || "Loading time investment message..."}</div>
   </div>
 
   <Cards />
@@ -220,13 +200,15 @@ function Home() {
 
 <div className="part3 w-full h-auto bg-[#041212] pt-[3rem] text-[#fff] flex flex-col items-center rounded-2xl">
 
-<div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[10rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
+<div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[12rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
     <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    Dein Lehrplan
+    <div>{texts.online?.tradingCourse || "Loading time "}</div>
+
 </div>
 
 <div className="title flex justify-center mt-10 text-[48px] font-bold leading-[1.2] tracking-[.4px]">
-    <h1>In nur 7 Tagen sicher traden</h1>
+    <h1>{texts.online?.successTrader || "Loading time investment message..."}</h1>
+    
 </div>
 
 
@@ -258,14 +240,14 @@ function Home() {
         alt="" 
     />
 <div className="on_the_trader relative z-[20] mt-[3rem] md:mt-0"> 
-<div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-            Tag 4
-        </div>
+<div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+{texts.online?.chapter4 || "Loading time investment message..."}
+</div>
         <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-            Markstrukturen
+        {texts.online?.marketStructures || "Loading time investment message..."}
         </div>
         <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2 mb-[-1rem]">
-            Erlerne die Grundlagen der technischen Analyse sowie das Lesen der Märkte, um die Entwicklung einer Aktie zu verstehen.
+        {texts.online?.technicalAnalysis || "Loading time investment message..."}
         </div>
     </div>
     <div className="trader_block-overlay" style={{
@@ -286,14 +268,14 @@ function Home() {
             src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/66bdcaea1657996322be914b_U.avif"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
-            <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-              Tag 5
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          {texts.online?.chapter5 || "Loading time investment message..."}
             </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-              Die TF Methode
+            {texts.online?.riskManagement || "Loading time investment message..."}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-              Du wirst lernen, wie du in nur 6 Schritten mit der TF Methode innerhalb der nächsten 7 Tage deinen ersten profitablen Trade setzen kannst.
+            {texts.online?.riskManagementDescription || "Loading time investment message..."}
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -314,14 +296,14 @@ function Home() {
             src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/66d70fe18435ec9fd92ece3a_Group%202087326431.png"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
-          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-              Tag 6
-            </div>
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          {texts.online?.chapter6 || "Loading time investment message..."}
+          </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-              Die TF Methode
+            {texts.online?.strategy || "Loading time investment message..."}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-              Du wirst lernen, wie du in nur 6 Schritten mit der TF Methode innerhalb der nächsten 7 Tage deinen ersten profitablen Trade setzen kannst.
+            {texts.online?.checklistDefinition || "Loading time investment message..."}
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -342,14 +324,15 @@ function Home() {
             src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/66bdcaea186d4f1e46c729f4_Frame%202087326564.avif"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[1rem] md:mt-[-3rem] ">
-            <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-              Tag 7
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          {texts.online?.chapter7 || "Loading time investment message..."}
+
             </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-              Die TF Methode
+            {texts.online?.traderPath || "Loading time investment message..."}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-              Du wirst lernen, wie du in nur 6 Schritten mit der TF Methode innerhalb der nächsten 7 Tage deinen ersten profitablen Trade setzen kannst.
+            {texts.online?.incomeLimits || "Loading time investment message..."}
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -376,7 +359,7 @@ function Home() {
             height={30.19}
           />
           <div className="text-people ml-4 text-white text-[12px]  sm:text-[10px]">
-            Beretis <strong>2.145+</strong> Mal bestellt
+          <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
           </div>
         </div>
 </div>
@@ -392,7 +375,8 @@ function Home() {
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A" className="w-6 h-6 ml-2">
     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
   </svg>
-  <p className="font-[600] text-[14px] text-center">Trustpilot</p>
+  <p className="font-[600] text-[14px] text-center">   {texts.online?.trustpilot || "Loading time investment message..."}
+  </p>
 </div>
 
 
@@ -400,9 +384,9 @@ function Home() {
 
   <div className="flex flex-wrap justify-center gap-4 w-[100%] h-auto mt-[2.5rem] z-0 px-5">
   <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">2.145+</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Zurfriedene</span>
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Teilnehmer/innen</span>
+    <span className="text-[#0ec661]">{texts.online?.number || "Loading time investment message..."}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.satisfied || "Loading time investment message..."}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.participants || "Loading time investment message..."}</span>
     
     <img
       src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3f60_images-group-p-500.png"
@@ -426,9 +410,9 @@ function Home() {
 
   {/* Kolona 2 */}
   <div className="relative flex flex-col rounded-[12px] items-start bg-[#fff] pt-[2rem] pl-[2rem] w-[53rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600] col-start-2 z-20">
-    <span className="block text-[28px]  tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-10">Mehr als</span>
-    <span className="text-[#0ec661] relative z-10">12 Top-Experten</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">im Teams</span>
+    <span className="block text-[28px]  tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-10">{texts.online?.moreThan || "Loading time investment message..."}</span>
+    <span className="text-[#0ec661] relative z-10">{texts.online?.topExperts || "Loading time investment message..."}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam || "Loading time investment message..."}</span>
     
     <img
       src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/664cd3b45a1b4940ebcfc4ab_272327.webp"
@@ -464,9 +448,9 @@ function Home() {
 <div className="flex flex-wrap justify-center gap-4 w-[100%] h-auto mt-[1rem]">
   <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">Wir sind ein</span>
-    <span className="text-[#0ec661] z-20">deutsches</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">Unternehmen</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.weAre || "Loading time investment message..."}</span>
+    <span className="text-[#0ec661] z-20">{texts.online?.german || "Loading time investment message..."}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.company || "Loading time investment message..."}</span>
     
     <img
       src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/664cd3ac78e980e08b45322e_272326.webp"
@@ -490,9 +474,9 @@ function Home() {
     />
 </div>
 <div className="relative z-10 flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">15.000+</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Durchgefuhrte</span>
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Trades</span>
+    <span className="text-[#0ec661]">{texts.online?.number2 || "Loading time investment message..."}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.conducted || "Loading time investment message..."}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trades || "Loading time investment message..."}</span>
     
     <img
       src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3f5f_frame-numbers-p-500.png"
@@ -514,9 +498,9 @@ function Home() {
     />
 </div>
 <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">15 Jahre</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Trading</span>
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">Erfahrung</span>
+    <span className="text-[#0ec661]">{texts.online?.fifteenYears || "Loading time investment message..."}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading || "Loading time investment message..."}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.experience || "Loading time investment message..."}</span>
     
     <img
       src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff4016_Frame%25201948755811-p-500.png"
@@ -543,17 +527,17 @@ function Home() {
   <div className="relative w-screen flex flex-col items-center z-20 mt-10 px-5">
     <div className="text-[12px] text-black font-bold bg-white py-2 rounded-3xl px-4 flex items-center uppercase mt-4">
       <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-      Erkennstt du dich hier wieder?
-    </div>
+      {texts.online?.recognizeYourself || "Loading time investment message..."}
+          </div>
 
     <div className="title1 text-center text-black text-[40px] tracking-[.7px] font-bold leading-[1.1] mt-6">
-      Für wen dieser Kurs ist
+    {texts.online?.whoIsTrainingFor || "Loading time investment message..."}
     </div>
 
     <div className="flex flex-wrap justify-center items-start w-full h-auto mt-10 gap-6">
       <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px]">
         <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
-          100% richtig:
+        {texts.online?.hundredPercentCorrect || "Loading time investment message..."}
         </div>
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
@@ -564,7 +548,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du interessiert dich für die Börse
+    {texts.online?.interestedInTrading || "Loading time investment message..."}
     </li>
   <li className="flex mt-8">
     <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
@@ -574,7 +558,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du willst eine neue Fähigkeit lernen
+    {texts.online?.wantToLearnNewSkills || "Loading time investment message..."}
     </li>
   <li className="flex mt-8">
     <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
@@ -584,7 +568,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du willst finanzielle Freiheit erreichen
+    {texts.online?.wantFinancialFreedom || "Loading time investment message..."}
     </li>
   <li className="flex mt-8">
     <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
@@ -594,7 +578,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du hast 30-60 Minuten Zeit pro Tag
+    {texts.online?.readyToInvest || "Loading time investment message..."}
     </li>
   <li className="flex mt-8">
     <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
@@ -604,14 +588,14 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du willst erfolgserprobte Trading-Strategien
+    {texts.online?.willingToLearn || "Loading time investment message..."}
     </li>
 </ul>
       </div>
       
       <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px]">
         <div className="button1 bg-[#ff0000] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px] ">
-        Definitiv nicht:
+        {texts.online?.definitelyNot || "Loading time investment message..."}
         </div>
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
@@ -622,7 +606,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Trading interessiert dich nicht
+    {texts.online?.notInterested || "Loading time investment message..."}
 
     </li>
   <li className="flex mt-8">
@@ -633,7 +617,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du bist nicht lernbereit
+    {texts.online?.notWillingToLearn || "Loading time investment message..."}
 
     </li>
   <li className="flex mt-8">
@@ -644,7 +628,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du hast keine finanziellen Ziele
+    {texts.online?.noFinancialGoals || "Loading time investment message..."}
 
     </li>
   <li className="flex mt-8">
@@ -655,7 +639,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du willst keine Zeit investieren
+    {texts.online?.noMoneyToInvest || "Loading time investment message..."}
 
     </li>
   <li className="flex mt-8">
@@ -666,7 +650,7 @@ function Home() {
         className="absolute  w-[10px] h-[10px]"
       />
     </span>
-    Du denkst Trading hat mit Glück zu tun
+    {texts.online?.noTimeToInvest || "Loading time investment message..."}
 
     </li>
 </ul>
@@ -685,27 +669,16 @@ function Home() {
 
   <div className="text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
-      Der mit Abstand einfachste <br /> 
-      Weg, um mit geringem <br /> 
+    {texts.online?.easiestWay || "Loading time investment message..."}
+    <br /> 
+    {texts.online?.minimalTimeInvestment || "Loading time investment message..."} <br /> 
       <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
-        Zeitaufwand ins Trading <br />einzusteigen.
-      </span>
+      {texts.online?.completelyFree || "Loading time investment message..."}      </span>
     </h1>
 
     <div className="descript text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
-      In dieser 7-tägigen Ausbildung lernst du die Grundlagen des Daytradings in leicht <br className="hidden lg:block"/> 
-      verständlicher und unterhaltsamer Form und bekommst zudem noch klare Anleitungen und <br className="hidden lg:block"/>  
-      Strategien, die du danach eigenständig und sicher umsetzen kannst.
-      <br /><br />
-      In über 15 Jahren als Trader habe ich vieles gelernt, aber auch einige Fehler gemacht. <br className="hidden lg:block"/>
-      Ich weiß, wie komplex Trading für einen Anfänger ist. Um dir den Einstieg so einfach wie nur <br className="hidden lg:block"/>  
-      möglich zu machen, habe ich dieses kostenlose Online-Training erstellt. So eine Ausbildung <br className="hidden lg:block"/>  
-      hätte ich mir damals selbst gewünscht.
-      <br /><br />
-      Viel Spaß beim Erlernen dieser einzigartigen Fähigkeit!
-      <br />
-      <strong className='text-[#fff]'>Dein Tim</strong>
-      <br /><br />
+    <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
+
       <img className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0' src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/66bd24f909b20f8f904dba08_tim%20signature.avif" alt="Tim Signature" />
     </div>
   </div>
@@ -714,48 +687,43 @@ function Home() {
 <div className="part6 py-5 px-4 lg:py-16">
   <div className="part6-1 flex flex-col lg:flex-row justify-between items-start max-w-7xl mx-auto">
   <h1 className="hidden lg:block text-[40px] font-bold text-black leading-[1.2] mb-6 lg:mb-0">
-  Häufig gestellte <br /> Fragen
-</h1>
+  <h2 className="text-[24px] font-bold" dangerouslySetInnerHTML={{ __html: texts.online?.faq2 }} />
+  </h1>
 <h1 className="block lg:hidden text-[28px] font-bold text-black leading-[1.2] mb-10 lg:mb-0">
-  Häufig gestellte Fragen
-</h1>
+{texts.online?.faq || "Loading time investment message..."}</h1>
 
 
 
    
     {/* FAQ Section */}
     <div className="columns-click w-full lg:w-[38rem] px-1">
-  {faqs.map((faq, index) => (
-    <div 
-      key={index} 
-      className="bg-white mb-4 p-4 rounded-lg shadow-lg cursor-pointer" 
-      onClick={() => toggleAccordion(index)}  
-    >
-      <div className="flex justify-between items-center relative">
-        <h2 className="text-sm lg:text-[15px] tracking-[.18px] p-1 text-black font-[600]">
-          {faq.question}
-        </h2>
+    {texts?.online?.faqs?.map((faq, index) => (
+        <div 
+          key={index} 
+          className="bg-white mb-4 p-4 rounded-lg shadow-lg cursor-pointer" 
+          onClick={() => toggleAccordion(index)}  
+        >
+          <div className="flex justify-between items-center relative">
+            <h2 className="text-sm lg:text-[15px] tracking-[.18px] p-1 text-black font-[600]">
+              {faq.question}
+            </h2>
 
-        <div className="container">
-          <input type="checkbox" checked={activeIndex === index} readOnly />
-          <div className="line"></div>
-          <div className={`line line-indicator ${activeIndex === index ? 'active' : ''}`}></div>
-        </div>
-      </div>
+            <div className="container">
+              <input type="checkbox" checked={activeIndex === index} readOnly />
+              <div className="line"></div>
+              <div className={`line line-indicator ${activeIndex === index ? 'active' : ''}`}></div>
+            </div>
+          </div>
 
-      {activeIndex === index && (
-        <div className="mt-2 text-[#0006] text-xs lg:text-[14px] p-2 leading-[160%]">
-          {faq.answer}
+          {activeIndex === index && (
+            <div className="mt-2 text-[#0006] text-xs lg:text-[14px] p-2 leading-[160%]">
+              {faq.answer}
+            </div>
+          )}
         </div>
-      )}
+      ))}
     </div>
-  ))}
-</div>
-
-
-
-
-  </div>
+    </div>
 </div>
 
 
@@ -768,15 +736,14 @@ function Home() {
     {/* Left Section */}
     <div className="left mt-[2rem] md:mt-[7rem] text-center md:text-left w-full md:w-auto">
       <h1 className="text-[28px] md:text-[44px] font-[600] leading-tight">
-        Nur noch <span className="text-[#0cdc6a]">1 Schritt</span>...
+      {texts.online?.nurNochEinSchritt || "Loading time investment message..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading time investment message..."}</span>...
       </h1>
 
       <div className="description text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
-        Verwandle dich vom kompletten Anfänger zum fortgeschrittenen <br className="hidden md:inline" />
-        Trader in nur 7 Tagen. Warte nicht länger und sichere dir jetzt den <br className="hidden md:inline" />
-        Zugang zu dieser einzigartigen und für dich kostenlosen Online- <br className="hidden md:inline" />
-        Ausbildung.
-      </div>
+      {texts.online?.transformYourselfToAdvanced || "Loading time investment message..."} <br className="hidden md:inline" />
+      {texts.online?.accessToThisUniqueAndFreeOnline || "Loading time investment message..."} <br className="hidden md:inline" />
+      {texts.online?.transformYourselfToAdvancedIn7Days || "Loading time investment message..."} <br className="hidden md:inline" />
+      {texts.online?.training1 || "Loading time investment message..."}      </div>
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
@@ -830,7 +797,7 @@ function Home() {
       height={30.19}
     />
     <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
-      Beretis <strong>2.145+</strong> Mal bestellt
+      {/* Beretis <strong>2.145+</strong> Mal bestellte */}
     </div>
   </div>
 </div>
@@ -860,10 +827,10 @@ function Home() {
 {/* Right List */}
 <div className="list-right flex flex-col items-start justify-start h-full  md:p-0">
   <ul className="list-none flex flex-col items-start space-y-2 text-[14px] md:flex-row md:space-x-8 md:space-y-0 text-[#fff] mb-[3rem]  md:text-[14px]">
-    <li className="text-left py-2">Trader Training</li>
-    <li className="text-left py-2">Karriere</li>
-    <li className="text-left py-2">Kennenlerngespräch</li>
-    <li className="text-left py-2">Kundenmeinungen</li>
+    <li className="text-left py-2"> {texts.online?.traderTraining || "Loading time investment message..."}</li>
+    <li className="text-left py-2"> {texts.online?.career || "Loading time investment message..."}</li>
+    <li className="text-left py-2"> {texts.online?.introductoryTalk || "Loading time investment message..."}</li>
+    <li className="text-left py-2"> {texts.online?.customerReviews || "Loading time investment message..."}</li>
   </ul>
 </div>
 
@@ -877,9 +844,9 @@ function Home() {
   {/* Left List */}
   <div className="text-left">
     <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
-      <li>Datenschutz</li>
-      <li>Impressum</li>
-      <li>Risikohnwis</li>
+      <li>{texts.online?.privacyPolicy || "Loading time investment message..."}</li>
+      <li>{texts.online?.imprint || "Loading time investment message..."}</li>
+      <li>{texts.online?.riskNotice || "Loading time investment message..."}</li>
     </ul>
   </div>
   
@@ -890,16 +857,13 @@ function Home() {
 </div>
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
       <div className="title-footer mb-[2rem] text-[#fff] text-[24px] md:text-[24px] font-[600] leading-[100%]">
-        Risikohinweis
-      </div>
+      {texts.online?.riskNotice || "Loading time investment message..."}      </div>
       <div className="description-bottom text-[#ffffff8f] w-full font-[400] md:w-[44rem] text-[13px] md:text-[14px]">
-      Der Handel mit Hebelprodukten (z.B. CFD´s und Forex Trades) oder anderen Finanzinstrumenten ist mit einem enormen Risiko verbunden und nicht für jeden geeignet. Es besteht die Möglichkeit, dass Sie einen Totalverlust erleiden oder sogar Verluste erleiden, die Ihre Investitionen übersteigen. Bevor Sie mit Hebelprodukten oder anderen Finanzinstrumenten handeln, sollten Sie sicherstellen, dass Sie alle damit verbunden Risiken verstanden haben. Im Übrigen verweisen wir auf unsere Risikohinweise auf: https://tradingfreaks.com/risikohinweis/. Es wird ausdrücklich klargestellt, dass wir (TF Daytrading GmbH/ www.tradingfreaks.com/) keine Anlageberatung anbieten und durchführen und insbesondere auch keinerlei konkrete Empfehlungen zu einem Wertpapier, Finanzprodukt oder -Instrument abgeben. Die Erwähnung bestimmter Wertpapiere oder Anlageprodukte stellen ausdrücklich keine Empfehlung zum Kaufen oder Verkaufen oder Halten dar. Sie handeln bzw. traden auf eigenes Risiko. Jegliche Haftung wird ausgeschlossen.
+      {texts.online?.riskNoticeDetails || "Loading time investment message..."} <br />
 <br />
-<br />
-        CFDs sind komplexe Instrumente und bergen aufgrund der Hebelwirkung ein hohes Risiko, schnell Geld zu verlieren. Die große Mehrheit der Konten von Kleinanlegern verliert beim Handel mit CFDs Geld. Sie sollten abwägen, ob Sie die Funktionsweise von CFDs verstehen und ob Sie es sich leisten können, das hohe Risiko einzugehen, ihr Geld zu verlieren.
       <br />
       <br />
-      Kontaktieren Sie uns: info@tradingfreaks.com      </div>
+        </div>
     </div>
   </div>
 </div>

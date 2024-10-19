@@ -1,12 +1,49 @@
 "use client"; 
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import useGeolocation from '../../hooks/useGeolocation';
+
 
 const Button = () => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState('');
+  const country = useGeolocation();
+  // const [texts, setTexts] = useState(translations.EN)
+  const [texts, setTexts] = useState({});
+
+  const loadTranslations = async (langCode) => {
+    try {
+      const translations = await import(`../../../public/translations/${langCode}.json`);
+      setTexts(translations); 
+    } catch (error) {
+      console.error(`Could not load translations for ${langCode}:`, error);
+    }
+  };
+
+  
+  useEffect(() => {
+    switch (country) {
+      case "DE":
+        loadTranslations('de');
+        break;
+      case "PT":
+        loadTranslations('pt');
+        break;
+      case "FR":
+        loadTranslations('fr');
+        break;
+      case "NL":
+        loadTranslations('nl');
+        break;
+      case "IT":
+        loadTranslations('it');
+        break;
+      default:
+        loadTranslations('en'); 
+    }
+  }, [country]);
 
 
 
@@ -18,6 +55,9 @@ const Button = () => {
     setShowModal(false);
   };
 
+
+
+
   return (
     <>
       <div className="relative">
@@ -26,7 +66,7 @@ const Button = () => {
           className="button bg-[#13f97b] mt-[2rem] h-20 w-[388px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
         >
           <div className="btn-text w-full text-center">
-            Jetzt kostenlosen Zugang sichern
+          {texts.online?.downloadButton || "Loading..."}
           </div>
 
           <div className="btn-arrow-icon">
@@ -69,25 +109,24 @@ const Button = () => {
 
         {/* Modal Content */}
         <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
-          Nur noch ein Schritt...
-        </h1>
+        {texts.online?.justOneStep || "Loading..."}        </h1>
         <form>
           <input
             className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
             type="text"
-            placeholder="Vorname"
+            placeholder={texts.online?.firstNamePlaceholder || "Loading..."} // Using optional chaining
             required
           />
           <input
             className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
             type="text"
-            placeholder="Nachname"
+            placeholder={texts.online?.lastNamePlaceholder || "Loading..."} // Using optional chaining
             required
           />
           <input
             className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
             type="email"
-            placeholder="E-Mail Adresse"
+            placeholder={texts.online?.emailPlaceholder || "Loading..."} // Using optional chaining
             required
           />
           <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
@@ -116,9 +155,9 @@ const Button = () => {
           </div>
 
 
-          <div className="button1 bg-[#13f97b] mt-[2rem] h-20 w-[320px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden">
+          <div className="button1 bg-[#13f97b] mt-[2rem] h-20 w-[350px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden">
             <div className="btn-text w-full text-center z-10">
-              Jetzt Zugang sichern
+            {texts.online?.secureAccess || "Loading..."}  
             </div>
             <div className="btn-arrow-icon">
               <img className="w-[30px] h-[30px]"
@@ -142,7 +181,7 @@ const Button = () => {
           <div className="mt-4 flex items-center">
             <input type="checkbox" id="customCheckbox" className="custom-checkbox" />
             <label htmlFor="customCheckbox" className="text-[#728291] text-[14px]">
-              Ich akzeptiere die Datenschutzbestimmungen
+            {texts.online?.acceptPrivacyPolicy || "Loading..."}  
             </label>
           </div>
         </form>

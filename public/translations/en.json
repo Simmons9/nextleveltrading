@@ -1,6 +1,144 @@
 {
-    "online": {
-      "treading": "Free Trading Course"
+  "online": {
+    "treading": "Free Trading Course",
+    "learnTrading": "Learn serious trading as a beginner in just 7 days and start your day trading career",
+    "downloads": "Already <strong>68,134+</strong> times downloaded",
+    "orders": "Already ordered <strong>2,145+</strong> times",
+    "training": "Free Trading Training",
+    "description2": "With our step-by-step guide, actionable tips, broker recommendations, chart analyses, and a proven strategy, you lay the foundation for long-term profitable trading and financial freedom. Get our free trading course in PDF form now and take the opportunity to elevate your trading knowledge to the next level, including a free beginner consultation from a trading specialist!",
+    "downloadButton": "Download for free now",
+    "downloadCount": "Already downloaded 68,134+ times",
+    "lifeChange": "How successful trading",
+    "lifeChange2": "will change your life",
+    "timeInvestment": "With just 30-60 minutes of time investment per day!",
+    "financialIndependence": "Complete financial independence",
+    "tradingCourse": "Our Trading Course",
+    "successTrader": "In just 7 days to a successful trader",
+    "chapter1": "Chapter 1",
+    "chapter2": "Chapter 2",
+    "chapter3": "Chapter 3",
+    "chapter4": "Chapter 4",
+    "chapter5": "Chapter 5",
+    "chapter6": "Chapter 6",
+    "chapter7": "Chapter 7",
+    "marketStructures": "Market Structures",
+    "riskManagement": "Risk Management",
+    "strategy": "Strategy",
+    "traderPath": "Your Path as a Trader",
+    "technicalAnalysis": "Learn the basics of technical analysis and market reading to understand the development of a stock.",
+    "riskManagementDescription": "We will show you what proper risk management looks like in practice and how to protect your capital from unnecessary losses.",
+    "checklistDefinition": "Here we show you how to define clear entries and exits with our checklist. With this strategy, you can then create and trade your own trade ideas.",
+    "incomeLimits": "With trading, there are no income limits. We will show you which factors determine your first €100,000.",
+    "trustpilot": "Trustpilot",
+    "number": "68.134+",
+    "satisfied": "Satisfied",
+    "participants": "Participants",
+    "moreThan": "More than",
+    "topExperts": "12 Top Experts",
+    "onTeam": "On the Team",
+    "weAre": "We are a",
+    "german": "German",
+    "company": "company",
+    "number2": "15.000+",
+    "conducted": "Conducted",
+    "trades": "Trades",
+    "fifteenYears": "15 Years",
+    "trading": "Trading",
+    "experience": "Experience",
+    "recognizeYourself": "Do you recognize yourself here?",
+    "whoIsTrainingFor": "Who is our training for?",
+    "hundredPercentCorrect": "100% CORRECT",
+    "interestedInTrading": "You are interested in trading",
+    "wantToLearnNewSkills": "You want to learn new skills",
+    "wantFinancialFreedom": "You want to achieve financial freedom",
+    "readyToInvest": "You are ready to invest €250 for your first trades",
+    "willingToLearn": "You are eager to learn and trust our trading strategies",
+    "definitelyNot": "DEFINITELY NOT",
+    "notInterested": "Trading does not interest you",
+    "notWillingToLearn": "You are not willing to learn",
+    "noFinancialGoals": "You have no financial goals",
+    "noMoneyToInvest": "You do not want to invest money",
+    "noTimeToInvest": "You do not want to invest time",
+    "easiestWay": "The easiest way to start trading",
+    "minimalTimeInvestment": "with minimal time investment",
+    "completelyFree": "and completely free",
+    "dayTradingTrainingDescription": "In this 7-day training, you will learn the basics of day trading in a clear and entertaining way and also <br /> receive clear instructions and strategies that you can implement independently and confidently afterwards. <br /><br /> In over 15 years as a trader, I've learned a lot but also made some mistakes. I know how complex trading <br /> can be for a beginner. To make your entry as easy as possible, I've created this <br /> free online training. This is the kind of training I wish I had back then. <br /><br /> Have fun learning this unique skill! <br /> <strong className='text-[#fff]'>Your Tim</strong> <br /><br />",
+    "faq": "Frequently Asked Questions",
+    "faq2": "Frequently Asked <br /> Questions",
+    "ourMethod": "Our Method",
+    "rightBroker": "The Right Broker",
+    "tradingPlatforms": "Trading Platforms",
+    "learnIn7Steps": "You will learn how to trade profitably in just 7 steps with our method within the next 7 days.",
+    "cfBrokerSelection": "Learn what to look for when selecting a suitable CFD broker and what the biggest difference is compared to trading with borrowed capital.",
+    "tradingPlatformsIntro": "You will receive an introduction to the 2 most common trading platforms so that you feel confident and know exactly what to look for.",
+    "nurNochEinSchritt": "Nur noch",
+    "nurNochEinSchritt2": "1 Schritt...",
+    "transformYourselfToAdvanced": "Transform yourself from a complete beginner to an advanced ",
+    "accessToThisUniqueAndFreeOnline": " trader access to this unique and free online Transform yourself  ",
+    "transformYourselfToAdvancedIn7Days": " from a complete beginner to an advanced trader in just 7 days.",
+    "training1": "training",
+    "traderTraining": "Trader Training",
+    "career": "Career",
+    "introductoryTalk": "Introductory Talk",
+    "customerReviews": "Customer Reviews",
+    "privacyPolicy": "Privacy Policy",
+    "imprint": "Imprint",
+    "riskNotice": "Risk Notice",
+    "riskNoticeDetails": "Trading with leveraged products (e.g., CFDs and Forex trades) or other financial instruments involves significant risk and is not suitable for everyone. There is a possibility that you could incur a total loss or even losses exceeding your investments. Before trading with leveraged products or other financial instruments, you should ensure that you understand all associated risks. Furthermore, we refer to our risk notices. It is expressly clarified that we do not offer or conduct investment advice and do not provide any specific recommendations regarding a security, financial product, or instrument. The mention of certain securities or investment products does not constitute a recommendation to buy, sell, or hold. You trade at your own risk. Any liability is excluded.",
+    "justOneStep": "Just one more step...",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "emailPlaceholder": "Email Address",
+    "secureAccess": "Secure Access Now",
+    "acceptPrivacyPolicy": "I accept the privacy policy",
+    
+ 
+    
+    "faqs": [
+      {
+        "question": "Why is the training free?",
+        "answer": "It is important for us to say that membership and training is 100% free. Our broker partner covers the costs, so you don't have to pay anything. We work with one of the world's leading and award-winning trading platforms, which sponsors our service and funds your membership. As long as you use their platform, we can offer our service completely free of charge to all members. This is how we have created a real win-win situation - and this is exactly why we have become so popular in recent years and have developed into a globally recognized trading brand."
+      },
+      {
+        "question": "Do I need trading experience?",
+        "answer": "You don't need any previous trading experience. We'll guide you through the topic step by step with our trading PDF. With the course, we make sure that we give beginners the right specialist knowledge, the right infrastructure and a strategy to trade profitably on the market in the long term. In addition, there is direct, free coaching with a trading expert."
+      },
+      {
+        "question": "How much time do I need to invest in trading?",
+        "answer": "The course is primarily aimed at trading beginners. However, individual modules may be helpful for advanced traders."
+      },
+      {
+        "question": "Is the course also useful for advanced traders?",
+        "answer": "Yes, advanced traders can also benefit from the advanced strategies and techniques covered in the course."
+      },
+      {
+        "question": "Is there active support available?",
+        "answer": "Our free trading PDF saves us a lot of resources to provide you with the most important experiences. However, we have noticed that in order to be successful, it is good to give every new partner an initial meeting with a trading expert. If you need further support afterwards, we are of course always available to help you."
+      }
+    ],
+    "cards": {
+      "data": [
+        {
+          "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+          "title": "Complete Financial Independence",
+          "description": "Build a second financial pillar, make yourself independent of your employer in the long term, and secure a higher standard of living."
+        },
+        {
+          "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+          "title": "Break Your Income Limits",
+          "description": "As a trader, there are no artificial limits on your income. With this skill, you have full control over your earnings."
+        },
+        {
+          "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+          "title": "Live by Your Rules",
+          "description": "Enjoy a life without restrictions. You trade wherever and whenever you want - it doesn't matter if you're at home or traveling the world."
+        },
+        {
+          "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+          "title": "Earn in Any Market Condition",
+          "description": "Day traders benefit from both rising and falling prices. With our TF method, you can make profits regardless of market conditions."
+        }
+      ]
     }
   }
-  
+}

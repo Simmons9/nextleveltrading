@@ -1,6 +1,126 @@
 {
-    "online": {
-      "treading": "Kostenloser Trading-Kurs"
-    }
+  "online": {
+    "treading": "Kostenloser Trading-Kurs",
+    "learnTrading": "Lerne ernsthaftes Trading als Anfänger in nur 7 Tagen und starte deine Daytrading-Karriere",
+    "downloads": "Bereits <strong>68.134+</strong> Mal heruntergeladen",
+    "orders": "Bereits <strong>2.145+</strong> Mal bestellt",
+    "training": "Kostenloses Trading-Training",
+    "description2": "Mit unserem Schritt-für-Schritt-Leitfaden, umsetzbaren Tipps, Broker-Empfehlungen, Chartanalysen und einer bewährten Strategie legst du die Grundlage für langfristig profitables Trading und finanzielle Freiheit. Hol dir jetzt unseren kostenlosen Trading-Kurs im PDF-Format und nutze die Gelegenheit, dein Trading-Wissen auf das nächste Level zu heben, inklusive einem kostenlosen Anfänger-Gespräch mit einem Trading-Spezialisten!",
+    "downloadButton": "Jetzt kostenlos herunterladen",
+    "downloadCount": "Bereits 68.134+ Mal heruntergeladen",
+    "lifeChange": "Wie erfolgreiches Trading",
+    "lifeChange2": "dein Leben verändern wird",
+    "timeInvestment": "Mit nur 30-60 Minuten Zeitaufwand pro Tag!",
+    "financialIndependence": "Vollständige finanzielle Unabhängigkeit",
+    "tradingCourse": "Unser Trading-Kurs",
+    "successTrader": "In nur 7 Tagen zum erfolgreichen Trader",
+    "chapter1": "Kapitel 1",
+    "chapter2": "Kapitel 2",
+    "chapter3": "Kapitel 3",
+    "chapter4": "Kapitel 4",
+    "chapter5": "Kapitel 5",
+    "chapter6": "Kapitel 6",
+    "chapter7": "Kapitel 7",
+    "marketStructures": "Marktstrukturen",
+    "riskManagement": "Risikomanagement",
+    "strategy": "Strategie",
+    "traderPath": "Dein Weg als Trader",
+    "technicalAnalysis": "Lerne die Grundlagen der technischen Analyse und Marktbeobachtung, um die Entwicklung einer Aktie zu verstehen.",
+    "riskManagementDescription": "Wir zeigen dir, wie korrektes Risikomanagement in der Praxis aussieht und wie du dein Kapital vor unnötigen Verlusten schützt.",
+    "checklistDefinition": "Hier zeigen wir dir, wie du mit unserer Checkliste klare Ein- und Ausstiege definieren kannst. Mit dieser Strategie kannst du dann deine eigenen Handelsideen erstellen und umsetzen.",
+    "incomeLimits": "Beim Trading gibt es keine Einkommensgrenzen. Wir zeigen dir, welche Faktoren deine ersten 100.000 € bestimmen.",
+    "trustpilot": "Trustpilot",
+    "number": "68.134+",
+    "satisfied": "Zufriedene",
+    "participants": "Teilnehmer",
+    "moreThan": "Mehr als",
+    "topExperts": "12 Top-Experten",
+    "onTeam": "Im Team",
+    "weAre": "Wir sind ein",
+    "german": "deutsches",
+    "company": "Unternehmen",
+    "number2": "15.000+",
+    "conducted": "Durchgeführte",
+    "trades": "Trades",
+    "fifteenYears": "15 Jahre",
+    "trading": "Trading",
+    "experience": "Erfahrung",
+    "recognizeYourself": "Erkennst du dich hier wieder?",
+    "whoIsTrainingFor": "Für wen ist unser Training gedacht?",
+    "hundredPercentCorrect": "100% RICHTIG",
+    "interestedInTrading": "Du interessierst dich fürs Trading",
+    "wantToLearnNewSkills": "Du möchtest neue Fähigkeiten erlernen",
+    "wantFinancialFreedom": "Du möchtest finanzielle Freiheit erreichen",
+    "readyToInvest": "Du bist bereit, 250 € für deine ersten Trades zu investieren",
+    "willingToLearn": "Du bist lernwillig und vertraust unseren Trading-Strategien",
+    "definitelyNot": "DEFINTIV NICHT",
+    "notInterested": "Trading interessiert dich nicht",
+    "notWillingToLearn": "Du bist nicht bereit zu lernen",
+    "noFinancialGoals": "Du hast keine finanziellen Ziele",
+    "noMoneyToInvest": "Du möchtest kein Geld investieren",
+    "noTimeToInvest": "Du möchtest keine Zeit investieren",
+    "easiestWay": "Der einfachste Weg, um mit Trading zu beginnen",
+    "minimalTimeInvestment": "mit minimalem Zeitaufwand",
+    "completelyFree": "und völlig kostenlos",
+    "dayTradingTrainingDescription": "In diesem 7-tägigen Training lernst du die Grundlagen des Daytradings auf klare und unterhaltsame Weise und erhältst außerdem <br /> klare Anleitungen und Strategien, die du danach selbstständig und sicher umsetzen kannst. <br /><br /> In über 15 Jahren als Trader habe ich viel gelernt, aber auch einige Fehler gemacht. Ich weiß, wie komplex Trading <br /> für einen Anfänger sein kann. Um dir den Einstieg so einfach wie möglich zu machen, habe ich dieses <br /> kostenlose Online-Training erstellt. Das ist die Art von Training, die ich mir damals gewünscht hätte. <br /><br /> Viel Spaß beim Lernen dieser einzigartigen Fähigkeit! <br /> <strong className='text-[#fff]'>Dein Tim</strong> <br /><br />",
+    "faq": "Häufig gestellte Fragen",
+    "faq2": "Häufig Gestellte <br /> Fragen",
+    "ourMethod": "Unsere Methode",
+    "rightBroker": "Der richtige Broker",
+    "tradingPlatforms": "Trading-Plattformen",
+    "learnIn7Steps": "Du wirst lernen, wie man profitabel tradet, und zwar in nur 7 Schritten mit unserer Methode innerhalb der nächsten 7 Tage.",
+    "cfBrokerSelection": "Lerne, worauf du bei der Auswahl eines geeigneten CFD-Brokers achten solltest und was der größte Unterschied beim Trading mit Fremdkapital ist.",
+    "tradingPlatformsIntro": "Du erhältst eine Einführung in die 2 häufigsten Handelsplattformen, damit du dich sicher fühlst und genau weißt, worauf du achten musst.",
+    "nurNochEinSchritt": "Nur noch",
+    "nurNochEinSchritt2": "1 Schritt...",
+    "transformYourselfToAdvanced": "Verwandle dich vom kompletten Anfänger zu einem fortgeschrittenen ",
+    "accessToThisUniqueAndFreeOnline": "Trader, der Zugang zu dieser einzigartigen und kostenlosen Online-Transformationsausbildung hat.",
+    "transformYourselfToAdvancedIn7Days": "vom kompletten Anfänger zum fortgeschrittenen Trader in nur 7 Tagen.",
+    "training1": "Training",
+    "traderTraining": "Trader-Training",
+    "career": "Karriere",
+    "introductoryTalk": "Kennenlerngespräch",
+    "customerReviews": "Kundenmeinungen",
+    "privacyPolicy": "Datenschutz",
+    "imprint": "Impressum",
+    "riskNotice": "Risikohinweis",
+    "riskNoticeDetails": "Der Handel mit Hebelprodukten (z.B. CFDs und Forex-Trades) oder anderen Finanzinstrumenten ist mit einem enormen Risiko verbunden und nicht für jeden geeignet. Es besteht die Möglichkeit, dass du einen Totalverlust erleidest oder sogar Verluste, die deine Investitionen übersteigen. Bevor du mit Hebelprodukten oder anderen Finanzinstrumenten handelst, solltest du sicherstellen, dass du alle damit verbundenen Risiken verstanden hast. Im Übrigen verweisen wir auf unsere Risikohinweise. Es wird ausdrücklich klargestellt, dass wir keine Anlageberatung anbieten und durchführen und insbesondere auch keinerlei konkrete Empfehlungen zu einem Wertpapier, Finanzprodukt oder -instrument abgeben. Die Erwähnung bestimmter Wertpapiere oder Anlageprodukte stellt ausdrücklich keine Empfehlung zum Kaufen, Verkaufen oder Halten dar. Du handelst bzw. tradest auf eigenes Risiko. Jegliche Haftung wird ausgeschlossen.",
+    "justOneStep": "Nur noch ein Schritt...",
+    "firstNamePlaceholder": "Vorname",
+    "lastNamePlaceholder": "Nachname",
+    "emailPlaceholder": "E-Mail Adresse",
+    "secureAccess": "Jetzt Zugang sichern",
+    "acceptPrivacyPolicy": "Ich akzeptiere die Datenschutzbestimmungen",
+    
+    "faqs": [
+      {
+        "question": "Warum ist das Training kostenlos?",
+        "answer": "Es ist uns wichtig zu sagen, dass die Mitgliedschaft und das Training 100% kostenlos sind. Unser Broker-Partner übernimmt die Kosten, sodass du nichts bezahlen musst. Wir arbeiten mit einer der weltweit führenden und preisgekrönten Handelsplattformen zusammen, die unseren Service sponsert und deine Mitgliedschaft finanziert. Solange du deren Plattform nutzt, können wir unseren Service allen Mitgliedern völlig kostenlos anbieten. So haben wir eine echte Win-Win-Situation geschaffen – und genau deshalb sind wir in den letzten Jahren so beliebt geworden und haben uns zu einer global anerkannten Trading-Marke entwickelt."
+      },
+      {
+        "question": "Brauche ich Trading-Erfahrung?",
+        "answer": "Du brauchst keine Vorkenntnisse im Trading. Wir führen dich Schritt für Schritt durch das Thema mit unserem Trading-PDF. Mit dem Kurs stellen wir sicher, dass wir Anfängern das richtige Fachwissen, die richtige Infrastruktur und eine Strategie geben, um langfristig profitabel am Markt zu traden. Außerdem gibt es direktes, kostenloses Coaching mit einem Trading-Experten."
+      },
+      {
+        "question": "Wie lange dauert das Training?",
+        "answer": "Das Trading-Training dauert 7 Tage, wobei du dir die Inhalte selbst einteilen kannst. Du hast in der ersten Woche nach deiner Anmeldung Zugang zu allen Trainingsinhalten. Und keine Sorge: Das Training dauert nicht lange, wir halten es auf maximal 30-60 Minuten pro Tag, damit du deine Zeit so gut wie möglich nutzen kannst."
+      },
+      {
+        "question": "Wie kann ich mich anmelden?",
+        "answer": "Um dich anzumelden, fülle einfach das Formular auf dieser Seite aus, um unser Trading-PDF herunterzuladen und ein persönliches Kennenlerngespräch mit einem Trading-Experten zu vereinbaren."
+      },
+      {
+        "question": "Was sind die Voraussetzungen?",
+        "answer": "Du benötigst ein Smartphone oder einen Computer mit Internetzugang. Um mit dem Trading zu beginnen, solltest du bereit sein, mindestens 250 € für deine ersten Trades zu investieren und den Anweisungen der Trading-Experten zu folgen."
+      },
+      {
+        "question": "Gibt es eine Garantie für den Erfolg?",
+        "answer": "Es gibt keine Garantie für den Erfolg im Trading. Trading birgt immer Risiken, und es gibt keine Sicherheit, dass du Gewinn erzielen wirst. Du solltest dir im Klaren darüber sein, dass du auch Geld verlieren kannst. Wir bieten jedoch Schulungen und Unterstützung an, um deine Erfolgschancen zu erhöhen."
+      },
+      {
+        "question": "Wie funktioniert das Kennenlerngespräch?",
+        "answer": "Das Kennenlerngespräch findet online statt, in der Regel via Zoom oder einer ähnlichen Plattform. Der Trading-Experte wird dir deine Fragen beantworten, dir wertvolle Tipps geben und dich bei deinem Einstieg ins Trading unterstützen."
+      }
+    ]
   }
-  
+}
