@@ -8,8 +8,8 @@
     "description2": "Mit unserem Schritt-für-Schritt-Leitfaden, umsetzbaren Tipps, Broker-Empfehlungen, Chartanalysen und einer bewährten Strategie legst du die Grundlage für langfristig profitables Trading und finanzielle Freiheit. Hol dir jetzt unseren kostenlosen Trading-Kurs im PDF-Format und nutze die Gelegenheit, dein Trading-Wissen auf das nächste Level zu heben, inklusive einem kostenlosen Anfänger-Gespräch mit einem Trading-Spezialisten!",
     "downloadButton": "Jetzt kostenlos herunterladen",
     "downloadCount": "Bereits 68.134+ Mal heruntergeladen",
-    "lifeChange": "Wie erfolgreiches Trading",
-    "lifeChange2": "dein Leben verändern wird",
+    "lifeChange": "Wie erfolgreiches Trading dein",
+    "lifeChange2": " Leben verändern wird",
     "timeInvestment": "Mit nur 30-60 Minuten Zeitaufwand am Tag!",
     "financialIndependence": "Vollständige finanzielle Unabhängigkeit",
     "tradingCourse": "Kostenlose Trading-Ausbildung",
@@ -91,6 +91,12 @@
     "emailPlaceholder": "E-Mail Adresse",
     "secureAccess": "Jetzt Zugang sichern",
     "acceptPrivacyPolicy": "Ich akzeptiere die Datenschutzbestimmungen",
+
+    "Bewertungen": "202 Bewertungen auf",
+    "Trustpilot":"Trustpilot",
+    "Hervorragend": "Hervorragend",
+    "Mehr": "Mehr anzeigen",
+
     
     "faqs": [
       {

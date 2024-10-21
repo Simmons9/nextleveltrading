@@ -186,7 +186,7 @@ function Home() {
 </div>
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
-  <h1 className="w-[27.9rem] sm:w-[40.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
+  <h1 className="w-[27.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
   <div>{texts.online?.lifeChange || "Loading..."}</div>
   <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Loading..."}</span>
   </h1>
@@ -200,7 +200,7 @@ function Home() {
 
 <div className="part3 w-full h-auto bg-[#041212] pt-[3rem] text-[#fff] flex flex-col items-center rounded-2xl">
 
-<div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[12rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
+<div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[18rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
     <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
     <div>{texts.online?.tradingCourse || "Loading..."}</div>
 
@@ -221,7 +221,9 @@ function Home() {
             className="button flex items-center justify-between w-[20rem] bg-[#69bc8f26] font-[600] rounded-[10px] p-[20px] m-auto cursor-pointer"
             style={{ border: '1px solid rgba(255, 255, 255, 0.05)' }}
         >
-            <p className="mr-2">Mehr anzeigen</p>
+            <p className="mr-2"> {texts.online?.Mehr || "Loading..."}</p>
+
+           
             <div className="icon-create w-[24px] h-[24px]">
                 <img src="/images/66bdc762139d5d2dbcb2c74c_Add box.png" alt="" />
             </div>
@@ -372,7 +374,7 @@ function Home() {
 
 <div className="part3 bg-gradient-[#f1f3f5, #fff]">
 <div className="mt-[6rem] flex justify-center items-center space-x-2">
-  <p className="text-[18px]">Hervorragend</p>
+  <p className="text-[18px]">{texts.online?.Trustpilot || "Loading..."}</p>
 
   {/* 5 Stars */}
   <div className="flex items-center">
@@ -395,13 +397,13 @@ function Home() {
 </div>
 
 
-  <p className="font-medium text-[14px] hidden md:flex">202 Bewertungen auf</p>
+  <p className="font-medium text-[14px] hidden md:flex">{texts.online?.Bewertungen || "Loading..."}</p>
 
   <div className="items-center hidden md:flex">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A" className="w-6 h-6 ml-1">
       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
     </svg>
-    <p className="font-semibold text-[14px] text-center ml-1">Trustpilot</p>
+    <p className="font-semibold text-[14px] text-center ml-1">{texts.online?.Trustpilot || "Loading..."}</p>
   </div>
 </div>
 
@@ -448,7 +450,7 @@ function Home() {
     />
     <img
       src="/images/664cd803960057669fadea99_5.webp"
-      alt=""
+      alt="aa"
       className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[-8rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
     />
@@ -561,7 +563,7 @@ function Home() {
     </div>
 
     <div className="flex flex-wrap justify-center items-start w-full h-auto mt-10 gap-6">
-      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px]">
+      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
         <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
         {texts.online?.hundredPercentCorrect || "Loading..."}
         </div>
@@ -577,41 +579,41 @@ function Home() {
     {texts.online?.interestedInTrading || "Loading..."}
     </li>
   <li className="flex mt-8">
-    <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
-      <img 
+  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+  <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[30px] h-[30px]"
       />
     </span>
     {texts.online?.wantToLearnNewSkills || "Loading..."}
     </li>
   <li className="flex mt-8">
-    <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[30px] h-[30px]"
       />
     </span>
     {texts.online?.wantFinancialFreedom || "Loading..."}
     </li>
   <li className="flex mt-8">
-    <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[30px] h-[30px]"
       />
     </span>
     {texts.online?.readyToInvest || "Loading..."}
     </li>
   <li className="flex mt-8">
-    <span className="relative bg-[#0cdc6a] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[30px] h-[30px]"
       />
     </span>
     {texts.online?.willingToLearn || "Loading..."}
@@ -619,61 +621,61 @@ function Home() {
 </ul>
       </div>
       
-      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px]">
+      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
         <div className="button1 bg-[#ff0000] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px] ">
         {texts.online?.definitelyNot || "Loading..."}
         </div>
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
-        <span className="relative bg-[#f3ecea] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+        <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
       <img 
         src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[15px] h-[15px]"
       />
     </span>
     {texts.online?.notInterested || "Loading..."}
 
     </li>
   <li className="flex mt-8">
-  <span className="relative bg-[#f3ecea] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
   <img 
         src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[15px] h-[15px]"
       />
     </span>
     {texts.online?.notWillingToLearn || "Loading..."}
 
     </li>
   <li className="flex mt-8">
-  <span className="relative bg-[#f3ecea] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
   <img 
         src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[15px] h-[15px]"
       />
     </span>
     {texts.online?.noFinancialGoals || "Loading..."}
 
     </li>
   <li className="flex mt-8">
-  <span className="relative bg-[#f3ecea] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
   <img 
         src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[15px] h-[15px]"
       />
     </span>
     {texts.online?.noMoneyToInvest || "Loading..."}
 
     </li>
   <li className="flex mt-8">
-  <span className="relative bg-[#f3ecea] rounded-full w-[24px] h-[24px] mr-2 flex items-center justify-center">
+  <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
   <img 
         src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
         alt="check icon" 
-        className="absolute  w-[10px] h-[10px]"
+        className="absolute  w-[15px] h-[15px]"
       />
     </span>
     {texts.online?.noTimeToInvest || "Loading..."}
