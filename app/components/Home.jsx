@@ -445,13 +445,13 @@ function Home() {
     <img
       src="/images/image3.png"
       alt=""
-      className="hidden md:block w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
+      className=" w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
     />
     <img
       src="/images/664cd803960057669fadea99_5.webp"
-      alt="aa"
-      className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[-8rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
+      alt=""
+      className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[0.2rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
     />
 
@@ -532,7 +532,7 @@ function Home() {
     
     <img
       src="/images/6601dc8_Frame-p-500.png"
-      alt=""
+      alt="aae"
       className="mt-[4.1rem] object-cover bg-contain bg-repeat w-[28rem] h-[11.1rem] "
       style={{ backgroundImage: '100%' }}
     />
@@ -800,8 +800,8 @@ function Home() {
 
 
       
-    <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative hidden md:block" src="/images/image5.png" alt="" />
-    <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative block md:hidden" src="/images/66bddb6c5a17773ef43ca625_new 4-p-500.png" alt="" />
+     <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative  md:block" src="/images/image5.png" alt="" />
+  {/*  <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative block md:hidden" src="/images/66bddb6c5a17773ef43ca625_new 4-p-500.png" alt="" /> */}
 {/* <div className="absolute bottom-[117.9rem] lg:bottom-[83.4rem]">
 <img className="w-[200px]" src="/images/66bddb6c5a17773ef43ca625_new%204.avif" alt="" />
 
