@@ -371,7 +371,6 @@ function Home() {
 </div>
 
 <div className="part3 bg-gradient-[#f1f3f5, #fff]">
-<<<<<<< HEAD
 <div className="mt-[6rem] flex justify-center items-center space-x-2">
   <p className="text-[18px]">Hervorragend</p>
 
@@ -404,14 +403,6 @@ function Home() {
     </svg>
     <p className="font-semibold text-[14px] text-center ml-1">Trustpilot</p>
   </div>
-=======
-<div className="mt-[6rem] flex justify-center items-center">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A" className="w-6 h-6 ml-2">
-    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-  </svg>
-  <p className="font-[600] text-[14px] text-center">   {texts.online?.trustpilot || "Loading..."}
-  </p>
->>>>>>> a31ed298aa3b6f3e5574b68a467af368893d8861
 </div>
 
 
@@ -791,7 +782,7 @@ function Home() {
             height={30.19}
           />
           <div className="text-people ml-4 text-black text-[12px]  sm:text-[10px]">
-            Beretis <strong>2.145+</strong> Mal bestellt
+          <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
           </div>
         </div>
         
