@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Button from './assets/Button'
 import Cards from './assets/Cards'
 import Tag from './assets/Tag';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -75,7 +76,7 @@ function Home() {
       <img
         src="/images/logo-blakc.svg"
         alt="Logo"
-        className="w-[40px] h-auto sm:w-[115px]"  
+        className="w-[90px] h-auto sm:w-[115px]"  
       />
     </div>
 
@@ -83,7 +84,7 @@ function Home() {
       <img
         src="/images/avatars68k.png"
         alt="Avatar"
-        className="w-[118px] sm:w-[114px]"  
+        className="w-[118px] sm:w-[114px] mr-[-5rem]"  
       />
       <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
       <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
@@ -176,17 +177,17 @@ function Home() {
 
 
 
-<div className="grid grid-cols-2 sm:w-[90%] md:grid-cols-6 md:w-[70%]  lg:w-[190%] xl:w-[73%] m-auto">
-  <img className="h-20 w-full object-contain" src="/images/l1.png" alt="" />
-  <img className="h-20 w-full object-contain" src="/images/l2.png" alt="" />
-  <img className="h-20 w-full object-contain" src="/images/l3.png" alt="" />
-  <img className="h-20 w-full object-contain" src="/images/l4.png" alt="" />
-  <img className="h-20 w-full object-contain" src="/images/l5.png" alt="" />
-  <img className="h-20 w-full object-contain" src="/images/l6.png" alt="" />
+<div className="grid grid-cols-2 sm:w-[80%] md:grid-cols-6 md:w-[70%]  lg:w-[190%] xl:w-[73%] m-auto">
+  <img className="h-[3rem] w-full object-contain" src="/images/l1.png" alt="" />
+  <img className="h-[3rem] w-full object-contain" src="/images/l2.png" alt="" />
+  <img className="h-[3rem] w-full object-contain" src="/images/l3.png" alt="" />
+  <img className="h-[3rem] w-full object-contain" src="/images/l4.png" alt="" />
+  <img className="h-[3rem] w-full object-contain" src="/images/l5.png" alt="" />
+  <img className="h-[3rem] w-full object-contain" src="/images/l6.png" alt="" />
 </div>
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
-  <h1 className="w-[27.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
+  <h1 className="w-[23.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
   <div>{texts.online?.lifeChange || "Loading..."}</div>
   <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Loading..."}</span>
   </h1>
@@ -206,10 +207,16 @@ function Home() {
 
 </div>
 
-<div className="title flex justify-center mt-10 text-[48px] font-bold leading-[1.2] tracking-[.4px]">
-    <h1>{texts.online?.successTrader || "Loading..."}</h1>
-    
+
+<div className="Tradingdeine w-full h-auto mt-[2rem] px-4 flex flex-col items-center">
+  <h1 className="w-[23.9rem] sm:w-[46.24rem] font-bold text-[34px] mb-[-1rem] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
+  <div>{texts.online?.successTrader || "Loading..."}</div>
+  </h1>
+
+
 </div>
+
+
 
 
 <Tag />
@@ -578,9 +585,9 @@ function Home() {
     </span>
     {texts.online?.interestedInTrading || "Loading..."}
     </li>
-  <li className="flex mt-8">
-  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
-  <img 
+    <li className="flex mt-6">
+        <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+      <img 
         src="/images/image6.png" 
         alt="check icon" 
         className="absolute  w-[30px] h-[30px]"
@@ -588,8 +595,8 @@ function Home() {
     </span>
     {texts.online?.wantToLearnNewSkills || "Loading..."}
     </li>
-  <li className="flex mt-8">
-  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+    <li className="flex mt-6">
+        <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
@@ -598,9 +605,9 @@ function Home() {
     </span>
     {texts.online?.wantFinancialFreedom || "Loading..."}
     </li>
-  <li className="flex mt-8">
-  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
-      <img 
+    <li className="flex mt-6">
+    <span className="relative bg-[#ffffff] rounded-full w-[35px] h-[35px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
+    <img 
         src="/images/image6.png" 
         alt="check icon" 
         className="absolute  w-[30px] h-[30px]"
@@ -608,16 +615,17 @@ function Home() {
     </span>
     {texts.online?.readyToInvest || "Loading..."}
     </li>
-  <li className="flex mt-8">
-  <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+    <li className="flex mt-6">
+    <span className="relative bg-[#ffffff] rounded-full w-[35px] h-[35px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
+        className="absolute w-[49px]  lg:w-[30px] lg:h-[30px] "
       />
     </span>
     {texts.online?.willingToLearn || "Loading..."}
     </li>
+
 </ul>
       </div>
       
@@ -695,10 +703,26 @@ function Home() {
     <img src="/images/image4.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
   </div>
 
-  <div className="text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
+  <div className="hidden md:block text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
     {texts.online?.easiestWay || "Loading..."}
-    <br /> 
+    <br />
+    {texts.online?.minimalTimeInvestment || "Loading..."} <br /> 
+      <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
+      {texts.online?.completelyFree || "Loading..."}      </span>
+    </h1>
+
+    <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
+    <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
+
+      <img className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0' src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif" alt="Tim Signature" />
+    </div>
+  </div>
+
+  <div className="block md:hidden text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
+    <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
+    {texts.online?.easiestWay || "Loading..."}
+  
     {texts.online?.minimalTimeInvestment || "Loading..."} <br /> 
       <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
       {texts.online?.completelyFree || "Loading..."}      </span>
@@ -865,12 +889,17 @@ function Home() {
   {/* Left List */}
   <div className="text-left">
     <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
-      <li>{texts.online?.privacyPolicy || "Loading..."}</li>
-      <li>{texts.online?.imprint || "Loading..."}</li>
+    <li>
+          <Link href="/risikohinweis">
+            {texts.online?.privacyPolicy || 'Loading...'}
+          </Link>
+        </li>      
+        <li> <a href="/Risikohinweis"></a> {texts.online?.imprint || "Loading..."}</li>
       <li>{texts.online?.riskNotice || "Loading..."}</li>
     </ul>
   </div>
-  
+
+    
   {/* Right Copyright Text */}
   <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
     © 2023 TradingFreaks® All rights reserved
@@ -879,7 +908,7 @@ function Home() {
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
       <div className="title-footer mb-[4rem] text-[#fff] text-[24px] md:text-[24px] font-[600] leading-[100%]">
       {texts.online?.riskNotice || "Loading..."}      </div>
-      <div className="description-bottom text-[#ffffff8f] w-full lg:w-[50rem] font-[400] md:w-[100%] text-[13px] md:text-[14px]">
+      <div className="description-bottom text-[#ffffff8f] w-full font-[400] md:w-[100%] text-[13px] md:text-[14px]">
       {texts.online?.riskNoticeDetails || "Loading..."} <br />
 <br />
       <br />
@@ -913,8 +942,13 @@ function Home() {
 
 
 </div>
+
+
  
     </main>
+
+
+
   );
 }
 
