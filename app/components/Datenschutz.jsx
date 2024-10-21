@@ -11,7 +11,7 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import useGeolocation from '../hooks/useGeolocation';
 
 
-function Risikohinweis() {
+function Datenschutz() {
     const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const country = useGeolocation();
@@ -198,7 +198,7 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
                       <div className="text-left">
                           <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
                               <li>
-                                  <Link href="/risikohinweis">
+                                  <Link href="/Datenschutz">
                                       {texts.online?.privacyPolicy || 'Loading...'}
                                   </Link>
                               </li>      <li>{texts.online?.imprint || "Loading..."}</li>
@@ -230,4 +230,4 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
   )
 }
 
-export default Risikohinweis
+export default Datenschutz

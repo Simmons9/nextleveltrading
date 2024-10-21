@@ -4,6 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Button from './assets/Button'
 import Cards from './assets/Cards'
 import Tag from './assets/Tag';
+import Datenschutz from './Datenschutz';
+import Impressum from './Impressum';
+import Risikohinweis from './Risikohinweis';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -890,13 +893,21 @@ function Home() {
   <div className="text-left">
     <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
     <li>
-          <Link href="/risikohinweis">
-            {texts.online?.privacyPolicy || 'Loading...'}
-          </Link>
-        </li>      
-        <li> <a href="/Risikohinweis"></a> {texts.online?.imprint || "Loading..."}</li>
-      <li>{texts.online?.riskNotice || "Loading..."}</li>
-    </ul>
+    <a href="/datenschutz" className="hover:text-green-500">
+      {texts.online?.privacyPolicy || 'Loading...'}
+    </a>
+  </li>
+  <li>
+    <a href="/impressum" className="hover:text-green-500">
+      {texts.online?.imprint || 'Loading...'}
+    </a>
+  </li>
+  <li>
+    <a href="/risikohinweis" className="hover:text-green-500">
+      {texts.online?.riskNotice || 'Loading...'}
+    </a>
+  </li>
+</ul>
   </div>
 
     
