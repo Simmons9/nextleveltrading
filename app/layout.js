@@ -3,7 +3,9 @@ import Head from "next/head";
 import "./globals.css";
 import Home from "./components/Home";
 import Risikohinweis from "./components/Risikohinweis";
-// import Datenschutze from "./components/Datenschutze";
+import Datenschutz from "./components/Datenschutz";
+import Impressum from "./components/Impressum";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +43,8 @@ export default function RootLayout({ children }) {
         <Home />
 
         {/* <Risikohinweis /> */}
-        {/* <Datenschutze /> */}
+        {/* <Datenschutz /> */}
+        {/* <Impressum /> */}
       </body>
     </html>
   );
