@@ -1,6 +1,141 @@
 {
-    "online": {
-      "treading": "Corso di Trading Gratuito"
+  "online": {
+    "treading": "Corso di Trading Gratuito",
+    "learnTrading": "Impara il trading serio come principiante in soli 7 giorni e inizia la tua carriera nel day trading",
+    "downloads": "Già scaricato <strong>68.134+</strong> volte",
+    "orders": "Già ordinato <strong>2.145+</strong> volte",
+    "training": "Formazione Gratuita sul Trading",
+    "description2": "Con la nostra guida passo dopo passo, consigli pratici, raccomandazioni sui broker, analisi dei grafici e una strategia comprovata, crei le basi per un trading redditizio a lungo termine e per la libertà finanziaria. Ottieni ora il nostro corso gratuito di trading in formato PDF e cogli l'opportunità di elevare le tue conoscenze di trading al livello successivo, incluso una consulenza gratuita per principianti da parte di uno specialista di trading!",
+    "downloadButton": "Scarica ora gratuitamente",
+    "downloadCount": "Già scaricato 68.134+ volte",
+    "lifeChange": "Come un trading di successo",
+    "lifeChange2": "cambierà la tua vita",
+    "timeInvestment": "Con solo 30-60 minuti di investimento al giorno!",
+    "financialIndependence": "Completa indipendenza finanziaria",
+    "tradingCourse": "Il nostro Corso di Trading",
+    "successTrader": "In soli 7 giorni per diventare un trader di successo",
+    "chapter1": "Capitolo 1",
+    "chapter2": "Capitolo 2",
+    "chapter3": "Capitolo 3",
+    "chapter4": "Capitolo 4",
+    "chapter5": "Capitolo 5",
+    "chapter6": "Capitolo 6",
+    "chapter7": "Capitolo 7",
+    "marketStructures": "Strutture di Mercato",
+    "riskManagement": "Gestione del Rischio",
+    "strategy": "Strategia",
+    "traderPath": "Il tuo percorso come Trader",
+    "technicalAnalysis": "Impara le basi dell'analisi tecnica e della lettura del mercato per comprendere lo sviluppo di un titolo.",
+    "riskManagementDescription": "Ti mostreremo come appare una corretta gestione del rischio in pratica e come proteggere il tuo capitale da perdite inutili.",
+    "checklistDefinition": "Qui ti mostriamo come definire entrate e uscite chiare con la nostra checklist. Con questa strategia, potrai poi creare e commerciare le tue idee di trading.",
+    "incomeLimits": "Con il trading, non ci sono limiti di reddito. Ti mostreremo quali fattori determinano i tuoi primi €100.000.",
+    "trustpilot": "Trustpilot",
+    "number": "68.134+",
+    "satisfied": "Soddisfatti",
+    "participants": "Partecipanti",
+    "moreThan": "Più di",
+    "topExperts": "12 Top Esperti",
+    "onTeam": "Nel Team",
+    "weAre": "Siamo una",
+    "german": "azienda tedesca",
+    "number2": "15.000+",
+    "conducted": "Operazioni effettuate",
+    "trades": "Trades",
+    "fifteenYears": "15 Anni",
+    "trading": "di Trading",
+    "experience": "Esperienza",
+    "recognizeYourself": "Ti riconosci qui?",
+    "whoIsTrainingFor": "Per chi è il nostro corso?",
+    "hundredPercentCorrect": "100% CORRETTO",
+    "interestedInTrading": "Sei interessato al trading",
+    "wantToLearnNewSkills": "Vuoi acquisire nuove competenze",
+    "wantFinancialFreedom": "Vuoi raggiungere la libertà finanziaria",
+    "readyToInvest": "Sei pronto a investire €250 per i tuoi primi trade",
+    "willingToLearn": "Sei desideroso di imparare e fidarti delle nostre strategie di trading",
+    "definitelyNot": "DECISAMENTE NO",
+    "notInterested": "Il trading non ti interessa",
+    "notWillingToLearn": "Non sei disposto a imparare",
+    "noFinancialGoals": "Non hai obiettivi finanziari",
+    "noMoneyToInvest": "Non vuoi investire denaro",
+    "noTimeToInvest": "Non vuoi investire tempo",
+    "easiestWay": "Il modo più semplice per iniziare a fare trading",
+    "minimalTimeInvestment": "con un investimento minimo di tempo",
+    "completelyFree": "e completamente gratuito",
+    "dayTradingTrainingDescription": "In questo corso di 7 giorni, imparerai le basi del day trading in modo chiaro e divertente, <br /> riceverai anche istruzioni e strategie chiare che potrai implementare in modo indipendente e sicuro. <br /><br /> In oltre 15 anni di carriera come trader, ho imparato molto ma ho anche commesso degli errori. So quanto può essere complesso il trading <br /> per un principiante. Per rendere il tuo ingresso il più facile possibile, ho creato questo <br /> corso online gratuito. Questo è il tipo di formazione che avrei voluto avere allora. <br /><br /> Buon divertimento nell'apprendimento di questa abilità unica! <br /> <strong className='text-[#fff]'>Il tuo Tim</strong> <br /><br />",
+    "faq": "Domande Frequenti",
+    "faq2": "Domande <br /> Frequenti",
+    "ourMethod": "Il Nostro Metodo",
+    "rightBroker": "Il Broker Giusto",
+    "tradingPlatforms": "Piattaforme di Trading",
+    "learnIn7Steps": "Imparerai a fare trading in modo redditizio in soli 7 passaggi con il nostro metodo nei prossimi 7 giorni.",
+    "cfBrokerSelection": "Impara a capire cosa cercare nella selezione di un broker CFD adatto e qual è la maggiore differenza rispetto al trading con capitale preso in prestito.",
+    "tradingPlatformsIntro": "Riceverai un'introduzione alle 2 piattaforme di trading più comuni in modo che ti senta sicuro e sappia esattamente a cosa prestare attenzione.",
+    "nurNochEinSchritt": "Solo",
+    "nurNochEinSchritt2": "1 passo...",
+    "transformYourselfToAdvanced": "Trasformati da principiante completo a",
+    "accessToThisUniqueAndFreeOnline": " trader avanzato accedi a questo unico e gratuito Trasformati",
+    "transformYourselfToAdvancedIn7Days": "da principiante completo a trader avanzato in soli 7 giorni.",
+    "training1": "corso",
+    "traderTraining": "Corso per Trader",
+    "career": "Carriera",
+    "introductoryTalk": "Colloquio Introductivo",
+    "customerReviews": "Recensioni dei Clienti",
+    "privacyPolicy": "Politica sulla Privacy",
+    "imprint": "Impressum",
+    "riskNotice": "Avviso di Rischio",
+    "riskNoticeDetails": "Il trading con prodotti a leva (ad esempio, CFD e operazioni Forex) o altri strumenti finanziari comporta un rischio significativo e non è adatto a tutti. È possibile subire una perdita totale o addirittura perdite superiori agli investimenti. Prima di fare trading con prodotti a leva o altri strumenti finanziari, assicurati di comprendere tutti i rischi associati. Inoltre, facciamo riferimento ai nostri avvisi di rischio. È chiaramente specificato che non offriamo né forniamo consulenza finanziaria e non diamo alcuna raccomandazione specifica su un titolo, prodotto finanziario o strumento. La menzione di determinati titoli o prodotti di investimento non costituisce una raccomandazione di acquisto, vendita o mantenimento. Il trading è a tuo rischio. Qualsiasi responsabilità è esclusa.",
+    "justOneStep": "Solo un altro passo...",
+    "firstNamePlaceholder": "Nome",
+    "lastNamePlaceholder": "Cognome",
+    "emailPlaceholder": "Indirizzo Email",
+    "secureAccess": "Accesso Sicuro Ora",
+    "acceptPrivacyPolicy": "Accetto la politica sulla privacy",
+
+    "faqs": [
+      {
+        "question": "Perché il corso è gratuito?",
+        "answer": "È importante per noi precisare che l'iscrizione e il corso sono al 100% gratuiti. Il nostro partner broker copre i costi, quindi non devi pagare nulla. Collaboriamo con una delle piattaforme di trading leader a livello mondiale e premiata, che sponsorizza il nostro servizio e finanzia la tua iscrizione. Finché utilizzi la loro piattaforma, possiamo offrire il nostro servizio completamente gratuito a tutti i membri. Questo è il motivo per cui siamo diventati così popolari negli ultimi anni e ci siamo trasformati in un marchio di trading riconosciuto a livello globale."
+      },
+      {
+        "question": "Ho bisogno di esperienza nel trading?",
+        "answer": "Non hai bisogno di alcuna esperienza precedente nel trading. Ti guideremo passo dopo passo attraverso l'argomento con il nostro PDF di trading. Con il corso, ci assicuriamo di fornire ai principianti la giusta conoscenza specialistica, la giusta infrastruttura e una strategia per fare trading in modo redditizio sul mercato a lungo termine. Inoltre, offriamo un coaching diretto e gratuito con un esperto di trading."
+      },
+      {
+        "question": "Quanto tempo devo investire nel trading?",
+        "answer": "Il corso è principalmente rivolto ai principianti nel trading. Tuttavia, alcuni moduli possono essere utili anche per i trader avanzati."
+      },
+      {
+        "question": "Il corso è utile anche per i trader avanzati?",
+        "answer": "Sì, anche i trader avanzati possono beneficiare delle strategie e tecniche avanzate trattate nel corso."
+      },
+      {
+        "question": "C'è supporto attivo disponibile?",
+        "answer": "Il nostro PDF di trading gratuito ci consente di risparmiare molte risorse per fornirti le esperienze più importanti. Tuttavia, abbiamo notato che per avere successo, è utile dare a ogni nuovo partner un incontro iniziale con un esperto di trading. Se hai bisogno di ulteriore supporto dopo, siamo naturalmente sempre disponibili ad aiutarti."
+      }
+    ],
+    "cards": {
+      "data": [
+        {
+          "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+          "title": "Indipendenza Finanziaria Completa",
+          "description": "Costruisci un secondo pilastro finanziario, renditi indipendente dal tuo datore di lavoro a lungo termine e garantisciti uno standard di vita più elevato."
+        },
+        {
+          "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+          "title": "Rompi i tuoi Limiti di Reddito",
+          "description": "Come trader, non ci sono limiti artificiali al tuo reddito. Con questa abilità, hai il pieno controllo dei tuoi guadagni."
+        },
+        {
+          "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+          "title": "Vivi secondo le tue Regole",
+          "description": "Goditi una vita senza restrizioni. Fai trading ovunque e ogni volta che vuoi - non importa se sei a casa o in viaggio per il mondo."
+        },
+        {
+          "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+          "title": "Guadagna in Qualsiasi Condizione di Mercato",
+          "description": "I day trader beneficiano sia dei prezzi in aumento che di quelli in diminuzione. Con il nostro metodo TF, puoi ottenere profitti indipendentemente dalle condizioni di mercato."
+        }
+      ]
     }
   }
-  
+}

@@ -1,19 +1,19 @@
 {
   "online": {
-    "treading": "Kostenloser Trading-Kurs",
+    "treading": "Kostenlose Trading-Ausbildung",
     "learnTrading": "Lerne ernsthaftes Trading als Anfänger in nur 7 Tagen und starte deine Daytrading-Karriere",
     "downloads": "Bereits <strong>68.134+</strong> Mal heruntergeladen",
-    "orders": "Bereits <strong>2.145+</strong> Mal bestellt",
+    "orders": "Bereits <strong>68.134+</strong> Mal heruntergeladen",
     "training": "Kostenloses Trading-Training",
     "description2": "Mit unserem Schritt-für-Schritt-Leitfaden, umsetzbaren Tipps, Broker-Empfehlungen, Chartanalysen und einer bewährten Strategie legst du die Grundlage für langfristig profitables Trading und finanzielle Freiheit. Hol dir jetzt unseren kostenlosen Trading-Kurs im PDF-Format und nutze die Gelegenheit, dein Trading-Wissen auf das nächste Level zu heben, inklusive einem kostenlosen Anfänger-Gespräch mit einem Trading-Spezialisten!",
     "downloadButton": "Jetzt kostenlos herunterladen",
     "downloadCount": "Bereits 68.134+ Mal heruntergeladen",
     "lifeChange": "Wie erfolgreiches Trading",
     "lifeChange2": "dein Leben verändern wird",
-    "timeInvestment": "Mit nur 30-60 Minuten Zeitaufwand pro Tag!",
+    "timeInvestment": "Mit nur 30-60 Minuten Zeitaufwand am Tag!",
     "financialIndependence": "Vollständige finanzielle Unabhängigkeit",
-    "tradingCourse": "Unser Trading-Kurs",
-    "successTrader": "In nur 7 Tagen zum erfolgreichen Trader",
+    "tradingCourse": "Kostenlose Trading-Ausbildung",
+    "successTrader": "In nur 7 Tagen zum Erfolgstrader",
     "chapter1": "Kapitel 1",
     "chapter2": "Kapitel 2",
     "chapter3": "Kapitel 3",
@@ -68,9 +68,9 @@
     "ourMethod": "Unsere Methode",
     "rightBroker": "Der richtige Broker",
     "tradingPlatforms": "Trading-Plattformen",
-    "learnIn7Steps": "Du wirst lernen, wie man profitabel tradet, und zwar in nur 7 Schritten mit unserer Methode innerhalb der nächsten 7 Tage.",
-    "cfBrokerSelection": "Lerne, worauf du bei der Auswahl eines geeigneten CFD-Brokers achten solltest und was der größte Unterschied beim Trading mit Fremdkapital ist.",
-    "tradingPlatformsIntro": "Du erhältst eine Einführung in die 2 häufigsten Handelsplattformen, damit du dich sicher fühlst und genau weißt, worauf du achten musst.",
+    "learnIn7Steps": "Du wirst lernen, wie du in nur 7 Schritten mit unserer Methode innerhalb der nächsten 7 Tage profitabel Traden kannst.",
+    "cfBrokerSelection": "Lerne, worauf es bei der Auswahl eines passenden CFD-Brokers ankommt und was der größte Unterschied zum Handel mit Fremdkapital ist.",
+    "tradingPlatformsIntro": "Du erhältst eine Einführung in die 2 gängigsten Handelsplattformen, damit du dich sicher fühlst und genau weißt, worauf du achten musst.",
     "nurNochEinSchritt": "Nur noch",
     "nurNochEinSchritt2": "1 Schritt...",
     "transformYourselfToAdvanced": "Verwandle dich vom kompletten Anfänger zu einem fortgeschrittenen ",
@@ -94,32 +94,24 @@
     
     "faqs": [
       {
-        "question": "Warum ist das Training kostenlos?",
-        "answer": "Es ist uns wichtig zu sagen, dass die Mitgliedschaft und das Training 100% kostenlos sind. Unser Broker-Partner übernimmt die Kosten, sodass du nichts bezahlen musst. Wir arbeiten mit einer der weltweit führenden und preisgekrönten Handelsplattformen zusammen, die unseren Service sponsert und deine Mitgliedschaft finanziert. Solange du deren Plattform nutzt, können wir unseren Service allen Mitgliedern völlig kostenlos anbieten. So haben wir eine echte Win-Win-Situation geschaffen – und genau deshalb sind wir in den letzten Jahren so beliebt geworden und haben uns zu einer global anerkannten Trading-Marke entwickelt."
+        "question": "Warum ist die Ausbildung kostenlos?",
+        "answer": "Uns ist wichtig zu sagen, dass die Mitgliedschaft und Ausbildung zu 100 % kostenlos ist. Unser Broker-Partner übernimmt die Kosten, sodass du nichts zahlen musst. Wir arbeiten mit einer der weltweit führenden und mehrfach ausgezeichneten Handelsplattform zusammen, die unseren Service sponsert und Ihre Mitgliedschaft finanziert. Solange Sie deren Plattform nutzen, können wir unseren Service für alle Mitglieder komplett kostenlos anbieten. So haben wir eine echte Win-Win-Situation geschaffen – und genau das ist der Grund, warum wir in den letzten Jahren so populär geworden sind und sich zu einer weltweit anerkannten Handelsmarke entwickelt hat."
       },
       {
-        "question": "Brauche ich Trading-Erfahrung?",
-        "answer": "Du brauchst keine Vorkenntnisse im Trading. Wir führen dich Schritt für Schritt durch das Thema mit unserem Trading-PDF. Mit dem Kurs stellen wir sicher, dass wir Anfängern das richtige Fachwissen, die richtige Infrastruktur und eine Strategie geben, um langfristig profitabel am Markt zu traden. Außerdem gibt es direktes, kostenloses Coaching mit einem Trading-Experten."
+        "question": "Brauche ich Erfahrung im Trading?",
+        "answer": "Du benötigst keine Vorerfahrung im Trading. Wir führen dich mit unserer Trading-PDF Schritt-für-Schritt an das Thema heran. Mit dem Kurs stellen wir sicher, dass wir Anfängern das richtige Fachwissen, die passende Infrastruktur und eine Strategie mit an die Hand geben, um langfristig profitabel am Markt zu handeln, zusätzlich gibt es ein direktes kostenloses Coaching mit einem Tradingexperten."
       },
       {
-        "question": "Wie lange dauert das Training?",
-        "answer": "Das Trading-Training dauert 7 Tage, wobei du dir die Inhalte selbst einteilen kannst. Du hast in der ersten Woche nach deiner Anmeldung Zugang zu allen Trainingsinhalten. Und keine Sorge: Das Training dauert nicht lange, wir halten es auf maximal 30-60 Minuten pro Tag, damit du deine Zeit so gut wie möglich nutzen kannst."
+        "question": "Wie viel Zeit muss ich in das Trading investieren?",
+        "answer": "Als profitabler Trader brauchst du nicht den ganzen Tag vor den Charts zu sitzen. Die meisten unserer Mitglieder verbringen nur 30 bis 60 Minuten am Tag mit dem Handel. Unsere Konzepte bieten Strategien für jede Uhrzeit, was ideal für Berufstätige und vielbeschäftigte Personen ist. Das Wichtigste: Du musst weder täglich handeln noch mehrere Stunden investieren. Mit unserer Hilfe wird Trading auf natürliche Weise in deinen Alltag integriert."
       },
       {
-        "question": "Wie kann ich mich anmelden?",
-        "answer": "Um dich anzumelden, fülle einfach das Formular auf dieser Seite aus, um unser Trading-PDF herunterzuladen und ein persönliches Kennenlerngespräch mit einem Trading-Experten zu vereinbaren."
+        "question": "Ist die Trading-Ausbildung für fortgeschrittene sinnvoll?",
+        "answer": "Der Kurs richtet sich primär an Trading Einsteiger. Für Fortgeschrittene können dennoch einzelne Module hilfreich sein."
       },
       {
-        "question": "Was sind die Voraussetzungen?",
-        "answer": "Du benötigst ein Smartphone oder einen Computer mit Internetzugang. Um mit dem Trading zu beginnen, solltest du bereit sein, mindestens 250 € für deine ersten Trades zu investieren und den Anweisungen der Trading-Experten zu folgen."
-      },
-      {
-        "question": "Gibt es eine Garantie für den Erfolg?",
-        "answer": "Es gibt keine Garantie für den Erfolg im Trading. Trading birgt immer Risiken, und es gibt keine Sicherheit, dass du Gewinn erzielen wirst. Du solltest dir im Klaren darüber sein, dass du auch Geld verlieren kannst. Wir bieten jedoch Schulungen und Unterstützung an, um deine Erfolgschancen zu erhöhen."
-      },
-      {
-        "question": "Wie funktioniert das Kennenlerngespräch?",
-        "answer": "Das Kennenlerngespräch findet online statt, in der Regel via Zoom oder einer ähnlichen Plattform. Der Trading-Experte wird dir deine Fragen beantworten, dir wertvolle Tipps geben und dich bei deinem Einstieg ins Trading unterstützen."
+        "question": "Gibt es aktiven Support?",
+        "answer": "Durch unsere kostenlose Trading-PDF sparen wir schon einige Ressourcen bei uns ein, um Ihnen die wichtigsten Erfahrungen zu vermitteln. Wir haben aber gemerkt, um erfolgreich zu sein, dass es gut ist, jeden neuen Partner ein Erstgespräch freizustellen mit einem Tradingexperten. Solltest du im Anschluss weitere Unterstützung benötigen, stehen wir dir natürlich jederzeit zur Seite."
       }
     ]
   }

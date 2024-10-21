@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "target": "ES6",                // Ensure you're targeting ES6 or higher
+    "lib": ["DOM", "ES2015"],        // Include DOM and ES2015 or later to support Promise
+    "module": "commonjs",            // Or the module system you're using (e.g., ESNext)
+    "strict": true,                  // Optional, but enforces stricter type checking
+    "esModuleInterop": true,         // Ensures better CommonJS module compatibility
+    "skipLibCheck": true,            // Skips type checking for libraries to improve build speed
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./*"]
     }

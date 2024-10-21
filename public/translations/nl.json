@@ -1,6 +1,141 @@
 {
-    "online": {
-      "treading": "Gratis Handelscursus"
+  "online": {
+    "treading": "Gratis Trading Cursus",
+    "learnTrading": "Leer serieus traden als beginner in slechts 7 dagen en begin je carrière als daytrader",
+    "downloads": "Al meer dan <strong>68.134+</strong> keer gedownload",
+    "orders": "Al meer dan <strong>2.145+</strong> keer besteld",
+    "training": "Gratis Trading Training",
+    "description2": "Met onze stapsgewijze handleiding, praktische tips, broker-aanbevelingen, grafiekanalyses en een bewezen strategie, leg je de basis voor winstgevende trading op lange termijn en financiële vrijheid. Download nu gratis onze trading cursus in PDF-formaat en grijp de kans om je trading kennis naar een hoger niveau te tillen, inclusief gratis beginnersadvies van een trading-specialist!",
+    "downloadButton": "Download nu gratis",
+    "downloadCount": "Al meer dan 68.134+ keer gedownload",
+    "lifeChange": "Hoe succesvol traden",
+    "lifeChange2": "je leven zal veranderen",
+    "timeInvestment": "Met slechts 30-60 minuten investering per dag!",
+    "financialIndependence": "Volledige financiële onafhankelijkheid",
+    "tradingCourse": "Onze Trading Cursus",
+    "successTrader": "In slechts 7 dagen een succesvolle trader worden",
+    "chapter1": "Hoofdstuk 1",
+    "chapter2": "Hoofdstuk 2",
+    "chapter3": "Hoofdstuk 3",
+    "chapter4": "Hoofdstuk 4",
+    "chapter5": "Hoofdstuk 5",
+    "chapter6": "Hoofdstuk 6",
+    "chapter7": "Hoofdstuk 7",
+    "marketStructures": "Marktstructuren",
+    "riskManagement": "Risicobeheer",
+    "strategy": "Strategie",
+    "traderPath": "Jouw weg als trader",
+    "technicalAnalysis": "Leer de basis van technische analyse en het lezen van de markt om de ontwikkeling van een aandeel te begrijpen.",
+    "riskManagementDescription": "Wij laten je zien hoe een goed risicobeheer eruitziet in de praktijk en hoe je je kapitaal kunt beschermen tegen onnodige verliezen.",
+    "checklistDefinition": "Hier laten we je zien hoe je met onze checklist duidelijke in- en uitstapmomenten kunt definiëren. Met deze strategie kun je vervolgens je eigen trading ideeën creëren en verhandelen.",
+    "incomeLimits": "Met traden zijn er geen inkomenslimieten. We laten je zien welke factoren bepalend zijn voor je eerste €100.000.",
+    "trustpilot": "Trustpilot",
+    "number": "68.134+",
+    "satisfied": "Tevreden",
+    "participants": "Deelnemers",
+    "moreThan": "Meer dan",
+    "topExperts": "12 Top Experts",
+    "onTeam": "In het team",
+    "weAre": "Wij zijn een",
+    "german": "Duits bedrijf",
+    "number2": "15.000+",
+    "conducted": "Uitgevoerde",
+    "trades": "Trades",
+    "fifteenYears": "15 Jaar",
+    "trading": "trading",
+    "experience": "Ervaring",
+    "recognizeYourself": "Herken jij jezelf hierin?",
+    "whoIsTrainingFor": "Voor wie is onze cursus?",
+    "hundredPercentCorrect": "100% JUIST",
+    "interestedInTrading": "Je bent geïnteresseerd in trading",
+    "wantToLearnNewSkills": "Je wilt nieuwe vaardigheden leren",
+    "wantFinancialFreedom": "Je wilt financiële vrijheid bereiken",
+    "readyToInvest": "Je bent klaar om €250 te investeren voor je eerste trades",
+    "willingToLearn": "Je bent bereid om te leren en ons te vertrouwen met onze trading strategieën",
+    "definitelyNot": "ABSOLUUT NIET",
+    "notInterested": "Je bent niet geïnteresseerd in trading",
+    "notWillingToLearn": "Je bent niet bereid om te leren",
+    "noFinancialGoals": "Je hebt geen financiële doelen",
+    "noMoneyToInvest": "Je wilt geen geld investeren",
+    "noTimeToInvest": "Je wilt geen tijd investeren",
+    "easiestWay": "De makkelijkste manier om te beginnen met traden",
+    "minimalTimeInvestment": "met minimale tijdsinvestering",
+    "completelyFree": "en volledig gratis",
+    "dayTradingTrainingDescription": "In deze 7-daagse cursus leer je de basis van daytrading op een duidelijke en leuke manier, <br /> je krijgt ook duidelijke instructies en strategieën die je zelfstandig en veilig kunt implementeren. <br /><br /> In mijn meer dan 15-jarige carrière als trader heb ik veel geleerd, maar ook fouten gemaakt. Ik weet hoe complex trading kan zijn <br /> voor een beginner. Om jouw start zo eenvoudig mogelijk te maken, heb ik deze <br /> gratis online cursus gecreëerd. Dit is het soort training dat ik destijds had willen hebben. <br /><br /> Veel plezier met het leren van deze unieke vaardigheid! <br /> <strong className='text-[#fff]'>Jouw Tim</strong> <br /><br />",
+    "faq": "Veelgestelde Vragen",
+    "faq2": "Veelgestelde <br /> Vragen",
+    "ourMethod": "Onze Methode",
+    "rightBroker": "De Juiste Broker",
+    "tradingPlatforms": "Trading Platforms",
+    "learnIn7Steps": "Je leert winstgevend traden in slechts 7 stappen met onze methode in de komende 7 dagen.",
+    "cfBrokerSelection": "Leer waar je op moet letten bij het kiezen van een geschikte CFD-broker en wat het grootste verschil is met traden met geleend kapitaal.",
+    "tradingPlatformsIntro": "Je krijgt een introductie tot de 2 meest gebruikte trading platforms, zodat je je zeker voelt en precies weet waar je op moet letten.",
+    "nurNochEinSchritt": "Nog maar",
+    "nurNochEinSchritt2": "1 stap...",
+    "transformYourselfToAdvanced": "Transformeer jezelf van een complete beginner tot",
+    "accessToThisUniqueAndFreeOnline": "een gevorderde trader met toegang tot deze unieke en gratis online",
+    "transformYourselfToAdvancedIn7Days": "trader in slechts 7 dagen.",
+    "training1": "cursus",
+    "traderTraining": "Trader Cursus",
+    "career": "Carrière",
+    "introductoryTalk": "Introductiegesprek",
+    "customerReviews": "Klantenreviews",
+    "privacyPolicy": "Privacybeleid",
+    "imprint": "Impressum",
+    "riskNotice": "Risicowaarschuwing",
+    "riskNoticeDetails": "Traden met hefboomproducten (zoals CFD's en Forex-handel) of andere financiële instrumenten houdt een significant risico in en is niet geschikt voor iedereen. Het is mogelijk om je gehele inleg of zelfs meer te verliezen. Zorg ervoor dat je alle risico's begrijpt voordat je begint met traden in hefboomproducten of andere financiële instrumenten. Wij bieden geen financieel advies of specifieke aanbevelingen voor een bepaald effect, financieel product of instrument. Het noemen van bepaalde effecten of beleggingsproducten vormt geen aanbeveling tot kopen, verkopen of aanhouden. Traden is op eigen risico. Aansprakelijkheid wordt uitgesloten.",
+    "justOneStep": "Nog maar één stap...",
+    "firstNamePlaceholder": "Voornaam",
+    "lastNamePlaceholder": "Achternaam",
+    "emailPlaceholder": "E-mailadres",
+    "secureAccess": "Beveiligde toegang nu",
+    "acceptPrivacyPolicy": "Ik accepteer het privacybeleid",
+
+    "faqs": [
+      {
+        "question": "Waarom is de cursus gratis?",
+        "answer": "Het is belangrijk voor ons om te benadrukken dat de registratie en de cursus 100% gratis zijn. Onze broker-partner dekt de kosten, zodat jij niets hoeft te betalen. Wij werken samen met een van 's werelds toonaangevende en bekroonde trading platforms, dat onze service sponsort en jouw registratie financiert. Zolang je hun platform gebruikt, kunnen wij onze service volledig gratis aanbieden aan alle leden. Dit is waarom wij de afgelopen jaren zo populair zijn geworden en zijn uitgegroeid tot een wereldwijd erkend tradingmerk."
+      },
+      {
+        "question": "Heb ik ervaring nodig met traden?",
+        "answer": "Je hebt geen eerdere ervaring met traden nodig. Wij begeleiden je stap voor stap door het onderwerp met onze trading PDF. Met de cursus zorgen wij ervoor dat beginners de juiste specialistische kennis, de juiste infrastructuur en een strategie krijgen om op lange termijn winstgevend te traden. Daarnaast bieden wij gratis coaching met een tradingexpert."
+      },
+      {
+        "question": "Hoeveel tijd moet ik investeren in trading?",
+        "answer": "De cursus is vooral gericht op beginners in trading. Sommige modules kunnen echter ook nuttig zijn voor gevorderde traders."
+      },
+      {
+        "question": "Is de cursus ook nuttig voor gevorderde traders?",
+        "answer": "Ja, ook gevorderde traders kunnen profiteren van de geavanceerde strategieën en technieken die in de cursus worden behandeld."
+      },
+      {
+        "question": "Is er actieve ondersteuning beschikbaar?",
+        "answer": "Onze gratis trading PDF bespaart ons veel middelen om je de belangrijkste ervaringen te bieden. We hebben echter gemerkt dat voor succes het nuttig is om elke nieuwe partner een eerste ontmoeting te geven met een tradingexpert. Als je daarna meer ondersteuning nodig hebt, staan we natuurlijk altijd klaar om je te helpen."
+      }
+    ],
+    "cards": {
+      "data": [
+        {
+          "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+          "title": "Volledige Financiële Onafhankelijkheid",
+          "description": "Bouw een tweede financiële pijler, maak jezelf op lange termijn onafhankelijk van je werkgever en garandeer jezelf een hogere levensstandaard."
+        },
+        {
+          "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+          "title": "Doorbreek je Inkomenslimieten",
+          "description": "Als trader zijn er geen kunstmatige grenzen aan je inkomen. Met deze vaardigheid heb je de volledige controle over je verdiensten."
+        },
+        {
+          "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+          "title": "Leef volgens je Eigen Regels",
+          "description": "Geniet van een leven zonder beperkingen. Handel waar en wanneer je maar wilt - of je nu thuis bent of de wereld rondreist."
+        },
+        {
+          "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+          "title": "Verdien onder Elke Marktomstandigheid",
+          "description": "Daytraders profiteren zowel van stijgende als dalende prijzen. Met onze TF-methode kun je winst maken, ongeacht de marktomstandigheden."
+        }
+      ]
     }
   }
-  
+}
