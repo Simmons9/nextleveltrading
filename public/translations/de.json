@@ -5,7 +5,7 @@
     "downloads": "Bereits <strong>68.134+</strong> Mal heruntergeladen",
     "orders": "Bereits <strong>68.134+</strong> Mal heruntergeladen",
     "training": "Kostenloses Trading-Training",
-    "description2": "Mit unserem Schritt-für-Schritt-Leitfaden, umsetzbaren Tipps, Broker-Empfehlungen, Chartanalysen und einer bewährten Strategie legst du die Grundlage für langfristig profitables Trading und finanzielle Freiheit. Hol dir jetzt unseren kostenlosen Trading-Kurs im PDF-Format und nutze die Gelegenheit, dein Trading-Wissen auf das nächste Level zu heben, inklusive einem kostenlosen Anfänger-Gespräch mit einem Trading-Spezialisten!",
+    "description2": "Mit unserer Schritt-für-Schritt-Anleitung, direkt umsetzbaren Tipps, Brokerempfehlungen, Chartanalysen und einer erprobten Strategie schaffst du die Basis für langfristig profitables Trading und finanzieller Freiheit. Hol dir jetzt unsere kostenlose Trading-Ausbildung als PDF Form und nutze die Chance, dein Trading-Wissen auf das nächste Level zu bringen inkl. einer kostenlosen Anfängerberatung vom Trading-Spezialisten!",
     "downloadButton": "Jetzt kostenlos herunterladen",
     "downloadCount": "Bereits 68.134+ Mal heruntergeladen",
     "lifeChange": "Wie erfolgreiches Trading dein",
@@ -46,36 +46,35 @@
     "trading": "Trading",
     "experience": "Erfahrung",
     "recognizeYourself": "Erkennst du dich hier wieder?",
-    "whoIsTrainingFor": "Für wen ist unser Training gedacht?",
-    "hundredPercentCorrect": "100% RICHTIG",
-    "interestedInTrading": "Du interessierst dich fürs Trading",
-    "wantToLearnNewSkills": "Du möchtest neue Fähigkeiten erlernen",
-    "wantFinancialFreedom": "Du möchtest finanzielle Freiheit erreichen",
-    "readyToInvest": "Du bist bereit, 250 € für deine ersten Trades zu investieren",
-    "willingToLearn": "Du bist lernwillig und vertraust unseren Trading-Strategien",
-    "definitelyNot": "DEFINTIV NICHT",
+    "whoIsTrainingFor": "Für wen ist unsere Ausbildung",
+    "hundredPercentCorrect": "100% RICHTIG:",
+    "interestedInTrading": "Du interessierst dich für Trading ",
+    "wantToLearnNewSkills": "Du willst neue Fähigkeiten erlernen",
+    "wantFinancialFreedom": "Du willst finanzielle Freiheit erreichen",
+    "readyToInvest": "Du bist bereit 250€ für die ersten Trades zu investieren",
+    "willingToLearn": "Du lernwillig und vertraust auf unsere Trading-Strategien",
+    "definitelyNot": "DEFINITIV NICHT:",
     "notInterested": "Trading interessiert dich nicht",
-    "notWillingToLearn": "Du bist nicht bereit zu lernen",
+    "notWillingToLearn": "Du bist nicht lernbereit",
     "noFinancialGoals": "Du hast keine finanziellen Ziele",
-    "noMoneyToInvest": "Du möchtest kein Geld investieren",
+    "noMoneyToInvest": "Du willst kein Geld investieren",
     "noTimeToInvest": "Du möchtest keine Zeit investieren",
-    "easiestWay": "Der einfachste Weg, um mit Trading zu beginnen",
-    "minimalTimeInvestment": "mit minimalem Zeitaufwand",
+    "easiestWay": "Der einfachste Weg, mit minimalem ",
+    "minimalTimeInvestment": "Zeitaufwand ins Trading zu starten – ",
     "completelyFree": "und völlig kostenlos",
-    "dayTradingTrainingDescription": "In diesem 7-tägigen Training lernst du die Grundlagen des Daytradings auf klare und unterhaltsame Weise und erhältst außerdem <br /> klare Anleitungen und Strategien, die du danach selbstständig und sicher umsetzen kannst. <br /><br /> In über 15 Jahren als Trader habe ich viel gelernt, aber auch einige Fehler gemacht. Ich weiß, wie komplex Trading <br /> für einen Anfänger sein kann. Um dir den Einstieg so einfach wie möglich zu machen, habe ich dieses <br /> kostenlose Online-Training erstellt. Das ist die Art von Training, die ich mir damals gewünscht hätte. <br /><br /> Viel Spaß beim Lernen dieser einzigartigen Fähigkeit! <br /> <strong className='text-[#fff]'>Dein Tim</strong> <br /><br />",
+    "dayTradingTrainingDescription": "In dieser 7-tägigen Ausbildung lernst du die Grundlagen des Daytradings in leicht verständlicher und unterhaltsamer Form, aufgeteilt in 7 kompakte Kapitel. Du erhältst klare Anleitungen und Strategien, die du danach sicher und eigenständig umsetzen kannst. <br /><br /> Mit über 15 Jahren Erfahrung als Trader habe ich viele wertvolle Lektionen gelernt – aber auch Fehler gemacht. Ich weiß, wie komplex Trading für Einsteiger sein kann. Um dir den Einstieg so leicht wie möglich zu machen, habe ich dieses kostenlose Online-Training entwickelt, genau das, was ich mir damals selbst gewünscht hätte. Zusätzlich bieten wir dir ein unverbindliches telefonisches Coaching mit einem unserer Tradingexperten an, der dir das Trading und unsere erprobten Strategien näherbringt. <br /> <strong className='text-[#fff]'>Dein Tim</strong> <br /><br />",
     "faq": "Häufig gestellte Fragen",
     "faq2": "Häufig Gestellte <br /> Fragen",
     "ourMethod": "Unsere Methode",
     "rightBroker": "Der richtige Broker",
-    "tradingPlatforms": "Trading-Plattformen",
+    "tradingPlatforms": "Handelsplattformen",
     "learnIn7Steps": "Du wirst lernen, wie du in nur 7 Schritten mit unserer Methode innerhalb der nächsten 7 Tage profitabel Traden kannst.",
     "cfBrokerSelection": "Lerne, worauf es bei der Auswahl eines passenden CFD-Brokers ankommt und was der größte Unterschied zum Handel mit Fremdkapital ist.",
     "tradingPlatformsIntro": "Du erhältst eine Einführung in die 2 gängigsten Handelsplattformen, damit du dich sicher fühlst und genau weißt, worauf du achten musst.",
     "nurNochEinSchritt": "Nur noch",
-    "nurNochEinSchritt2": "1 Schritt...",
-    "transformYourselfToAdvanced": "Verwandle dich vom kompletten Anfänger zu einem fortgeschrittenen ",
-    "accessToThisUniqueAndFreeOnline": "Trader, der Zugang zu dieser einzigartigen und kostenlosen Online-Transformationsausbildung hat.",
-    "transformYourselfToAdvancedIn7Days": "vom kompletten Anfänger zum fortgeschrittenen Trader in nur 7 Tagen.",
+    "nurNochEinSchritt2": "1 Schritt",
+    "transformYourselfToAdvanced": "Verwandle dich vom kompletten Anfänger zum fortgeschrittenen Trader in nur wenigen Tagen. Warte nicht länger und sichere dir jetzt unsere Trading-PDF zu dieser einzigartigen und für dich kostenlosen Online-Ausbildung.",
+    
     "training1": "Training",
     "traderTraining": "Trader-Training",
     "career": "Karriere",
@@ -84,8 +83,7 @@
     "privacyPolicy": "Datenschutz",
     "imprint": "Impressum",
     "riskNotice": "Risikohinweis",
-    "riskNoticeDetails": "Der Handel mit Hebelprodukten (z.B. CFDs und Forex-Trades) oder anderen Finanzinstrumenten ist mit einem enormen Risiko verbunden und nicht für jeden geeignet. Es besteht die Möglichkeit, dass du einen Totalverlust erleidest oder sogar Verluste, die deine Investitionen übersteigen. Bevor du mit Hebelprodukten oder anderen Finanzinstrumenten handelst, solltest du sicherstellen, dass du alle damit verbundenen Risiken verstanden hast. Im Übrigen verweisen wir auf unsere Risikohinweise. Es wird ausdrücklich klargestellt, dass wir keine Anlageberatung anbieten und durchführen und insbesondere auch keinerlei konkrete Empfehlungen zu einem Wertpapier, Finanzprodukt oder -instrument abgeben. Die Erwähnung bestimmter Wertpapiere oder Anlageprodukte stellt ausdrücklich keine Empfehlung zum Kaufen, Verkaufen oder Halten dar. Du handelst bzw. tradest auf eigenes Risiko. Jegliche Haftung wird ausgeschlossen.",
-    "justOneStep": "Nur noch ein Schritt...",
+    "riskNoticeDetails": "Der Handel mit Hebelprodukten (z.B. CFD´s und Forex Trades) oder anderen Finanzinstrumenten ist mit einem enormen Risiko verbunden und nicht für jeden geeignet. Es besteht die Möglichkeit, dass Sie einen Totalverlust erleiden oder sogar Verluste erleiden, die Ihre Investitionen übersteigen. Bevor Sie mit Hebelprodukten oder anderen Finanzinstrumenten handeln, sollten Sie sicherstellen, dass Sie alle damit verbunden Risiken verstanden haben. Im Übrigen verweisen wir auf unsere Risikohinweise. Es wird ausdrücklich klargestellt, dass wir keine Anlageberatung anbieten und durchführen und insbesondere auch keinerlei konkrete Empfehlungen zu einem Wertpapier, Finanzprodukt oder -Instrument abgeben. Die Erwähnung bestimmter Wertpapiere oder Anlageprodukte stellen ausdrücklich keine Empfehlung zum Kaufen oder Verkaufen oder Halten dar. Sie handeln bzw. traden auf eigenes Risiko. Jegliche Haftung wird ausgeschlossen.",
     "firstNamePlaceholder": "Vorname",
     "lastNamePlaceholder": "Nachname",
     "emailPlaceholder": "E-Mail Adresse",
@@ -124,23 +122,23 @@
   "data": [
     {
       "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
-      "title": "Vollständige finanzielle Unabhängigkeit",
+      "title": "Komplette finanzielle Unabhängigkeit",
       "description": "Baue dir ein zweites finanzielles Standbein auf, mache dich langfristig unabhängig von deinem Arbeitgeber und sichere dir einen höheren Lebensstandard."
     },
     {
       "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
-      "title": "Durchbreche deine Einkommensgrenzen",
-      "description": "Als Trader gibt es keine künstlichen Einkommensgrenzen. Mit dieser Fähigkeit hast du die volle Kontrolle über dein Einkommen."
+      "title": "Sprenge deine Einkommensgrenzen",
+      "description": "Als Trader sind deinem Einkommen keine künstlichen Grenzen mehr gesetzt. Mit dieser Fähigkeit hast du die volle Kontrolle über dein Einkommen."
     },
     {
       "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
       "title": "Lebe nach deinen Regeln",
-      "description": "Genieße ein Leben ohne Einschränkungen. Du handelst, wo und wann du willst – egal ob du zu Hause bist oder die Welt bereist."
+      "description": "Genieße ein Leben ohne Einschränkungen. Du tradest wo und wann du willst - dabei ist es egal, ob du Zuhause bist oder die Welt bereisen möchtest."
     },
     {
       "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
       "title": "Verdiene bei jeder Marktlage",
-      "description": "Daytrader profitieren sowohl von steigenden als auch von fallenden Kursen. Mit unserer TF-Methode kannst du unabhängig von den Marktbedingungen Gewinne erzielen."
+      "description": "Daytrader profitieren sowohl von steigenden als auch von fallenden Kursen. Mit unserer TF-Methode kannst du marktunabhängig Gewinne erzielen."
     }
   ]
 }

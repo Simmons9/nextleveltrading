@@ -527,13 +527,13 @@ function Home() {
 </div>
 <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
     <span className="text-[#0ec661]">{texts.online?.fifteenYears || "Loading..."}</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading || "Loading..."}</span>
+    {/* <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading || "Loading..."}</span> */}
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.experience || "Loading..."}</span>
     
     <img
       src="/images/6601dc8_Frame-p-500.png"
       alt=""
-      className="mt-[2rem] object-cover bg-contain bg-repeat w-[27rem] h-[10.1rem] "
+      className="mt-[4.1rem] object-cover bg-contain bg-repeat w-[28rem] h-[11.1rem] "
       style={{ backgroundImage: '100%' }}
     />
     
@@ -704,7 +704,7 @@ function Home() {
       {texts.online?.completelyFree || "Loading..."}      </span>
     </h1>
 
-    <div className="descript text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
+    <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
     <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
 
       <img className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0' src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif" alt="Tim Signature" />
@@ -767,11 +767,11 @@ function Home() {
       {texts.online?.nurNochEinSchritt || "Loading..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading..."}</span>...
       </h1>
 
-      <div className="description text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
+      <div className="description w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
       {texts.online?.transformYourselfToAdvanced || "Loading..."} <br className="hidden md:inline" />
-      {texts.online?.accessToThisUniqueAndFreeOnline || "Loading..."} <br className="hidden md:inline" />
-      {texts.online?.transformYourselfToAdvancedIn7Days || "Loading..."} <br className="hidden md:inline" />
-      {texts.online?.training1 || "Loading..."}      </div>
+     
+      
+       </div>
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
@@ -802,14 +802,14 @@ function Home() {
       
     <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative hidden md:block" src="/images/image5.png" alt="" />
     <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative block md:hidden" src="/images/66bddb6c5a17773ef43ca625_new 4-p-500.png" alt="" />
-<div className="absolute bottom-[117.9rem] lg:bottom-[83.4rem]">
+{/* <div className="absolute bottom-[117.9rem] lg:bottom-[83.4rem]">
 <img className="w-[200px]" src="/images/66bddb6c5a17773ef43ca625_new%204.avif" alt="" />
 
 </div>
 <div className="img-foot absolute bottom-[90rem] left-[12rem] lg:bottom-[59.5rem] lg:left-[81.5rem]">
 <img className="w-[200px]" src="/images/66bdc35512c1734c225b3e8b_5.avif" alt="" />
 
-</div> 
+</div>  */}
 <div className="footer_blur1 block lg:hidden"></div>
 
 
@@ -879,7 +879,7 @@ function Home() {
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
       <div className="title-footer mb-[4rem] text-[#fff] text-[24px] md:text-[24px] font-[600] leading-[100%]">
       {texts.online?.riskNotice || "Loading..."}      </div>
-      <div className="description-bottom text-[#ffffff8f] w-full font-[400] md:w-[100%] text-[13px] md:text-[14px]">
+      <div className="description-bottom text-[#ffffff8f] w-full lg:w-[50rem] font-[400] md:w-[100%] text-[13px] md:text-[14px]">
       {texts.online?.riskNoticeDetails || "Loading..."} <br />
 <br />
       <br />
