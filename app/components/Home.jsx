@@ -497,7 +497,7 @@ function Home() {
       style={{ backgroundImage: '100%' }}
     />
 
-    <img className='absolute bottom-[5rem] z-20 w-[260px]' src="/images/daytrading.png" alt="" />
+    <img className='absolute bottom-[5rem] z-20 w-[260px]' src="/images/daytrading.png" alt="daytrading" />
     
     <div
       className="trader_block-overlay"
@@ -623,7 +623,7 @@ function Home() {
       <img 
         src="/images/image6.png" 
         alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
+        className="absolute w-[49px]  lg:w-[30px] lg:h-[30px] "
       />
     </span>
     {texts.online?.willingToLearn || "Loading..."}
