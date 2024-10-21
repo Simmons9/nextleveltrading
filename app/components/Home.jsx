@@ -913,7 +913,7 @@ function Home() {
     
   {/* Right Copyright Text */}
   <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-    © 2023 TradingFreaks® All rights reserved
+    © 2024 NextLevelTrading® All rights reserved
   </div>
 </div>
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
