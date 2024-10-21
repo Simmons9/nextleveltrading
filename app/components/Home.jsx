@@ -767,7 +767,7 @@ function Home() {
       {texts.online?.nurNochEinSchritt || "Loading..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading..."}</span>...
       </h1>
 
-      <div className="description w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
+      <div className="description lg:w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
       {texts.online?.transformYourselfToAdvanced || "Loading..."} <br className="hidden md:inline" />
      
       
@@ -783,7 +783,7 @@ function Home() {
             width={114}
             height={30.19}
           />
-          <div className="text-people ml-4 text-black text-[12px]  sm:text-[10px]">
+          <div className="text-people ml-3 mt-1 text-black text-[12px]  sm:text-[11px]">
           <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
           </div>
         </div>
@@ -824,8 +824,8 @@ function Home() {
       width={114}
       height={30.19}
     />
-    <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
-      {/* Beretis <strong>2.145+</strong> Mal bestellte */}
+    <div className="text-people ml-4 text-black text-[12px] sm:text-[11px]">
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
     </div>
   </div>
 </div>
