@@ -381,7 +381,7 @@ function Home() {
 
 <div className="part3 bg-gradient-[#f1f3f5, #fff]">
 <div className="mt-[6rem] flex justify-center items-center space-x-2">
-  <p className="text-[18px]">{texts.online?.Trustpilot || "Loading..."}</p>
+  <p className="text-[18px]">{texts.online?.Hervorragend || "Loading..."}</p>
 
   {/* 5 Stars */}
   <div className="flex items-center">
