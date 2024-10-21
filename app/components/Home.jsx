@@ -84,7 +84,7 @@ function Home() {
       <img
         src="/images/avatars68k.png"
         alt="Avatar"
-        className="w-[118px] sm:w-[114px] mr-[-5rem]"  
+        className="w-[118px] sm:w-[114px] lg:mr-0 mr-[-5rem]"  
       />
       <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
       <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
