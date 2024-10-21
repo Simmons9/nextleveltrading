@@ -41,7 +41,7 @@ const Button = () => {
         loadTranslations('it');
         break;
       default:
-        loadTranslations('en'); 
+        loadTranslations('de'); 
     }
   }, [country]);
 

@@ -121,6 +121,31 @@
         "question": "Comment fonctionne l'entretien de découverte ?",
         "answer": "L'entretien de découverte se déroule en ligne, généralement via Zoom ou une plateforme similaire. L'expert en trading répondra à tes questions, te donnera des conseils précieux et t'acceptera dans tes débuts en trading."
       }
-    ]
+    ],
+    "cards": {
+  "data": [
+    {
+      "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+      "title": "Indépendance financière complète",
+      "description": "Construisez un second pilier financier, devenez indépendant de votre employeur à long terme et assurez-vous un niveau de vie plus élevé."
+    },
+    {
+      "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+      "title": "Brisez vos limites de revenus",
+      "description": "En tant que trader, il n'y a pas de limites artificielles à vos revenus. Avec cette compétence, vous avez un contrôle total sur vos gains."
+    },
+    {
+      "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+      "title": "Vivez selon vos propres règles",
+      "description": "Profitez d'une vie sans restrictions. Vous tradez où et quand vous voulez – que vous soyez chez vous ou en train de parcourir le monde."
+    },
+    {
+      "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+      "title": "Gagnez dans toutes les conditions de marché",
+      "description": "Les day traders profitent à la fois de la hausse et de la baisse des prix. Avec notre méthode TF, vous pouvez réaliser des bénéfices quelles que soient les conditions du marché."
+    }
+  ]
+}
+
   }
 }
