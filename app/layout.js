@@ -1,11 +1,11 @@
+"use client"; // Shtoni këtë linjë në fillim të skedës
+
 import localFont from "next/font/local";
 import Head from "next/head";
+import { usePathname } from "next/navigation"; 
 import "./globals.css";
 import Home from "./components/Home";
-import Risikohinweis from "./components/assets/Risikohinweis";
-import Datenschutz from "./components/assets/Datenschutz";
-import Impressum from "./components/assets/Impressum";
-
+import { metadata } from './metadata'; // Importoni metadata
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,32 +19,18 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "TradingProject",
-  description: "created by banozz",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname(); 
+
   return (
     <html lang="en">
       <Head>
-        {/* Link to Google Font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
         <title>{metadata.title}</title>
       </Head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ fontFamily: "'Outfit', sans-serif" }} // Outfit as the primary font
-      >
-        {children}
-        <Home />
-
-        {/* <Risikohinweis /> */}
-        {/* <Datenschutz /> */}
-        {/* <Impressum /> */}
+      <body>
+        <main>
+          {pathname === '/' ? <Home /> : children}
+        </main>
       </body>
     </html>
   );

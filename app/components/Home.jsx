@@ -893,17 +893,17 @@ function Home() {
   <div className="text-left">
   <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
       <li>
-        <Link href="/assets/datenschutz" className="hover:text-green-500">
+        <Link href="/legal/datenschutz" className="hover:text-green-500">
           {texts.online?.privacyPolicy || 'Loading...'}
         </Link>
       </li>
       <li>
-        <Link href="/assets/impressum" className="hover:text-green-500">
+        <Link href="/legal/impressum" className="hover:text-green-500">
           {texts.online?.imprint || 'Loading...'}
         </Link>
       </li>
       <li>
-        <Link href="/assets/risikohinweis" className="hover:text-green-500">
+        <Link href="/legal/risikohinweis" className="hover:text-green-500">
           {texts.online?.riskNotice || 'Loading...'}
         </Link>
       </li>
