@@ -1,31 +1,27 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import useGeolocation from '../../hooks/useGeolocation';
 
-
-
 function Datenschutz() {
-    const [showColumns, setShowColumns] = useState(false);
+  const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const country = useGeolocation();
-  // const [texts, setTexts] = useState(translations.EN)
   const [texts, setTexts] = useState({});
 
   const loadTranslations = async (langCode) => {
     try {
       const translations = await import(`../../public/translations/${langCode}.json`);
-      setTexts(translations); 
+      setTexts(translations);
     } catch (error) {
       console.error(`Could not load translations for ${langCode}:`, error);
     }
   };
 
-  
   useEffect(() => {
     switch (country) {
       case "DE":
@@ -44,28 +40,27 @@ function Datenschutz() {
         loadTranslations('it');
         break;
       default:
-        loadTranslations('de'); 
+        loadTranslations('de');
     }
   }, [country]);
-
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-
   const handleShowColumns = () => {
-    setShowColumns(true); 
+    setShowColumns(true);
   };
 
   const handleToggleColumns = () => {
     setShowColumns(prevState => !prevState);
   };
+
   return (
 <div>
           <div className="risiko px-4 lg:px-20 py-12 lg:py-24 mx-auto">
               {/* Header Section */}
-              <header className="flex justify-between items-center mb-16 border-b border-gray-300 pb-4">
+              <header className="flex justify-between items-center mx-auto w-full max-w-[1200px] px-4 py-4">
                   <img
                       src="/images/6601dc8887b1e34f1fff3ef7_logo (1).webp"
                       alt="Logo"
@@ -120,54 +115,11 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
               </main>
           </div>
 
-          <div className="part7 flex justify-center items-center w-full py-6">
-              <div className="section3 part7-1 mb-[-19rem] flex flex-col md:flex-row items-start justify-between max-w-7xl w-full md:w-[85rem] rounded-[20px] mx-auto bg-white">
-
-                  <img className='w-full rounded-[20px]' src="/images/6601dc8887b1e34f1fff3f9d_Frame 1948755961.webp" alt="aaa" />
-
-                  <img className="w-[55rem] mt-[-5.7rem] ml-[rem] absolute" src="/images/6601dc8887b1e34f1fff3f9c_Mask group.webp" alt="pe" />
-
-                  <div className=" relative right mt-[4rem] w-full ml-[-35rem]">
-
-                      <h1 className="text-[48px] text-[#fff] leading-[90%] font-bold">Dein Weg zum
-                          <br />Trader beginnt jetzt
-                      </h1>
-
-                      <p className="text-[#ffffffb8] mt-[3rem]">Erfolgreiches Daytrading ist keine Glückssache, sondern eine Fähigkeit, die man erlernen kann. Bei uns bekommst du das Handwerk von echten Vollzeittradern beigebracht.
-
-                      </p>
-
-                      <div
-                          className="button bg-[#13f97b] mt-[2rem] h-[4rem] w-[388px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
-                      >
-                          <div className="btn-text w-full text-left ml-[1rem]">
-                                Jetz Trader-Training ansehen
-                          </div>
-
-                          <div className="btn-arrow-icon">
-                              <img
-                                  src="/images/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
-                                  alt="Arrow" />
-                          </div>
-                 </div>
-                 <div
-                          className="button border border-[#ffffff29] mt-[2rem] h-[4rem] w-[388px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
-                      >
-                          <div className="btn-text w-full text-left ml-[1rem]">
-                                order Kennenkerngesprach buchen 
-                          </div>
-
-                          <div className="btn-arrow-icon">
-                              <img
-                                  src="images/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
-                                  alt="Arrow" />
-                          </div>
-                 </div>
-</div>
-
-
-          </div>
-      </div><div className="light-background-footer bg-[#04120b]">
+            <div className="part7 flex justify-center items-center w-full py-6">
+               
+       </div>
+       
+       <div className="light-background-footer bg-[#04120b]">
               <div className="part7-1 max-w-full md:max-w-8xl w-full md:w-[85rem] rounded-[20px] bg-[#04120b] flex flex-col mx-auto pb-[80px] py-[30px] px-[20px] md:px-[80px]">
 
                   {/* Footer Top Section */}
