@@ -188,9 +188,7 @@ function Datenschutz() {
               </main>
           </div>
 
-            <div className="part7 mt-[5rem] flex justify-center items-center w-full py-6">
-               
-       </div>
+           
 
        <div className="hidden md:flex text1  items-center relative bg-white left-[13%] rounded-[20px] px-[10px] py-2 w-[13rem] top-[16rem] z-20 font-[400]">
        <img src="/images/6601dc8887b1e34f1fff3e8d_check.svg" alt="aaa" className="mr-2" />
