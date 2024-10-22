@@ -5,7 +5,7 @@ const fetchLocation = async () => {
   try {
     // Use environment variable for the token
     const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-    const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+    const response = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     const data = await response.json();
     return data.country;
   } catch (error) {

@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 
-// Function to fetch country from IP info
 const fetchLocation = async () => {
   try {
-    const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-    const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+    const response = await fetch('https://get.geojs.io/v1/ip/geo.json');
     const data = await response.json();
-    return data.country; // Returns country code like 'DE', 'US', etc.
+    return data.country; // This will return the country code (e.g., "DE", "US")
   } catch (error) {
-    console.error("Failed to fetch location:", error);
-    return null; // Return null in case of failure
+    console.error("Failed to fetch location", error);
+    return null;
   }
 };
 
@@ -19,7 +17,7 @@ export default function useGeolocation() {
   useEffect(() => {
     const getLocation = async () => {
       const location = await fetchLocation();
-      setCountry(location || "DE"); // Fallback to "DE" if location fetching fails
+      setCountry(location);
     };
 
     getLocation();
