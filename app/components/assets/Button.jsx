@@ -139,16 +139,17 @@ const Button = () => {
                 width: '90%',
                 backgroundColor: '#edf1f6',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: '16px',
                 padding: '18px',
                 borderRadius: '10px',
                 marginLeft: "43px",
-                fontWeight: "bold",
                 zIndex: "1001",
               }}
               inputProps={{
                 name: 'phone',
                 required: true,
+                placeholder: texts.online?.telefonnumer || "Loading...", 
+
               }}
               disableCountryCode={true} 
             />
@@ -178,12 +179,12 @@ const Button = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="mt-4 flex items-center">
+          {/* <div className="mt-4 flex items-center">
             <input type="checkbox" id="customCheckbox" className="custom-checkbox" />
             <label htmlFor="customCheckbox" className="text-[#728291] text-[14px]">
             {texts.online?.acceptPrivacyPolicy || "Loading..."}  
             </label>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
