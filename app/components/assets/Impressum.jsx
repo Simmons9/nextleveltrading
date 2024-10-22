@@ -17,7 +17,7 @@ function Impressum() {
 
   const loadTranslations = async (langCode) => {
     try {
-      const translations = await import(`../../public/translations/${langCode}.json`);
+      const translations = await import(`../../../public/translations/${langCode}.json`);
       setTexts(translations); 
     } catch (error) {
       console.error(`Could not load translations for ${langCode}:`, error);
@@ -207,14 +207,23 @@ function Impressum() {
                   <div className="content flex flex-col md:flex-row items-start md:items-center justify-between border-b border-solid border-[#ffffff29] py-4">
                       {/* Left List */}
                       <div className="text-left">
-                          <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
-                              <li>
-                                  <Link href="/risikohinweis">
-                                      {texts.online?.privacyPolicy || 'Loading...'}
-                                  </Link>
-                              </li>      <li>{texts.online?.imprint || "Loading..."}</li>
-                              <li>{texts.online?.riskNotice || "Loading..."}</li>
-                          </ul>
+                      <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
+      <li>
+        <Link href="/legal/datenschutz" className="hover:text-green-500">
+          {texts.online?.privacyPolicy || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/legal/impressum" className="hover:text-green-500">
+          {texts.online?.imprint || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/legal/risikohinweis" className="hover:text-green-500">
+          {texts.online?.riskNotice || 'Loading...'}
+        </Link>
+      </li>
+    </ul>
                       </div>
 
 

@@ -7,6 +7,14 @@
   --star-background: #fc0;
 }
 
+@media (max-width: 768px) {
+  .mobile-bg {
+    background-color: #536054;
+    border: none;
+  }
+}
+
+
 main{
     font-family: 'Outfit', sans-serif;
     overflow: hidden;
