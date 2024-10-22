@@ -2,9 +2,9 @@ import localFont from "next/font/local";
 import Head from "next/head";
 import "./globals.css";
 import Home from "./components/Home";
-import Risikohinweis from "./components/Risikohinweis";
-import Datenschutz from "./components/Datenschutz";
-import Impressum from "./components/Impressum";
+import Risikohinweis from "./components/assets/Risikohinweis";
+import Datenschutz from "./components/assets/Datenschutz";
+import Impressum from "./components/assets/Impressum";
 
 
 const geistSans = localFont({

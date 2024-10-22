@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import Button from './assets/Button'
-import Cards from './assets/Cards'
-import Tag from './assets/Tag';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import useGeolocation from '../hooks/useGeolocation';
+import useGeolocation from '../../hooks/useGeolocation';
+
 
 
 function Datenschutz() {
@@ -148,7 +146,7 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
 
                           <div className="btn-arrow-icon">
                               <img
-                                  src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
+                                  src="/images/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
                                   alt="Arrow" />
                           </div>
                  </div>
@@ -161,7 +159,7 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
 
                           <div className="btn-arrow-icon">
                               <img
-                                  src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
+                                  src="images/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
                                   alt="Arrow" />
                           </div>
                  </div>
@@ -189,27 +187,35 @@ Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung de
 
                   </div>
 
+        {/* Footer Bottom Section */}
+        <div className="content flex flex-col md:flex-row items-start md:items-center justify-between border-b border-solid border-[#ffffff29] py-4">
+          {/* Left List */}
+          <div className="text-left">
+          <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
+      <li>
+        <Link href="/assets/datenschutz" className="hover:text-green-500">
+          {texts.online?.privacyPolicy || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/impressum" className="hover:text-green-500">
+          {texts.online?.imprint || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/risikohinweis" className="hover:text-green-500">
+          {texts.online?.riskNotice || 'Loading...'}
+        </Link>
+      </li>
+    </ul>
+          </div>
 
 
-
-                  {/* Footer Bottom Section */}
-                  <div className="content flex flex-col md:flex-row items-start md:items-center justify-between border-b border-solid border-[#ffffff29] py-4">
-                      {/* Left List */}
-                      <div className="text-left">
-                          <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
-                              <li>
-                                  <Link href="/Datenschutz">
-                                      {texts.online?.privacyPolicy || 'Loading...'}
-                                  </Link>
-                              </li>      <li>{texts.online?.imprint || "Loading..."}</li>
-                              <li>{texts.online?.riskNotice || "Loading..."}</li>
-                          </ul>
-                      </div>
 
 
                       {/* Right Copyright Text */}
                       <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-                          © 2023 TradingFreaks® All rights reserved
+                          © 2025 NextLevelTrading® All rights reserved
                       </div>
                   </div>
                   <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">

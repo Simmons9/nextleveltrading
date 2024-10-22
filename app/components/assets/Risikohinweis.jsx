@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import Button from './assets/Button'
-import Cards from './assets/Cards'
-import Tag from './assets/Tag';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import useGeolocation from '../hooks/useGeolocation';
+import useGeolocation from '../../hooks/useGeolocation';
 
 
 function Risikohinweis() {

@@ -4,9 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Button from './assets/Button'
 import Cards from './assets/Cards'
 import Tag from './assets/Tag';
-import Datenschutz from './Datenschutz';
-import Impressum from './Impressum';
-import Risikohinweis from './Risikohinweis';
+import Datenschutz from './assets/Datenschutz';
+import Impressum from './assets/Impressum';
+import Risikohinweis from './assets/Risikohinweis';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -459,7 +459,7 @@ function Home() {
       style={{ backgroundImage: '100%' }}
     />
     <img
-      src="/images/664cd803960057669fadea99_5.webp"
+      src=""
       alt=""
       className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[0.2rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
@@ -891,23 +891,23 @@ function Home() {
     <div className="content flex flex-col md:flex-row items-start md:items-center justify-between border-b border-solid border-[#ffffff29] py-4">
   {/* Left List */}
   <div className="text-left">
-    <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
-    <li>
-    <a href="/datenschutz" className="hover:text-green-500">
-      {texts.online?.privacyPolicy || 'Loading...'}
-    </a>
-  </li>
-  <li>
-    <a href="/impressum" className="hover:text-green-500">
-      {texts.online?.imprint || 'Loading...'}
-    </a>
-  </li>
-  <li>
-    <a href="/risikohinweis" className="hover:text-green-500">
-      {texts.online?.riskNotice || 'Loading...'}
-    </a>
-  </li>
-</ul>
+  <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
+      <li>
+        <Link href="/assets/datenschutz" className="hover:text-green-500">
+          {texts.online?.privacyPolicy || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/assets/impressum" className="hover:text-green-500">
+          {texts.online?.imprint || 'Loading...'}
+        </Link>
+      </li>
+      <li>
+        <Link href="/assets/risikohinweis" className="hover:text-green-500">
+          {texts.online?.riskNotice || 'Loading...'}
+        </Link>
+      </li>
+    </ul>
   </div>
 
     
