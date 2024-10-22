@@ -1,25 +1,28 @@
-// app/page.js
 "use client";
 import { useState, useEffect } from 'react';
 
 const fetchLocation = async () => {
   try {
-    const response = await fetch(`https://ipinfo.io/json?token=1a87347435ee33`);
+    // Use environment variable for the token
+    const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+    const response = await fetch(`https://ipinfo.io/json?token=${token}`);
     const data = await response.json();
     return data.country;
   } catch (error) {
     console.error("Failed to fetch location", error);
-    return null;
+    return null; // return null in case of error
   }
 };
 
 export default function Page() {
   const [country, setCountry] = useState(null);
+  const [loading, setLoading] = useState(true); // Loading state for user feedback
 
   useEffect(() => {
     const getLocation = async () => {
       const location = await fetchLocation();
       setCountry(location);
+      setLoading(false); // Set loading to false after fetching location
     };
 
     getLocation();
