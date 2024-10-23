@@ -83,7 +83,7 @@ function Home() {
       <img
         src="/images/logo-blakc.svg"
         alt="Logo"
-        className="w-[90px] h-auto sm:w-[115px]"  
+        className="w-[90px] h-auto sm:w-[135px]"  
       />
     </div>
 
