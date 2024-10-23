@@ -33,6 +33,9 @@ const CardSection = () => {
       case "IT":
         loadTranslations('it');
         break;
+      case "SV": 
+        loadTranslations('sv');
+        break;
       default:
         loadTranslations('de'); 
     }

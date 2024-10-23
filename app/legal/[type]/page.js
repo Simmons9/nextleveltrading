@@ -13,7 +13,7 @@ export default function LegalPage({ params }) {
       {type === 'risikohinweis' && <Risikohinweis />}
       {type === 'datenschutz' && <Datenschutz />}
       {!['impressum', 'agb', 'datenschutz'].includes(type) && (
-        <div>Please select a valid option.</div>
+        <div></div>
       )}
     </div>
   );
