@@ -109,7 +109,7 @@ function Home() {
         className="w-[118px] sm:w-[114px] lg:mr-0 mr-[-5rem]"  
       />
       <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
-      <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
+      <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
          </div>
 
     </div>
@@ -126,14 +126,14 @@ function Home() {
     style={{ animationDelay: "0s" }}
   >
     <span className="online h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    {texts.online?.treading || "Loading..."}
+    {texts.online?.treading || "Kostenlose Trading-Ausbildung"}
 
       </div>
   <h1
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
   style={{ animationDelay: "0.2s", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}
 >
-<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Loading..." }} />
+<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Lerne ernsthaftes Trading als Anfänger in nur 7 Tagen und starte deine Daytrading-Karriere" }} />
 </h1>
 
 
@@ -143,7 +143,7 @@ function Home() {
     className="desc1 text-center w-[90%] max-w-[60rem] text-[14px] sm:text-[16px] text-[#728291] tracking-[-.32px] leading-[1.5] my-4 px-4 sm:tracking-[.2px] sm:px-2 fadeInUp"
     style={{ animationDelay: "0.4s" }}
   >
-       <div>{texts.online?.description2 || "Loading description..."}</div>
+       <div>{texts.online?.description2 || "Mit unserer Schritt-für-Schritt-Anleitung, direkt umsetzbaren Tipps, Brokerempfehlungen, Chartanalysen und einer erprobten Strategie schaffst du die Basis für langfristig profitables Trading und finanzieller Freiheit. Hol dir jetzt unsere kostenlose Trading-Ausbildung als PDF Form und nutze die Chance, dein Trading-Wissen auf das nächste Level zu bringen inkl. einer kostenlosen Anfängerberatung vom Trading-Spezialisten!"}</div>
 
   </div>
 
@@ -157,7 +157,7 @@ function Home() {
         height={30.19}
       />
       <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
-      <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
+      <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads }} />
         
       </div>
     </div>
@@ -210,12 +210,12 @@ function Home() {
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
   <h1 className="w-[23.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.lifeChange || "Loading..."}</div>
-  <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Loading..."}</span>
+  <div>{texts.online?.lifeChange || "Wie erfolgreiches Trading dein"}</div>
+  <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Leben verändern wird"}</span>
   </h1>
 
   <div className="desc flex justify-center mt-4 text-[#728291] text-[16px] sm:text-[16px] fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.timeInvestment || "Loading..."}</div>
+  <div>{texts.online?.timeInvestment || "Mit nur 30-60 Minuten Zeitaufwand am Tag!"}</div>
   </div>
 
   <Cards />
@@ -225,14 +225,14 @@ function Home() {
 
 <div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[18rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
     <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    <div>{texts.online?.tradingCourse || "Loading..."}</div>
+    <div>{texts.online?.tradingCourse || "Kostenlose Trading-Ausbildung"}</div>
 
 </div>
 
 
 <div className="Tradingdeine w-full h-auto mt-[2rem] px-4 flex flex-col items-center">
   <h1 className="w-[23.9rem] sm:w-[46.24rem] font-bold text-[34px] mb-[-1rem] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.successTrader || "Loading..."}</div>
+  <div>{texts.online?.successTrader || "In nur 7 Tagen zum Erfolgstrader"}</div>
   </h1>
 
 
@@ -250,7 +250,7 @@ function Home() {
             className="button flex items-center justify-between w-[20rem] bg-[#69bc8f26] font-[600] rounded-[10px] p-[20px] m-auto cursor-pointer"
             style={{ border: '1px solid rgba(255, 255, 255, 0.05)' }}
         >
-            <p className="mr-2"> {texts.online?.Mehr || "Loading..."}</p>
+            <p className="mr-2"> {texts.online?.Mehr || "Mehr anzeigen"}</p>
 
            
             <div className="icon-create w-[24px] h-[24px]">

@@ -81,7 +81,7 @@ const Button = () => {
           className="button bg-[#13f97b] mt-[2rem] h-20 w-[388px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
         >
           <div className="btn-text w-full text-center">
-          {texts.online?.downloadButton || "Loading..."}
+          {texts.online?.downloadButton || "Jetzt kostenlos herunterladen"}
           </div>
 
           <div className="btn-arrow-icon">
@@ -124,7 +124,7 @@ const Button = () => {
 
         {/* Modal Content */}
         <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
-        {texts.online?.justOneStep || "Loading..."}        </h1>
+        {texts.online?.justOneStep || "Nur noch ein Schritt..."}        </h1>
         <form>
           <input
             className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
