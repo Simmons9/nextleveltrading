@@ -15,31 +15,43 @@ const CardSection = () => {
       console.error(`Could not load translations for ${langCode}:`, error);
     }
   };
-
   useEffect(() => {
     switch (country) {
       case "DE":
-        loadTranslations('de');
+      case "AT": // Austria
+        loadTranslations('de'); // German
+        break;
+      case "US":
+      case "GB": // United Kingdom
+      case "CA": // Canada
+      case "AU": // Australia
+      case "NZ": // New Zealand
+        loadTranslations('en'); // English
         break;
       case "PT":
-        loadTranslations('pt');
+      case "BR": // Brazil
+        loadTranslations('pt'); // Portuguese
         break;
       case "FR":
-        loadTranslations('fr');
+      case "CH": // Switzerland
+      case "LU": // Luxembourg
+        loadTranslations('fr'); // French
         break;
       case "NL":
-        loadTranslations('nl');
+      case "BE": // Belgium
+        loadTranslations('nl'); // Dutch
         break;
       case "IT":
-        loadTranslations('it');
+        loadTranslations('it'); // Italian
         break;
-      case "SV": 
-        loadTranslations('sv');
+      case "SV":
+        loadTranslations('sv'); // Swedish
         break;
       default:
-        loadTranslations('de'); 
+        loadTranslations('de'); // Default to German
     }
   }, [country]);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
