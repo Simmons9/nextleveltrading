@@ -168,7 +168,7 @@ function Risikohinweis() {
               {/* Main Content */}
               <main className="max-w-3xl mx-auto mt-[5rem] lg:mt-[10rem] relative z-10">
                   <h1 className="text-5xl font-bold mb-8">{texts.online?.risiki1 || "Loading..."}</h1>
-                  <section className="text-lg text-[#00000066] leading-relaxed space-y-6">
+                  <section className="text-lg text-black leading-relaxed space-y-6">
                     
 
                 <br />

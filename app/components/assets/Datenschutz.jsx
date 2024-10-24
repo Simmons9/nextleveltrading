@@ -243,10 +243,10 @@ function Datenschutz() {
                         
                      </p>
 
-                    
+                    <div className="div text-black ">
                       {texts.online?.desc17 || "Loading..."}    
 
-
+</div>
 <br />
 <br />
                       <strong>
@@ -296,10 +296,11 @@ function Datenschutz() {
                       <p className="text-black">{texts.online?.desc50 || "Loading..."}</p>
                       <p className="text-black">{texts.online?.desc51 || "Loading..."}</p>
                       <p className="text-black">{texts.online?.desc52 || "Loading..."}</p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc53 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc54 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc55 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc56 || "Loading..." }}></p>
+                      
+                      <p className='text-black' dangerouslySetInnerHTML={{ __html: texts.online?.desc53 || "Loading..." }}></p>
+                      <p className='text-black' dangerouslySetInnerHTML={{ __html: texts.online?.desc54 || "Loading..." }}></p>
+                      <p className='text-black' dangerouslySetInnerHTML={{ __html: texts.online?.desc55 || "Loading..." }}></p>
+                      <p className='text-black' dangerouslySetInnerHTML={{ __html: texts.online?.desc56 || "Loading..." }}></p>
                       <p className="text-black">{texts.online?.desc57 || "Loading..."}</p>
                       <p className="text-black">{texts.online?.desc58 || "Loading..."}</p>
                       <p className="text-black">{texts.online?.desc59 || "Loading..."}</p>

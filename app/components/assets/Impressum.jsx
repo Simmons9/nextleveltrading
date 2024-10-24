@@ -171,7 +171,7 @@ function Impressum() {
                   <h1 className="text-5xl font-bold mb-8"> 
                     {texts.online?.impressum1 || "Loading..."}
                   </h1>
-                  <section className="text-lg text-[#00000066] leading-relaxed space-y-6">
+                  <section className="text-lg text-black leading-relaxed space-y-6">
 
 
                 {texts.online?.impressum2 || "Loading..."} <br />
