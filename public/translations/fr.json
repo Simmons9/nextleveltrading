@@ -1,19 +1,22 @@
 {
   "online": {
-    "treading": "Cours de Trading Gratuit",
-    "learnTrading": "Apprends le trading sérieux en tant que débutant en seulement 7 jours et lance ta carrière de Day Trader",
-    "downloads": "Déjà <strong>68.134+</strong> téléchargements",
-    "orders": "Déjà <strong>2.145+</strong> commandes",
-    "training": "Formation de Trading Gratuite",
-    "description2": "Avec notre guide étape par étape, des conseils pratiques, des recommandations de courtiers, des analyses de graphiques et une stratégie éprouvée, tu établiras les bases pour un trading rentable à long terme et la liberté financière. Obtiens dès maintenant notre cours de trading gratuit au format PDF et profite de l'occasion pour élever tes connaissances en trading, y compris un entretien gratuit avec un spécialiste du trading !",
-    "downloadButton": "Télécharger maintenant gratuitement",
-    "downloadCount": "Déjà 68.134+ téléchargements",
-    "lifeChange": "Comment le trading réussi",
-    "lifeChange2": "peut changer ta vie",
-    "timeInvestment": "Avec seulement 30 à 60 minutes d'engagement par jour !",
-    "financialIndependence": "Indépendance financière totale",
-    "tradingCourse": "Notre cours de trading",
-    "successTrader": "De débutant à trader à succès en seulement 7 jours",
+    "treading": "Formation gratuite en trading",
+    "learnTrading": "Apprends le trading sérieux en tant que débutant en seulement 7 jours et commence ta carrière de day trading",
+    "downloads": "Déjà téléchargé <strong>68.134+</strong> fois",
+    "orders": "Déjà téléchargé <strong>68.134+</strong> fois",
+    "training": "Formation gratuite en trading",
+    "description2": "Avec notre guide étape par étape, des conseils directement applicables, des recommandations de courtiers, des analyses de graphiques et une stratégie éprouvée, tu poses les bases d'un trading rentable à long terme et de la liberté financière. Obtiens dès maintenant notre formation gratuite au trading en format PDF et profite de l'opportunité d'améliorer tes connaissances en trading, y compris une consultation gratuite pour débutants avec un spécialiste du trading !",
+    "downloadButton": "Télécharger gratuitement maintenant",
+    "downloadCount": "Déjà téléchargé 68.134+ fois",
+    "lifeChange": "Comment le trading réussi va changer ta",
+    "lifeChange2": " vie",
+    "timeInvestment": "Avec seulement 30 à 60 minutes par jour !",
+    "financialIndependence": "Indépendance financière complète",
+    "tradingCourse": "Formation gratuite en trading",
+    "successTrader": "Deviens un trader performant en seulement 7 jours",
+    "successTrader1": "Deviens un trader performant en seulement 7 jours",
+    "justOneStep": "Encore un seul pas...",
+    "telefonnumer": "Numéro de téléphone",
     "chapter1": "Chapitre 1",
     "chapter2": "Chapitre 2",
     "chapter3": "Chapitre 3",
@@ -24,132 +27,174 @@
     "marketStructures": "Structures de marché",
     "riskManagement": "Gestion des risques",
     "strategy": "Stratégie",
-    "traderPath": "Ton chemin en tant que trader",
+    "traderPath": "Ton parcours de trader",
     "technicalAnalysis": "Apprends les bases de l'analyse technique et de l'observation du marché pour comprendre l'évolution d'une action.",
-    "riskManagementDescription": "Nous te montrerons à quoi ressemble une gestion des risques correcte en pratique et comment protéger ton capital contre les pertes inutiles.",
-    "checklistDefinition": "Nous te montrons comment définir des entrées et sorties claires avec notre check-list. Avec cette stratégie, tu pourras alors créer et mettre en œuvre tes propres idées de trading.",
-    "incomeLimits": "En trading, il n'y a pas de limites de revenus. Nous te montrerons quels facteurs détermineront tes premiers 100.000 €.",
+    "riskManagementDescription": "Nous te montrons comment une gestion des risques correcte fonctionne en pratique et comment protéger ton capital contre les pertes inutiles.",
+    "checklistDefinition": "Ici, nous te montrons comment définir des points d'entrée et de sortie clairs avec notre checklist. Avec cette stratégie, tu pourras ensuite créer et mettre en œuvre tes propres idées de trading.",
+    "incomeLimits": "Il n'y a pas de limites de revenus dans le trading. Nous te montrons quels facteurs détermineront tes premiers 100 000 €.",
     "trustpilot": "Trustpilot",
     "number": "68.134+",
-    "satisfied": "Satisfaits",
-    "participants": "participants",
+    "satisfied": "Clients satisfaits",
+    "participants": "Participants",
     "moreThan": "Plus de",
-    "topExperts": "12 experts de haut niveau",
-    "onTeam": "dans l'équipe",
+    "topExperts": "12 experts de premier plan",
+    "onTeam": "Dans l'équipe",
     "weAre": "Nous sommes une",
     "german": "entreprise allemande",
     "company": "entreprise",
     "number2": "15.000+",
-    "conducted": "Trades effectués",
-    "trades": "trades",
+    "conducted": "Transactions réalisées",
+    "trades": "Transactions",
     "fifteenYears": "15 ans",
-    "trading": "trading",
+    "trading": "de trading",
     "experience": "d'expérience",
     "recognizeYourself": "Te reconnais-tu ici ?",
-    "whoIsTrainingFor": "Pour qui est notre formation ?",
-    "hundredPercentCorrect": "100% CORRECT",
+    "whoIsTrainingFor": "Pour qui est notre formation",
+    "hundredPercentCorrect": "100% CORRECT :",
     "interestedInTrading": "Tu t'intéresses au trading",
-    "wantToLearnNewSkills": "Tu souhaites acquérir de nouvelles compétences",
-    "wantFinancialFreedom": "Tu souhaites atteindre la liberté financière",
-    "readyToInvest": "Tu es prêt à investir 250 € pour tes premiers trades",
-    "willingToLearn": "Tu es prêt à apprendre et fais confiance à nos stratégies de trading",
-    "definitelyNot": "DÉFINITIVEMENT PAS",
+    "wantToLearnNewSkills": "Tu veux acquérir de nouvelles compétences",
+    "wantFinancialFreedom": "Tu veux atteindre la liberté financière",
+    "readyToInvest": "Tu es prêt à investir 250€ pour tes premiers trades",
+    "willingToLearn": "Tu as envie d'apprendre et fais confiance à nos stratégies de trading",
+    "definitelyNot": "DÉFINITIVEMENT PAS :",
     "notInterested": "Le trading ne t'intéresse pas",
-    "notWillingToLearn": "Tu n'es pas prêt à apprendre",
+    "notWillingToLearn": "Tu n'es pas disposé à apprendre",
     "noFinancialGoals": "Tu n'as pas d'objectifs financiers",
-    "noMoneyToInvest": "Tu ne souhaites pas investir d'argent",
-    "noTimeToInvest": "Tu ne souhaites pas investir de temps",
-    "easiestWay": "Le moyen le plus simple de commencer à trader",
-    "minimalTimeInvestment": "avec un investissement temporel minimal",
+    "noMoneyToInvest": "Tu ne veux pas investir d'argent",
+    "noTimeToInvest": "Tu ne veux pas investir de temps",
+    "easiestWay": "Le moyen le plus simple, avec un minimum de",
+    "minimalTimeInvestment": "temps pour commencer le trading –",
     "completelyFree": "et totalement gratuit",
-    "dayTradingTrainingDescription": "Dans cette formation de 7 jours, tu apprendras les bases du day trading de manière claire et divertissante, et tu recevras également <br /> des instructions claires et des stratégies que tu pourras ensuite mettre en œuvre de manière autonome et sécurisée. <br /><br /> En plus de 15 ans en tant que trader, j'ai beaucoup appris, mais j'ai aussi fait quelques erreurs. Je sais à quel point le trading peut être complexe pour un débutant. Pour te faciliter au maximum le démarrage, j'ai créé cette <br /> formation gratuite en ligne. C'est le type de formation que j'aurais souhaité avoir à l'époque. <br /><br /> Amuse-toi à apprendre cette compétence unique ! <br /> <strong className='text-[#fff]'>Ton Tim</strong> <br /><br />",
-    "faq": "Questions Fréquemment Posées",
-    "faq2": "Questions Fréquemment <br /> Posées",
-    "ourMethod": "Notre Méthode",
+    "dayTradingTrainingDescription": "Dans cette formation de 7 jours, tu apprendras les bases du day trading de manière simple et divertissante, répartie en 7 chapitres compacts. Tu recevras des instructions et des stratégies claires que tu pourras mettre en œuvre en toute confiance et de manière autonome. <br /><br /> Avec plus de 15 ans d'expérience en tant que trader, j'ai appris de nombreuses leçons précieuses – mais j'ai aussi fait des erreurs. Je sais à quel point le trading peut être complexe pour les débutants. Pour te faciliter la tâche au maximum, j'ai développé cette formation en ligne gratuite, exactement ce que j'aurais aimé avoir à l'époque. De plus, nous te proposons un coaching téléphonique sans engagement avec l'un de nos experts en trading, qui te présentera le trading et nos stratégies éprouvées. <br /> <strong className='text-[#fff]'>Ton Tim</strong> <br /><br />",
+    "faq": "Questions fréquemment posées",
+    "faq2": "Questions fréquemment <br /> posées",
+    "ourMethod": "Notre méthode",
     "rightBroker": "Le bon courtier",
     "tradingPlatforms": "Plateformes de trading",
-    "learnIn7Steps": "Tu apprendras à trader de manière rentable en seulement 7 étapes avec notre méthode au cours des 7 prochains jours.",
-    "cfBrokerSelection": "Apprends sur quoi tu dois faire attention lors du choix d'un courtier CFD adapté et quelle est la plus grande différence lorsque tu trades avec effet de levier.",
-    "tradingPlatformsIntro": "Tu recevras une introduction aux 2 plateformes de trading les plus courantes, afin que tu te sentes en sécurité et que tu saches exactement quoi surveiller.",
-    "nurNochEinSchritt": "Il ne reste plus que",
-    "nurNochEinSchritt2": "1 étape...",
-    "transformYourselfToAdvanced": "Transforme-toi d'un complet débutant à un ",
-    "accessToThisUniqueAndFreeOnline": "trader avancé qui a accès à cette formation en ligne unique et gratuite.",
-    "transformYourselfToAdvancedIn7Days": "d'un complet débutant à un trader avancé en seulement 7 jours.",
+    "learnIn7Steps": "Tu apprendras à trader de manière rentable en seulement 7 étapes avec notre méthode dans les 7 prochains jours.",
+    "cfBrokerSelection": "Apprends ce qu'il faut rechercher lors du choix d'un courtier CFD approprié et quelle est la plus grande différence avec le trading avec effet de levier.",
+    "tradingPlatformsIntro": "Tu recevras une introduction aux 2 plateformes de trading les plus courantes, afin que tu te sentes en confiance et que tu saches exactement à quoi faire attention.",
+    "nurNochEinSchritt": "Encore un",
+    "nurNochEinSchritt2": "seul pas",
+    "transformYourselfToAdvanced": "Transforme-toi de débutant complet à trader avancé en quelques jours seulement. N'attends plus et sécurise dès maintenant notre PDF de trading pour cette formation en ligne unique et gratuite.",
+    
     "training1": "Formation",
-    "traderTraining": "Formation Trader",
+    "traderTraining": "Formation de trader",
     "career": "Carrière",
-    "introductoryTalk": "Entretien d'introduction",
+    "introductoryTalk": "Entretien de découverte",
     "customerReviews": "Avis clients",
     "privacyPolicy": "Politique de confidentialité",
     "imprint": "Mentions légales",
-    "riskNotice": "Avertissement sur les risques",
-    "riskNoticeDetails": "Le trading avec des produits à effet de levier (par ex. CFD et Forex) ou d'autres instruments financiers comporte un risque énorme et n'est pas adapté à tout le monde. Il existe un risque de perte totale ou même de pertes dépassant tes investissements. Avant de trader des produits à effet de levier ou d'autres instruments financiers, tu dois t'assurer que tu as bien compris tous les risques associés. De plus, nous renvoyons à nos avertissements sur les risques. Il est explicitement précisé que nous ne proposons pas et ne menons pas de conseils d'investissement et, en particulier, que nous ne donnons aucune recommandation concrète sur un titre, un produit ou un instrument financier. La mention de certains titres ou produits d'investissement ne constitue en aucun cas une recommandation d'achat, de vente ou de conservation. Tu trades à tes propres risques. Toute responsabilité est exclue.",
-    "justOneStep": "Il ne reste plus qu'une étape...",
+    "riskNotice": "Avis de risque",
+    "riskNoticeDetails": "Le trading de produits à effet de levier (par exemple, CFD et Forex) ou d'autres instruments financiers comporte un risque énorme et ne convient pas à tout le monde. Il est possible que vous subissiez une perte totale ou même des pertes dépassant vos investissements. Avant de trader des produits à effet de levier ou d'autres instruments financiers, vous devez vous assurer que vous comprenez tous les risques associés. Nous nous référons également à nos avis de risque. Il est expressément précisé que nous n'offrons ni ne fournissons de conseil en investissement et en particulier ne faisons aucune recommandation spécifique concernant un titre, un produit financier ou un instrument. La mention de titres ou de produits d'investissement spécifiques ne constitue pas une recommandation d'achat, de vente ou de conservation. Vous tradez à vos propres risques. Toute responsabilité est exclue.",
     "firstNamePlaceholder": "Prénom",
     "lastNamePlaceholder": "Nom de famille",
     "emailPlaceholder": "Adresse e-mail",
-    "secureAccess": "Sécuriser l'accès maintenant",
+    "secureAccess": "Obtenir un accès sécurisé maintenant",
     "acceptPrivacyPolicy": "J'accepte la politique de confidentialité",
+
     "Bewertungen": "202 avis sur",
     "Trustpilot": "Trustpilot",
     "Hervorragend": "Excellent",
     "Mehr": "Voir plus",
     
-    "faqs": [
-      {
-        "question": "Pourquoi la formation est-elle gratuite ?",
-        "answer": "Il est important pour nous de dire que l'adhésion et la formation sont 100 % gratuites. Notre partenaire courtier couvre les coûts, donc tu ne dois rien payer. Nous travaillons avec l'une des plateformes de trading les plus reconnues et primées au monde, qui sponsorise notre service et finance ton adhésion. Tant que tu utilises leur plateforme, nous pouvons offrir notre service à tous les membres totalement gratuitement. Nous avons donc créé une véritable situation gagnant-gagnant – et c'est précisément pourquoi nous sommes devenus si populaires au cours des dernières années et que nous nous sommes établis en tant que marque de trading reconnue dans le monde entier."
-      },
-      {
-        "question": "Ai-je besoin d'expérience en trading ?",
-        "answer": "Tu n'as pas besoin de connaissances préalables en trading. Nous te guiderons pas à pas à travers le sujet avec notre PDF de trading. Avec le cours, nous nous assurons de donner aux débutants une chance équitable et de faciliter leur entrée dans le trading."
-      },
-      {
-        "question": "Combien de temps dure la formation ?",
-        "answer": "La formation au trading dure 7 jours, pendant lesquels tu peux organiser ton emploi du temps. Tu auras accès à tous les contenus de formation dans la première semaine suivant ton inscription. Et ne t'inquiète pas : la formation ne prend pas longtemps, nous la maintenons à un maximum de 30 à 60 minutes par jour afin que tu puisses utiliser ton temps aussi efficacement que possible."
-      },
-      {
-        "question": "Comment puis-je m'inscrire ?",
-        "answer": "Pour t'inscrire, il te suffit de remplir le formulaire sur cette page pour télécharger notre PDF de trading et convenir d'un entretien de découverte avec un expert en trading."
-      },
-      {
-        "question": "Quelles sont les conditions requises ?",
-        "answer": "Tu auras besoin d'un smartphone ou d'un ordinateur avec un accès Internet. Pour commencer le trading, tu devrais être prêt à investir au moins 250 € pour tes premiers trades et à suivre les instructions des experts en trading."
-      },
-      {
-        "question": "Y a-t-il une garantie de succès ?",
-        "answer": "Il n'y a aucune garantie de succès dans le trading. Le trading comporte toujours des risques, et il n'y a aucune certitude que tu réaliseras un profit. Tu devrais être conscient que tu peux également perdre de l'argent. Cependant, nous proposons des formations et un soutien pour augmenter tes chances de succès."
-      },
-      {
-        "question": "Comment fonctionne l'entretien de découverte ?",
-        "answer": "L'entretien de découverte se déroule en ligne, généralement via Zoom ou une plateforme similaire. L'expert en trading répondra à tes questions, te donnera des conseils précieux et t'acceptera dans tes débuts en trading."
-      }
-    ],
-    "cards": {
+    "trader": "Formation de trader",
+    "Kennerlerngesprach": "Réserver un entretien de découverte",
+    "Kundenmeinungen": "Avis clients",
+    "impressum1": "Mentions légales",
+    "impressum2": "(Informations selon § 5 DDG)",
+    "impressum3": "Direct Trading GmbH",
+    "impressum4": "Donaustaufer Str. 200",
+    "impressum5": "93059 Ratisbonne",
+    "impressum6": "Allemagne",
+    "impressum7": "info(at)nextleveltrading.com",
+    "impressum8": "Site web : www.nextleveltrading.com",
+    "impressum9": "Inscription au registre : Inscrit au registre du commerce",
+    "impressum10": "Tribunal d'enregistrement : Ratisbonne",
+    "impressum11": "Numéro d'enregistrement : 7498",
+    "impressum12": "Directeur général :",
+    "impressum13": "Georg Hierstetter",
+    "impressum14": "Résolution des litiges en ligne :",
+    "impressum15": "Résolution des litiges en ligne selon l'art. 14, par. 1 ODR-VO : La Commission européenne met à disposition une plateforme de résolution des litiges en ligne (OS), que les clients peuvent trouver à l'adresse http://ec.europa.eu/consumers/odr/.",
+    "impressum16": "1. Limitation de responsabilité",
+    "impressum17": "Le contenu du site web a été créé avec le plus grand soin et à notre meilleure connaissance. Cependant, le fournisseur de ce site web ne garantit pas l'exactitude, l'exhaustivité et l'actualité des pages et contenus fournis.",
+    "impressum18": "En tant que fournisseur de services, le fournisseur de ce site web est responsable de son propre contenu et des informations fournies sur ces pages selon § 7, par. 1 TMG ; cependant, selon §§ 8 à 10 TMG, il n'est pas tenu de surveiller les informations étrangères transmises ou stockées. Le retrait ou le blocage de tels contenus interviendra immédiatement dès connaissance d'une violation spécifique. La responsabilité n'est possible qu'à partir du moment de la prise de connaissance.",
+    "impressum19": "Les demandes de dommages-intérêts contre le fournisseur, relatives à des dommages matériels ou immatériels causés par l'utilisation ou la non-utilisation des informations fournies ou par l'utilisation d'informations incorrectes et incomplètes, sont fondamentalement exclues, sauf si l'auteur a agi de manière intentionnelle ou par négligence grave. Toutes les offres sont sujettes à modification et non contraignantes. Le fournisseur se réserve expressément le droit de modifier, compléter, supprimer des parties des pages ou l'intégralité de l'offre sans préavis ou d'interrompre temporairement ou définitivement la publication.",
+    "impressum20": "2. Liens externes",
+    "impressum21": "Le site web contient des 'liens externes' (liens) vers d'autres sites, sur le contenu desquels le fournisseur de ce site web n'a aucune influence. Pour cette raison, le fournisseur ne peut accepter aucune responsabilité pour ces contenus. Le fournisseur respectif du site lié est responsable du contenu et de l'exactitude des informations fournies. Au moment du lien, aucune violation légale n'était reconnaissable. Dès qu'il prend connaissance de telles violations légales, le lien sera supprimé immédiatement.",
+    "impressum22": "3. Droits d'auteur / Droits de protection des performances",
+    "impressum23": "Les contenus, œuvres et informations publiés sur ce site web sont soumis aux droits d'auteur allemands et aux droits de protection des performances. Toute reproduction, édition, distribution, stockage et toute forme d'exploitation au-delà des limites des droits d'auteur nécessite le consentement écrit préalable du titulaire des droits respectifs. La copie ou le stockage non autorisés des informations fournies sur ces sites web n'est pas autorisé et est punissable.",
+    "impressum24": "4. Validité de cette clause de non-responsabilité",
+    "impressum25": "Cette clause de non-responsabilité doit être considérée comme partie de l'offre internet par laquelle il a été fait référence à cette page. Si des parties ou des formulations individuelles de ce texte ne correspondent pas, ne correspondent plus ou ne correspondent pas complètement à la situation juridique applicable, les parties restantes du document restent intactes dans leur contenu et leur validité. État au 20.03.2024",
+    "impressum26": "État au 20.03.2024",
+
+    "risiki1": "Avis de risque",
+    "risiki2": "Avis général de risque",
+    "risiki3": "Direct Daytrading GmbH, représentée par le directeur général Georg Hierstetter, Donaustaufer Str. 200, à 93059 Ratisbonne (ci-après dénommée 'NextLevelTrading' ou 'Fournisseur') propose un concept éducatif sur le site www.nextleveltrading.com (ci-après dénommé 'Offre').",
+    "risiki4": "Le contenu du blog sert uniquement à des fins de divertissement et d'éducation personnelle. Les lecteurs ou abonnés qui prennent des décisions d'investissement ou effectuent des transactions basées sur le contenu publié ou les informations du fournisseur agissent entièrement à leurs propres risques. Le fournisseur ne fait aucune recommandation. Les opinions ou autres informations contenues sur cette page sont fournies en tant que commentaire général sur le marché et ne constituent pas des conseils d'investissement.",
+    "risiki5": "Le fournisseur obtient des informations de sources qu'il considère fiables. Aucune garantie concernant la qualité et la véracité de ces informations ne peut être donnée et ne peut être prise.",
+    "risiki6": "NextLevelTrading n'assume aucune responsabilité pour les suggestions de trading et les informations fournies. Celles-ci ne constituent en aucun cas une invitation à répliquer individuellement ou généralement, même implicitement. Les suggestions de trading ou autres informations ne constituent pas une invitation à acheter ou vendre des titres ou des produits financiers dérivés. La responsabilité pour les conséquences indirectes et directes du contenu et des informations publiées est donc exclue.",
+    "risiki7": "NextLevelTrading n'est pas responsable des pertes ou dommages, y compris, mais sans s'y limiter, des profits perdus, qui découlent directement ou indirectement d'activités de trading basées sur ces informations. Tradingfreaks.com a pris des mesures suffisantes pour garantir l'exactitude des informations sur le site web.",
+    "risiki8": "Des modifications du contenu de ce site web sont réservées à tout moment et sans préavis.",
+    "risiki9": "Le trading d'actions, d'indices, de devises Forex et de CFD sur marge implique un risque élevé et n'est donc pas adapté à tous les investisseurs. Avant de considérer les services et produits de différents courtiers pour le trading dérivé, vous devez soigneusement prendre en compte vos objectifs d'investissement, votre situation financière, vos besoins, ainsi que votre niveau d'expérience et de connaissances.",
+    "risiki10": "En tradant et en spéculant avec des devises, vous pourriez subir une perte partielle ou totale de vos fonds déposés auprès de différents courtiers et ne devez donc pas spéculer avec des capitaux que vous ne pouvez pas vous permettre de perdre. Soyez conscient de tous les risques associés au trading dérivé, en particulier l'obligation possible de couvrir les pertes avec les courtiers respectifs. Tradingfreaks.com recommande de consulter un conseiller financier indépendant.",
+    "risiki11": "NextLevelTrading attire l'attention sur les risques particulièrement élevés dans les transactions avec des options, des dérivés et des instruments financiers dérivés. Le trading avec des options, des CFD ou des dérivés est une transaction à terme financier. Les opportunités significatives des transactions à terme financiers s'accompagnent de risques correspondants, qui peuvent non seulement entraîner une perte totale du capital investi, mais aussi entraîner des pertes supplémentaires pouvant conduire à une demande de paiement supplémentaire au-delà du capital investi. Si vous ne respectez pas la marge requise, votre position peut être liquidée ; vous êtes seul responsable des pertes en résultant. L'utilisation d'un système de trading basé sur Internet comporte des risques, y compris, mais sans s'y limiter, des pannes de matériel, de logiciel et de connexion Internet.",
+    "risiki12": "Pour cette raison, ce type de transaction nécessite des connaissances approfondies et bien fondées concernant les produits financiers, les instruments financiers et d'autres produits négociables, ainsi que les techniques et stratégies de trading sur les marchés des valeurs mobilières.",
+    "risiki13": "Seuls les consommateurs qui ont lu et compris la brochure 'Informations de base sur les futures financiers' disponible dans les banques et les caisses d'épargne conformément au § 37d WpHG et qui ont lu et signé le formulaire 'Informations importantes sur les risques de perte des transactions de futures financiers' ont le droit de participer au trading d'options et d'autres transactions de futures financiers. Le client agit à ses propres risques et périls.",
+    "risiki14": "Avis de risque sur les futures",
+    "risiki15": "En raison de l'effet de levier, des pertes disproportionnées peuvent se produire. Veuillez noter que le trading de futures est soumis à des fluctuations de valeur et de prix des actifs sous-jacents. Après des suspensions de trading, en phases de marché volatiles et entre les prix de clôture et d'ouverture, des changements de prix peuvent se produire qui peuvent dépasser la perte du capital investi.",
+    "risiki16": "Avis de risque sur le trading sur marge",
+    "risiki17": "Le trading sur marge comprend des transactions basées sur les mouvements de prix d'un produit. Le règlement est basé sur la différence entre le prix d'ouverture et le prix de clôture de la transaction. Le trading sur marge n'est adapté qu'aux investisseurs expérimentés avec une haute tolérance au risque. Il existe un danger que vous perdiez plus de capital que vous n'avez investi à l'origine. Le trading sur marge peut entraîner des pertes totales et des obligations de couvrir des pertes.",
+    "risiki18": "Avis de risque sur les marchés, analyses d'actions et articles",
+    "risiki19": "Les analyses de marché, d'actions ou les articles ne sont fournis qu'à titre d'information. Ils ne constituent pas une offre ou une recommandation pour ouvrir un compte de courtier, utiliser un service ou acheter ou vendre des instruments financiers. Les informations sur les gains réalisés et potentiels dans le passé ne garantissent pas des profits futurs.",
+
+"faqs": [
+  {
+    "question": "Pourquoi la formation est-elle gratuite?",
+    "answer": "Il est important pour nous de dire que l'adhésion et la formation sont 100 % gratuites. Notre partenaire courtier couvre les coûts, vous n'avez donc rien à payer. Nous travaillons avec l'une des plateformes de trading les plus reconnues au monde, qui finance notre service et votre adhésion. Tant que vous utilisez leur plateforme, nous pouvons offrir notre service complètement gratuitement à tous les membres. Cela crée une véritable situation gagnant-gagnant – et c'est précisément pourquoi nous sommes devenus si populaires ces dernières années et avons évolué en une marque de trading reconnue mondialement."
+  },
+  {
+    "question": "Ai-je besoin d'expérience en trading?",
+    "answer": "Vous n'avez pas besoin d'expérience préalable en trading. Nous vous guidons étape par étape sur le sujet avec notre PDF de trading. Grâce au cours, nous veillons à fournir aux débutants les bonnes connaissances, l'infrastructure appropriée et une stratégie pour trader de manière rentable sur le marché à long terme ; de plus, il y a un coaching gratuit direct avec un expert en trading."
+  },
+  {
+    "question": "Combien de temps dois-je investir dans le trading?",
+    "answer": "En tant que trader rentable, vous n'avez pas besoin de passer toute la journée devant les graphiques. La plupart de nos membres passent seulement 30 à 60 minutes par jour à trader. Nos concepts offrent des stratégies pour chaque moment, ce qui est idéal pour les professionnels et les personnes occupées. Le plus important : vous n'avez ni besoin de trader quotidiennement ni d'investir plusieurs heures. Avec notre aide, le trading sera naturellement intégré dans votre quotidien."
+  },
+  {
+    "question": "La formation au trading est-elle utile pour les avancés?",
+    "answer": "Le cours s'adresse principalement aux débutants en trading. Cependant, certains modules individuels peuvent encore être utiles pour les traders avancés."
+  },
+  {
+    "question": "Y a-t-il un support actif?",
+    "answer": "Grâce à notre PDF de trading gratuit, nous économisons déjà certaines ressources pour transmettre les expériences les plus importantes. Cependant, nous avons réalisé qu'il est bénéfique pour chaque nouveau partenaire d'avoir une première conversation avec un expert en trading pour réussir. Si vous avez besoin d'une aide supplémentaire par la suite, nous sommes bien sûr à votre disposition à tout moment."
+  }
+],
+"cards": {
   "data": [
     {
       "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
       "title": "Indépendance financière complète",
-      "description": "Construisez un second pilier financier, devenez indépendant de votre employeur à long terme et assurez-vous un niveau de vie plus élevé."
+      "description": "Construisez une seconde source de revenu, devenez indépendant de votre employeur à long terme et assurez-vous un niveau de vie plus élevé."
     },
     {
       "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
       "title": "Brisez vos limites de revenus",
-      "description": "En tant que trader, il n'y a pas de limites artificielles à vos revenus. Avec cette compétence, vous avez un contrôle total sur vos gains."
+      "description": "En tant que trader, vos revenus ne sont plus soumis à des limites artificielles. Avec cette capacité, vous avez le plein contrôle de vos revenus."
     },
     {
       "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
-      "title": "Vivez selon vos propres règles",
-      "description": "Profitez d'une vie sans restrictions. Vous tradez où et quand vous voulez – que vous soyez chez vous ou en train de parcourir le monde."
+      "title": "Vivez selon vos règles",
+      "description": "Profitez d'une vie sans restrictions. Vous tradez où et quand vous le souhaitez – peu importe si vous êtes chez vous ou en voyage à travers le monde."
     },
     {
       "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
-      "title": "Gagnez dans toutes les conditions de marché",
-      "description": "Les day traders profitent à la fois de la hausse et de la baisse des prix. Avec notre méthode TF, vous pouvez réaliser des bénéfices quelles que soient les conditions du marché."
+      "title": "Gagnez dans toutes les situations de marché",
+      "description": "Les day traders profitent à la fois des hausses et des baisses des prix. Avec notre méthode TF, vous pouvez réaliser des bénéfices indépendamment du marché."
     }
   ]
 }
+
 
   }
 }

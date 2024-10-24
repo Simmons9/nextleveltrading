@@ -160,11 +160,11 @@ function Datenschutz() {
 
               {/* Main Content */}
               <main className="max-w-3xl mx-auto mt-[5rem] lg:mt-[10rem] relative z-10">
-                  <h1 className="text-5xl font-bold mb-8">          <div dangerouslySetInnerHTML={{ __html: texts.online?.title || "Loading..." }} />
+                  <h1 className="text-5xl text-black font-bold mb-8">          <div dangerouslySetInnerHTML={{ __html: texts.online?.title || "Loading..." }} />
                   </h1>
                   <section className="text-lg text-[#00000066] leading-relaxed space-y-6">
                     <img className='w-[300px] h-auto' src="/images/6601dc8887b1e34f1fff3fab_erecht24-siegel-datenschutz-rot-gross-322x420-1 (1).png" alt="" />
-                      <p>
+                      <p className="text-black">
                           <strong>            
                             {texts.online?.first || "Loading..."} 
 
@@ -179,53 +179,53 @@ function Datenschutz() {
                   
 
 
-                      <p>
+                      <p className="text-black">
                       {texts.online?.desc2 || "Loading..."}    
                         
                      </p>
-                     <p>
+                     <p className="text-black">
                       {texts.online?.desc3 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc4 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc5|| "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc6 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc7 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc8 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc9 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc10 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc11 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc12 || "Loading..."}    
                         
-                     </p>   <p>
+                     </p>   <p className="text-black">
                       {texts.online?.desc13 || "Loading..."}    
                         
                      </p>   
-                     <p>
+                     <p className="text-black">
                       {texts.online?.desc14 || "Loading..."}    
                         
-                     </p>
-                     <p>
+                     </p >
+                     <p className="text-black">
                       {texts.online?.desc15 || "Loading..."}    
                         
                      </p>
-                     <p>
+                     <p className="text-black">
                       {texts.online?.desc16 || "Loading..."}    
                         
                      </p>
@@ -244,290 +244,290 @@ function Datenschutz() {
 
 
                     
-                      <p>{texts.online?.desc19 || "Loading..."}</p>
-                      <p>{texts.online?.desc20 || "Loading..."}</p>
-                      <p>{texts.online?.desc21 || "Loading..."}</p>
-                      <p>{texts.online?.desc22 || "Loading..."}</p>
-                      <p>{texts.online?.desc23 || "Loading..."}</p>
-                      <p>{texts.online?.desc24 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc19 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc20 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc21 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc22 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc23 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc24 || "Loading..."}</p>
                        <br />
                       <strong>
-                      <p>{texts.online?.Allgemeine || "Loading..."}</p> 
+                      <p className="text-black">{texts.online?.Allgemeine || "Loading..."}</p> 
                       
                        </strong>
 
-                      <p>{texts.online?.desc26 || "Loading..."}</p>
-                      <p>{texts.online?.desc27 || "Loading..."}</p>
-                      <p>{texts.online?.desc28 || "Loading..."}</p>
-                      <p>{texts.online?.desc29 || "Loading..."}</p>
-                      <p>{texts.online?.desc30 || "Loading..."}</p>
-                      <p>{texts.online?.desc31 || "Loading..."}</p>
-                      <p>{texts.online?.desc32 || "Loading..."}</p>
-                      <p>{texts.online?.desc33 || "Loading..."}</p>
-                      <p>{texts.online?.desc34 || "Loading..."}</p>
-                      <p>{texts.online?.desc35 || "Loading..."}</p>
-                      <p>{texts.online?.desc36 || "Loading..."}</p>
-                      <p>{texts.online?.desc37 || "Loading..."}</p>
-                      <p>{texts.online?.desc38 || "Loading..."}</p>
-                      <p>{texts.online?.desc39 || "Loading..."}</p>
-                      <p>{texts.online?.desc40 || "Loading..."}</p>
-                      <p>{texts.online?.desc41 || "Loading..."}</p>
-                      <p>{texts.online?.desc42 || "Loading..."}</p>
-                      <p>{texts.online?.desc43 || "Loading..."}</p>
-                      <p>{texts.online?.desc44 || "Loading..."}</p>
-                      <p>{texts.online?.desc45 || "Loading..."}</p>
-                      <p>{texts.online?.desc46 || "Loading..."}</p>
-                      <p>{texts.online?.desc47 || "Loading..."}</p>
-                      <p>{texts.online?.desc48 || "Loading..."}</p>
-                      <p>{texts.online?.desc49 || "Loading..."}</p>
-                      <p>{texts.online?.desc50 || "Loading..."}</p>
-                      <p>{texts.online?.desc51 || "Loading..."}</p>
-                      <p>{texts.online?.desc52 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc26 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc27 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc28 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc29 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc30 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc31 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc32 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc33 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc34 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc35 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc36 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc37 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc38 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc39 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc40 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc41 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc42 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc43 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc44 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc45 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc46 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc47 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc48 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc49 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc50 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc51 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc52 || "Loading..."}</p>
                       <p dangerouslySetInnerHTML={{ __html: texts.online?.desc53 || "Loading..." }}></p>
                       <p dangerouslySetInnerHTML={{ __html: texts.online?.desc54 || "Loading..." }}></p>
                       <p dangerouslySetInnerHTML={{ __html: texts.online?.desc55 || "Loading..." }}></p>
                       <p dangerouslySetInnerHTML={{ __html: texts.online?.desc56 || "Loading..." }}></p>
-                      <p>{texts.online?.desc57 || "Loading..."}</p>
-                      <p>{texts.online?.desc58 || "Loading..."}</p>
-                      <p>{texts.online?.desc59 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc57 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc58 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc59 || "Loading..."}</p>
  <br />
 
                      <strong>
 
-                     <p>{texts.online?.Datenefassung || "Loading..."}</p>
+                     <p className="text-black">{texts.online?.Datenefassung || "Loading..."}</p>
 
 
                      </strong>
-                      <p>{texts.online?.desc60 || "Loading..."}</p>
-                      <p>{texts.online?.desc61 || "Loading..."}</p>
-                      <p>{texts.online?.desc62 || "Loading..."}</p>
-                      <p>{texts.online?.desc63 || "Loading..."}</p>
-                      <p>{texts.online?.desc64 || "Loading..."}</p>
-                      <p>{texts.online?.desc65 || "Loading..."}</p>
-                      <p>{texts.online?.desc66 || "Loading..."}</p>
-                      <p>{texts.online?.desc67 || "Loading..."}</p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc68 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc69 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc70 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc71 || "Loading..." }}></p>
-                      <p dangerouslySetInnerHTML={{ __html: texts.online?.desc72 || "Loading..." }}></p>
-                      <p>{texts.online?.desc73 || "Loading..."}</p>
-                      <p>{texts.online?.desc74 || "Loading..."}</p>
-                      <p>{texts.online?.desc75 || "Loading..."}</p>
-                      <p>{texts.online?.desc76 || "Loading..."}</p>
-                      <p>{texts.online?.desc77 || "Loading..."}</p>
-                      <p>{texts.online?.desc78 || "Loading..."}</p>
-                      <p>{texts.online?.desc79 || "Loading..."}</p>
-                      <p>{texts.online?.desc80 || "Loading..."}</p>
-                      <p>{texts.online?.desc81 || "Loading..."}</p>
-                      <p>{texts.online?.desc82 || "Loading..."}</p>
-                      <p>{texts.online?.desc83 || "Loading..."}</p>
-                      <p>{texts.online?.desc84 || "Loading..."}</p>
-                      <p>{texts.online?.desc85 || "Loading..."}</p>
-                      <p>{texts.online?.desc86 || "Loading..."}</p>
-                      <p>{texts.online?.desc87 || "Loading..."}</p>
-                      <p>{texts.online?.desc88 || "Loading..."}</p>
-                      <p>{texts.online?.desc89 || "Loading..."}</p>
-                      <p>{texts.online?.desc90 || "Loading..."}</p>
-                      <p>{texts.online?.desc91 || "Loading..."}</p>
-                      <p>{texts.online?.desc92 || "Loading..."}</p>
-                      <p>{texts.online?.desc93 || "Loading..."}</p>
-                      <p>{texts.online?.desc94 || "Loading..."}</p>
-                      <p>{texts.online?.desc95 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc60 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc61 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc62 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc63 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc64 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc65 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc66 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc67 || "Loading..."}</p>
+                      <p className="text-black" dangerouslySetInnerHTML={{ __html: texts.online?.desc68 || "Loading..." }}></p>
+                      <p className="text-black" dangerouslySetInnerHTML={{ __html: texts.online?.desc69 || "Loading..." }}></p>
+                      <p className="text-black" dangerouslySetInnerHTML={{ __html: texts.online?.desc70 || "Loading..." }}></p>
+                      <p className="text-black" dangerouslySetInnerHTML={{ __html: texts.online?.desc71 || "Loading..." }}></p>
+                      <p className="text-black" dangerouslySetInnerHTML={{ __html: texts.online?.desc72 || "Loading..." }}></p>
+                      <p className="text-black">{texts.online?.desc73 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc74 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc75 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc76 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc77 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc78 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc79 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc80 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc81 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc82 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc83 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc84 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc85 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc86 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc87 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc88 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc89 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc90 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc91 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc92 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc93 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc94 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc95 || "Loading..."}</p>
                       <br />
 
 <strong>
 
-<p>{texts.online?.Analyse || "Loading..."}</p>
+<p className="text-black">{texts.online?.Analyse || "Loading..."}</p>
 
 
 </strong>
-                      <p>{texts.online?.desc96 || "Loading..."}</p>
-                      <p>{texts.online?.desc97 || "Loading..."}</p>
-                      <p>{texts.online?.desc98 || "Loading..."}</p>
-                      <p>{texts.online?.desc99 || "Loading..."}</p>
-                      <p>{texts.online?.desc100 || "Loading..."}</p>
-                      <p>{texts.online?.desc101 || "Loading..."}</p>
-                      <p>{texts.online?.desc102 || "Loading..."}</p>
-                      <p>{texts.online?.desc103 || "Loading..."}</p>
-                      <p>{texts.online?.desc104 || "Loading..."}</p>
-                      <p>{texts.online?.desc105 || "Loading..."}</p>
-                      <p>{texts.online?.desc106 || "Loading..."}</p>
-                      <p>{texts.online?.desc107 || "Loading..."}</p>
-                      <p>{texts.online?.desc108 || "Loading..."}</p>
-                      <p>{texts.online?.desc109 || "Loading..."}</p>
-                      <p>{texts.online?.desc110 || "Loading..."}</p>
-                      <p>{texts.online?.desc111 || "Loading..."}</p>
-                      <p>{texts.online?.desc112 || "Loading..."}</p>
-                      <p>{texts.online?.desc113 || "Loading..."}</p>
-                      <p>{texts.online?.desc114 || "Loading..."}</p>
-                      <p>{texts.online?.desc115 || "Loading..."}</p>
-                      <p>{texts.online?.desc116 || "Loading..."}</p>
-                      <p>{texts.online?.desc117 || "Loading..."}</p>
-                      <p>{texts.online?.desc118 || "Loading..."}</p>
-                      <p>{texts.online?.desc119 || "Loading..."}</p>
-                      <p>{texts.online?.desc120 || "Loading..."}</p>
-                      <p>{texts.online?.desc121 || "Loading..."}</p>
-                      <p>{texts.online?.desc122 || "Loading..."}</p>
-                      <p>{texts.online?.desc123 || "Loading..."}</p>
-                      <p>{texts.online?.desc124 || "Loading..."}</p>
-                      <p>{texts.online?.desc125 || "Loading..."}</p>
-                      <p>{texts.online?.desc126 || "Loading..."}</p>
-                      <p>{texts.online?.desc127 || "Loading..."}</p>
-                      <p>{texts.online?.desc128 || "Loading..."}</p>
-                      <p>{texts.online?.desc129 || "Loading..."}</p>
-                      <p>{texts.online?.desc130 || "Loading..."}</p>
-                      <p>{texts.online?.desc131 || "Loading..."}</p>
-                      <p>{texts.online?.desc132 || "Loading..."}</p>
-                      <p>{texts.online?.desc133 || "Loading..."}</p>
-                      <p>{texts.online?.desc134 || "Loading..."}</p>
-                      <p>{texts.online?.desc135 || "Loading..."}</p>
-                      <p>{texts.online?.desc136 || "Loading..."}</p>
-                      <p>{texts.online?.desc137 || "Loading..."}</p>
-                      <p>{texts.online?.desc138 || "Loading..."}</p>
-                      <p>{texts.online?.desc139 || "Loading..."}</p>
-                      <p>{texts.online?.desc140 || "Loading..."}</p>
-                      <p>{texts.online?.desc141 || "Loading..."}</p>
-                      <p>{texts.online?.desc142 || "Loading..."}</p>
-                      <p>{texts.online?.desc143 || "Loading..."}</p>
-                      <p>{texts.online?.desc144 || "Loading..."}</p>
-                      <p>{texts.online?.desc145 || "Loading..."}</p>
-                      <p>{texts.online?.desc146 || "Loading..."}</p>
-                      <p>{texts.online?.desc147 || "Loading..."}</p>
-                      <p>{texts.online?.desc148 || "Loading..."}</p>
-                      <p>{texts.online?.desc149 || "Loading..."}</p>
-                      <p>{texts.online?.desc150 || "Loading..."}</p>
-                      <p>{texts.online?.desc151 || "Loading..."}</p>
-                      <p>{texts.online?.desc152 || "Loading..."}</p>
-                      <p>{texts.online?.desc153 || "Loading..."}</p>
-                      <p>{texts.online?.desc154 || "Loading..."}</p>
-                      <p>{texts.online?.desc155 || "Loading..."}</p>
-                      <p>{texts.online?.desc156 || "Loading..."}</p>
-                      <p>{texts.online?.desc157 || "Loading..."}</p>
-                      <p>{texts.online?.desc158 || "Loading..."}</p>
-                      <p>{texts.online?.desc159 || "Loading..."}</p>
-                      <p>{texts.online?.desc160 || "Loading..."}</p>
-                      <p>{texts.online?.desc161 || "Loading..."}</p>
-                      <p>{texts.online?.desc162 || "Loading..."}</p>
-                      <p>{texts.online?.desc163 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc96 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc97 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc98 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc99 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc100 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc101 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc102 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc103 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc104 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc105 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc106 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc107 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc108 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc109 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc110 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc111 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc112 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc113 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc114 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc115 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc116 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc117 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc118 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc119 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc120 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc121 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc122 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc123 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc124 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc125 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc126 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc127 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc128 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc129 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc130 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc131 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc132 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc133 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc134 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc135 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc136 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc137 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc138 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc139 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc140 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc141 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc142 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc143 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc144 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc145 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc146 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc147 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc148 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc149 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc150 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc151 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc152 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc153 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc154 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc155 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc156 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc157 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc158 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc159 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc160 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc161 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc162 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc163 || "Loading..."}</p>
 
                       <br />
                       <strong>
-                      <p>{texts.online?.newsletter || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.newsletter || "Loading..."}</p>
                       </strong>
 
-                      <p>{texts.online?.desc164 || "Loading..."}</p>
-                      <p>{texts.online?.desc165 || "Loading..."}</p>
-                      <p>{texts.online?.desc166 || "Loading..."}</p>
-                      <p>{texts.online?.desc167 || "Loading..."}</p>
-                      <p>{texts.online?.desc168 || "Loading..."}</p>
-                      <p>{texts.online?.desc169 || "Loading..."}</p>
-                      <p>{texts.online?.desc170 || "Loading..."}</p>
-                      <p>{texts.online?.desc171 || "Loading..."}</p>
-                      <p>{texts.online?.desc172 || "Loading..."}</p>
-                      <p>{texts.online?.desc173 || "Loading..."}</p>
-                      <p>{texts.online?.desc174 || "Loading..."}</p>
-                      <p>{texts.online?.desc175 || "Loading..."}</p>
-                      <p>{texts.online?.desc176 || "Loading..."}</p>
-                      <p>{texts.online?.desc177 || "Loading..."}</p>
-                      <p>{texts.online?.desc178 || "Loading..."}</p>
-                      <p>{texts.online?.desc179 || "Loading..."}</p>
-                      <p>{texts.online?.desc180 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc164 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc165 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc166 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc167 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc168 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc169 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc170 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc171 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc172 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc173 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc174 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc175 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc176 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc177 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc178 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc179 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc180 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.plugins || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.plugins || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc181 || "Loading..."}</p>
-                      <p>{texts.online?.desc182 || "Loading..."}</p>
-                      <p>{texts.online?.desc183 || "Loading..."}</p>
-                      <p>{texts.online?.desc184 || "Loading..."}</p>
-                      <p>{texts.online?.desc185 || "Loading..."}</p>
-                      <p>{texts.online?.desc186 || "Loading..."}</p>
-                      <p>{texts.online?.desc187 || "Loading..."}</p>
-                      <p>{texts.online?.desc188 || "Loading..."}</p>
-                      <p>{texts.online?.desc189 || "Loading..."}</p>
-                      <p>{texts.online?.desc190 || "Loading..."}</p>
-                      <p>{texts.online?.desc191 || "Loading..."}</p>
-                      <p>{texts.online?.desc192 || "Loading..."}</p>
-                      <p>{texts.online?.desc193 || "Loading..."}</p>
-                      <p>{texts.online?.desc194 || "Loading..."}</p>
-                      <p>{texts.online?.desc195 || "Loading..."}</p>
-                      <p>{texts.online?.desc196 || "Loading..."}</p>
-                      <p>{texts.online?.desc197 || "Loading..."}</p>
-                      <p>{texts.online?.desc198 || "Loading..."}</p>
-                      <p>{texts.online?.desc199 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc181 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc182 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc183 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc184 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc185 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc186 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc187 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc188 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc189 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc190 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc191 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc192 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc193 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc194 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc195 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc196 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc197 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc198 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc199 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.online || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.online || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc200 || "Loading..."}</p>
-                      <p>{texts.online?.desc201 || "Loading..."}</p>
-                      <p>{texts.online?.desc202 || "Loading..."}</p>
-                      <p>{texts.online?.desc203 || "Loading..."}</p>
-                      <p>{texts.online?.desc204 || "Loading..."}</p>
-                      <p>{texts.online?.desc205 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc200 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc201 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc202 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc203 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc204 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc205 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.Zahlung || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.Zahlung || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc206 || "Loading..."}</p>
-                      <p>{texts.online?.desc207 || "Loading..."}</p>
-                      <p>{texts.online?.desc208 || "Loading..."}</p>
-                      <p>{texts.online?.desc209 || "Loading..."}</p>
-                      <p>{texts.online?.desc210 || "Loading..."}</p>
-                      <p>{texts.online?.desc211 || "Loading..."}</p>
-                      <p>{texts.online?.desc212 || "Loading..."}</p>
-                      <p>{texts.online?.desc213 || "Loading..."}</p>
-                      <p>{texts.online?.desc214 || "Loading..."}</p>
-                      <p>{texts.online?.desc215 || "Loading..."}</p>
-                      <p>{texts.online?.desc216 || "Loading..."}</p>
-                      <p>{texts.online?.desc217 || "Loading..."}</p>
-                      <p>{texts.online?.desc218 || "Loading..."}</p>
-                      <p>{texts.online?.desc219 || "Loading..."}</p>
-                      <p>{texts.online?.desc220 || "Loading..."}</p>
-                      <p>{texts.online?.desc221 || "Loading..."}</p>
-                      <p>{texts.online?.desc222 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc206 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc207 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc208 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc209 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc210 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc211 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc212 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc213 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc214 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc215 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc216 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc217 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc218 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc219 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc220 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc221 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc222 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.webinare || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.webinare || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc223 || "Loading..."}</p>
-                      <p>{texts.online?.desc224 || "Loading..."}</p>
-                      <p>{texts.online?.desc225 || "Loading..."}</p>
-                      <p>{texts.online?.desc226 || "Loading..."}</p>
-                      <p>{texts.online?.desc227 || "Loading..."}</p>
-                      <p>{texts.online?.desc228 || "Loading..."}</p>
-                      <p>{texts.online?.desc229 || "Loading..."}</p>
-                      <p>{texts.online?.desc230 || "Loading..."}</p>
-                      <p>{texts.online?.desc231 || "Loading..."}</p>
-                      <p>{texts.online?.desc232 || "Loading..."}</p>
-                      <p>{texts.online?.desc233 || "Loading..."}</p>
-                      <p>{texts.online?.desc234 || "Loading..."}</p>
-                      <p>{texts.online?.desc235 || "Loading..."}</p>
-                      <p>{texts.online?.desc236 || "Loading..."}</p>
-                      <p>{texts.online?.desc237 || "Loading..."}</p>
-                      <p>{texts.online?.desc238 || "Loading..."}</p>
-                      <p>{texts.online?.desc239 || "Loading..."}</p>
-                      <p>{texts.online?.desc240 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc223 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc224 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc225 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc226 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc227 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc228 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc229 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc230 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc231 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc232 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc233 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc234 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc235 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc236 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc237 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc238 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc239 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc240 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.telefontermine || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.telefontermine || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc241 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc241 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.CRM || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.CRM || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc242 || "Loading..."}</p>
-                      <p>{texts.online?.desc243 || "Loading..."}</p>
-                      <p>{texts.online?.desc244 || "Loading..."}</p>
-                      <p>{texts.online?.desc245 || "Loading..."}</p>
-                      <p>{texts.online?.desc246 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc242 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc243 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc244 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc245 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc246 || "Loading..."}</p>
                       <br />
                       <strong>
-                      <p>{texts.online?.smsfactor || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.smsfactor || "Loading..."}</p>
                       </strong>
-                      <p>{texts.online?.desc247 || "Loading..."}</p>
+                      <p className="text-black">{texts.online?.desc247 || "Loading..."}</p>
                      
             
                         
