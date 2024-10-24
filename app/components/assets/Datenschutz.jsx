@@ -81,11 +81,13 @@ function Datenschutz() {
     <header className={`w-full max-w-[80rem] h-[5rem] py-1 mx-auto sm:h-[3.8rem] ${isOpen ? 'mobile-bg' : ''}`}>
       <nav className="flex justify-between items-center h-full px-4">
         <div className="left-imagess">
-          <img
-            src="/images/logo-blakc.svg"
-            alt="Logo"
-            className="w-[90px] h-auto sm:w-[115px]"
-          />
+        <a href="/">
+  <img
+    src="/images/logo-blakc.svg"
+    alt="Logo"
+    className="w-[120px] h-auto sm:w-[115px]"  
+  />
+</a>
         </div>
         <div className="right-images flex items-center">
           <div className="hidden md:flex items-center">
