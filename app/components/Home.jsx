@@ -97,7 +97,7 @@ function Home() {
   <img
     src="/images/logo-blakc.svg"
     alt="Logo"
-    className="w-[120px] h-auto sm:w-[115px]"  
+    className="w-[120px] h-auto sm:w-[140px]"  
   />
 </a>
     </div>
@@ -893,7 +893,7 @@ function Home() {
   <img
     src="/images/logo-white.svg"
     alt="Logo"
-    width={115}
+    width={140}
     height={32}
   />
 </div>

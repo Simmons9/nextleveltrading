@@ -85,7 +85,7 @@ function Impressum() {
   };
   return (
 <div>
-<div className={`risiko px-4 lg:mt-[2rem] mx-auto ${isOpen ? 'mobile-bg' : ''}`}>
+<div className={`risiko px-4 lg:mt-[0rem] mx-auto ${isOpen ? 'mobile-bg' : ''}`}>
 {/* Header Section */}
 <div className="bg-white lg:border-b">
     <header className={`w-full max-w-[80rem] h-[5rem] py-1 mx-auto sm:h-[3.8rem] ${isOpen ? 'mobile-bg' : ''}`}>
@@ -95,7 +95,7 @@ function Impressum() {
   <img
     src="/images/logo-blakc.svg"
     alt="Logo"
-    className="w-[120px] h-auto sm:w-[115px]"  
+    className="w-[120px] h-auto sm:w-[140px]"  
   />
 </a>
         </div>
@@ -167,7 +167,7 @@ function Impressum() {
   </div>
 
               {/* Main Content */}
-              <main className="max-w-3xl mx-auto mt-[5rem] lg:mt-[10rem] relative z-10">
+              <main className="max-w-3xl mx-auto mt-[2rem] mb-[5rem] lg:mt-[5rem] relative z-10">
                   <h1 className="text-5xl font-bold mb-8"> 
                     {texts.online?.impressum1 || "Loading..."}
                   </h1>
@@ -223,7 +223,7 @@ function Impressum() {
                           <img
                               src="/images/logo-white.svg"
                               alt="Logo"
-                              width={115}
+                              width={150}
                               height={32} />
                       </div>
 
@@ -261,7 +261,7 @@ function Impressum() {
 
                       {/* Right Copyright Text */}
                       <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-                          © 2023 TradingFreaks® All rights reserved
+                          © 2024 NextLevelTrading® All rights reserved
                       </div>
                   </div>
                   <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">

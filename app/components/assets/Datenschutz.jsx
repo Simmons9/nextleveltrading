@@ -88,7 +88,7 @@ function Datenschutz() {
 
   return (
     <div>
-<div className={`risiko px-4 lg:mt-[2rem] mx-auto ${isOpen ? 'mobile-bg' : ''}`}>
+<div className={`risiko px-4 lg:mt-[0rem] mx-auto ${isOpen ? 'mobile-bg' : ''}`}>
 {/* Header Section */}
 <div className="bg-white lg:border-b">
     <header className={`w-full max-w-[80rem] h-[5rem] py-1 mx-auto sm:h-[3.8rem] ${isOpen ? 'mobile-bg' : ''}`}>
@@ -98,7 +98,7 @@ function Datenschutz() {
   <img
     src="/images/logo-blakc.svg"
     alt="Logo"
-    className="w-[120px] h-auto sm:w-[115px]"  
+    className="w-[120px] h-auto sm:w-[140px]"  
   />
 </a>
         </div>
@@ -172,8 +172,8 @@ function Datenschutz() {
 
 
               {/* Main Content */}
-              <main className="max-w-3xl mx-auto mt-[5rem] lg:mt-[10rem] relative z-10">
-                  <h1 className="text-5xl text-black font-bold mb-8">          <div dangerouslySetInnerHTML={{ __html: texts.online?.title || "Loading..." }} />
+              <main className="max-w-3xl mx-auto mt-[2rem] mb-[5rem] lg:mt-[5rem] relative z-10">
+                  <h1 className="text-4xl text-black font-bold mb-8">          <div dangerouslySetInnerHTML={{ __html: texts.online?.title || "Loading..." }} />
                   </h1>
                   <section className="text-lg text-[#00000066] leading-relaxed space-y-6">
                     <img className='w-[300px] h-auto' src="/images/6601dc8887b1e34f1fff3fab_erecht24-siegel-datenschutz-rot-gross-322x420-1 (1).png" alt="" />
@@ -569,7 +569,7 @@ function Datenschutz() {
                           <img
                               src="/images/logo-white.svg"
                               alt="Logo"
-                              width={115}
+                              width={150}
                               height={32} />
                       </div>
 
@@ -608,7 +608,7 @@ function Datenschutz() {
 
                       {/* Right Copyright Text */}
                       <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-                          © 2025 NextLevelTrading® All rights reserved
+                            © 2024 NextLevelTrading® All rights reserved
                       </div>
                   </div>
                   <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
