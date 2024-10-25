@@ -890,12 +890,14 @@ function Home() {
 
 {/* Left Images */}
 <div className="left-images mb-[3rem]">
+<a href="/">
   <img
     src="/images/logo-white.svg"
     alt="Logo"
     width={140}
     height={32}
   />
+</a>
 </div>
 
 {/* Right List */}
