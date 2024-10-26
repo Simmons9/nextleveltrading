@@ -628,7 +628,7 @@ function Home() {
     {texts.online?.wantFinancialFreedom || "Loading..."}
     </li>
     <li className="flex mt-6">
-    <span className="relative bg-[#ffffff] rounded-full w-[35px] h-[35px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
+    <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
     <img 
         src="/images/image6.png" 
         alt="check icon" 
@@ -638,7 +638,7 @@ function Home() {
     {texts.online?.readyToInvest || "Loading..."}
     </li>
     <li className="flex mt-6">
-    <span className="relative bg-[#ffffff] rounded-full w-[35px] h-[35px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
+    <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] lg:w-[25px] lg:h-[25px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
