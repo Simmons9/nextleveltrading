@@ -1,107 +1,109 @@
-{
-  "online": {
-    "treading": "Kostnadsfri Tradingutbildning",
-    "learnTrading": "Lär dig seriös trading som nybörjare på bara 7 dagar och starta din karriär inom daytrading",
-    "downloads": "Redan <strong>68.134+</strong> gånger nedladdad",
-    "orders": "Redan <strong>68.134+</strong> gånger nedladdad",
-    "training": "Kostnadsfri Tradingutbildning",
-    "description2": "Med vår steg-för-steg-guide, direkt tillämpbara tips, rekommendationer för mäklare, diagramanalyser och en beprövad strategi lägger du grunden för lönsam trading på lång sikt och ekonomisk frihet. Få nu vår kostnadsfria tradingutbildning i PDF-format och ta chansen att ta din tradingkunskap till nästa nivå, inklusive en kostnadsfri nybörjarrådgivning från en tradingexpert!",
-    "downloadButton": "Ladda ner gratis nu",
-    "downloadCount": "Redan 68.134+ gånger nedladdad",
-    "lifeChange": "Hur framgångsrik trading kommer att förändra ditt",
-    "lifeChange2": "liv",
-    "timeInvestment": "Med endast 30-60 minuters tid per dag!",
-    "financialIndependence": "Fullständig ekonomisk oberoende",
-    "tradingCourse": "Kostnadsfri Tradingutbildning",
-    "successTrader": "Bli en framgångsrik trader på bara 7 dagar",
-    "successTrader1": "Bli en framgångsrik trader på bara 7 dagar",
-    "justOneStep": "Bara ett steg kvar...",
-    "telefonnumer": "Telefonnummer",
-    "chapter1": "Kapitel 1",
-    "chapter2": "Kapitel 2",
-    "chapter3": "Kapitel 3",
-    "chapter4": "Kapitel 4",
-    "chapter5": "Kapitel 5",
-    "chapter6": "Kapitel 6",
-    "chapter7": "Kapitel 7",
-    "marketStructures": "Marknadsstrukturer",
-    "riskManagement": "Riskhantering",
-    "strategy": "Strategi",
-    "traderPath": "Din väg som trader",
-    "technicalAnalysis": "Lär dig grunderna i teknisk analys och marknadsbevakning för att förstå utvecklingen av en aktie.",
-    "riskManagementDescription": "Vi visar dig hur korrekt riskhantering ser ut i praktiken och hur du skyddar ditt kapital från onödiga förluster.",
-    "checklistDefinition": "Här visar vi dig hur du kan definiera tydliga in- och utgångar med vår checklista. Med denna strategi kan du sedan skapa och implementera dina egna handelsidéer.",
-    "incomeLimits": "Det finns inga inkomstgränser inom trading. Vi visar dig vilka faktorer som avgör dina första 100.000 €.",
-    "trustpilot": "Trustpilot",
-    "number": "68.134+",
-    "satisfied": "Nöjda",
-    "participants": "deltagare",
-    "moreThan": "Mer än",
-    "topExperts": "12 Topexperter",
-    "onTeam": "I teamet",
-    "weAre": "Vi är ett",
-    "german": "tysk",
-    "company": "företag",
-    "number2": "15.000+",
-    "conducted": "Genomförda",
-    "trades": "affärer",
-    "fifteenYears": "15 år",
-    "trading": "trading",
-    "experience": "erfarenhet",
-    "recognizeYourself": "Känner du igen dig här?",
-    "whoIsTrainingFor": "För vem är vår utbildning",
-    "hundredPercentCorrect": "100% RÄTT:",
-    "interestedInTrading": "Du är intresserad av trading",
-    "wantToLearnNewSkills": "Du vill lära dig nya färdigheter",
-    "wantFinancialFreedom": "Du vill uppnå ekonomisk frihet",
-    "readyToInvest": "Du är redo att investera 250€ i dina första affärer",
-    "willingToLearn": "Du är villig att lära dig och litar på våra tradingstrategier",
-    "definitelyNot": "DEFINITIVT INTE:",
-    "notInterested": "Trading intresserar dig inte",
-    "notWillingToLearn": "Du är inte villig att lära dig",
-    "noFinancialGoals": "Du har inga ekonomiska mål",
-    "noMoneyToInvest": "Du vill inte investera pengar",
-    "noTimeToInvest": "Du vill inte investera tid",
-    "easiestWay": "Det enklaste sättet att börja med trading med minimal",
-    "minimalTimeInvestment": "tidsinvestering – ",
-    "completelyFree": "och helt gratis",
-    "dayTradingTrainingDescription": "I denna 7-dagars utbildning lär du dig grunderna i day trading på ett lättförståeligt och underhållande sätt, uppdelat i 7 kompakta kapitel. Du får tydliga instruktioner och strategier som du sedan kan genomföra på ett säkert och självständigt sätt. <br /><br /> Med över 15 års erfarenhet som trader har jag lärt mig många värdefulla läxor – men också gjort misstag. Jag vet hur komplext trading kan vara för nybörjare. För att göra din start så lätt som möjligt har jag utvecklat denna kostnadsfria onlineutbildning, precis det jag önskade mig då. Dessutom erbjuder vi en icke-bindande telefonrådgivning med en av våra tradingexperter, som kommer att hjälpa dig att förstå trading och våra beprövade strategier. <br /> <strong className='text-[#fff]'>Din Tim</strong> <br /><br />",
-    "faq": "Vanliga frågor",
-    "faq2": "Vanliga <br /> frågor",
-    "ourMethod": "Vår metod",
-    "rightBroker": "Rätt mäklare",
-    "tradingPlatforms": "Handelsplattformar",
-    "learnIn7Steps": "Du kommer att lära dig hur du kan handla lönsamt på bara 7 steg med vår metod under de kommande 7 dagarna.",
-    "cfBrokerSelection": "Lär dig vad som är viktigt vid valet av en lämplig CFD-mäklare och vad som är den största skillnaden mot handel med främmande kapital.",
-    "tradingPlatformsIntro": "Du får en introduktion till de 2 vanligaste handelsplattformarna, så att du känner dig säker och vet exakt vad du ska tänka på.",
-    "nurNochEinSchritt": "Bara en",
-    "nurNochEinSchritt2": "1 steg",
-    "transformYourselfToAdvanced": "Förvandla dig från total nybörjare till avancerad trader på bara några dagar. Vänta inte längre och säkra nu vår trading-PDF för denna unika och kostnadsfria onlineutbildning.",
 
-    "training1": "Träning",
-    "traderTraining": "Traderträning",
-    "career": "Karriär",
-    "introductoryTalk": "Introduktionssamtal",
-    "customerReviews": "Kundrecensioner",
-    "privacyPolicy": "Integritetspolicy",
-    "imprint": "Impressum",
-    "riskNotice": "Riskinformation",
-    "riskNoticeDetails": "Handel med hävstångsprodukter (t.ex. CFDs och Forex) eller andra finansiella instrument innebär en stor risk och passar inte för alla. Det finns en möjlighet att du kan förlora hela ditt kapital eller till och med förlora mer än din investering. Innan du handlar med hävstångsprodukter eller andra finansiella instrument bör du säkerställa att du har förstått alla risker som är förknippade med dem. Dessutom hänvisar vi till våra riskinformationer. Det klargörs uttryckligen att vi inte erbjuder eller utför investeringsrådgivning och, i synnerhet, inte ger några specifika rekommendationer angående några värdepapper, finansiella produkter eller instrument. Nämnandet av vissa värdepapper eller investeringsprodukter utgör uttryckligen ingen rekommendation för köp, försäljning eller innehav. Du handlar eller traderar på egen risk. Allt ansvar utesluts.",
-    "firstNamePlaceholder": "Förnamn",
-    "lastNamePlaceholder": "Efternamn",
-    "emailPlaceholder": "E-postadress",
-    "secureAccess": "Säkra åtkomst nu",
-    "acceptPrivacyPolicy": "Jag accepterar integritetspolicyn",
-
-    "Bewertungen": "202 recensioner på",
-    "Trustpilot": "Trustpilot",
-    "Hervorragend": "Utmärkt",
-    "Mehr": "Visa mer",
-
-
-    "trader": "Traderträning",
-    "Kennerlerngesprach": "Boka introduktionssamtal",
-    "Kundenmeinungen": "Kundrecensioner",
+    {
+        "online": {
+          "treading": "QUANTUM-AI-TRADING",
+          "learnTrading": "Quantum AI Trading-plattformen: <br /> Uppnå ekonomisk frihet på bara 7 dagar!",
+          "downloads": "Över <strong>238 134+</strong> registreringar",
+          "orders": "Över <strong>238 134+</strong> registreringar",
+          "training": "QUANTUM-AI-TRADING",
+          "description2": "Att handla framgångsrikt med Bitcoin är inte en fråga om tur utan en färdighet du kan lära dig. Här får du seriös utbildning med professionella handlare genom personlig handledning. Vi gör handel enkelt för både nybörjare och erfarna, och säkerställer vinster för varje deltagare. Lär dig handla på allvar och bli en del av NextLevel Trading!",
+          "downloadButton": "REGISTRERA DIG NU",
+          "downloadCount": "Över 68 134 nedladdningar",
+          "lifeChange": "Hur framgångsrik handel kommer",
+          "lifeChange2": " att förändra ditt liv",
+          "timeInvestment": "Med endast 30-60 minuters investering per dag!",
+          "financialIndependence": "Full ekonomisk frihet",
+          "tradingCourse": "QUANTUM-AI-TRADING",
+          "successTrader": "Uppnå ekonomisk frihet på bara 7 dagar",
+          "successTrader1": "Uppnå ekonomisk frihet på bara 7 dagar",
+          "justOneStep": "Bara ett steg till...",
+          "telefonnumer": "Telefonnummer",
+          "chapter1": "Dag 1",
+          "chapter2": "Dag 2",
+          "chapter3": "Dag 3",
+          "chapter4": "Dag 4",
+          "chapter5": "Dag 5",
+          "chapter6": "Dag 6",
+          "chapter7": "Dag 7",
+          "marketStructures": "Automatisering",
+          "riskManagement": "Riskhantering",
+          "strategy": "Strategi",
+          "traderPath": "Din väg till att bli en handlare",
+          "technicalAnalysis": "När du har ställt in systemet efter din riskaptit hanterar vår Quantum AI-programvara allt automatiskt och garanterar dagliga vinster.",
+          "riskManagementDescription": "På den femte dagen går vi igenom de senaste transaktionerna och vinstresultaten tillsammans. Därefter går vi vidare till nästa steg för att ytterligare optimera vår programvara.",
+          "checklistDefinition": "Vi visar dig hur du kan fortsätta att tjäna dagligen med endast 30-60 minuters insats och uppnå en femsiffrig månadsinkomst utan vårt stöd.",
+          "incomeLimits": "På den sista dagen av den individuella coachningen kommer du ha tjänat minst 10 000 € och kan bestämma om du vill fortsätta med vårt stöd eller använda programvaran självständigt.",
+          "trustpilot": "Trustpilot",
+          "number": "68 134+",
+          "satisfied": "Nöjda",
+          "participants": "deltagare",
+          "moreThan": "Mer än",
+          "topExperts": "12 toppexperter",
+          "onTeam": "I teamet",
+          "weAre": "Vi är ett",
+          "german": "amerikanskt",
+          "company": "företag",
+          "number2": "900 000+",
+          "conducted": "Genomförda transaktioner",
+          "trades": "transaktioner",
+          "fifteenYears": "15 år",
+          "trading": "av handel",
+          "experience": "erfarenhet",
+          "recognizeYourself": "Känner du igen dig själv?",
+          "whoIsTrainingFor": "Vem vår handelsutbildning är för",
+          "hundredPercentCorrect": "100% RÄTT:",
+          "interestedInTrading": "Du är en nybörjare eller erfaren handlare",
+          "wantToLearnNewSkills": "Du är villig att investera",
+          "wantFinancialFreedom": "Du vill lära dig nya färdigheter",
+          "readyToInvest": "Du vill ha ekonomisk frihet",
+          "willingToLearn": "Du vill förändra ditt liv",
+          "definitelyNot": "DEFINITIVT INTE:",
+          "notInterested": "Du är inte intresserad av handel",
+          "notWillingToLearn": "Du vill inte investera",
+          "noFinancialGoals": "Du har inga ekonomiska mål",
+          "noMoneyToInvest": "Du är inte villig att lära dig",
+          "noTimeToInvest": "Du vill inte investera tid",
+          "easiestWay": "Det enklaste sättet att börja",
+          "minimalTimeInvestment": "med minimal ansträngning på Bitcoin-handel",
+          "completelyFree": "framgångsrikt!",
+          "dayTradingTrainingDescription": "Vår plattform är designad med en tydlig vision: att bygga en bro mellan artificiell intelligens och den dynamiska världen av handel. Med stöd av teknologiska visionärer som Elon Musk och Jeff Bezos AI-team har vi utvecklat en innovativ lösning som kombinerar avancerad teknik med användarvänlighet. Efter en intensiv utvecklings- och testfas är vi stolta över att kunna erbjuda en programvara som inte bara garanterar tillförlitliga resultat utan också kan öka dina finansiella möjligheter avsevärt. Vår teknologi är tillgänglig för både nybörjare och erfarna handlare. Dessutom finns våra experter alltid redo att hjälpa dig att få ut det mesta av din handel. Låt oss tillsammans upptäcka vad vår plattform kan göra för dig.",
+          "faq": "Vanliga frågor",
+          "faq2": "Vanliga <br /> frågor",
+          "ourMethod": "Introduktionssamtal",
+          "rightBroker": "Vår plattform",
+          "tradingPlatforms": "Första vinster",
+          "learnIn7Steps": "Efter registrering kommer din tradingexpert att kontakta dig per telefon och visa dig vår plattform. En liten första insättning på 250 € krävs för att starta framgångsrikt.",
+          "cfBrokerSelection": "Utforska vår plattform och gör dina första transaktioner med stöd från din tradingexpert. Du kommer att se vår exklusiva Quantum AI-programvara i aktion.",
+          "tradingPlatformsIntro": "Vi garanterar att du på den tredje dagen redan har gjort dina första vinster, minst tio gånger din första insättning.",
+          "nurNochEinSchritt": "Bara ett steg kvar",
+          "nurNochEinSchritt2": "för att gå",
+          "transformYourselfToAdvanced": "Bli en framgångsrik Bitcoin-handlare på bara 7 dagar med vår Quantum AI-programvara. Vänta inte längre, säkra din åtkomst, gör din första investering och upptäck vår unika programvara som garanterar minst 3 500 € i vinst på bara 7 dagar!",
+          
+          "training1": "Utbildning",
+          "traderTraining": "Tradingutbildning",
+          "career": "Karriär",
+          "introductoryTalk": "Introduktionssamtal",
+          "customerReviews": "Kundomdömen",
+          "privacyPolicy": "Integritetspolicy",
+          "imprint": "Impressum",
+          "riskNotice": "Riskvarning",
+          "riskNoticeDetails": "Att handla med hävstångsprodukter (som CFD:er och valutatransaktioner) eller andra finansiella instrument innebär en hög risk och kan vara olämpligt för alla. Förluster kan överstiga den ursprungliga investeringen. Se till att förstå alla risker innan du handlar med hävstångsprodukter eller andra finansiella instrument. Vi ger inte investeringsråd eller specifika rekommendationer om köp eller försäljning. Användningen av vår programvara sker på egen risk. Vi tar inget ansvar.",
+          "firstNamePlaceholder": "Förnamn",
+          "lastNamePlaceholder": "Efternamn",
+          "emailPlaceholder": "E-postadress",
+          "secureAccess": "Säkra åtkomst",
+          "acceptPrivacyPolicy": "Jag accepterar integritetspolicyn",
+          "allrightsreserved": "© 2024 NextLevelTrading® Alla rättigheter förbehållna",
+      
+          "Bewertungen": "202 omdömen på",
+          "Trustpilot": "Trustpilot",
+          "Hervorragend": "Utmärkt",
+          "Mehr": "Visa mer",
+      
+          "trader": "Tradingutbildning",
+          "Kennerlerngesprach": "Boka introduktionssamtal",
+          "Kundenmeinungen": "Kundomdömen"
+       ,
 
     "title": "Vi tar dataskydd på allvar! Denna integritetspolicy har utarbetats av specialiserade jurister.",
     "first": "1. Dataskydd i ett nötskal",
@@ -413,51 +415,54 @@
     "risiki17": "Marginalhandel omfattar transaktioner som baseras på prisrörelser av en produkt. Avräkningen sker baserat på skillnaden mellan öppnings- och slutpriserna för transaktionen. Handel på marginalbasis är endast lämplig för erfarna investerare med hög riskbenägenhet. Det finns risk för att du förlorar mer kapital än du ursprungligen investerat. Marginalhandel kan leda till totala förluster och skyldigheter till ytterligare insättningar.",
     "risiki18": "Riskvarning Marknads-, aktieanalyser och artiklar",
     "risiki19": "Marknads-, aktieanalyser eller artiklar tjänar endast som informationssyfte. De utgör varken ett erbjudande eller en rekommendation att öppna ett mäklarkonto, att begära en tjänst eller att köpa eller sälja finansiella instrument. Uppgifter om realiserade och potentiella vinster i det förflutna garanterar inga framtida vinster.",
-    "faqs": [
-      {
-          "question": "Varför är utbildningen gratis?",
-          "answer": "Det är viktigt för oss att säga att medlemskapet och utbildningen är 100 % gratis. Vår mäklare-partner täcker kostnaderna, så du behöver inte betala något. Vi arbetar med en av världens ledande och flera gånger prisbelönta handelsplattformar som sponsrar vår tjänst och finansierar ditt medlemskap. Så länge du använder deras plattform kan vi erbjuda vår tjänst helt gratis för alla medlemmar. På så sätt har vi skapat en verklig win-win-situation – och det är precis anledningen till att vi har blivit så populära under de senaste åren och utvecklats till ett globalt erkänt handelsvarumärke."
-      },
-      {
-          "question": "Behöver jag erfarenhet av trading?",
-          "answer": "Du behöver ingen tidigare erfarenhet av trading. Vi guidar dig steg för steg med vår trading-PDF. Med kursen säkerställer vi att vi ger nybörjare rätt kunskap, lämplig infrastruktur och en strategi för att handla lönsamt på marknaden på lång sikt. Dessutom får du direkt gratis coaching med en tradingexpert."
-      },
-      {
-          "question": "Hur mycket tid måste jag investera i trading?",
-          "answer": "Som en lönsam trader behöver du inte sitta hela dagen framför graferna. De flesta av våra medlemmar spenderar bara 30 till 60 minuter om dagen på trading. Våra koncept erbjuder strategier för varje tidpunkt, vilket är idealiskt för yrkesverksamma och upptagna personer. Det viktigaste: Du behöver varken handla varje dag eller investera flera timmar. Med vår hjälp integreras trading naturligt i din vardag."
-      },
-      {
-          "question": "Är tradingutbildningen meningsfull för avancerade?",
-          "answer": "Kursen riktar sig främst till tradingnybörjare. För avancerade kan dock vissa moduler vara till hjälp."
-      },
-      {
-          "question": "Finns det aktiv support?",
-          "answer": "Genom vår gratis trading-PDF sparar vi redan en del resurser för att förmedla de viktigaste erfarenheterna till dig. Vi har dock märkt att det är bra för varje ny partner att ha ett första samtal med en tradingexpert för att bli framgångsrik. Om du efteråt behöver ytterligare stöd står vi självklart till tjänst."
-      }
-  ],
-  "cards": {
-      "data": [
+    
+        "faqs": [
           {
-              "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
-              "title": "Komplett ekonomisk oberoende",
-              "description": "Bygg upp en andra ekonomisk pelare, bli långsiktigt oberoende av din arbetsgivare och säkra en högre levnadsstandard."
+            "question": "Vad exakt är Quantum AI Trading?",
+            "answer": "Quantum AI är en avancerad programvara som kombinerar kvantdatorer med artificiell intelligens. Programvaran har utvecklats för att analysera marknadstrender och möjliggöra intelligenta, helt automatiserade handelsbeslut."
           },
           {
+            "question": "Är Quantum AI-plattformen pålitlig?",
+            "answer": "Vår programvara har genomgått omfattande tester och har visat konsekvent lönsamhet under olika marknadsförhållanden. Som med alla handelverktyg finns det risker, så vi rekommenderar nya användare att göra en maximal insättning på 200 € för att vi ska kunna övertyga er med en liten investering i vår lösning."
+          },
+          {
+            "question": "Vad kostar det att använda Quantum AI?",
+            "answer": "Att öppna ett konto med Quantum AI-programvaran är helt gratis, men för att aktivera handelsfunktionerna och göra den första gemensamma testen krävs en minimiinsättning på 250 €. Denna lilla investering säkerställer att nya användare är redo att investera och delta aktivt i handeln från början."
+          },
+          {
+            "question": "Hur börjar jag använda Quantum AI?",
+            "answer": "Det är mycket enkelt att komma igång: Du registrerar dig först på vår webbplats och öppnar ett gratis konto hos oss. En av våra handels experter kommer sedan att kontakta dig och förklara allt steg för steg. Vi rekommenderar att du börjar med en liten första investering och sedan gradvis ökar efter att du har förstått programvaran och kunnat registrera dina första vinster."
+          },
+          {
+            "question": "Varför är det gratis att använda Quantum AI?",
+            "answer": "Vi vill erbjuda er ett mervärde och vi är övertygade om att vår programvara kommer att vara framgångsrik. Självklart har vi också löpande kostnader för att hålla hela vårt företag igång. Vi har avtal med partnermäklare som täcker avgiften för varje ny kund och vi får dessutom en avgift för lönsamma affärer från våra kunder. Kort sagt, vi tjänar pengar endast när ni genererar vinster."
+          }
+        ],
+        "cards": {
+          "data": [
+            {
+              "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+              "title": "Fullständig finansiell oberoende",
+              "description": "Bygg upp en andra inkomstkälla, gör dig långsiktigt oberoende av din arbetsgivare och säkra en högre levnadsstandard."
+            },
+            {
               "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
               "title": "Spräng dina inkomstgränser",
-              "description": "Som trader finns det inga konstgjorda gränser för din inkomst. Med denna förmåga har du full kontroll över din inkomst."
-          },
-          {
+              "description": "Som trader finns det inga gränser för din inkomst. Med vår Quantum AI-plattform har du full kontroll över din inkomst."
+            },
+            {
               "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
-              "title": "Lev efter dina regler",
-              "description": "Njut av ett liv utan begränsningar. Du handlar var och när du vill - oavsett om du är hemma eller reser världen runt."
-          },
-          {
+              "title": "Lev efter dina egna regler",
+              "description": "Njut av ett liv utan begränsningar. Du handlar när och var du vill - oavsett om du är hemma eller reser världen runt."
+            },
+            {
               "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
-              "title": "Tjäna i alla marknadslägen",
-              "description": "Daytraders drar nytta av både stigande och fallande kurser. Med vår TF-metod kan du göra vinster oavsett marknad."
-          }
-      ]
-  }
+              "title": "Tjäna pengar oavsett marknadssituation",
+              "description": "Bitcoin-handlare drar nytta av både stigande och fallande priser. Med vår Quantum AI-teknologi kan du göra vinster oavsett marknaden."
+            }
+          ]
+        }
+      
+      
 }
 }

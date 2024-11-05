@@ -133,7 +133,7 @@ function Home() {
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
   style={{ animationDelay: "0.2s", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}
 >
-<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Quantum AI Trading Plattform: In nur  7 Tagen zur finanziellen Unabhängigkeit!" }} />
+<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Quantum AI Trading Plattform: <br />  In nur   7 Tagen zur finanziellen Unabhängigkeit!" }} />
 </h1>
 
 
@@ -592,64 +592,32 @@ function Home() {
     </div>
 
     <div className="flex flex-wrap justify-center items-start w-full h-auto mt-10 gap-6">
-      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
-        <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
-        {texts.online?.hundredPercentCorrect || "Loading..."}
-        </div>
-        <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
-        <li className="flex mt-6">
+    <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
+  <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
+    {texts.online?.hundredPercentCorrect || "Loading..."}
+  </div>
+  <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
+    {[
+      texts.online?.interestedInTrading,
+      texts.online?.wantToLearnNewSkills,
+      texts.online?.wantFinancialFreedom,
+      texts.online?.readyToInvest,
+      texts.online?.willingToLearn,
+    ].map((text, index) => (
+      <li className="flex mt-[2rem]" key={index}>
         <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-      <img 
-        src="/images/image6.png" 
-        alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
-      />
-    </span>
-    {texts.online?.interestedInTrading || "Loading..."}
-    </li>
-    <li className="flex mt-[2rem]">
-    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-    <img 
-        src="/images/image6.png" 
-        alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
-      />
-    </span>
-    {texts.online?.wantToLearnNewSkills || "Loading..."}
-    </li>
-    <li className="flex mt-[2rem]">
-    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-    <img 
-        src="/images/image6.png" 
-        alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
-      />
-    </span>
-    {texts.online?.wantFinancialFreedom || "Loading..."}
-    </li>
-    <li className="flex mt-[2rem]">
-    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-    <img 
-        src="/images/image6.png" 
-        alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
-      />
-    </span>
-    {texts.online?.readyToInvest || "Loading..."}
-    </li>
-    <li className="flex mt-[2rem]">
-    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-    <img 
-        src="/images/image6.png" 
-        alt="check icon" 
-        className="absolute  w-[30px] h-[30px]"
-      />
-    </span>
-    {texts.online?.willingToLearn || "Loading..."}
-    </li>
+          <img
+            src="/images/image6.png"
+            alt="check icon"
+            className="w-[30px] h-[30px]" // Set fixed size without absolute positioning
+          />
+        </span>
+        {text || "Loading..."}
+      </li>
+    ))}
+  </ul>
+</div>
 
-</ul>
-      </div>
       
       <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
         <div className="button1 bg-[#ff0000] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px] ">

@@ -1,107 +1,110 @@
-{
-  "online": {
-    "treading": "Formação de Trading Gratuita",
-    "learnTrading": "Aprenda trading sério como iniciante em apenas 7 dias e comece sua carreira no day trading",
-    "downloads": "Já <strong>68.134+</strong> vezes baixado",
-    "orders": "Já <strong>68.134+</strong> vezes baixado",
-    "training": "Formação de Trading Gratuita",
-    "description2": "Com nosso guia passo a passo, dicas práticas, recomendações de corretores, análises de gráficos e uma estratégia comprovada, você estabelece a base para um trading lucrativo a longo prazo e liberdade financeira. Baixe agora nossa formação de trading gratuita em formato PDF e aproveite a oportunidade de elevar seu conhecimento em trading para o próximo nível, incluindo uma consultoria gratuita para iniciantes com um especialista em trading!",
-    "downloadButton": "Baixe agora gratuitamente",
-    "downloadCount": "Já 68.134+ vezes baixado",
-    "lifeChange": "Como o trading bem-sucedido mudará sua",
-    "lifeChange2": "vida",
-    "timeInvestment": "Com apenas 30-60 minutos de dedicação por dia!",
-    "financialIndependence": "Total independência financeira",
-    "tradingCourse": "Formação de Trading Gratuita",
-    "successTrader": "Torne-se um trader de sucesso em apenas 7 dias",
-    "successTrader1": "Torne-se um trader de sucesso em apenas 7 dias",
-    "justOneStep": "Só mais um passo...",
-    "telefonnumer": "Número de telefone",
-    "chapter1": "Capítulo 1",
-    "chapter2": "Capítulo 2",
-    "chapter3": "Capítulo 3",
-    "chapter4": "Capítulo 4",
-    "chapter5": "Capítulo 5",
-    "chapter6": "Capítulo 6",
-    "chapter7": "Capítulo 7",
-    "marketStructures": "Estruturas de Mercado",
-    "riskManagement": "Gestão de Risco",
-    "strategy": "Estratégia",
-    "traderPath": "Seu caminho como trader",
-    "technicalAnalysis": "Aprenda os fundamentos da análise técnica e observação do mercado para entender a evolução de uma ação.",
-    "riskManagementDescription": "Mostramos como a gestão de risco correta se aplica na prática e como proteger seu capital de perdas desnecessárias.",
-    "checklistDefinition": "Aqui mostramos como você pode definir entradas e saídas claras com nossa lista de verificação. Com essa estratégia, você poderá criar e implementar suas próprias ideias de negociação.",
-    "incomeLimits": "No trading não há limites de renda. Mostramos quais fatores determinam os seus primeiros 100.000 €.",
-    "trustpilot": "Trustpilot",
-    "number": "68.134+",
-    "satisfied": "Satisfeitos",
-    "participants": "participantes",
-    "moreThan": "Mais de",
-    "topExperts": "12 Especialistas de Topo",
-    "onTeam": "Na equipe",
-    "weAre": "Somos uma",
-    "german": "empresa alemã",
-    "company": "empresa",
-    "number2": "15.000+",
-    "conducted": "Realizadas",
-    "trades": "transações",
-    "fifteenYears": "15 anos",
-    "trading": "trading",
-    "experience": "experiência",
-    "recognizeYourself": "Você se reconhece aqui?",
-    "whoIsTrainingFor": "Para quem é nossa formação",
-    "hundredPercentCorrect": "100% CORRETO:",
-    "interestedInTrading": "Você se interessa por trading",
-    "wantToLearnNewSkills": "Você quer aprender novas habilidades",
-    "wantFinancialFreedom": "Você quer alcançar liberdade financeira",
-    "readyToInvest": "Você está pronto para investir 250€ nas primeiras transações",
-    "willingToLearn": "Você está disposto a aprender e confia em nossas estratégias de trading",
-    "definitelyNot": "DEFINITIVAMENTE NÃO:",
-    "notInterested": "Você não se interessa por trading",
-    "notWillingToLearn": "Você não está disposto a aprender",
-    "noFinancialGoals": "Você não tem objetivos financeiros",
-    "noMoneyToInvest": "Você não quer investir dinheiro",
-    "noTimeToInvest": "Você não quer investir tempo",
-    "easiestWay": "A maneira mais fácil de começar a trading com um mínimo de",
-    "minimalTimeInvestment": "tempo de investimento – ",
-    "completelyFree": "e totalmente gratuito",
-    "dayTradingTrainingDescription": "Neste treinamento de 7 dias, você aprenderá os fundamentos do day trading de forma fácil e divertida, dividido em 7 capítulos compactos. Você receberá instruções claras e estratégias que poderá implementar com segurança e de forma independente. <br /><br /> Com mais de 15 anos de experiência como trader, aprendi muitas lições valiosas – mas também cometi erros. Sei como o trading pode ser complexo para iniciantes. Para tornar sua entrada o mais fácil possível, criei este treinamento online gratuito, exatamente o que eu gostaria de ter na época. Além disso, oferecemos uma consultoria telefônica não vinculativa com um de nossos especialistas em trading, que o ajudará a entender o trading e nossas estratégias comprovadas. <br /> <strong className='text-[#fff]'>Seu Tim</strong> <br /><br />",
-    "faq": "Perguntas Frequentes",
-    "faq2": "Perguntas Frequentes <br />",
-    "ourMethod": "Nossa Método",
-    "rightBroker": "O corretor certo",
-    "tradingPlatforms": "Plataformas de Trading",
-    "learnIn7Steps": "Você aprenderá como negociar de forma lucrativa em apenas 7 passos com nosso método nos próximos 7 dias.",
-    "cfBrokerSelection": "Aprenda a importância da escolha de um corretor CFD adequado e qual é a maior diferença ao negociar com capital de terceiros.",
-    "tradingPlatformsIntro": "Você terá uma introdução às 2 plataformas de trading mais populares, para que se sinta seguro e saiba exatamente no que prestar atenção.",
-    "nurNochEinSchritt": "Só mais",
-    "nurNochEinSchritt2": "1 passo",
-    "transformYourselfToAdvanced": "Transforme-se de um completo iniciante em um trader avançado em poucos dias. Não espere mais e garanta agora nosso PDF de trading para esta formação online única e gratuita.",
 
-    "training1": "Treinamento",
-    "traderTraining": "Treinamento de Traders",
-    "career": "Carreira",
-    "introductoryTalk": "Conversa Inicial",
-    "customerReviews": "Opiniões dos Clientes",
-    "privacyPolicy": "Política de Privacidade",
-    "imprint": "Impressão",
-    "riskNotice": "Aviso de Risco",
-    "riskNoticeDetails": "A negociação de produtos alavancados (por exemplo, CFDs e Forex) ou outros instrumentos financeiros envolve riscos significativos e não é adequada para todos. Existe o risco de perda total de capital ou até mesmo perdas que excedem seus investimentos. Antes de negociar com produtos alavancados ou outros instrumentos financeiros, você deve garantir que compreende todos os riscos envolvidos. Além disso, referimo-nos aos nossos avisos de risco. Fica expressamente claro que não oferecemos nem realizamos consultoria de investimentos e, em particular, não fazemos recomendações específicas sobre qualquer título, produto ou instrumento financeiro. A menção de determinados títulos ou produtos de investimento não constitui uma recomendação para compra, venda ou manutenção. Você opera ou negocia por conta própria. Qualquer responsabilidade é excluída.",
-    "firstNamePlaceholder": "Primeiro Nome",
-    "lastNamePlaceholder": "Último Nome",
-    "emailPlaceholder": "Endereço de E-mail",
-    "secureAccess": "Garanta agora o acesso",
-    "acceptPrivacyPolicy": "Eu aceito a política de privacidade",
 
-    "Bewertungen": "202 avaliações em",
-    "Trustpilot": "Trustpilot",
-    "Hervorragend": "Excelente",
-    "Mehr": "Ver mais",
-
-    "trader": "Treinamento de Traders",
-    "Kennerlerngesprach": "Agendar uma conversa inicial",
-    "Kundenmeinungen": "Opiniões dos Clientes",
-
+  {
+    "online": {
+      "treading": "QUANTUM-AI-TRADING",
+      "learnTrading": "Plataforma de Trading Quantum AI: <br /> Alcance a independência financeira em apenas 7 dias!",
+      "downloads": "Mais de <strong>238.134+</strong> registros",
+      "orders": "Mais de <strong>238.134+</strong> registros",
+      "training": "QUANTUM-AI-TRADING",
+      "description2": "Operar com sucesso em Bitcoin não é uma questão de sorte, mas uma habilidade que você pode aprender. Aqui, você aprenderá o básico de forma séria com traders profissionais por meio de mentorias individuais. Facilitamos a operação tanto para iniciantes quanto para experientes, garantindo lucro para cada participante. Aprenda a operar de forma séria e faça parte do NextLevel Trading!",
+      "downloadButton": "REGISTRE-SE AGORA",
+      "downloadCount": "Mais de 68.134 downloads",
+      "lifeChange": "Como o trading bem-sucedido irá",
+      "lifeChange2": " mudar sua vida",
+      "timeInvestment": "Com apenas 30-60 minutos de investimento por dia!",
+      "financialIndependence": "Independência financeira completa",
+      "tradingCourse": "QUANTUM-AI-TRADING",
+      "successTrader": "Alcance a liberdade financeira em apenas 7 dias",
+      "successTrader1": "Alcance a liberdade financeira em apenas 7 dias",
+      "justOneStep": "Apenas mais um passo...",
+      "telefonnumer": "Número de telefone",
+      "chapter1": "Dia 1",
+      "chapter2": "Dia 2",
+      "chapter3": "Dia 3",
+      "chapter4": "Dia 4",
+      "chapter5": "Dia 5",
+      "chapter6": "Dia 6",
+      "chapter7": "Dia 7",
+      "marketStructures": "Automatização",
+      "riskManagement": "Gestão de Risco",
+      "strategy": "Estratégia",
+      "traderPath": "Seu caminho para se tornar trader",
+      "technicalAnalysis": "Depois de configurar o sistema de acordo com sua disposição para riscos, nosso software Quantum AI gerencia tudo automaticamente, garantindo lucro diário.",
+      "riskManagementDescription": "No quinto dia, revisamos juntos as transações recentes e os resultados dos lucros. Em seguida, passamos para a próxima etapa para otimizar ainda mais nosso software.",
+      "checklistDefinition": "Mostraremos como você pode continuar a ganhar todos os dias com apenas 30-60 minutos de esforço e alcançar uma renda de cinco dígitos mensais sem nosso suporte.",
+      "incomeLimits": "No último dia da mentoria individual, você terá ganho pelo menos 10.000€ e poderá decidir se deseja continuar com nosso suporte ou usar o software de forma independente.",
+      "trustpilot": "Trustpilot",
+      "number": "68.134+",
+      "satisfied": "Satisfeitos",
+      "participants": "participantes",
+      "moreThan": "Mais de",
+      "topExperts": "12 principais especialistas",
+      "onTeam": "Na equipe",
+      "weAre": "Somos uma",
+      "german": "empresa americana",
+      "company": "empresa",
+      "number2": "900.000+",
+      "conducted": "Transações realizadas",
+      "trades": "transações",
+      "fifteenYears": "15 anos",
+      "trading": "de trading",
+      "experience": "experiência",
+      "recognizeYourself": "Você se identifica com isso?",
+      "whoIsTrainingFor": "Para quem é nosso treinamento de trading",
+      "hundredPercentCorrect": "100% CORRETO:",
+      "interestedInTrading": "Você é um trader iniciante ou experiente",
+      "wantToLearnNewSkills": "Você está disposto a investir",
+      "wantFinancialFreedom": "Você quer aprender novas habilidades",
+      "readyToInvest": "Você quer independência financeira",
+      "willingToLearn": "Você quer mudar de vida",
+      "definitelyNot": "COM CERTEZA NÃO:",
+      "notInterested": "Você não está interessado em trading",
+      "notWillingToLearn": "Você não quer investir",
+      "noFinancialGoals": "Você não tem objetivos financeiros",
+      "noMoneyToInvest": "Você não está disposto a aprender",
+      "noTimeToInvest": "Você não quer investir tempo",
+      "easiestWay": "A maneira mais fácil de começar",
+      "minimalTimeInvestment": "com o mínimo de esforço no trading de Bitcoin",
+      "completelyFree": "com sucesso!",
+      "dayTradingTrainingDescription": "Nossa plataforma foi projetada com uma visão clara: fazer a ponte entre a inteligência artificial e o mundo dinâmico do trading. Com o apoio de visionários tecnológicos como Elon Musk e a equipe de IA de Jeff Bezos, desenvolvemos uma solução inovadora que combina tecnologia avançada e facilidade de uso. Após uma fase de desenvolvimento e testes intensivos, temos orgulho de oferecer um software que não só garante resultados confiáveis, mas também tem o potencial de aumentar consideravelmente suas possibilidades financeiras. Nossa tecnologia é acessível tanto para iniciantes quanto para traders experientes. Além disso, nossos especialistas estão sempre prontos para ajudar você a tirar o máximo proveito do seu trading. Vamos descobrir juntos o que nossa plataforma pode fazer por você.",
+      "faq": "Perguntas Frequentes",
+      "faq2": "Perguntas <br /> Frequentes",
+      "ourMethod": "Entrevista Inicial",
+      "rightBroker": "Nossa plataforma",
+      "tradingPlatforms": "Primeiros lucros",
+      "learnIn7Steps": "Após o registro, seu especialista em trading entrará em contato com você por telefone e mostrará nossa plataforma. Um pequeno depósito inicial de 250€ é necessário para começar com sucesso.",
+      "cfBrokerSelection": "Descubra nossa plataforma e faça suas primeiras transações com o apoio do seu especialista em trading. Você verá nosso exclusivo software Quantum AI em ação.",
+      "tradingPlatformsIntro": "Garantimos que no terceiro dia você já terá feito seus primeiros lucros, com pelo menos dez vezes o valor do seu depósito inicial.",
+      "nurNochEinSchritt": "Só mais um passo",
+      "nurNochEinSchritt2": "para ir",
+      "transformYourselfToAdvanced": "Torne-se um trader bem-sucedido de Bitcoin em apenas 7 dias com nosso software Quantum AI. Não espere mais, garanta seu acesso, faça seu primeiro investimento e descubra nosso software único que garante pelo menos 3.500€ de lucro em apenas 7 dias!",
+      
+      "training1": "Treinamento",
+      "traderTraining": "Treinamento de Trading",
+      "career": "Carreira",
+      "introductoryTalk": "Entrevista Inicial",
+      "customerReviews": "Opiniões dos Clientes",
+      "privacyPolicy": "Política de Privacidade",
+      "imprint": "Impressão",
+      "riskNotice": "Aviso de Risco",
+      "riskNoticeDetails": "Negociar produtos alavancados (como CFDs e transações Forex) ou outros instrumentos financeiros envolve um alto nível de risco e pode não ser adequado para todos. As perdas podem exceder o investimento inicial. Certifique-se de entender todos os riscos antes de negociar produtos alavancados ou outros instrumentos financeiros. Não oferecemos consultoria de investimento ou recomendações específicas de compra ou venda. O uso de nosso software é por sua conta e risco. Não aceitamos qualquer responsabilidade.",
+      "firstNamePlaceholder": "Nome",
+      "lastNamePlaceholder": "Sobrenome",
+      "emailPlaceholder": "Endereço de e-mail",
+      "secureAccess": "Garanta o acesso",
+      "acceptPrivacyPolicy": "Eu aceito a política de privacidade",
+      "allrightsreserved": "© 2024 NextLevelTrading® Todos os direitos reservados",
+  
+      "Bewertungen": "202 avaliações em",
+      "Trustpilot": "Trustpilot",
+      "Hervorragend": "Excelente",
+      "Mehr": "Ver mais",
+  
+      "trader": "Treinamento de Trading",
+      "Kennerlerngesprach": "Agende uma entrevista",
+      "Kundenmeinungen": "Opiniões dos Clientes"
+   ,
 
     "title": "Levamos a proteção de dados a sério! Esta declaração de proteção de dados foi elaborada por advogados especializados.",
     "first": "1. Proteção de dados em um relance",
@@ -411,51 +414,51 @@
       "risiki19": "Análises de mercado, ações ou artigos servem apenas para fins informativos. Elas não constituem uma oferta ou recomendação para abrir uma conta de corretora, solicitar um serviço ou comprar ou vender instrumentos financeiros. Informações sobre lucros realizados e potenciais no passado não garantem lucros futuros.",
   
 
-    "faqs": [
-      {
-        "question": "Por que o treinamento é gratuito?",
-        "answer": "É importante dizer que a adesão e o treinamento são 100% gratuitos. Nosso parceiro corretor cobre os custos, então você não precisa pagar nada. Trabalhamos com uma das plataformas de trading mais importantes e premiadas do mundo, que patrocina nosso serviço e financia sua adesão. Enquanto você usar a plataforma deles, podemos oferecer nosso serviço completamente gratuito para todos os membros. Foi assim que criamos uma verdadeira situação ganha-ganha - e é exatamente por isso que nos tornamos tão populares nos últimos anos e nos desenvolvemos em uma marca globalmente reconhecida no mundo do trading."
-      },
-      {
-        "question": "Preciso de experiência em trading?",
-        "answer": "Você não precisa de nenhuma experiência prévia em trading. Vamos guiá-lo passo a passo no assunto com nosso PDF de trading. Com o curso, garantimos que damos aos iniciantes o conhecimento especializado certo, a infraestrutura certa e uma estratégia para negociar lucrativamente no mercado a longo prazo. Além disso, há coaching direto e gratuito com um especialista em trading."
-      },
-      {
-        "question": "Quanto tempo preciso investir no trading?",
-        "answer": "O curso é principalmente destinado a iniciantes em trading. No entanto, módulos individuais podem ser úteis para traders avançados."
-      },
-      {
-        "question": "O curso também é útil para traders avançados?",
-        "answer": "Sim, traders avançados também podem se beneficiar das estratégias e técnicas avançadas abordadas no curso."
-      },
-      {
-        "question": "Existe suporte ativo disponível?",
-        "answer": "Nosso PDF gratuito de trading nos economiza muitos recursos para fornecer as experiências mais importantes para você. No entanto, percebemos que, para ter sucesso, é bom dar a cada novo parceiro uma reunião inicial com um especialista em trading. Se precisar de mais suporte depois, estamos, é claro, sempre à disposição para ajudá-lo."
-      }
-    ],
-    "cards": {
-      "data": [
-        {
-          "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
-          "title": "Independência Financeira Completa",
-          "description": "Construa um segundo pilar financeiro, torne-se independente de seu empregador a longo prazo e garanta um padrão de vida mais elevado."
-        },
-        {
-          "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
-          "title": "Quebre seus Limites de Renda",
-          "description": "Como trader, não há limites artificiais para sua renda. Com essa habilidade, você tem controle total sobre seus ganhos."
-        },
-        {
-          "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
-          "title": "Viva pelas Suas Regras",
-          "description": "Aproveite uma vida sem restrições. Você negocia onde e quando quiser – não importa se está em casa ou viajando pelo mundo."
-        },
-        {
-          "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
-          "title": "Ganhe em Qualquer Condição de Mercado",
-          "description": "Os day traders se beneficiam tanto de preços em alta quanto em baixa. Com nosso método TF, você pode obter lucros independentemente das condições de mercado."
-        }
-      ]
+  "faqs": [
+    {
+      "question": "O que exatamente é o Quantum AI Trading?",
+      "answer": "Quantum AI é um software avançado que combina computação quântica com inteligência artificial. O software foi desenvolvido para analisar tendências de mercado e possibilitar decisões de negociação inteligentes e totalmente automatizadas."
+    },
+    {
+      "question": "A plataforma Quantum AI é confiável?",
+      "answer": "Nosso software passou por testes extensivos e demonstrou consistência em lucratividade sob diversas condições de mercado. Como em qualquer ferramenta de negociação, existem riscos, portanto, recomendamos que novos usuários façam um depósito inicial máximo de 200€, para que possamos convencê-los com um pequeno investimento em nossa solução."
+    },
+    {
+      "question": "Qual é o custo para usar o Quantum AI?",
+      "answer": "A abertura de uma conta com o software Quantum AI é completamente gratuita, mas para ativar as funções de negociação e fazer o primeiro teste conjunto, é necessário um depósito mínimo de 250€. Esse pequeno investimento garante que novos usuários estejam prontos para investir e participar ativamente do trading desde o início."
+    },
+    {
+      "question": "Como começo a usar o Quantum AI?",
+      "answer": "Começar é muito simples: você se registra em nosso site e abre uma conta gratuita conosco. Um de nossos especialistas em trading entrará em contato e explicará tudo passo a passo. Recomendamos começar com um pequeno investimento inicial e aumentar gradualmente após você entender o software e registrar os primeiros lucros."
+    },
+    {
+      "question": "Por que usar o Quantum AI é gratuito?",
+      "answer": "Queremos oferecer um valor agregado e estamos confiantes no sucesso do nosso software. É claro que também temos custos operacionais para manter nossa empresa funcionando. Firmamos contratos com corretores parceiros que cobrem a taxa de cada novo cliente e também recebemos uma taxa por negociações lucrativas de nossos clientes. Em resumo, ganhamos dinheiro apenas quando vocês obtêm lucros."
     }
+  ],
+  "cards": {
+    "data": [
+      {
+        "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+        "title": "Independência financeira completa",
+        "description": "Construa uma segunda fonte de renda, torne-se independente do seu empregador a longo prazo e assegure um padrão de vida mais elevado."
+      },
+      {
+        "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+        "title": "Quebre suas limitações de renda",
+        "description": "Como trader, não há limites para sua renda. Com nossa plataforma Quantum AI, você tem controle total sobre sua renda."
+      },
+      {
+        "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+        "title": "Viva segundo suas regras",
+        "description": "Desfrute de uma vida sem restrições. Você negocia onde e quando quiser - não importa se está em casa ou viajando pelo mundo."
+      },
+      {
+        "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+        "title": "Ganhe em qualquer condição de mercado",
+        "description": "Os traders de Bitcoin se beneficiam tanto de preços em alta quanto em baixa. Com nossa tecnologia Quantum AI, você pode lucrar independentemente do mercado."
+      }
+    ]
+  }
   }
 }

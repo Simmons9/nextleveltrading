@@ -1,82 +1,83 @@
 {
-  "online": {
-    "treading": "Free Trading Education",
-    "learnTrading": "Learn serious trading as a beginner in just 7 days and start your day trading career",
-    "downloads": "Already downloaded <strong>68,134+</strong> times",
-    "orders": "Already downloaded <strong>68,134+</strong> times",
-    "training": "Free Trading Training",
-    "description2": "With our step-by-step guide, actionable tips, broker recommendations, chart analyses, and a proven strategy, you'll lay the foundation for long-term profitable trading and financial freedom. Get our free trading education now in PDF format and seize the opportunity to take your trading knowledge to the next level, including a free beginner consultation from a trading specialist!",
-    "downloadButton": "Download for free now",
-    "downloadCount": "Already downloaded 68,134+ times",
-    "lifeChange": "How successful trading will",
-    "lifeChange2": "change your life",
-    "timeInvestment": "With just 30-60 minutes of time a day!",
+ "online": {
+    "treading": "QUANTUM-AI-TRADING",
+    "learnTrading": "Quantum AI Trading Platform: <br /> Achieve financial independence in just 7 days!",
+    "downloads": "Already <strong>238,134+</strong> registrations",
+    "orders": "Already <strong>238,134+</strong> registrations",
+    "training": "QUANTUM-AI-TRADING",
+    "description2": "Successful Bitcoin trading is not luck but a skill that can be learned. With us, you’ll be taught the trade professionally by full-time traders through 1:1 mentoring. We make trading successful for both beginners and advanced traders, guaranteeing profits for every participant. Learn professional trading and become part of NextLevel Trading!",
+    "downloadButton": "REGISTER NOW",
+    "downloadCount": "Downloaded over 68,134+ times",
+    "lifeChange": "How successful trading will change your",
+    "lifeChange2": " life",
+    "timeInvestment": "With just 30-60 minutes of time per day!",
     "financialIndependence": "Complete financial independence",
-    "tradingCourse": "Free Trading Education",
-    "successTrader": "Become a successful trader in just 7 days",
-    "successTrader1": "Become a successful trader in just 7 days",
-    "justOneStep": "Just one step...",
+    "tradingCourse": "QUANTUM-AI-TRADING",
+    "successTrader": "Achieve financial freedom in just 7 days",
+    "successTrader1": "Achieve financial freedom in just 7 days",
+    "justOneStep": "Just one more step...",
     "telefonnumer": "Phone number",
-    "chapter1": "Chapter 1",
-    "chapter2": "Chapter 2",
-    "chapter3": "Chapter 3",
-    "chapter4": "Chapter 4",
-    "chapter5": "Chapter 5",
-    "chapter6": "Chapter 6",
-    "chapter7": "Chapter 7",
-    "marketStructures": "Market Structures",
-    "riskManagement": "Risk Management",
+    "chapter1": "Day 1",
+    "chapter2": "Day 2",
+    "chapter3": "Day 3",
+    "chapter4": "Day 4",
+    "chapter5": "Day 5",
+    "chapter6": "Day 6",
+    "chapter7": "Day 7",
+    "marketStructures": "Automation",
+    "riskManagement": "Risk management",
     "strategy": "Strategy",
-    "traderPath": "Your Path as a Trader",
-    "technicalAnalysis": "Learn the basics of technical analysis and market observation to understand the development of a stock.",
-    "riskManagementDescription": "We'll show you what proper risk management looks like in practice and how to protect your capital from unnecessary losses.",
-    "checklistDefinition": "Here we show you how to define clear entry and exit points using our checklist. With this strategy, you can then create and implement your own trading ideas.",
-    "incomeLimits": "There are no income limits in trading. We'll show you what factors determine your first 100,000 €.",
+    "traderPath": "Your path as a trader",
+    "technicalAnalysis": "Once you have optimized the system according to your risk appetite, our Quantum AI software will manage everything else automatically and generate daily profits for you.",
+    "riskManagementDescription": "On the fifth day, you will review the last trades and the profits made. Now we can move on to the next phase and further optimize our software.",
+    "checklistDefinition": "We will show you how you can continue to make your profits work for you daily with just 30-60 minutes of effort and achieve up to a five-figure monthly income.",
+    "incomeLimits": "On the last day of the 1:1 mentoring, you will have earned at least €10,000, and it is up to you whether you need further support or want to continue using our software independently.",
     "trustpilot": "Trustpilot",
     "number": "68,134+",
     "satisfied": "Satisfied",
-    "participants": "Participants",
+    "participants": "Partners",
     "moreThan": "More than",
-    "topExperts": "12 top experts",
-    "onTeam": "On the team",
-    "weAre": "We are a",
-    "german": "German",
+    "topExperts": "12 top supporters",
+    "onTeam": "on the team",
+    "weAre": "We are an",
+    "german": "American",
     "company": "company",
-    "number2": "15,000+",
+    "number2": "900,000+",
     "conducted": "Conducted",
-    "trades": "Trades",
+    "trades": "trades",
     "fifteenYears": "15 years",
-    "trading": "Trading",
-    "experience": "Experience",
-    "recognizeYourself": "Do you recognize yourself here?",
-    "whoIsTrainingFor": "Who is our training for",
+    "trading": "trading",
+    "experience": "experience",
+    "recognizeYourself": "Do you see yourself here?",
+    "whoIsTrainingFor": "Who is our trading software for",
     "hundredPercentCorrect": "100% CORRECT:",
-    "interestedInTrading": "You are interested in trading",
-    "wantToLearnNewSkills": "You want to learn new skills",
-    "wantFinancialFreedom": "You want to achieve financial freedom",
-    "readyToInvest": "You are ready to invest 250€ for your first trades",
-    "willingToLearn": "You are eager to learn and trust our trading strategies",
+    "interestedInTrading": "You are a beginner or advanced trader",
+    "wantToLearnNewSkills": "You are willing to invest",
+    "wantFinancialFreedom": "You want to learn new skills",
+    "readyToInvest": "You want financial freedom",
+    "willingToLearn": "You want to break free from your old life",
     "definitelyNot": "DEFINITELY NOT:",
     "notInterested": "You are not interested in trading",
-    "notWillingToLearn": "You are not willing to learn",
+    "notWillingToLearn": "You do not want to invest",
     "noFinancialGoals": "You have no financial goals",
-    "noMoneyToInvest": "You don't want to invest money",
-    "noTimeToInvest": "You don't want to invest time",
+    "noMoneyToInvest": "You are not willing to learn",
+    "noTimeToInvest": "You do not want to invest time",
     "easiestWay": "The easiest way, with minimal",
-    "minimalTimeInvestment": "time investment to start trading –",
-    "completelyFree": "and completely free",
-    "dayTradingTrainingDescription": "In this 7-day training, you will learn the basics of day trading in an easy-to-understand and entertaining way, divided into 7 compact chapters. You will receive clear instructions and strategies that you can confidently implement on your own. <br /><br /> With over 15 years of experience as a trader, I have learned many valuable lessons – but I have also made mistakes. I know how complex trading can be for beginners. To make it as easy as possible for you to get started, I have developed this free online training, exactly what I wish I had had back then. Additionally, we offer you an optional phone coaching session with one of our trading experts, who will introduce you to trading and our proven strategies. <br /> <strong className='text-[#fff]'>Your Tim</strong> <br /><br />",
+    "minimalTimeInvestment": "time investment to successfully start Bitcoin trading",
+    "completelyFree": "for free!",
+    "dayTradingTrainingDescription": "Our platform was created with a clear vision: to bridge the gap between artificial intelligence and the dynamic world of trading. With the support of leading tech visionaries like Elon Musk and Jeff Bezos’ AI department, we have developed a revolutionary trading solution that combines cutting-edge technology with user-friendliness. After an intensive development and testing phase, we are proud to offer software that not only delivers reliable results but also has the potential to significantly enhance your financial capabilities. Our technology is accessible to anyone who wants to take their trading to the next level – whether beginner or advanced. Additionally, our experienced experts are always available to help you get the most out of your trading. Join us on the journey to a better financial life and discover what our platform can do for you.",
     "faq": "Frequently Asked Questions",
     "faq2": "Frequently Asked <br /> Questions",
-    "ourMethod": "Our Method",
-    "rightBroker": "The Right Broker",
-    "tradingPlatforms": "Trading Platforms",
-    "learnIn7Steps": "You will learn how to trade profitably in just 7 steps with our method within the next 7 days.",
-    "cfBrokerSelection": "Learn what to look for when choosing the right CFD broker and what the biggest difference is to trading with leverage.",
-    "tradingPlatformsIntro": "You will get an introduction to the 2 most common trading platforms so you feel confident and know exactly what to look out for.",
-    "nurNochEinSchritt": "Just one",
-    "nurNochEinSchritt2": "step",
-    "transformYourselfToAdvanced": "Transform yourself from a complete beginner to an advanced trader in just a few days. Don’t wait any longer and secure our trading PDF for this unique and free online training now.",
+    "ourMethod": "Initial consultation",
+    "rightBroker": "Our platform",
+    "tradingPlatforms": "First profits",
+    "learnIn7Steps": "After registering, your personal trading expert will contact you by phone and show you our platform. Your initial small deposit of €250 is required to trade profitably.",
+    "cfBrokerSelection": "Get to know our platform and make your first trades with your trading expert. This is where you’ll see our unique Quantum AI software in action for the first time.",
+    "tradingPlatformsIntro": "We guarantee that you will have made your first profits with our platform by the third day, at least ten times your initial deposit.",
+    "nurNochEinSchritt": "Just",
+    "nurNochEinSchritt2": "1 step",
+    "transformYourselfToAdvanced": "Become a successful Bitcoin trader in just 7 days with our Quantum AI software. Don’t wait any longer and secure access now, make your first investment, and experience our unique software that guarantees at least €3,500 in returns from your initial investment in just 7 days!",
+    
     "training1": "Training",
     "traderTraining": "Trader Training",
     "career": "Career",
@@ -85,16 +86,23 @@
     "privacyPolicy": "Privacy Policy",
     "imprint": "Imprint",
     "riskNotice": "Risk Notice",
-    "riskNoticeDetails": "Trading leveraged products (e.g., CFDs and forex trades) or other financial instruments carries significant risk and is not suitable for everyone. There is a possibility that you may suffer a total loss or even losses that exceed your investments. Before trading leveraged products or other financial instruments, you should ensure that you fully understand all the associated risks. In addition, we refer to our risk notices. It is expressly clarified that we do not offer or provide investment advice and in particular do not make any specific recommendations regarding a security, financial product, or instrument. The mention of specific securities or investment products does not constitute a recommendation to buy, sell, or hold them. You trade or invest at your own risk. Any liability is excluded.",
-    "firstNamePlaceholder": "First Name",
-    "lastNamePlaceholder": "Last Name",
-    "emailPlaceholder": "Email Address",
+    "riskNoticeDetails": "Trading leveraged products (e.g., CFDs and Forex trades) or other financial instruments involves significant risk and is not suitable for everyone. There is a possibility that you could suffer total loss or even losses that exceed your investments. Before trading leveraged products or other financial instruments, you should ensure that you understand all the associated risks. Additionally, we refer to our risk notices. It is expressly stated that we do not provide or conduct investment advice and, in particular, do not give any specific recommendations regarding any security, financial product, or instrument. Mentioning certain securities or investment products does not constitute a recommendation to buy, sell, or hold them. You trade at your own risk. Any liability is excluded.",
+    "firstNamePlaceholder": "First name",
+    "lastNamePlaceholder": "Last name",
+    "emailPlaceholder": "Email address",
     "secureAccess": "Secure access now",
     "acceptPrivacyPolicy": "I accept the privacy policy",
-    "Bewertungen": "202 Reviews on",
+    "allrightsreserved": "© 2024 NextLevelTrading® All rights reserved",
+    "Bewertungen": "202 reviews on",
     "Trustpilot": "Trustpilot",
     "Hervorragend": "Excellent",
     "Mehr": "Show more",
+    
+    "trader": "Trader Training",
+    "Kennerlerngesprach": "Book introductory talk",
+    "Kundenmeinungen": "Customer Reviews",
+
+    
     "title": "We take data protection seriously! This privacy policy was created by specialist lawyers.",
     "first": "1. Data Protection at a Glance",
     "desc": "General Information",
@@ -401,53 +409,52 @@
       "risiki17": "Margin trading includes transactions based on the price movements of a product. The settlement is based on the difference between the opening and closing price of the transaction. Margin trading is only suitable for experienced investors with a high risk tolerance. There is a danger that you will lose more capital than you originally invested. Margin trading can lead to total losses and obligations to cover losses.",
       "risiki18": "Risk Notice Market, Stock Analyses and Articles",
       "risiki19": "Market, stock analyses, or articles are for informational purposes only. They do not constitute an offer or a recommendation to open a broker account, to use a service, or to buy or sell financial instruments. Information on realized and potential gains in the past does not guarantee future profits.",
-  "faqs": [
-  {
-    "question": "Why is the training free?",
-    "answer": "It is important for us to say that membership and training are 100% free. Our broker partner covers the costs, so you don't have to pay anything. We work with one of the world's leading and multiple award-winning trading platforms that sponsors our service and finances your membership. As long as you use their platform, we can offer our service completely free to all members. This creates a true win-win situation – and that is precisely why we have become so popular in recent years and have developed into a globally recognized trading brand."
-  },
-  {
-    "question": "Do I need experience in trading?",
-    "answer": "You do not need any prior experience in trading. We guide you step-by-step into the subject with our trading PDF. With the course, we ensure that we provide beginners with the right knowledge, appropriate infrastructure, and a strategy to trade profitably in the market over the long term; additionally, there is direct free coaching with a trading expert."
-  },
-  {
-    "question": "How much time do I need to invest in trading?",
-    "answer": "As a profitable trader, you do not need to sit in front of the charts all day. Most of our members spend only 30 to 60 minutes a day trading. Our concepts offer strategies for every time, which is ideal for working professionals and busy individuals. The most important thing: You neither have to trade daily nor invest several hours. With our help, trading will naturally be integrated into your everyday life."
-  },
-  {
-    "question": "Is the trading education useful for advanced traders?",
-    "answer": "The course is primarily aimed at trading beginners. However, some individual modules may still be helpful for advanced traders."
-  },
-  {
-    "question": "Is there active support?",
-    "answer": "Through our free trading PDF, we already save some resources to convey the most important experiences. However, we have realized that it is beneficial for each new partner to have an initial conversation with a trading expert to succeed. Should you need further assistance afterwards, we are, of course, at your disposal at any time."
-  }
-],
-"cards": {
-  "data": [
-    {
-      "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
-      "title": "Complete Financial Independence",
-      "description": "Build a second source of income, become long-term independent from your employer, and secure a higher standard of living."
-    },
-    {
-      "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
-      "title": "Break Your Income Limits",
-      "description": "As a trader, your income is no longer subject to artificial limits. With this ability, you have full control over your income."
-    },
-    {
-      "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
-      "title": "Live by Your Rules",
-      "description": "Enjoy a life without restrictions. You trade wherever and whenever you want – it doesn't matter if you're at home or traveling the world."
-    },
-    {
-      "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
-      "title": "Earn in Every Market Situation",
-      "description": "Day traders benefit from both rising and falling prices. With our TF method, you can generate profits independent of the market."
-    }
-  ]
-}
-
+      "faqs": [
+        {
+          "question": "What exactly is Quantum AI Trading?",
+          "answer": "Quantum AI is a cutting-edge software that combines quantum computing with artificial intelligence. The software is designed to analyze market trends and enable intelligent, fully automated trading decisions."
+        },
+        {
+          "question": "Is the Quantum AI platform reliable?",
+          "answer": "Our software has undergone extensive testing and has proven consistent profitability under various market conditions. However, like any trading tool, there are risks involved, so we recommend new users start with a maximum initial deposit of €200, allowing us to demonstrate our solution with a small investment."
+        },
+        {
+          "question": "What does it cost to use Quantum AI?",
+          "answer": "Opening an account with the Quantum AI software is completely free; however, a minimum deposit of €250 is required to activate trading functions and conduct the first joint test. This small investment ensures that new users are ready to invest from the start and actively participate in trading."
+        },
+        {
+          "question": "How do I start using Quantum AI?",
+          "answer": "Getting started is easy: you first register on our website and open a free account with us. One of our trading experts will then contact you and explain everything step by step. We recommend starting with a small initial investment and then gradually increasing it after you understand the software and have made your first profits."
+        },
+        {
+          "question": "Why is using Quantum AI free?",
+          "answer": "We want to provide you with added value and are confident in the success of our software. Of course, we also have ongoing costs to keep our entire company running. We have contracts with partner brokers who cover the fee for each new customer, and we additionally receive a fee for profitable trades from our clients. In short, we only make money when you generate profits."
+        }
+      ],
+      "cards": {
+        "data": [
+          {
+            "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
+            "title": "Complete financial independence",
+            "description": "Build a second financial pillar, become independent from your employer in the long term, and secure a higher standard of living."
+          },
+          {
+            "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
+            "title": "Break your income limits",
+            "description": "As a trader, there are no limits to your income anymore. With our Quantum AI platform, you have full control over your income."
+          },
+          {
+            "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
+            "title": "Live by your own rules",
+            "description": "Enjoy a life without restrictions. Trade where and when you want - whether you are at home or traveling the world."
+          },
+          {
+            "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
+            "title": "Earn in any market condition",
+            "description": "Bitcoin traders benefit from both rising and falling prices. With our Quantum AI technology, you can generate profits regardless of market conditions."
+          }
+        ]
+      }
     }
     
 }
