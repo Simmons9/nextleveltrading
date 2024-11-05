@@ -516,7 +516,7 @@ function Home() {
       style={{ backgroundImage: '100%' }}
     />
 
-    <img className='absolute bottom-[5rem] z-20 w-[260px]' src="/images/daytrading.png" alt="daytrading" />
+    <img className='absolute bottom-[5rem] rounded-[25px] z-20 w-[260px]' src="/images/photo_2024-11-05_17-55-42.jpg" alt="daytrading" />
     
     <div
       className="trader_block-overlay"
