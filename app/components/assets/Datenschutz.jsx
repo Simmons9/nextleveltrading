@@ -91,92 +91,42 @@ function Datenschutz() {
 <div className={`risiko px-4 lg:mt-[0rem] mx-auto ${isOpen ? 'mobile-bg' : ''}`}>
 {/* Header Section */}
 <div className="bg-white lg:border-b">
-    <header className={`w-full max-w-[80rem] h-[5rem] py-1 mx-auto sm:h-[3.8rem] ${isOpen ? 'mobile-bg' : ''}`}>
-      <nav className="flex justify-between items-center h-full px-4">
-        <div className="left-imagess">
-        <a href="/">
-  <img
-    src="/images/logo-blakc.svg"
-    alt="Logo"
-    className="w-[120px] h-auto sm:w-[140px]"  
-  />
-</a>
-        </div>
+<header className="w-full max-w-[80rem] h-[5rem] py-1 mx-auto sm:h-[3.8rem]">
+  <nav className="flex justify-between items-center h-full px-4">
+    <div className="left-imagess">
+      <a href="/">
+        <img
+          src="/images/logo-blakc.svg"
+          alt="Logo"
+          className="w-[120px] h-auto sm:w-[140px]"
+        />
+      </a>
+    </div>
+    <div className="right-images flex items-center">
+      <div className=" items-center">
         <div className="right-images flex items-center">
-          <div className="hidden md:flex items-center">
-          <div className="text-nav ml-5 text-black text-[14px] font-semibold">
-            <Link href="/" className="hover:text-green-500">
-          Home
-        </Link>            </div>
-            <div className="text-nav ml-5 text-black text-[14px] font-semibold">
-            <Link href="/legal/impressum" className="hover:text-green-500">
-          {texts.online?.imprint || 'Loading...'}
-        </Link>           </div>
-            <div className="text-nav ml-10 text-black text-[14px] font-semibold">
-            <Link href="/legal/risikohinweis" className="hover:text-green-500">
-          {texts.online?.riskNotice || 'Loading...'}
-        </Link>           </div>
-            <div className="text-nav ml-10 text-black text-[14px] font-semibold">
-            <Link href="/legal/datenschutz" className="hover:text-green-500">
-          {texts.online?.privacyPolicy || 'Loading...'}
-        </Link>           </div>
+          <img
+            src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+            alt="Avatar"
+            className="w-[118px] sm:w-[114px] lg:mr-0 mr-[-5rem]"
+          />
+          <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
+            <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
           </div>
-          {/* Hamburger Menu / X for close */}
-          <button
-            className="md:hidden flex flex-col items-center justify-center border border-[#00000029] bg-[#0000000A] px-2 py-2 "
-            onClick={toggleMenu}
-          >
-            {isOpen ? (
-              // X icon for close
-              <span className="block w-5 h-3 mb-3  text-white text-2xl">✕</span>
-            ) : (
-              // Hamburger menu when closed
-              <>
-                <span className="block w-5 h-[2px] bg-black mb-1"></span>
-                <span className="block w-5 h-[2px] bg-black mb-1"></span>
-                <span className="block w-5 h-[2px] bg-black"></span>
-              </>
-            )}
-          </button>
         </div>
-      </nav>
-  
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="md:hidden  z-50 mt-[5rem] flex  items-center flex-col bg-[#536054] relative h-[53rem] text-[30px]">
-          <div className=" p-4 text-black text-[21px] lg:text-[21px] font-semibold">
-          <Link href="/" className="hover:text-green-500">
-          Home
-        </Link>            </div>
-          <div className=" p-4 text-black text-[21px] lg:text-[21px] font-semibold border-b border-t border-[#ffffff29]">
-          <Link href="/legal/impressum" className="hover:text-green-500">
-          {texts.online?.imprint || 'Loading...'}
-        </Link>            </div>
-          <div className=" p-4 text-black text-[21px] lg:text-[21px] font-semibold">
-          <Link href="/legal/risikohinweis" className="hover:text-green-500">
-          {texts.online?.riskNotice || 'Loading...'}
-        </Link>           </div>
-        <div className=" p-4 text-black text-[21px] lg:text-[21px] font-semibold">
-        <Link href="/legal/datenschutz" className="hover:text-green-500">
-          {texts.online?.privacyPolicy || 'Loading...'}
-        </Link>           </div>
-        
+      </div>
+    </div>
+  </nav>
+</header>
 
-          < Button />
-        
-        </div>
-      )}
-    </header>
   </div>
 
 
 
               {/* Main Content */}
               <main className="max-w-3xl mx-auto mt-[2rem] mb-[5rem] lg:mt-[5rem] relative z-10">
-                  <h1 className="text-4xl text-black font-bold mb-8">          <div dangerouslySetInnerHTML={{ __html: texts.online?.title || "Loading..." }} />
-                  </h1>
+                 
                   <section className="text-lg text-[#00000066] leading-relaxed space-y-6">
-                    <img className='w-[300px] h-auto' src="/images/6601dc8887b1e34f1fff3fab_erecht24-siegel-datenschutz-rot-gross-322x420-1 (1).png" alt="" />
                       <p className="text-black">
                           <strong>            
                             {texts.online?.first || "Loading..."} 

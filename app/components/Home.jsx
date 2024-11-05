@@ -104,7 +104,7 @@ function Home() {
 
     <div className="right-images flex items-center">
       <img
-        src="/images/avatars68k.png"
+        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
         alt="Avatar"
         className="w-[118px] sm:w-[114px] lg:mr-0 mr-[-5rem]"  
       />
@@ -120,20 +120,20 @@ function Home() {
 
 
 
-<div className="w-[90%] max-w-[60rem] mx-auto relative z-[1000] flex flex-col items-center justify-center lg:mt-[3rem] mt-[2rem] sm:mt-1">
+<div className="w-[90%] max-w-[65rem] mx-auto relative z-[1000] flex flex-col items-center justify-center lg:mt-[3rem] mt-[2rem] sm:mt-1">
   <div
     className="text-[12px] text-black font-bold bg-white itepy-2 rounded-3xl px-4 py-3 flex items-center uppercase mt-[1rem]  fadeInUp"
     style={{ animationDelay: "0s" }}
   >
     <span className="online h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    {texts.online?.treading || "Kostenlose Trading-Ausbildung"}
+    {texts.online?.treading || "QUANTUM-AI-TRADING"}
 
       </div>
   <h1
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
   style={{ animationDelay: "0.2s", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}
 >
-<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Lerne ernsthaftes Trading als Anfänger in nur 7 Tagen und starte deine Daytrading-Karriere" }} />
+<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Quantum AI Trading Plattform: In nur  7 Tagen zur finanziellen Unabhängigkeit!" }} />
 </h1>
 
 
@@ -143,7 +143,7 @@ function Home() {
     className="desc1 text-center w-[90%] max-w-[60rem] text-[14px] sm:text-[16px] text-[#728291] tracking-[-.32px] leading-[1.5] my-4 px-4 sm:tracking-[.2px] sm:px-2 fadeInUp"
     style={{ animationDelay: "0.4s" }}
   >
-       <div>{texts.online?.description2 || "Mit unserer Schritt-für-Schritt-Anleitung, direkt umsetzbaren Tipps, Brokerempfehlungen, Chartanalysen und einer erprobten Strategie schaffst du die Basis für langfristig profitables Trading und finanzieller Freiheit. Hol dir jetzt unsere kostenlose Trading-Ausbildung als PDF Form und nutze die Chance, dein Trading-Wissen auf das nächste Level zu bringen inkl. einer kostenlosen Anfängerberatung vom Trading-Spezialisten!"}</div>
+       <div>{texts.online?.description2 || "Erfolgreiches Bitcoin-Trading ist keine Glückssache, sondern eine Fähigkeit, die man erlernen kann. Bei uns bekommst du das Handwerk seriös und von echten Vollzeittradern im 1:1 Mentoring beigebracht. Wir machen Trading für Anfänger und Fortgeschrittene erfolgreich und garantieren jeden Teilnehmer Gewinne. Lerne seriöses Trading und werde ein Teil von NextLevel Trading!"}</div>
 
   </div>
 
@@ -151,7 +151,7 @@ function Home() {
     <Button />
     <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
       <img
-        src="/images/avatars68k.png"
+        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
         alt="Avatar"
         width={114}
         height={30.19}
@@ -179,7 +179,7 @@ function Home() {
 <div className="relative z-10 mt-[2rem] sm:mt-[3rem] fadeInUp flex justify-center" style={{ animationDelay: "0.9s" }}>
   <img
     className="images1 h-auto object-cover relative w-[50%] sm:w-[60%] md:w-[70%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]" // Adjusted width for mobile
-    src="/images/image1.png"
+    src="/images/image11.png"
     alt="New Image"
     loading="lazy"
   />
@@ -223,11 +223,11 @@ function Home() {
 
 <div className="part3 w-full h-auto bg-[#041212] pt-[3rem] text-[#fff] flex flex-col items-center rounded-2xl">
 
-<div className="text-[12px] flex justify-center font-bold bg-[#fefefe0f] w-[18rem] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
+<div className="text-[12px] flex justify-center mx-auto font-bold bg-[#fefefe0f] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
     <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    <div>{texts.online?.tradingCourse || "Kostenlose Trading-Ausbildung"}</div>
-
+    <div>{texts.online?.tradingCourse || "QUANTUM-AI-TRADING"}</div>
 </div>
+
 
 
 <div className="Tradingdeine w-full h-auto mt-[2rem] px-4 flex flex-col items-center">
@@ -271,7 +271,7 @@ function Home() {
         alt="" 
     />
 <div className="on_the_trader relative z-[20] mt-[3rem] md:mt-0"> 
-<div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+<div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
 {texts.online?.chapter4 || "Loading..."}
 </div>
         <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
@@ -299,7 +299,7 @@ function Home() {
             src="/images/66bdcaea1657996322be914b_U.avif"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
-          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter5 || "Loading..."}
             </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
@@ -327,7 +327,7 @@ function Home() {
             src="/images/66d70fe18435ec9fd92ece3a_Group%202087326431.png"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
-          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter6 || "Loading..."}
           </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
@@ -355,7 +355,7 @@ function Home() {
             src="/images/66bdcaea186d4f1e46c729f4_Frame%202087326564.avif"
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[1rem] md:mt-[-3rem] ">
-          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[6rem] rounded-2xl">
+          <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter7 || "Loading..."}
 
             </div>
@@ -384,8 +384,8 @@ function Home() {
   <Button />
   <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
           <img
-            src="/images/avatars68k.png"
-            alt="Avatar"
+        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+        alt="Avatar"
             width={114}
             height={30.19}
           />
@@ -472,7 +472,7 @@ function Home() {
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam || "Loading..."}</span>
     
     <img
-      src="/images/image3.png"
+      src="/images/image12.png"
       alt=""
       className=" w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
@@ -598,7 +598,7 @@ function Home() {
         </div>
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
-        <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+        <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
       <img 
         src="/images/image6.png" 
         alt="check icon" 
@@ -607,9 +607,9 @@ function Home() {
     </span>
     {texts.online?.interestedInTrading || "Loading..."}
     </li>
-    <li className="flex mt-6">
-        <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
-      <img 
+    <li className="flex mt-[2rem]">
+    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
+    <img 
         src="/images/image6.png" 
         alt="check icon" 
         className="absolute  w-[30px] h-[30px]"
@@ -617,9 +617,9 @@ function Home() {
     </span>
     {texts.online?.wantToLearnNewSkills || "Loading..."}
     </li>
-    <li className="flex mt-6">
-        <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
-      <img 
+    <li className="flex mt-[2rem]">
+    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
+    <img 
         src="/images/image6.png" 
         alt="check icon" 
         className="absolute  w-[30px] h-[30px]"
@@ -627,8 +627,8 @@ function Home() {
     </span>
     {texts.online?.wantFinancialFreedom || "Loading..."}
     </li>
-    <li className="flex mt-6">
-    <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
+    <li className="flex mt-[2rem]">
+    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
     <img 
         src="/images/image6.png" 
         alt="check icon" 
@@ -637,9 +637,9 @@ function Home() {
     </span>
     {texts.online?.readyToInvest || "Loading..."}
     </li>
-    <li className="flex mt-6">
-    <span className="relative bg-[#ffffff] rounded-full w-[25px] h-[25px] mr-2 flex items-center justify-center">
-      <img 
+    <li className="flex mt-[2rem]">
+    <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
+    <img 
         src="/images/image6.png" 
         alt="check icon" 
         className="absolute  w-[30px] h-[30px]"
@@ -722,7 +722,7 @@ function Home() {
 <div className="part5 w-full h-auto bg-[#041212] rounded-[20px] flex flex-col lg:flex-row justify-center items-center mt-[4rem] md:mt-[6rem] mb-10 px-4 lg:px-0">
   
   <div className="left-img w-full lg:w-[34rem] mt-[1.5rem] h-auto lg:mt-[6rem] mb-[2rem] lg:mb-[6rem]">
-    <img src="/images/image4.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
+    <img src="/images/image.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
   </div>
 
   <div className="hidden md:block text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
@@ -824,8 +824,8 @@ function Home() {
       <Button />
   <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
           <img
-            src="/images/avatars68k.png"
-            alt="Avatar"
+        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+        alt="Avatar"
             width={114}
             height={30.19}
           />
@@ -846,7 +846,7 @@ function Home() {
 
 
       
-     <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative  md:block" src="/images/image5.png" alt="" />
+     <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative  md:block" src="/images/imageMusk-Bezos.png" alt="" />
   {/*  <img className="w-full md:w-[518px] h-auto mx-auto md:mx-0 relative block md:hidden" src="/images/66bddb6c5a17773ef43ca625_new 4-p-500.png" alt="" /> */}
 {/* <div className="absolute bottom-[117.9rem] lg:bottom-[83.4rem]">
 <img className="w-[200px]" src="/images/66bddb6c5a17773ef43ca625_new%204.avif" alt="" />
@@ -865,8 +865,8 @@ function Home() {
   <Button />
   <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
-      src="/images/avatars68k.png"
-      alt="Avatar"
+        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+        alt="Avatar"
       width={114}
       height={30.19}
     />
@@ -934,7 +934,10 @@ function Home() {
     
   {/* Right Copyright Text */}
   <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-    © 2024 NextLevelTrading® All rights reserved
+    {texts.online?.allrightsreserved || 'Loading...'}
+
+
+
   </div>
 </div>
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
