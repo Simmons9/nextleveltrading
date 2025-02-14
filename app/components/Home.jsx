@@ -124,14 +124,14 @@ function Home() {
     style={{ animationDelay: "0s" }}
   >
     <span className="online h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    {texts.online?.treading || "QUANTUM-AI-TRADING"}
+    {texts.online?.treading}
 
       </div>
   <h1
   className="title-top text-center text-black text-[32px] sm:text-[32px] font-bold tracking-[-.7px] leading-[1.1] mt-6 sm:leading-[1.1] md:text-[56px] fadeInUp"
   style={{ animationDelay: "0.2s", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}
 >
-<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading || "Quantum AI Trading Plattform: <br />  In nur   7 Tagen zur finanziellen Unabhängigkeit!" }} />
+<div dangerouslySetInnerHTML={{ __html: texts.online?.learnTrading }} />
 </h1>
 
 
@@ -141,7 +141,7 @@ function Home() {
     className="desc1 text-center w-[90%] max-w-[60rem] text-[14px] sm:text-[16px] text-[#728291] tracking-[-.32px] leading-[1.5] my-4 px-4 sm:tracking-[.2px] sm:px-2 fadeInUp"
     style={{ animationDelay: "0.4s" }}
   >
-       <div>{texts.online?.description2 || "Erfolgreiches Bitcoin-Trading ist keine Glückssache, sondern eine Fähigkeit, die man erlernen kann. Bei uns bekommst du das Handwerk seriös und von echten Vollzeittradern im 1:1 Mentoring beigebracht. Wir machen Trading für Anfänger und Fortgeschrittene erfolgreich und garantieren jeden Teilnehmer Gewinne. Lerne seriöses Trading und werde ein Teil von NextLevel Trading!"}</div>
+       <div>{texts.online?.description2}</div>
 
   </div>
 
@@ -208,12 +208,12 @@ function Home() {
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
   <h1 className="w-[23.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.lifeChange || "Wie erfolgreiches Trading dein"}</div>
-  <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 || "Leben verändern wird"}</span>
+  <div>{texts.online?.lifeChange}</div>
+  <span className="text-[#0cdc6a] fadeInUp ml-2" style={{ animationDelay: "0.9s" }}>{texts.online?.lifeChange2 }</span>
   </h1>
 
   <div className="desc flex justify-center mt-4 text-[#728291] text-[16px] sm:text-[16px] fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.timeInvestment || "Mit nur 30-60 Minuten Zeitaufwand am Tag!"}</div>
+  <div>{texts.online?.timeInvestment}</div>
   </div>
 
   <Cards />
@@ -223,14 +223,14 @@ function Home() {
 
 <div className="text-[12px] flex justify-center mx-auto font-bold bg-[#fefefe0f] h-auto py-2 rounded-2xl px-3 items-center uppercase mt-4">
     <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-    <div>{texts.online?.tradingCourse || "QUANTUM-AI-TRADING"}</div>
+    <div>{texts.online?.tradingCourse}</div>
 </div>
 
 
 
 <div className="Tradingdeine w-full h-auto mt-[2rem] px-4 flex flex-col items-center">
   <h1 className="w-[23.9rem] sm:w-[46.24rem] font-bold text-[34px] mb-[-1rem] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
-  <div>{texts.online?.successTrader || "In nur 7 Tagen zum Erfolgstrader"}</div>
+  <div>{texts.online?.successTrader}</div>
   </h1>
 
 
@@ -248,7 +248,7 @@ function Home() {
             className="button flex items-center justify-between w-[20rem] bg-[#69bc8f26] font-[600] rounded-[10px] p-[20px] m-auto cursor-pointer"
             style={{ border: '1px solid rgba(255, 255, 255, 0.05)' }}
         >
-            <p className="mr-2"> {texts.online?.Mehr || "Mehr anzeigen"}</p>
+            <p className="mr-2"> {texts.online?.Mehr}</p>
 
            
             <div className="icon-create w-[24px] h-[24px]">
@@ -270,13 +270,13 @@ function Home() {
     />
 <div className="on_the_trader relative z-[20] mt-[3rem] md:mt-0"> 
 <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-{texts.online?.chapter4 || "Loading..."}
+{texts.online?.chapter4}
 </div>
         <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-        {texts.online?.marketStructures || "Loading..."}
+        {texts.online?.marketStructures}
         </div>
         <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2 mb-[-1rem]">
-        {texts.online?.technicalAnalysis || "Loading..."}
+        {texts.online?.technicalAnalysis}
         </div>
     </div>
     <div className="trader_block-overlay" style={{
@@ -298,13 +298,13 @@ function Home() {
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-          {texts.online?.chapter5 || "Loading..."}
+          {texts.online?.chapter5}
             </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-            {texts.online?.riskManagement || "Loading..."}
+            {texts.online?.riskManagement}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-            {texts.online?.riskManagementDescription || "Loading..."}
+            {texts.online?.riskManagementDescription}
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -326,10 +326,10 @@ function Home() {
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-          {texts.online?.chapter6 || "Loading..."}
+          {texts.online?.chapter6}
           </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-            {texts.online?.strategy || "Loading..."}
+            {texts.online?.strategy}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
             <div dangerouslySetInnerHTML={{ __html: texts.online?.checklistDefinition }} />
@@ -355,14 +355,14 @@ function Home() {
             alt="" />
           <div className="on_the_trader relative z-[20] mt-[1rem] md:mt-[-3rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
-          {texts.online?.chapter7 || "Loading..."}
+          {texts.online?.chapter7}
 
             </div>
             <div className="h3 text-[#fff] tracking-[0] font-[500] leading-[1.2] text-[24px] mt-3">
-            {texts.online?.traderPath || "Loading..."}
+            {texts.online?.traderPath}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-            {texts.online?.incomeLimits || "Loading..."}
+            {texts.online?.incomeLimits}
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -402,7 +402,7 @@ function Home() {
 
 <div className="part3 bg-gradient-[#f1f3f5, #fff]">
 <div className="mt-[6rem] flex justify-center items-center space-x-2">
-  <p className="text-[18px]">{texts.online?.Hervorragend || "Loading..."}</p>
+  <p className="text-[18px]">{texts.online?.Hervorragend}</p>
 
   {/* 5 Stars */}
   <div className="flex items-center">
@@ -425,13 +425,13 @@ function Home() {
 </div>
 
 
-  <p className="font-medium text-[14px] hidden md:flex">{texts.online?.Bewertungen || "Loading..."}</p>
+  <p className="font-medium text-[14px] hidden md:flex">{texts.online?.Bewertungen}</p>
 
   <div className="items-center hidden md:flex">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A" className="w-6 h-6 ml-1">
       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
     </svg>
-    <p className="font-semibold text-[14px] text-center ml-1">{texts.online?.Trustpilot || "Loading..."}</p>
+    <p className="font-semibold text-[14px] text-center ml-1">{texts.online?.Trustpilot}</p>
   </div>
 </div>
 
@@ -440,9 +440,9 @@ function Home() {
 
   <div className="flex flex-wrap justify-center gap-4 w-[100%] h-auto mt-[2.5rem] z-0 px-5">
   <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">{texts.online?.number || "Loading..."}</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.satisfied || "Loading..."}</span>
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.participants || "Loading..."}</span>
+    <span className="text-[#0ec661]">{texts.online?.number}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.satisfied}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.participants}</span>
     
     <img
       src="/images/image2.png"
@@ -466,9 +466,9 @@ function Home() {
 
   {/* Kolona 2 */}
   <div className="relative flex flex-col rounded-[12px] items-start bg-[#fff] pt-[2rem] pl-[2rem] w-[53rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600] col-start-2 z-20">
-    <span className="block text-[28px]  tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-10">{texts.online?.moreThan || "Loading..."}</span>
-    <span className="text-[#0ec661] relative z-10">{texts.online?.topExperts || "Loading..."}</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam || "Loading..."}</span>
+    <span className="block text-[28px]  tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-10">{texts.online?.moreThan}</span>
+    <span className="text-[#0ec661] relative z-10">{texts.online?.topExperts}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam}</span>
     
     <img
       src="/images/image12.png"
@@ -504,9 +504,9 @@ function Home() {
 <div className="flex flex-wrap justify-center gap-4 w-[100%] h-auto mt-[1rem]">
   <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.weAre || "Loading..."}</span>
-    <span className="text-[#0ec661] z-20">{texts.online?.german || "Loading..."}</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.company || "Loading..."}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.weAre}</span>
+    <span className="text-[#0ec661] z-20">{texts.online?.german}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] z-20">{texts.online?.company}</span>
     
     <img
       src="/images/664cd3ac78e980e08b45322e_272326.webp"
@@ -530,9 +530,9 @@ function Home() {
     />
 </div>
 <div className="relative z-10 flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">{texts.online?.number2 || "Loading..."}</span> 
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.conducted || "Loading..."}</span>
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trades || "Loading..."}</span>
+    <span className="text-[#0ec661]">{texts.online?.number2}</span> 
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.conducted}</span>
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trades}</span>
     
     <img
       src="/images/6601dc8887b1e34f1fff3f5f_frame-numbers-p-500.webp"
@@ -554,9 +554,9 @@ function Home() {
     />
 </div>
 <div className="relative flex flex-col items-start rounded-[12px] pr-[32px] pl-[32px] bg-[#fff] p-4 pt-[2rem] w-[25.5rem] h-auto text-[28px] tracking-[.35px] leading-[100%] font-[600]">
-    <span className="text-[#0ec661]">{texts.online?.fifteenYears || "Loading..."}</span> 
-    {/* <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading || "Loading..."}</span> */}
-    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.experience || "Loading..."}</span>
+    <span className="text-[#0ec661]">{texts.online?.fifteenYears}</span> 
+    {/* <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading}</span> */}
+    <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.experience}</span>
     
     <img
       src="/images/6601dc8_Frame-p-500.png"
@@ -583,17 +583,17 @@ function Home() {
   <div className="relative w-screen flex flex-col items-center z-20 mt-10 px-5">
     <div className="text-[12px] text-black font-bold bg-white py-2 rounded-3xl px-4 flex items-center uppercase mt-4">
       <span className="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
-      {texts.online?.recognizeYourself || "Loading..."}
+      {texts.online?.recognizeYourself}
           </div>
 
     <div className="title1 text-center text-black text-[40px] tracking-[.7px] font-bold leading-[1.1] mt-6">
-    {texts.online?.whoIsTrainingFor || "Loading..."}
+    {texts.online?.whoIsTrainingFor}
     </div>
 
     <div className="flex flex-wrap justify-center items-start w-full h-auto mt-10 gap-6">
     <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
   <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
-    {texts.online?.hundredPercentCorrect || "Loading..."}
+    {texts.online?.hundredPercentCorrect}
   </div>
   <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
     {[
@@ -611,7 +611,7 @@ function Home() {
             className="w-[30px] h-[30px]" // Set fixed size without absolute positioning
           />
         </span>
-        {text || "Loading..."}
+        {text}
       </li>
     ))}
   </ul>
@@ -620,7 +620,7 @@ function Home() {
       
       <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
         <div className="button1 bg-[#ff0000] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px] ">
-        {texts.online?.definitelyNot || "Loading..."}
+        {texts.online?.definitelyNot}
         </div>
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
@@ -631,7 +631,7 @@ function Home() {
         className="absolute  w-[15px] h-[15px]"
       />
     </span>
-    {texts.online?.notInterested || "Loading..."}
+    {texts.online?.notInterested}
 
     </li>
   <li className="flex mt-8">
@@ -642,7 +642,7 @@ function Home() {
         className="absolute  w-[15px] h-[15px]"
       />
     </span>
-    {texts.online?.notWillingToLearn || "Loading..."}
+    {texts.online?.notWillingToLearn}
 
     </li>
   <li className="flex mt-8">
@@ -653,7 +653,7 @@ function Home() {
         className="absolute  w-[15px] h-[15px]"
       />
     </span>
-    {texts.online?.noFinancialGoals || "Loading..."}
+    {texts.online?.noFinancialGoals}
 
     </li>
   <li className="flex mt-8">
@@ -664,7 +664,7 @@ function Home() {
         className="absolute  w-[15px] h-[15px]"
       />
     </span>
-    {texts.online?.noMoneyToInvest || "Loading..."}
+    {texts.online?.noMoneyToInvest}
 
     </li>
   <li className="flex mt-8">
@@ -675,7 +675,7 @@ function Home() {
         className="absolute  w-[15px] h-[15px]"
       />
     </span>
-    {texts.online?.noTimeToInvest || "Loading..."}
+    {texts.online?.noTimeToInvest}
 
     </li>
 </ul>
@@ -694,11 +694,11 @@ function Home() {
 
   <div className="hidden md:block text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
-    {texts.online?.easiestWay || "Loading..."}
+    {texts.online?.easiestWay}
     <br />
-    {/* {texts.online?.minimalTimeInvestment || "Loading..."} <br />  */}
+    {/* {texts.online?.minimalTimeInvestment} <br />  */}
       <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
-      {texts.online?.completelyFree || "Loading..."}    
+      {texts.online?.completelyFree}    
         </span>
     </h1>
 
@@ -711,11 +711,11 @@ function Home() {
 
   <div className="block md:hidden text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
-    {texts.online?.easiestWay || "Loading..."}
+    {texts.online?.easiestWay}
   
-    {texts.online?.minimalTimeInvestment || "Loading..."} <br /> 
+    {texts.online?.minimalTimeInvestment} <br /> 
       <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
-      {texts.online?.completelyFree || "Loading..."}      </span>
+      {texts.online?.completelyFree}      </span>
     </h1>
 
     <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
@@ -732,7 +732,7 @@ function Home() {
   <div className="text-[24px] font-bold" dangerouslySetInnerHTML={{ __html: texts.online?.faq2 }} />
   </h1>
 <h1 className="block lg:hidden text-[28px] font-bold text-black leading-[1.2] mb-10 lg:mb-0">
-{texts.online?.faq || "Loading..."}</h1>
+{texts.online?.faq}</h1>
 
 
 
@@ -779,15 +779,15 @@ function Home() {
     {/* Left Section */}
     <div className="left mt-[2rem] md:mt-[7rem] text-center md:text-left w-full md:w-auto">
       <h1 className="text-[28px] md:text-[44px] font-[600] leading-tight">
-      {/* {texts.online?.nurNochEinSchritt || "Loading..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading..."}</span>... */}
-     {/* <span>{texts.online?.nurNochEinSchritt2 || "Loading..."}</span> */}
+      {/* {texts.online?.nurNochEinSchritt} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2}</span>... */}
+     {/* <span>{texts.online?.nurNochEinSchritt2}</span> */}
      <div className='' dangerouslySetInnerHTML={{ __html: texts.online?.nurNochEinSchritt2  }} />
 
 
       </h1>
 
       <div className="description lg:w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
-      {/* {texts.online?.transformYourselfToAdvanced || "Loading..."} <br className="hidden md:inline" /> */}
+      {/* {texts.online?.transformYourselfToAdvanced} <br className="hidden md:inline" /> */}
       <div className='hidden md:inline ' dangerouslySetInnerHTML={{ __html: texts.online?.transformYourselfToAdvanced  }} />
 
       
@@ -804,7 +804,7 @@ function Home() {
             height={30.19}
           />
           <div className="text-people ml-3 mt-1 text-black text-[12px]  sm:text-[11px]">
-          <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
+          <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
           </div>
         </div>
         
@@ -845,7 +845,7 @@ function Home() {
       height={30.19}
     />
     <div className="text-people ml-4 text-black text-[12px] sm:text-[11px]">
-    <div dangerouslySetInnerHTML={{ __html: texts.online?.orders || "Loading..." }} />
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
     </div>
   </div>
 </div>
@@ -916,9 +916,9 @@ function Home() {
 </div>
     <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
       <div className="title-footer mb-[4rem] text-[#fff] text-[24px] md:text-[24px] font-[600] leading-[100%]">
-      {texts.online?.riskNotice || "Loading..."}      </div>
+      {texts.online?.riskNotice}      </div>
       <div className="description-bottom text-[#ffffff8f] w-full font-[400] md:w-[100%] text-[13px] md:text-[14px]">
-      {texts.online?.riskNoticeDetails || "Loading..."} <br />
+      {texts.online?.riskNoticeDetails} <br />
 <br />
       <br />
       <br />
