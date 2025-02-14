@@ -12,7 +12,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import useGeolocation from '../hooks/useGeolocation';
-// import translations from '../../public/translations';
 
 
 function Home() {
@@ -21,7 +20,6 @@ function Home() {
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const country = useGeolocation();
-  // const [texts, setTexts] = useState(translations.EN)
   const [texts, setTexts] = useState({});
 
   const loadTranslations = async (langCode) => {
