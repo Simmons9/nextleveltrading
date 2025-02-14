@@ -65,7 +65,7 @@ function Home() {
         loadTranslations('sv'); // Swedish
         break;
       default:
-        loadTranslations('de'); // Default to German
+        loadTranslations('en'); // Default to German
     }
   }, [country]);
   
@@ -332,7 +332,8 @@ function Home() {
             {texts.online?.strategy || "Loading..."}
             </div>
             <div className="description text-[#788886] tracking-[-.28px] text-[14px] leading-[1.5] mt-2">
-            {texts.online?.checklistDefinition || "Loading..."}
+            <div dangerouslySetInnerHTML={{ __html: texts.online?.checklistDefinition }} />
+
             </div>
           </div>
           <div className="trader_block-overlay" style={{
@@ -695,9 +696,10 @@ function Home() {
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
     {texts.online?.easiestWay || "Loading..."}
     <br />
-    {texts.online?.minimalTimeInvestment || "Loading..."} <br /> 
+    {/* {texts.online?.minimalTimeInvestment || "Loading..."} <br />  */}
       <span className='text-[#0cdc6a] text-[28px] lg:text-[40px]'>
-      {texts.online?.completelyFree || "Loading..."}      </span>
+      {texts.online?.completelyFree || "Loading..."}    
+        </span>
     </h1>
 
     <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
@@ -758,6 +760,7 @@ function Home() {
           {activeIndex === index && (
             <div className="mt-2 text-[#0006] text-xs lg:text-[14px] p-2 leading-[160%]">
               {faq.answer}
+              
             </div>
           )}
         </div>
@@ -776,12 +779,17 @@ function Home() {
     {/* Left Section */}
     <div className="left mt-[2rem] md:mt-[7rem] text-center md:text-left w-full md:w-auto">
       <h1 className="text-[28px] md:text-[44px] font-[600] leading-tight">
-      {texts.online?.nurNochEinSchritt || "Loading..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading..."}</span>...
+      {/* {texts.online?.nurNochEinSchritt || "Loading..."} <span className="text-[#0cdc6a]">{texts.online?.nurNochEinSchritt2 || "Loading..."}</span>... */}
+     {/* <span>{texts.online?.nurNochEinSchritt2 || "Loading..."}</span> */}
+     <div className='' dangerouslySetInnerHTML={{ __html: texts.online?.nurNochEinSchritt2  }} />
+
+
       </h1>
 
       <div className="description lg:w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
-      {texts.online?.transformYourselfToAdvanced || "Loading..."} <br className="hidden md:inline" />
-     
+      {/* {texts.online?.transformYourselfToAdvanced || "Loading..."} <br className="hidden md:inline" /> */}
+      <div className='hidden md:inline ' dangerouslySetInnerHTML={{ __html: texts.online?.transformYourselfToAdvanced  }} />
+
       
        </div>
 

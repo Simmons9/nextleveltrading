@@ -48,7 +48,7 @@ const CardSection = () => {
         loadTranslations('sv'); // Swedish
         break;
       default:
-        loadTranslations('de'); // Default to German
+        loadTranslations('en'); // Default to German
     }
   }, [country]);
   
