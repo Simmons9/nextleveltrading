@@ -26,8 +26,7 @@ export default function useGeolocation() {
   return country; // Return the country code
 }
 
-
-
+//maximind code
 
 // import { useState, useEffect } from "react";
 
