@@ -59,6 +59,9 @@ function Datenschutz() {
       case "SV":
         loadTranslations('sv'); // Swedish
         break;
+        case 'ES':
+          loadTranslations('es'); // Spanish
+          break;
       default:
         loadTranslations('de'); // Default to German
     }

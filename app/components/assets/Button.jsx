@@ -6,7 +6,7 @@ import 'react-phone-input-2/lib/style.css';
 import useGeolocation from '../../hooks/useGeolocation';
 
 
-const Button = () => {
+const Button = ({ buttonText }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState('');
   const country = useGeolocation();
@@ -55,6 +55,9 @@ const Button = () => {
       case "SV":
         loadTranslations('sv'); // Swedish
         break;
+        case 'ES':
+          loadTranslations('es'); // Spanish
+          break;
       default:
         loadTranslations('de'); // Default to German
     }
@@ -80,9 +83,8 @@ const Button = () => {
           onClick={handleOpenModal}
           className="button bg-[#13f97b] mt-[2rem] h-20 w-[388px] rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
         >
-          <div className="btn-text w-full text-center">
-          {texts.online?.downloadButton || "JETZT REGISTRIEREN"}
-          </div>
+                   <div className="btn-text w-full text-center">{buttonText}</div>
+
 
           <div className="btn-arrow-icon">
             <img
