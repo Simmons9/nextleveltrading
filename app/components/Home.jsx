@@ -88,7 +88,7 @@ function Home() {
     setShowColumns(prevState => !prevState);
   };
   return (
-    <main className="relative " style={{ fontFamily: "'Outfit', sans-serif" }}>
+    <main className="relative" style={{ fontFamily: "'Outfit', sans-serif" }}>
         <div className="light-bg"  style={{ fontFamily: "'Outfit', sans-serif" }}>
         <div className="bg-white">
         <header className="w-full max-w-[80rem] h-[5rem] py-1 bg-[#fff] mx-auto sm:h-[3.8rem]">
