@@ -73,7 +73,7 @@ const Button = ({ buttonText }) => {
       <div className="relative">
         <div
           onClick={handleOpenModal}
-          className="button bg-[#13f97b] sm:text-[16px] mt-[2rem] h-20 w-auto rounded-lg p-4 cursor-pointer flex items-center justify-between text-[13px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
+          className="button bg-[#13f97b] sm:text-[14px] mt-[2rem] h-20 sm:w-[27rem] w-auto rounded-lg p-4 cursor-pointer flex items-center justify-between text-[13px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
         >
           <div className="btn-text w-full text-center">{buttonText}</div>
           <div className="btn-arrow-icon">
