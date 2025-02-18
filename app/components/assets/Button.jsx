@@ -171,7 +171,7 @@ const Button = ({ buttonText }) => {
               <input
                 type="text"
                 name="firstName"
-                placeholder="Emri..."
+                placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
                 className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
                 value={formData.firstName}
                 onChange={(e) =>
@@ -183,7 +183,7 @@ const Button = ({ buttonText }) => {
               <input
                 type="text"
                 name="lastName"
-                placeholder="Mbiemri..."
+                placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
                 className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
                 value={formData.lastName}
                 onChange={(e) =>
@@ -195,7 +195,7 @@ const Button = ({ buttonText }) => {
               <input
                 type="email"
                 name="email"
-                placeholder="Email..."
+                placeholder={texts.online?.emailPlaceholder || "Email..."}
                 className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
                 value={formData.email}
                 onChange={(e) =>
@@ -220,7 +220,7 @@ const Button = ({ buttonText }) => {
                 }}
                 inputProps={{
                   required: true,
-                  placeholder: "Telefoni...",
+                  placeholder: texts.online?.telefonnumer || "Telefonnummer",
                 }}
               />
               </div>
