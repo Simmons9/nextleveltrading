@@ -91,7 +91,8 @@ const Button = ({ buttonText }) => {
 
       const result = await response.json();
       if (result.success) {
-        alert("Të dhënat u dërguan me sukses!");
+       // alert("Të dhënat u dërguan me sukses!");
+       console.log("Të dhënat u dërguan me sukses! ", result);
         setShowModal(false);
       } else {
         alert("Ndodhi një gabim! Provoni përsëri.");
@@ -219,10 +220,18 @@ const Button = ({ buttonText }) => {
 
               <button
                 type="submit"
-                disabled={loading}
-                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-center text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105"
+                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden"
               >
-                {loading ? "Duke dërguar..." : "Dërgo"}
+                <div className="btn-text w-full text-center z-10">
+                  {texts.online?.secureAccess}
+                </div>
+                <div className="btn-arrow-icon">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src="/images/66be15dd3e60e45dfe4c8ab4_Check box.png"
+                    alt="Arrow"
+                  />
+                </div>
               </button>
             </form>
           </div>
