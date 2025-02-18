@@ -110,7 +110,14 @@ const Button = ({ buttonText }) => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
+    setPhone("");
   };
+  
 
   return (
     <>
