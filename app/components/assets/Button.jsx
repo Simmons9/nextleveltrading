@@ -1,64 +1,107 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-import useGeolocation from '../../hooks/useGeolocation';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import useGeolocation from "../../hooks/useGeolocation";
 
 const Button = ({ buttonText }) => {
   const [showModal, setShowModal] = useState(false);
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
   const country = useGeolocation();
   const [texts, setTexts] = useState({});
 
-  const loadTranslations = async (langCode) => {
-    try {
-      const translations = await import(`../../../public/translations/${langCode}.json`);
-      setTexts(translations); 
-    } catch (error) {
-      console.error(`Could not load translations for ${langCode}:`, error);
-    }
-  };
-
   useEffect(() => {
+    const loadTranslations = async (langCode) => {
+      try {
+        const translations = await import(
+          `../../../public/translations/${langCode}.json`
+        );
+        setTexts(translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+
     switch (country) {
       case "DE":
       case "AT":
-        loadTranslations('de');
+        loadTranslations("de");
         break;
       case "US":
       case "GB":
       case "CA":
       case "AU":
       case "NZ":
-        loadTranslations('en');
+        loadTranslations("en");
         break;
       case "PT":
       case "BR":
-        loadTranslations('pt');
+        loadTranslations("pt");
         break;
       case "FR":
       case "CH":
       case "LU":
-        loadTranslations('fr');
+        loadTranslations("fr");
         break;
       case "NL":
       case "BE":
-        loadTranslations('nl');
+        loadTranslations("nl");
         break;
       case "IT":
-        loadTranslations('it');
+        loadTranslations("it");
         break;
       case "SV":
-        loadTranslations('sv');
+        loadTranslations("sv");
         break;
-      case 'ES':
-        loadTranslations('es');
+      case "ES":
+        loadTranslations("es");
         break;
       default:
-        loadTranslations('de');
+        loadTranslations("de");
     }
   }, [country]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const payload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phoneNumber: phone,
+      ip: "user-ip", 
+    };
+
+    try {
+      const response = await fetch("/api/trackbox", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Të dhënat u dërguan me sukses!");
+        setShowModal(false);
+      } else {
+        alert("Ndodhi një gabim! Provoni përsëri.");
+      }
+    } catch (error) {
+      console.error("Gabim gjatë dërgimit:", error);
+      alert("Gabim gjatë dërgimit të të dhënave.");
+    }
+    setLoading(false);
+  };
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -116,91 +159,72 @@ const Button = ({ buttonText }) => {
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
               {texts.online?.justOneStep || "Nur noch ein Schritt..."}
             </h1>
-            <form
-  action="https://submit.jotform.com/submit/250456892999378" // Zëvendëso me URL-në e dërgimit të JotForm
-  method="POST"
->
-  {/* Emri */}
-  <input
-    type="text"
-    name="q3_firstName" // Emri i fushës në JotForm
-    placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
-    className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
-    required
-  />
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Emri..."
+                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                value={formData.firstName}
+                onChange={(e) =>
+                  setFormData({ ...formData, firstName: e.target.value })
+                }
+                required
+              />
 
-  {/* Mbiemri */}
-  <input
-    type="text"
-    name="q4_lastName" // Emri i fushës në JotForm
-    placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
-    className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
-    required
-  />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Mbiemri..."
+                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                value={formData.lastName}
+                onChange={(e) =>
+                  setFormData({ ...formData, lastName: e.target.value })
+                }
+                required
+              />
 
-  {/* Email */}
-  <input
-    type="email"
-    name="q6_email" // Emri i fushës në JotForm
-    placeholder={texts.online?.emailPlaceholder || "Email..."}
-    className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
-    required
-  />
-
-  {/* Numri i Telefonit */}
+              <input
+                type="email"
+                name="email"
+                placeholder="Email..."
+                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                required
+              />
   <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
-    <PhoneInput
-      country={'de'} // Vendosni kodin e shtetit si parazgjedhje
-      value={phone}
-      onChange={setPhone}
-      containerClass="w-full"
-      inputStyle={{
-        width: '90%',
-        backgroundColor: '#edf1f6',
-        border: 'none',
-        fontSize: '16px',
-        padding: '18px',
-        borderRadius: '10px',
-        marginLeft: "43px",
-        zIndex: "1001",
-      }}
-      inputProps={{
-        required: true,
-        placeholder: texts.online?.telefonnumer || "Telefoni...",
-      }}
-      disableCountryCode={false} // Sigurohuni që kodi i shtetit të përfshihet
-    />
-  </div>
+              <PhoneInput
+                country={"de"}
+                value={phone}
+                onChange={setPhone}
+                inputStyle={{
+                  width: '90%',
+                  backgroundColor: '#edf1f6',
+                  border: 'none',
+                  fontSize: '16px',
+                  padding: '18px',
+                  borderRadius: '10px',
+                  marginLeft: "43px",
+                  zIndex: "1001",
+                }}
+                inputProps={{
+                  required: true,
+                  placeholder: "Telefoni...",
+                }}
+              />
+              </div>
 
-  {/* Fushat e fshehura për numrin e telefonit */}
-  <input
-    type="hidden"
-    name="q7_phoneNumber[area]" // Fusha për kodin e shtetit
-    value={phone.slice(0, 3)} // Merrni kodin e shtetit (p.sh., +49)
-  />
-  <input
-    type="hidden"
-    name="q7_phoneNumber[phone]" // Fusha për numrin e telefonit
-    value={phone.slice(3)} // Merrni numrin e telefonit pa kodin e shtetit
-  />
-
-  {/* Butoni i dërgimit */}
-  <button
-    type="submit"
-    className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden"
-  >
-    <div className="btn-text w-full text-center z-10">
-      {texts.online?.secureAccess}
-    </div>
-    <div className="btn-arrow-icon">
-      <img
-        className="w-[30px] h-[30px]"
-        src="/images/66be15dd3e60e45dfe4c8ab4_Check box.png"
-        alt="Arrow"
-      />
-    </div>
-  </button>
-</form>
+              <button
+                type="submit"
+                disabled={loading}
+                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-center text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105"
+              >
+                {loading ? "Duke dërguar..." : "Dërgo"}
+              </button>
+            </form>
           </div>
         </div>
       )}
