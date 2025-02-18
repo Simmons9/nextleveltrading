@@ -11,10 +11,12 @@ export async function POST(req) {
         lastname: formData.lastName,
         email: formData.email,
         phone: formData.phoneNumber,
+        password: "password",
         so: "your_funnel_name",
         lg: "EN",
       };
-  
+      //console.log("Password:", process.env.TRACKBOX_PASSWORD);
+
       const response = await fetch("https://affiliate.alphanetwork.io/api/signup/procform", {
         method: "POST",
         headers: {
@@ -24,9 +26,11 @@ export async function POST(req) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(trackboxPayload),
+        
       });
   
       const result = await response.json();
+      console.log(result);
       return Response.json({ success: true, result });
     } catch (error) {
       return Response.json({ error: "Gabim gjatë dërgimit" }, { status: 500 });
