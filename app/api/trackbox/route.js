@@ -1,18 +1,16 @@
-export const config = {
-  runtime: "edge", // Enables Vercel Edge Functions for fast response
-};
+export const runtime = "edge"; // ✅ Correct Next.js 13+ format
 
 export async function POST(req) {
   try {
     const body = await req.json();
 
-    // Trackbox API Credentials (Store in Environment Variables)
+    // Trackbox API Credentials (Use Vercel Environment Variables)
     const TRACKBOX_API_URL = "https://affiliate.alphanetwork.io/api/signup/procform";
     const TRACKBOX_USERNAME = process.env.TRACKBOX_USERNAME;
     const TRACKBOX_PASSWORD = process.env.TRACKBOX_PASSWORD;
     const TRACKBOX_API_KEY = process.env.TRACKBOX_API_KEY;
 
-    // Ensure required env variables exist
+    // Ensure API credentials exist
     if (!TRACKBOX_USERNAME || !TRACKBOX_PASSWORD || !TRACKBOX_API_KEY) {
       return new Response(JSON.stringify({ success: false, message: "Missing API credentials" }), {
         status: 500,
@@ -20,7 +18,7 @@ export async function POST(req) {
       });
     }
 
-    // Prepare Payload
+    // Prepare Data Payload
     const payload = {
       ai: "2958103", // Trackbox AI ID
       ci: "1",
@@ -29,7 +27,7 @@ export async function POST(req) {
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Aa12345!", // Required by Trackbox
+      password: body.password || "Aa12345!", // Trackbox requires a password
       phone: body.phoneNumber,
       so: "funnelname",
       lg: "EN",
