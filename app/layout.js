@@ -1,6 +1,5 @@
 "use client";
 
-import localFont from "next/font/local";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
@@ -8,19 +7,21 @@ import "./globals.css";
 import Home from "./components/Home";
 import { metadata } from "./metadata";
 
-// Load fonts
+// Load Google Fonts
 import { GeistSans, GeistMono } from "next/font/google";
 
 const geistSans = GeistSans({
   subsets: ["latin"],
   variable: "--font-geist-sans",
   weight: "100..900",
+  display: "swap", // Prevents layout shifts (better UX)
 });
 
 const geistMono = GeistMono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
   weight: "100..900",
+  display: "swap",
 });
 
 export default function RootLayout({ children }) {
