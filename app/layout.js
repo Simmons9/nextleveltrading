@@ -8,21 +8,22 @@ import Home from "./components/Home";
 import { metadata } from "./metadata";
 
 // Load Google Fonts
-import { GeistSans, GeistMono } from "next/font/google";
+import localFont from "next/font/local";
 
-const geistSans = GeistSans({
-  subsets: ["latin"],
+// Load GeistSans from local files
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff", 
   variable: "--font-geist-sans",
-  weight: "100..900",
-  display: "swap", // Prevents layout shifts (better UX)
+  display: "swap", // Prevents layout shifts
 });
 
-const geistMono = GeistMono({
-  subsets: ["latin"],
+// Load GeistMono from local files
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  weight: "100..900",
   display: "swap",
 });
+
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
