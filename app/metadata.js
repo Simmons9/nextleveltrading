@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Trading",
-    description: "created by banozz",
+    title: "NextLevelTrading",
+    description: "QuantumAI Trading Bot",
   };
   

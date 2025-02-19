@@ -23,51 +23,27 @@ const Button = ({ buttonText }) => {
         const translations = await import(
           `../../../public/translations/${langCode}.json`
         );
-        setTexts(translations);
+        setTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
       }
     };
 
-    switch (country) {
-      case "DE":
-      case "AT":
-        loadTranslations("de");
-        break;
-      case "US":
-      case "GB":
-      case "CA":
-      case "AU":
-      case "NZ":
-        loadTranslations("en");
-        break;
-      case "PT":
-      case "BR":
-        loadTranslations("pt");
-        break;
-      case "FR":
-      case "CH":
-      case "LU":
-        loadTranslations("fr");
-        break;
-      case "NL":
-      case "BE":
-        loadTranslations("nl");
-        break;
-      case "IT":
-        loadTranslations("it");
-        break;
-      case "SV":
-        loadTranslations("sv");
-        break;
-      case "ES":
-        loadTranslations("es");
-        break;
-      default:
-        loadTranslations("de");
-    }
+    const languageMap = {
+      DE: "de", AT: "de",
+      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+      PT: "pt", BR: "pt",
+      FR: "fr", CH: "fr", LU: "fr",
+      NL: "nl", BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+
+    loadTranslations(languageMap[country] || "de");
   }, [country]);
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -77,7 +53,7 @@ const Button = ({ buttonText }) => {
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
-      ip: "user-ip", 
+      ip: "user-ip",
     };
 
     try {
@@ -91,79 +67,36 @@ const Button = ({ buttonText }) => {
 
       const result = await response.json();
       if (result.success) {
-       // alert("Të dhënat u dërguan me sukses!");
-       console.log("Të dhënat u dërguan me sukses! ", result);
+        console.log("Lead successfully sent!", result);
         setShowModal(false);
       } else {
-        alert("Ndodhi një gabim! Provoni përsëri.");
+        alert("Error submitting form. Please try again.");
       }
     } catch (error) {
-      console.error("Gabim gjatë dërgimit:", error);
-      alert("Gabim gjatë dërgimit të të dhënave.");
+      console.error("Submission error:", error);
+      alert("Error sending data.");
     }
     setLoading(false);
   };
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-    });
-    setPhone("");
-  };
-  
 
   return (
     <>
       <div className="relative">
         <div
-          onClick={handleOpenModal}
-          className="button bg-[#13f97b] sm:text-[14px] mt-[2rem] h-20 sm:w-[27rem] w-auto rounded-lg p-4 cursor-pointer flex items-center justify-between text-[13px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden z-50"
+          onClick={() => setShowModal(true)}
+          className="button bg-[#13f97b] sm:text-[14px] mt-[2rem] h-20 sm:w-[27rem] w-auto rounded-lg p-4 cursor-pointer flex items-center justify-between text-[13px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden z-50"
         >
           <div className="btn-text w-full text-center">{buttonText}</div>
-          <div className="btn-arrow-icon">
-            <img
-              src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3e88_arrow-right%201.svg"
-              alt="Arrow"
-            />
-          </div>
-          <div className="interaction absolute top-0 left-0 h-full w-full animate-interaction pointer-events-none">
-            <img
-              className="h-full w-full object-cover"
-              src="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3f53_Rectangle%203404.webp"
-              alt="interaction"
-              loading="lazy"
-              sizes="(max-width: 100px), 200.998046875px"
-              srcSet="https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3f53_Rectangle%25203404-p-500.png 500w, https://cdn.prod.website-files.com/6601dc8887b1e34f1fff3e59/6601dc8887b1e34f1fff3f53_Rectangle%203404.webp 654w"
-            />
-          </div>
         </div>
       </div>
 
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] backdrop-blur-md p-5">
           <div className="bg-white relative rounded-[20px] p-8 w-full max-w-lg lg:mx-0 z-[1001]">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4"
-              onClick={handleCloseModal}
-            >
-              <img
-                className="text-[#fff] h-[20px] w-[20px]"
-                src="/images/66bd20b15f0d9108f1af0809_Group 2087326444.png"
-                alt="Close"
-                style={{ filter: "grayscale(1)" }}
-              />
+            <button className="absolute top-4 right-4" onClick={() => setShowModal(false)}>
+              <img className="h-[20px] w-[20px]" src="/images/close.png" alt="Close" />
             </button>
 
-            {/* Forma Juaj */}
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
               {texts.online?.justOneStep || "Nur noch ein Schritt..."}
             </h1>
@@ -172,11 +105,9 @@ const Button = ({ buttonText }) => {
                 type="text"
                 name="firstName"
                 placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
-                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.firstName}
-                onChange={(e) =>
-                  setFormData({ ...formData, firstName: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 required
               />
 
@@ -184,11 +115,9 @@ const Button = ({ buttonText }) => {
                 type="text"
                 name="lastName"
                 placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
-                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.lastName}
-                onChange={(e) =>
-                  setFormData({ ...formData, lastName: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 required
               />
 
@@ -196,56 +125,46 @@ const Button = ({ buttonText }) => {
                 type="email"
                 name="email"
                 placeholder={texts.online?.emailPlaceholder || "Email..."}
-                className="block w-full mb-4 rounded-[10px] text-[16px] bg-[#edf1f6] p-[18px]"
+                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
-  <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
-              <PhoneInput
-                country={"de"}
-                value={phone}
-                onChange={setPhone}
-                inputStyle={{
-                  width: '90%',
-                  backgroundColor: '#edf1f6',
-                  border: 'none',
-                  fontSize: '16px',
-                  padding: '18px',
-                  borderRadius: '10px',
-                  marginLeft: "43px",
-                  zIndex: "1001",
-                }}
-                inputProps={{
-                  required: true,
-                  placeholder: texts.online?.telefonnumer || "Telefonnummer",
-                }}
-              />
+
+              <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
+                <PhoneInput
+                  country={"de"}
+                  value={phone}
+                  onChange={setPhone}
+                  inputStyle={{
+                    width: "90%",
+                    backgroundColor: "#edf1f6",
+                    border: "none",
+                    fontSize: "16px",
+                    padding: "18px",
+                    borderRadius: "10px",
+                    marginLeft: "43px",
+                    zIndex: "1001",
+                  }}
+                  inputProps={{
+                    required: true,
+                    placeholder: texts.online?.telefonnumer || "Telefonnummer",
+                  }}
+                />
               </div>
 
               <button
                 type="submit"
-                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out shadow-[0_24px_32px_-20px_rgba(19,249,123,0)] hover:scale-105 relative overflow-hidden"
+                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
               >
-                <div className="btn-text w-full text-center z-10">
-                  {texts.online?.secureAccess}
-                </div>
-                <div className="btn-arrow-icon">
-                  <img
-                    className="w-[30px] h-[30px]"
-                    src="/images/66be15dd3e60e45dfe4c8ab4_Check box.png"
-                    alt="Arrow"
-                  />
+                <div className="btn-text w-full text-center">
+                  {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
                 </div>
               </button>
             </form>
           </div>
         </div>
       )}
-
-
 
       <style jsx>{`
         @keyframes moveInteraction {
@@ -263,50 +182,34 @@ const Button = ({ buttonText }) => {
           backdrop-filter: blur(10px);
           background-image: linear-gradient(#f6f8fb80, #f6f8fbe6);
         }
-       .checkbox {
-  float: none;
-  border: 1.5px solid #b9c8da;
-  border-radius: 5px;
-  width: 24px;
-  height: 24px;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 10px;
-
-}
-  .custom-checkbox {
-  display: none; /* Hide the native checkbox */
-}
-
-.custom-checkbox + label {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-left: 34px; /* Space for the custom checkbox */
-  cursor: pointer;
-}
-
-.custom-checkbox + label::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 1.5px solid #b9c8da;
-  border-radius: 5px;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.custom-checkbox:checked + label::before {
-  background-image: url("https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg");
-  background-size: cover;
-  background-position: center;
-  border: none;
-    background-color: #b9c8da;
-
-
-}
+        .custom-checkbox {
+          display: none;
+        }
+        .custom-checkbox + label {
+          display: flex;
+          align-items: center;
+          position: relative;
+          padding-left: 34px;
+          cursor: pointer;
+        }
+        .custom-checkbox + label::before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          border: 1.5px solid #b9c8da;
+          border-radius: 5px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .custom-checkbox:checked + label::before {
+          background-image: url("/images/checkmark.svg");
+          background-size: cover;
+          background-position: center;
+          border: none;
+          background-color: #b9c8da;
+        }
       `}</style>
     </>
   );
