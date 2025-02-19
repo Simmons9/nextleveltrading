@@ -29,7 +29,7 @@ export async function POST(req) {
       email: body.email,
       password: body.password || "Aa12345!", // Trackbox requires a password
       phone: body.phoneNumber,
-      so: "funnelname",
+      so: "NextLevelTrading",
       lg: "EN",
     };
 

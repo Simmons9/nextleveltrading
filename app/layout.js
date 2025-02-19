@@ -7,23 +7,20 @@ import "./globals.css";
 import Home from "./components/Home";
 import { metadata } from "./metadata";
 
-// Load Google Fonts
+// Load Local Fonts Correctly
 import localFont from "next/font/local";
 
-// Load GeistSans from local files
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff", 
+  src: "/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  display: "swap", // Prevents layout shifts
-});
-
-// Load GeistMono from local files
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
   display: "swap",
 });
 
+const geistMono = localFont({
+  src: "/fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -32,27 +29,46 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <title>{metadata.title}</title>
-        {/* Inject Trackbox AI Global Variables */}
+
+        {/* ✅ Define gvars Before Any Other Scripts */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `gvars = { gi: 81, ci: 887, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };`,
+            __html: `
+              window.gvars = { gi: 81, ci: 887, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };
+            `,
           }}
         />
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* Load External Scripts */}
+
+        {/* ✅ Load Vue ONLY for Trackbox (No Need to Install Vue in Next.js) */}
         <Script
-          src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"
-          strategy="afterInteractive"
+          src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"
+          strategy="beforeInteractive"
+          onLoad={() => console.log("✅ Vue.js loaded for Trackbox!")}
         />
+
+        {/* ✅ Load Web Components for Trackbox */}
         <Script
           src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
+
+        {/* ✅ Delay Trackbox Script to Prevent Errors */}
         <Script
-          src="/trackbot.js"
+          id="trackbox-loader"
           strategy="afterInteractive"
-          onLoad={() => console.log("Trackbox script loaded successfully!")}
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener("DOMContentLoaded", function() {
+                let script = document.createElement("script");
+                script.src = "/trackbot.js";
+                script.async = true;
+                script.onload = () => console.log("✅ Trackbox script loaded!");
+                document.body.appendChild(script);
+              });
+            `,
+          }}
         />
 
         {/* Required Trackbox Elements */}
