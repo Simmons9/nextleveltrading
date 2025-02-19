@@ -1,16 +1,28 @@
+export const config = {
+  runtime: "edge", // Enables Vercel Edge Functions for fast response
+};
+
 export async function POST(req) {
   try {
     const body = await req.json();
-    
-    // Trackbox AI API Credentials
-    const TRACKBOX_API_URL = "https://affiliate.alphanetwork.io/api/signup/procform ";
-    const TRACKBOX_USERNAME = "june";
-    const TRACKBOX_PASSWORD = "Bitcoin2025$";
-    const TRACKBOX_API_KEY = "2643889w34df345676ssdas323tgc738";
 
-    // Prepare Data Payload
+    // Trackbox API Credentials (Store in Environment Variables)
+    const TRACKBOX_API_URL = "https://affiliate.alphanetwork.io/api/signup/procform";
+    const TRACKBOX_USERNAME = process.env.TRACKBOX_USERNAME;
+    const TRACKBOX_PASSWORD = process.env.TRACKBOX_PASSWORD;
+    const TRACKBOX_API_KEY = process.env.TRACKBOX_API_KEY;
+
+    // Ensure required env variables exist
+    if (!TRACKBOX_USERNAME || !TRACKBOX_PASSWORD || !TRACKBOX_API_KEY) {
+      return new Response(JSON.stringify({ success: false, message: "Missing API credentials" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // Prepare Payload
     const payload = {
-      ai: "2958103", // Get this from Trackbox
+      ai: "2958103", // Trackbox AI ID
       ci: "1",
       gi: "81",
       userip: body.userip || "0.0.0.0",
@@ -19,11 +31,11 @@ export async function POST(req) {
       email: body.email,
       password: body.password || "Aa12345!", // Required by Trackbox
       phone: body.phoneNumber,
-      so: "NextLevelTrading",
-      lg: "EN"
+      so: "funnelname",
+      lg: "EN",
     };
 
-    // Send Data to Trackbox
+    // Call Trackbox API
     const response = await fetch(TRACKBOX_API_URL, {
       method: "POST",
       headers: {
@@ -36,7 +48,7 @@ export async function POST(req) {
     });
 
     const data = await response.json();
-    
+
     return new Response(JSON.stringify({ success: response.ok, data }), {
       status: response.status,
       headers: { "Content-Type": "application/json" },

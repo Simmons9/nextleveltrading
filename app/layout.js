@@ -9,16 +9,18 @@ import Home from "./components/Home";
 import { metadata } from "./metadata";
 
 // Load fonts
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+import { GeistSans, GeistMono } from "next/font/google";
+
+const geistSans = GeistSans({
+  subsets: ["latin"],
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: "100..900",
 });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+const geistMono = GeistMono({
+  subsets: ["latin"],
   variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "100..900",
 });
 
 export default function RootLayout({ children }) {

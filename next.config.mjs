@@ -1,16 +1,12 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    env: {
-      NEXT_PUBLIC_IPINFO_TOKEN: process.env.NEXT_PUBLIC_IPINFO_TOKEN,
-    },
-    images: {
-      domains: ['framerusercontent.com'], // Add your domain here
-      unoptimized: true, // Disable Image Optimization
-    },
-  };
-  
-  export default nextConfig;
+  images: {
+    domains: ['nextleveltrading.io'], // Add your domain here
+    formats: ['image/avif', 'image/webp'], // Enable optimized formats
+  },
+  experimental: {
+    scrollRestoration: true, // Improves page transitions
+  },
+};
 
-
-  
+export default nextConfig;
