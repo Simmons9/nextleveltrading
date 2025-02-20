@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
@@ -16,6 +17,7 @@ const Button = ({ buttonText }) => {
   const [loading, setLoading] = useState(false);
   const country = useGeolocation();
   const [texts, setTexts] = useState({});
+  const router = useRouter();
 
   useEffect(() => {
     const loadTranslations = async (langCode) => {
@@ -69,6 +71,11 @@ const Button = ({ buttonText }) => {
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
+
+        // Redirect to thank you page after submission
+        setTimeout(() => {
+          router.push("/thankyou");
+        }, 2000);
       } else {
         alert("Error submitting form. Please try again.");
       }
