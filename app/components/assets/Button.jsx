@@ -14,15 +14,14 @@ const Button = ({ buttonText }) => {
     email: "",
   });
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false); // ✅ Success state
   const country = useGeolocation();
   const [texts, setTexts] = useState({});
 
   useEffect(() => {
     const loadTranslations = async (langCode) => {
       try {
-        const translations = await import(
-          `../../../public/translations/${langCode}.json`
-        );
+        const translations = await import(`../../../public/translations/${langCode}.json`);
         setTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
@@ -68,7 +67,13 @@ const Button = ({ buttonText }) => {
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
-        setShowModal(false);
+        setSuccess(true); // ✅ Show success message
+        setTimeout(() => {
+          setShowModal(false);
+          setSuccess(false);
+          setFormData({ firstName: "", lastName: "", email: "" });
+          setPhone("");
+        }, 3000); // ✅ Auto-close after 3 seconds
       } else {
         alert("Error submitting form. Please try again.");
       }
@@ -93,96 +98,80 @@ const Button = ({ buttonText }) => {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] backdrop-blur-md p-5">
           <div className="bg-white relative rounded-[20px] p-8 w-full max-w-lg lg:mx-0 z-[1001]">
-          <button
-            className="absolute top-4 right-4"
-            onClick={() => setShowModal(false)}
-            aria-label="Close"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4"
+              onClick={() => setShowModal(false)}
+              aria-label="Close"
             >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-
-
-            <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
-              {texts.online?.justOneStep || "Nur noch ein Schritt..."}
-            </h1>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="firstName"
-                placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
-                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
-                value={formData.firstName}
-                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                required
-              />
-
-              <input
-                type="text"
-                name="lastName"
-                placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
-                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
-                value={formData.lastName}
-                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                required
-              />
-
-              <input
-                type="email"
-                name="email"
-                placeholder={texts.online?.emailPlaceholder || "Email..."}
-                className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-              />
-
-              <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
-                <PhoneInput
-                  country={"de"}
-                  value={phone}
-                  onChange={setPhone}
-                  inputStyle={{
-                    width: "90%",
-                    backgroundColor: "#edf1f6",
-                    border: "none",
-                    fontSize: "16px",
-                    padding: "18px",
-                    borderRadius: "10px",
-                    marginLeft: "43px",
-                    zIndex: "1001",
-                  }}
-                  inputProps={{
-                    required: true,
-                    placeholder: texts.online?.telefonnumer || "Telefonnummer",
-                  }}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <div className="btn-text w-full text-center">
-                  {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            {/* ✅ Success Message & Animation */}
+            {success ? (
+              <div className="flex flex-col items-center justify-center">
+                <div className="checkmark-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-16 w-16 text-green-500 animate-checkmark"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
-              </button>
-            </form>
+                <h2 className="text-green-600 text-2xl font-bold mt-4">Thank you!</h2>
+                <p className="text-gray-500 text-center">Your information has been submitted successfully.</p>
+              </div>
+            ) : (
+              <>
+                <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
+                  {texts.online?.justOneStep || "Nur noch ein Schritt..."}
+                </h1>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
+                    className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    required
+                  />
+
+                  <button
+                    type="submit"
+                    className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
+                  >
+                    <div className="btn-text w-full text-center">
+                      {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
+                    </div>
+                  </button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       )}
 
+      {/* ✅ Full CSS (Restored) */}
       <style jsx>{`
         @keyframes moveInteraction {
           0% {
