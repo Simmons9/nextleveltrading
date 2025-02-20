@@ -15,9 +15,10 @@ const Button = ({ buttonText }) => {
     email: "",
   });
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const country = useGeolocation();
   const [texts, setTexts] = useState({});
-  const router = useRouter();
+
 
   useEffect(() => {
     const loadTranslations = async (langCode) => {
