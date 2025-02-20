@@ -149,10 +149,30 @@ const Button = ({ buttonText }) => {
                   <input
                     type="text"
                     name="firstName"
-                    placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
+                    placeholder={texts.online?.firstNamePlaceholder || "Name..."}
                     className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    required
+                  />
+
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder={texts.online?.lastNamePlaceholder || "Surname..."}
+                    className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                    required
+                  />
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder={texts.online?.emailPlaceholder || "E-mail..."}
+                    className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                   />
 
@@ -171,51 +191,18 @@ const Button = ({ buttonText }) => {
         </div>
       )}
 
-      {/* ✅ Full CSS (Restored) */}
+      {/* ✅ FULLY RESTORED CSS */}
       <style jsx>{`
         @keyframes moveInteraction {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
-        .animate-interaction {
-          animation: moveInteraction 3s linear infinite;
-        }
-        .backdrop-blur-md {
-          backdrop-filter: blur(10px);
-          background-image: linear-gradient(#f6f8fb80, #f6f8fbe6);
-        }
-        .custom-checkbox {
-          display: none;
-        }
-        .custom-checkbox + label {
-          display: flex;
-          align-items: center;
-          position: relative;
-          padding-left: 34px;
-          cursor: pointer;
-        }
-        .custom-checkbox + label::before {
-          content: "";
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          border: 1.5px solid #b9c8da;
-          border-radius: 5px;
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-        .custom-checkbox:checked + label::before {
-          background-image: url("/images/checkmark.svg");
-          background-size: cover;
-          background-position: center;
-          border: none;
-          background-color: #b9c8da;
-        }
+        .animate-interaction { animation: moveInteraction 3s linear infinite; }
+        .backdrop-blur-md { backdrop-filter: blur(10px); background-image: linear-gradient(#f6f8fb80, #f6f8fbe6); }
+        .custom-checkbox { display: none; }
+        .custom-checkbox + label { display: flex; align-items: center; position: relative; padding-left: 34px; cursor: pointer; }
+        .custom-checkbox + label::before { content: ""; width: 24px; height: 24px; border: 1.5px solid #b9c8da; border-radius: 5px; position: absolute; left: 0; top: 0; }
+        .custom-checkbox:checked + label::before { background-image: url("/images/checkmark.svg"); background-size: cover; background-position: center; border: none; background-color: #b9c8da; }
       `}</style>
     </>
   );
