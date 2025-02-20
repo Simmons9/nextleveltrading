@@ -74,9 +74,8 @@ const Button = ({ buttonText }) => {
         setShowModal(false);
 
         // Redirect to thank you page after submission
-        setTimeout(() => {
+ 
           router.push("/thank-you");
-        }, 2000);
       } else {
         alert("Error submitting form. Please try again.");
       }

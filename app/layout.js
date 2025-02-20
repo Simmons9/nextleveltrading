@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.gvars = { gi: 81, ci: 887, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };
+              window.gvars = { gi: 21, ci: 4, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };
             `,
           }}
         />
