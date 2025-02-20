@@ -21,13 +21,13 @@ export async function POST(req) {
     // Prepare Data Payload
     const payload = {
       ai: "2958103", // Trackbox AI ID
-      ci: "1",
-      gi: "81",
+      ci: "4",
+      gi: "22",
       userip: body.userip || "0.0.0.0",
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Aa12345!", // Trackbox requires a password
+      password: body.password || "Bitcoin$", // Trackbox requires a password
       phone: body.phoneNumber,
       so: "NextLevelTrading",
       lg: "EN",
