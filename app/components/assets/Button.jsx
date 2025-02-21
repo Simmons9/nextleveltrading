@@ -15,22 +15,24 @@ const Button = ({ buttonText }) => {
     email: "",
   });
   const [loading, setLoading] = useState(false);
+  const [texts, setTexts] = useState({});
   const router = useRouter();
   const country = useGeolocation();
-  const [texts, setTexts] = useState({});
 
+  // Function to dynamically load translations
+  const loadTranslations = async (langCode) => {
+    try {
+      const response = await fetch(`/translations/${langCode}.json`);
+      const translations = await response.json();
+      setTexts(translations);
+    } catch (error) {
+      console.error(`Could not load translations for ${langCode}:`, error);
+    }
+  };
 
+  // Fetch translations when country changes
   useEffect(() => {
-    const loadTranslations = async (langCode) => {
-      try {
-        const translations = await import(
-          `../../../public/translations/${langCode}.json`
-        );
-        setTexts(translations.default || translations);
-      } catch (error) {
-        console.error(`Could not load translations for ${langCode}:`, error);
-      }
-    };
+    if (!country) return;
 
     const languageMap = {
       DE: "de", AT: "de",

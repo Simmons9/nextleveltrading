@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import Button from './assets/Button'
-import Cards from './assets/Cards'
+import React, { useState, useEffect } from 'react';
+import Button from './assets/Button';
+import Cards from './assets/Cards';
 import Tag from './assets/Tag';
 import Datenschutz from './assets/Datenschutz';
 import Impressum from './assets/Impressum';
@@ -13,66 +13,40 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import useGeolocation from '../hooks/useGeolocation';
 
-
 function Home() {
-
-
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
-  const country = useGeolocation();
+  const country = useGeolocation(); // Uses the Next.js API route for security
   const [texts, setTexts] = useState({});
 
+  // Function to dynamically load language translations
   const loadTranslations = async (langCode) => {
     try {
-      const translations = await import(`../../public/translations/${langCode}.json`);
-      setTexts(translations); 
+      const response = await fetch(`/translations/${langCode}.json`);
+      const translations = await response.json();
+      setTexts(translations);
     } catch (error) {
       console.error(`Could not load translations for ${langCode}:`, error);
     }
   };
 
-  
+  // Update language when country code is fetched
   useEffect(() => {
-    switch (country) {
-      case "DE":
-      case "AT": // Austria
-        loadTranslations('de'); // German
-        break;
-      case "US":
-      case "GB": // United Kingdom
-      case "CA": // Canada
-      case "AU": // Australia
-      case "NZ": // New Zealand
-        loadTranslations('en'); // English
-        break;
-      case "PT":
-      case "BR": // Brazil
-        loadTranslations('pt'); // Portuguese
-        break;
-      case "FR":
-      case "CH": // Switzerland
-      case "LU": // Luxembourg
-        loadTranslations('fr'); // French
-        break;
-      case "NL":
-      case "BE": // Belgium
-        loadTranslations('nl'); // Dutch
-        break;
-      case "IT":
-        loadTranslations('it'); // Italian
-        break;
-      case "SV":
-        loadTranslations('sv'); // Swedish
-        break;
-        case 'ES':
-        loadTranslations('es'); // Spanish
-        break;
-      default:
-        loadTranslations('de'); // Default to German
-    }
+    if (!country) return; // Wait until country is determined
+
+    const languageMap = {
+      DE: "de", AT: "de", // German
+      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en", // English
+      PT: "pt", BR: "pt", // Portuguese
+      FR: "fr", CH: "fr", LU: "fr", // French
+      NL: "nl", BE: "nl", // Dutch
+      IT: "it", // Italian
+      SV: "sv", // Swedish
+      ES: "es", // Spanish
+    };
+
+    loadTranslations(languageMap[country] || "de"); // Default to German
   }, [country]);
-  
-  
 
 
   const toggleAccordion = (index) => {

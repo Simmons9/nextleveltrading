@@ -1,64 +1,58 @@
 "use client";
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import useGeolocation from '../../hooks/useGeolocation';
-
+const fetchLocation = async () => {
+  try {
+    const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+    const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+    const data = await response.json();
+    return data.country; // Returns country code (e.g., "DE", "US")
+  } catch (error) {
+    console.error("Failed to fetch location", error);
+    return "DE"; // Default to German if an error occurs
+  }
+};
 
 function Tag() {
+  const [country, setCountry] = useState(null);
+  const [texts, setTexts] = useState({});
 
-    const country = useGeolocation();
-    // const [texts, setTexts] = useState(translations.EN)
-    const [texts, setTexts] = useState({});
+  useEffect(() => {
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
+    };
+
+    getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (!country) return;
+
+    const languageMap = {
+      DE: "de", AT: "de",
+      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+      PT: "pt", BR: "pt",
+      FR: "fr", CH: "fr", LU: "fr",
+      NL: "nl", BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+
     const loadTranslations = async (langCode) => {
-        try {
-          const translations = await import(`../../../public/translations/${langCode}.json`);
-          setTexts(translations); 
-        } catch (error) {
-          console.error(`Could not load translations for ${langCode}:`, error);
-        }
-      };
-    
-      
-      useEffect(() => {
-        switch (country) {
-          case "DE":
-          case "AT": // Austria
-            loadTranslations('de'); // German
-            break;
-          case "US":
-          case "GB": // United Kingdom
-          case "CA": // Canada
-          case "AU": // Australia
-          case "NZ": // New Zealand
-            loadTranslations('en'); // English
-            break;
-          case "PT":
-          case "BR": // Brazil
-            loadTranslations('pt'); // Portuguese
-            break;
-          case "FR":
-          case "CH": // Switzerland
-          case "LU": // Luxembourg
-            loadTranslations('fr'); // French
-            break;
-          case "NL":
-          case "BE": // Belgium
-            loadTranslations('nl'); // Dutch
-            break;
-          case "IT":
-            loadTranslations('it'); // Italian
-            break;
-          case "SV":
-            loadTranslations('sv'); // Swedish
-            break;
-            case 'ES':
-              loadTranslations('es'); // Spanish
-              break;
-          default:
-            loadTranslations('de'); // Default to German
-          }
-      }, [country]);
+      try {
+        const translations = await import(`../../../public/translations/${langCode}.json`);
+        setTexts(translations.default || translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+
+    loadTranslations(languageMap[country] || "de"); // Default to German
+
+  }, [country]);
       
 
   return (

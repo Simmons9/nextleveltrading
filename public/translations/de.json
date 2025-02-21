@@ -435,49 +435,49 @@
 "risiki19": "Markt-, Aktienanalysen oder Artikel dienen ausschließlich zu Informationszwecken. Sie stellen weder ein Angebot noch eine Empfehlung zur Eröffnung eines Brokerkontos, zur Beanspruchung einer Dienstleistung oder zum Kauf bzw. Verkauf von Finanzinstrumenten dar. Angaben über realisierte und potentielle Gewinne in der Vergangenheit stellen keine Garantie für zukünftige Gewinne dar.",
 
     
-    "faqs": [
-      {
-        "question": "Wat is Next Level Trading?",
-        "answer": "Onze AI-software combineert quantum computing met kunstmatige intelligentie om de cryptomarkt in realtime te analyseren en volledig geautomatiseerde, nauwkeurige trading-beslissingen te nemen. "
-      },
-      {
-        "question": "Is de trading bot echt winstgevend?",
-        "answer": "Onze tests en gebruikerservaringen bevestigen: onze bot genereert consistente winsten – of de markt nu stijgt of daalt. We raden aan om te beginnen met een klein startbedrag en het zelf te ervaren."
-      },
-      {
-        "question": "Wat kost het om de bot te gebruiken?",
-        "answer": "Onze service is volledig gratis! We verdienen alleen geld wanneer jij winst maakt – via commissies van brokerplatforms."
-      },
-      {
-        "question": "Hoe kan ik beginnen?",
-        "answer": "Meld je eenvoudig aan, start met een klein bedrag en laat je bot voor je werken. Jouw trading-expert ondersteunt je persoonlijk!"
-      },
-      {
-        "question": "Waarom is jullie oplossing gratis?",
-        "answer": "Wij willen waarde leveren en geloven in het succes van onze software. Natuurlijk hebben we operationele kosten, die worden gedekt door samenwerkingen met partnerbrokers die een vergoeding betalen voor elke nieuwe klant. Daarnaast ontvangen we een commissie over de winst die gebruikers genereren. Kortom: wij verdienen alleen als jij verdient."
-      }
-    ],
-   "cards": {
+"faqs": [
+  {
+    "question": "Was ist Next Level Trading?",
+    "answer": "Unsere KI-Software kombiniert Quantencomputing mit künstlicher Intelligenz, um den Kryptomarkt in Echtzeit zu analysieren und vollautomatische, präzise Handelsentscheidungen zu treffen."
+  },
+  {
+    "question": "Ist der Trading-Bot wirklich profitabel?",
+    "answer": "Unsere Tests und Kundenerfahrungen bestätigen: Unser Bot generiert kontinuierlich Gewinne – egal ob der Markt steigt oder fällt. Wir empfehlen, mit einem kleinen Startbetrag zu beginnen und es selbst zu erleben."
+  },
+  {
+    "question": "Was kostet die Nutzung des Bots?",
+    "answer": "Unser Service ist völlig kostenlos! Wir verdienen nur Geld, wenn Sie Gewinne erzielen – durch Provisionen von Brokerplattformen."
+  },
+  {
+    "question": "Wie kann ich anfangen?",
+    "answer": "Melden Sie sich einfach an, starten Sie mit einem kleinen Betrag und lassen Sie den Bot für sich arbeiten. Ihr persönlicher Trading-Experte unterstützt Sie dabei!"
+  },
+  {
+    "question": "Warum ist Ihre Lösung kostenlos?",
+    "answer": "Wir möchten Mehrwert bieten und glauben an den Erfolg unserer Software. Natürlich haben wir Betriebskosten, die durch Kooperationen mit Partnerbrokern gedeckt werden, die eine Gebühr für jeden neuen Kunden zahlen. Außerdem erhalten wir eine Provision auf die Gewinne, die unsere Nutzer erzielen. Kurz gesagt: Wir verdienen nur, wenn Sie verdienen."
+  }
+],
+"cards": {
   "data": [
     {
       "imgSrc": "/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif",
-      "title": "Financiële Onafhankelijkheid is Simpel",
-      "description": "Met slechts 30 minuten per dag kun je een stabiel passief inkomen opbouwen. Stop met afhankelijk zijn van je salaris – laat jouw trading bot voor je werken!"
+      "title": "Finanzielle Unabhängigkeit ist einfach",
+      "description": "Mit nur 30 Minuten pro Tag können Sie ein stabiles passives Einkommen aufbauen. Hören Sie auf, von Ihrem Gehalt abhängig zu sein – lassen Sie Ihren Trading-Bot für sich arbeiten!"
     },
     {
       "imgSrc": "/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif",
-      "title": "Doorbreek Jouw Inkomensgrenzen",
-      "description": "Geen baas. Geen limieten. Geen restricties. Jouw inkomen groeit met jou mee – en onze trading bot doet al het zware werk."
+      "title": "Durchbrechen Sie Ihre Einkommensgrenzen",
+      "description": "Kein Chef. Keine Limits. Keine Einschränkungen. Ihr Einkommen wächst mit Ihnen – und unser Trading-Bot übernimmt die harte Arbeit."
     },
     {
       "imgSrc": "/images/66bd10635b19cc084b2099c2_Untitled-3 1-2.avif",
-      "title": "Leef Volgens Jouw Eigen Regels",
-      "description": "Trade wanneer en waar je maar wilt – vanuit huis of terwijl je de wereld rondreist. Geniet van je nieuwe, onafhankelijke leven!"
+      "title": "Leben Sie nach Ihren eigenen Regeln",
+      "description": "Traden Sie wann und wo Sie wollen – von zu Hause aus oder während Sie die Welt bereisen. Genießen Sie Ihr neues, unabhängiges Leben!"
     },
     {
       "imgSrc": "/images/66bd10638eee05feffd9aaa0_Untitled-3 1-3.avif",
-      "title": "Winst in Elke Marktsituatie",
-      "description": "Of de prijzen nu stijgen of dalen – onze AI-trader maakt winst voor jou! Milliseconden-marktanalyse, razendsnelle beslissingen – maximale winst!"
+      "title": "Gewinne in jeder Marktsituation",
+      "description": "Ob die Preise steigen oder fallen – unser KI-Trader macht Gewinne für Sie! Millisekunden-Marktanalysen, blitzschnelle Entscheidungen – maximale Gewinne!"
     }
   ]
 }

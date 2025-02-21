@@ -1,70 +1,65 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import useGeolocation from '../../hooks/useGeolocation';
-import Button from './Button';
-// import Header from './Header';
 
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+import Button from "./Button";
 
+const fetchLocation = async () => {
+  try {
+    const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+    const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+    const data = await response.json();
+    return data.country; // Returns country code (e.g., "DE", "US")
+  } catch (error) {
+    console.error("Failed to fetch location", error);
+    return "DE"; // Default to German if error occurs
+  }
+};
 
-
-function Datenschutz() { 
-  const [showColumns, setShowColumns] = useState(false); 
-  const [isOpen, setIsOpen] = useState(false); 
-  const [activeIndex, setActiveIndex] = useState(null); 
-  const country = useGeolocation(); 
-  const [texts, setTexts] = useState({}); 
-
-  const loadTranslations = async (langCode) => { 
-    try { 
-      const translations = await import(`../../../public/translations/${langCode}.json`); 
-      setTexts(translations); 
-    } catch (error) { 
-      console.error(`Could not load translations for ${langCode}:`, error); 
-    } 
-  }; 
+function Datenschutz() {
+  const [showColumns, setShowColumns] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [texts, setTexts] = useState({});
 
   useEffect(() => {
-    switch (country) {
-      case "DE":
-      case "AT": // Austria
-        loadTranslations('de'); // German
-        break;
-      case "US":
-      case "GB": // United Kingdom
-      case "CA": // Canada
-      case "AU": // Australia
-      case "NZ": // New Zealand
-        loadTranslations('en'); // English
-        break;
-      case "PT":
-      case "BR": // Brazil
-        loadTranslations('pt'); // Portuguese
-        break;
-      case "FR":
-      case "CH": // Switzerland
-      case "LU": // Luxembourg
-        loadTranslations('fr'); // French
-        break;
-      case "NL":
-      case "BE": // Belgium
-        loadTranslations('nl'); // Dutch
-        break;
-      case "IT":
-        loadTranslations('it'); // Italian
-        break;
-      case "SV":
-        loadTranslations('sv'); // Swedish
-        break;
-        case 'ES':
-          loadTranslations('es'); // Spanish
-          break;
-      default:
-        loadTranslations('de'); // Default to German
-    }
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
+    };
+
+    getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (!country) return;
+
+    const languageMap = {
+      DE: "de", AT: "de",
+      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+      PT: "pt", BR: "pt",
+      FR: "fr", CH: "fr", LU: "fr",
+      NL: "nl", BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+
+    const loadTranslations = async (langCode) => {
+      try {
+        const translations = await import(`../../../public/translations/${langCode}.json`);
+        setTexts(translations.default || translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+
+    loadTranslations(languageMap[country] || "de"); // Default to German if no match
+
   }, [country]);
   
 
@@ -563,7 +558,7 @@ function Datenschutz() {
 
                       {/* Right Copyright Text */}
                       <div className="text text-[#ffffff3d] text-[14px] md:text-[12px] ">
-                            © 2024 NextLevelTrading® All rights reserved
+                            © 2025 NextLevelTrading® All rights reserved
                       </div>
                   </div>
                   <div className="content flex flex-col py-4 mt-[3rem] md:mt-[5rem]">
