@@ -16,38 +16,60 @@ import useGeolocation from '../hooks/useGeolocation';
 function Home() {
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
-  const country = useGeolocation(); // Uses the Next.js API route for security
+  const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
 
-  // Function to dynamically load language translations
-  const loadTranslations = async (langCode) => {
+
+
+  const fetchLocation = async () => {
     try {
-      const response = await fetch(`/translations/${langCode}.json`);
-      const translations = await response.json();
-      setTexts(translations);
+      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      const data = await response.json();
+      return data.country; // Returns country code (e.g., "DE", "US")
     } catch (error) {
-      console.error(`Could not load translations for ${langCode}:`, error);
+      console.error("Failed to fetch location", error);
+      return "DE"; // Default to German if error occurs
     }
   };
 
-  // Update language when country code is fetched
-  useEffect(() => {
-    if (!country) return; // Wait until country is determined
-
-    const languageMap = {
-      DE: "de", AT: "de", // German
-      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en", // English
-      PT: "pt", BR: "pt", // Portuguese
-      FR: "fr", CH: "fr", LU: "fr", // French
-      NL: "nl", BE: "nl", // Dutch
-      IT: "it", // Italian
-      SV: "sv", // Swedish
-      ES: "es", // Spanish
-    };
-
-    loadTranslations(languageMap[country] || "de"); // Default to German
-  }, [country]);
-
+  // Function to dynamically load language translations
+   useEffect(() => {
+      const getLocation = async () => {
+        const location = await fetchLocation();
+        setCountry(location);
+      };
+  
+      getLocation();
+    }, []);
+  
+    useEffect(() => {
+      if (!country) return;
+  
+      const languageMap = {
+        DE: "de", AT: "de",
+        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+        PT: "pt", BR: "pt",
+        FR: "fr", CH: "fr", LU: "fr",
+        NL: "nl", BE: "nl",
+        IT: "it",
+        SV: "sv",
+        ES: "es",
+      };
+  
+      const loadTranslations = async (langCode) => {
+        try {
+          const translations = await import(`../../public/translations/${langCode}.json`);
+          setTexts(translations.default || translations);
+        } catch (error) {
+          console.error(`Could not load translations for ${langCode}:`, error);
+        }
+      };
+  
+      loadTranslations(languageMap[country] || "de"); // Default to German if no match
+  
+    }, [country]);
+    
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
