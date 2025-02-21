@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 
 const fetchLocation = async () => {
   try {
-    const response = await fetch("/api/location"); // Calls your Next.js API route
+    const response = await fetch("/api/location"); // Calls Next.js API route
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
+
     const data = await response.json();
-    return data.countryCode; // Returns "DE", "US", etc.
+    return data.countryCode || null; // Returns "DE", "US", etc.
   } catch (error) {
-    console.error("Error fetching location", error);
+    console.error("❌ Error fetching location:", error);
     return null;
   }
 };

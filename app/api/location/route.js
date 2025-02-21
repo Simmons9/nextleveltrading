@@ -1,17 +1,50 @@
-export default async function handler(req, res) {
+export async function GET() {
     try {
-      const token = process.env.IPINFO_TOKEN; // Store token in Vercel Environment Variables
+      const token = process.env.IPINFO_TOKEN; // Get token from Vercel Environment Variables
       if (!token) {
-        return res.status(500).json({ error: "Missing API Token" });
+        console.error("❌ Missing API Token in Vercel Environment Variables.");
+        return new Response(JSON.stringify({ error: "Missing API Token" }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        });
       }
   
+      // Fetch user geolocation from IPInfo
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      if (!response.ok) throw new Error("Failed to fetch location");
+  
+      if (!response.ok) {
+        console.error(`❌ IPInfo API Error: ${response.status}`);
+        return new Response(JSON.stringify({ error: "Failed to fetch geolocation" }), {
+          status: response.status,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
   
       const data = await response.json();
-      res.status(200).json({ country: data.country, countryCode: data.country }); // Returns "DE", "US", etc.
+  
+      // Ensure country data is present
+      if (!data.country) {
+        console.error("❌ Country data not found in IPInfo response");
+        return new Response(JSON.stringify({ error: "Invalid geolocation response" }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+  
+      return new Response(JSON.stringify({
+        country: data.country,  // Full country name (e.g., "Germany")
+        countryCode: data.country // ISO country code (e.g., "DE")
+      }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+  
     } catch (error) {
-      console.error("Error fetching geolocation:", error);
-      res.status(500).json({ error: "Failed to fetch geolocation" });
+      console.error("❌ Error fetching geolocation:", error);
+      return new Response(JSON.stringify({ error: "Failed to fetch geolocation" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
   }
+  
