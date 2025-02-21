@@ -14,39 +14,63 @@ const Button = ({ buttonText }) => {
     lastName: "",
     email: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const router = useRouter();
-  const country = useGeolocation();
 
-  // Function to dynamically load translations
-  const loadTranslations = async (langCode) => {
+
+
+  const fetchLocation = async () => {
     try {
-      const response = await fetch(`/translations/${langCode}.json`);
-      const translations = await response.json();
-      setTexts(translations);
+      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      const data = await response.json();
+      return data.country; // Returns country code (e.g., "DE", "US")
     } catch (error) {
-      console.error(`Could not load translations for ${langCode}:`, error);
+      console.error("Failed to fetch location", error);
+      return "DE"; // Default to German if error occurs
     }
   };
 
-  // Fetch translations when country changes
+
+  const [loading, setLoading] = useState(false);
+  const [texts, setTexts] = useState({});
+  const router = useRouter();
+  const [country, setCountry] = useState(null);
+
+  // Function to dynamically load translations
   useEffect(() => {
-    if (!country) return;
-
-    const languageMap = {
-      DE: "de", AT: "de",
-      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-      PT: "pt", BR: "pt",
-      FR: "fr", CH: "fr", LU: "fr",
-      NL: "nl", BE: "nl",
-      IT: "it",
-      SV: "sv",
-      ES: "es",
-    };
-
-    loadTranslations(languageMap[country] || "de");
-  }, [country]);
+      const getLocation = async () => {
+        const location = await fetchLocation();
+        setCountry(location);
+      };
+  
+      getLocation();
+    }, []);
+  
+    useEffect(() => {
+      if (!country) return;
+  
+      const languageMap = {
+        DE: "de", AT: "de",
+        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+        PT: "pt", BR: "pt",
+        FR: "fr", CH: "fr", LU: "fr",
+        NL: "nl", BE: "nl",
+        IT: "it",
+        SV: "sv",
+        ES: "es",
+      };
+  
+      const loadTranslations = async (langCode) => {
+        try {
+          const translations = await import(`../../../public/translations/${langCode}.json`);
+          setTexts(translations.default || translations);
+        } catch (error) {
+          console.error(`Could not load translations for ${langCode}:`, error);
+        }
+      };
+  
+      loadTranslations(languageMap[country] || "de"); // Default to German if no match
+  
+    }, [country]);
 
   // Handle form submission
   const handleSubmit = async (e) => {
