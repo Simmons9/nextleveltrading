@@ -594,7 +594,7 @@ function Home() {
     </div>
 
     <div className="flex flex-wrap justify-center items-start w-full h-auto mt-10 gap-6">
-    <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
+    <div className="w-[32rem] bg-[#fff] pt-3 rounded-[20px] h-auto">
   <div className="button1 bg-[#0cdc6a] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px]">
     {texts.online?.hundredPercentCorrect}
   </div>
@@ -621,7 +621,7 @@ function Home() {
 </div>
 
       
-      <div className="w-[32rem] bg-[#fff] p-3 rounded-[20px] h-[27rem]">
+      <div className="w-[32rem] bg-[#fff] pt-3 rounded-[20px] h-auto">
         <div className="button1 bg-[#ff0000] text-[#ffffff] font-bold pt-[15px] pb-[15px] text-[20px] items-center text-center rounded-[10px] ">
         {texts.online?.definitelyNot}
         </div>
