@@ -180,7 +180,7 @@ function Home() {
 <div className="relative z-10 mt-[2rem] sm:mt-[3rem] fadeInUp flex justify-center" style={{ animationDelay: "0.9s" }}>
   <img
     className="images1 h-auto object-cover relative w-[50%] sm:w-[60%] md:w-[70%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]" // Adjusted width for mobile
-    src="/images/image11.png"
+    src="/images/image1.png"
     alt="New Image"
     loading="lazy"
   />
@@ -474,7 +474,7 @@ function Home() {
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam}</span>
     
     <img
-      src="/images/image12.png"
+      src="/images/image3.png"
       alt=""
       className=" w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
       style={{ backgroundImage: '100%' }}
@@ -692,7 +692,7 @@ function Home() {
 <div className="part5 w-full h-auto bg-[#041212] rounded-[20px] flex flex-col lg:flex-row justify-center items-center mt-[4rem] md:mt-[6rem] mb-10 px-4 lg:px-0">
   
   <div className="left-img w-full lg:w-[34rem] mt-[1.5rem] h-auto lg:mt-[6rem] mb-[2rem] lg:mb-[6rem]">
-    <img src="/images/image.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
+    <img src="/images/image4.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
   </div>
 
   <div className="hidden md:block text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
