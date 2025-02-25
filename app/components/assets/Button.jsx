@@ -4,75 +4,86 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import useGeolocation from "../../hooks/useGeolocation";
 
 const Button = ({ buttonText }) => {
+  // State for modal
   const [showModal, setShowModal] = useState(false);
+
+  // State for phone input
   const [phone, setPhone] = useState("");
+
+  // State for other form fields
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
 
+  // Loading, translations, country states
+  const [loading, setLoading] = useState(false);
+  const [texts, setTexts] = useState({});
+  const [country, setCountry] = useState(null);
 
+  // Next.js router for redirection
+  const router = useRouter();
 
+  // 1. Fetch user’s location from IPinfo
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      if (!token) {
+        console.error("IPinfo token is missing");
+        return "DE"; // Default to DE
+      }
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      if (!response.ok) throw new Error("Failed to fetch location");
       const data = await response.json();
-      return data.country; // Returns country code (e.g., "DE", "US")
+      return data.country || "DE"; // E.g., "DE", "US", etc.
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE"; // Default to German if error occurs
+      return "DE"; // Default to DE if error
     }
   };
 
-
-  const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const router = useRouter();
-  const [country, setCountry] = useState(null);
-
-  // Function to dynamically load translations
+  // 2. On component mount, get country
   useEffect(() => {
-      const getLocation = async () => {
-        const location = await fetchLocation();
-        setCountry(location);
-      };
-  
-      getLocation();
-    }, []);
-  
-    useEffect(() => {
-      if (!country) return;
-  
-      const languageMap = {
-        DE: "de", AT: "de",
-        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-        PT: "pt", BR: "pt",
-        FR: "fr", CH: "fr", LU: "fr",
-        NL: "nl", BE: "nl",
-        IT: "it",
-        SV: "sv",
-        ES: "es",
-      };
-  
-      const loadTranslations = async (langCode) => {
-        try {
-          const translations = await import(`../../../public/translations/${langCode}.json`);
-          setTexts(translations.default || translations);
-        } catch (error) {
-          console.error(`Could not load translations for ${langCode}:`, error);
-        }
-      };
-  
-      loadTranslations(languageMap[country] || "de"); // Default to German if no match
-  
-    }, [country]);
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
+    };
+    getLocation();
+  }, []);
 
-  // Handle form submission
+  // 3. Dynamically load translations based on the user’s country
+  useEffect(() => {
+    if (!country) return;
+
+    const languageMap = {
+      DE: "de", AT: "de",
+      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+      PT: "pt", BR: "pt",
+      FR: "fr", CH: "fr", LU: "fr",
+      NL: "nl", BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+
+    const loadTranslations = async (langCode) => {
+      try {
+        const translations = await import(
+          `../../../public/translations/${langCode}.json`
+        );
+        setTexts(translations.default || translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+
+    loadTranslations(languageMap[country] || "de"); // fallback to DE
+  }, [country]);
+
+  // 4. Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -82,15 +93,13 @@ const Button = ({ buttonText }) => {
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
-      ip: "user-ip",
+      ip: "user-ip", // or pass real IP if needed
     };
 
     try {
       const response = await fetch("/api/trackbox", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
@@ -98,10 +107,8 @@ const Button = ({ buttonText }) => {
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
-
-        // Redirect to thank you page after submission
- 
-          router.push("/thank-you");
+        // ✅ Redirect to thank you page
+        router.push("/thank-you");
       } else {
         alert("Error submitting form. Please try again.");
       }
