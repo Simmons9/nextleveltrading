@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";  // Use next/navigation to get query params
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -26,6 +26,12 @@ const Button = ({ buttonText }) => {
 
   // Next.js router for redirection
   const router = useRouter();
+
+  // Get query parameters from URL (useSearchParams hook)
+  const searchParams = useSearchParams();
+  const affiliateId = searchParams.get("ai");  // Extract affiliate ID from URL
+  const gi = searchParams.get("gi");  // Extract gi from URL
+  const ci = searchParams.get("ci");  // Extract ci from URL
 
   // 1. Fetch user’s location from IPinfo
   const fetchLocation = async () => {
@@ -93,6 +99,9 @@ const Button = ({ buttonText }) => {
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
+      ai: affiliateId,  // Pass affiliate ID dynamically
+      gi: gi,  // Pass gi dynamically
+      ci: ci,  // Pass ci dynamically
       ip: "user-ip", // or pass real IP if needed
     };
 

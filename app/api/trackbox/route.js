@@ -1,4 +1,4 @@
-export const runtime = "edge"; // Next.js 13+ App Router (Edge Runtime optional)
+export const runtime = "edge"; // Next.js 13+ Edge Runtime (optional)
 
 export async function POST(req) {
   try {
@@ -21,28 +21,24 @@ export async function POST(req) {
       );
     }
 
-    // You may pass these parameters from your client form or query params
-    // For example, if the client does a fetch("/api/trackbox", { method: "POST", body: { ai: "2958033", ... } })
-    // or you parse them in your client from the query string ?ai=2958033, etc.
-    // Just ensure your client includes them in the request body.
-
-    const affiliateAi = body.ai || "2958033";  // If none provided, fallback to a default
-    const giParam      = body.gi || "22";      // If your gi is dynamic, can also do fallback
-    const ciParam      = body.ci || "1";       // If your ci is dynamic, fallback to "1"
+    // Extract affiliate ID and other params from the request body
+    const affiliateAi = body.ai || "2958033";  // Default affiliate ID if none is passed
+    const giParam = body.gi || "22";  // Default gi if none is passed
+    const ciParam = body.ci || "4";  // Default ci if none is passed
 
     // Prepare Data Payload
     const payload = {
-      ai: affiliateAi,             // <== dynamic affiliate ID
+      ai: affiliateAi, // Dynamic affiliate ID
       ci: ciParam,
       gi: giParam,
-      userip: body.userip || "0.0.0.0",
+      userip: body.userip || "0.0.0.0",  // Default user IP
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Aa123456789!", // Trackbox requires a password
+      password: body.password || "Aa123456789!",  // Default password
       phone: body.phoneNumber,
-      so: body.so || "NextLevelTrading",         // If 'so' can also be dynamic
-      lg: body.lg || "EN",                      // Language param can be dynamic
+      so: body.so || "NextLevelTrading",  // Source (optional)
+      lg: body.lg || "EN",  // Language (optional)
     };
 
     // Call Trackbox API
@@ -58,7 +54,6 @@ export async function POST(req) {
     });
 
     const data = await response.json();
-
     return new Response(
       JSON.stringify({ success: response.ok, data }),
       {
