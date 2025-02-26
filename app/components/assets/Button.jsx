@@ -1,37 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation"; // Use next/navigation to get query params
+import { useRouter } from "next/navigation"; // Use useRouter() instead of useSearchParams
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 const Button = ({ buttonText }) => {
-  // State for modal
   const [showModal, setShowModal] = useState(false);
-
-  // State for phone input
   const [phone, setPhone] = useState("");
-
-  // State for other form fields
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
-
-  // Loading, translations, country states
   const [loading, setLoading] = useState(false);
   const [texts, setTexts] = useState({});
   const [country, setCountry] = useState(null);
 
-  // Next.js router for redirection
   const router = useRouter();
+  const { query } = router; // Access query parameters from router
 
-  // Get query parameters from URL (useSearchParams hook)
-  const searchParams = useSearchParams();
-  const affiliateIds = searchParams.get("ai")?.split(",") || [];  // Handle multiple affiliate IDs
-  const gi = searchParams.get("gi");  // Extract gi from URL
-  const ci = searchParams.get("ci");  // Extract ci from URL
+  const affiliateIds = query.ai?.split(",") || []; // Handle multiple affiliate IDs
+  const gi = query.gi;
+  const ci = query.ci;
 
   // Fetch user's location based on IP
   const fetchLocation = async () => {
@@ -44,10 +35,10 @@ const Button = ({ buttonText }) => {
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       if (!response.ok) throw new Error("Failed to fetch location");
       const data = await response.json();
-      return data.country || "DE"; // E.g., "DE", "US", etc.
+      return data.country || "DE";
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE"; // Default to DE if error
+      return "DE";
     }
   };
 
@@ -119,7 +110,7 @@ const Button = ({ buttonText }) => {
       }
 
       setShowModal(false);
-      router.push("/thank-you"); // Redirect after all submissions
+      router.push("/thank-you");
     } catch (error) {
       console.error("Submission error:", error);
       alert("Error sending data.");
