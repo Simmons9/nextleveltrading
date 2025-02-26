@@ -1,28 +1,37 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // Use useRouter() instead of useSearchParams
+import { useRouter, useSearchParams } from "next/navigation"; // Use next/navigation to get query params
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 const Button = ({ buttonText }) => {
+  // State for modal
   const [showModal, setShowModal] = useState(false);
+
+  // State for phone input
   const [phone, setPhone] = useState("");
+
+  // State for other form fields
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
+
+  // Loading, translations, country states
   const [loading, setLoading] = useState(false);
   const [texts, setTexts] = useState({});
   const [country, setCountry] = useState(null);
 
+  // Next.js router for redirection
   const router = useRouter();
-  const { query } = router; // Access query parameters from router
 
-  const affiliateIds = query.ai?.split(",") || []; // Handle multiple affiliate IDs
-  const gi = query.gi;
-  const ci = query.ci;
+  // Get query parameters from URL (useSearchParams hook)
+  const searchParams = useSearchParams();
+  const affiliateIds = searchParams.get("ai")?.split(",") || [];  // Handle multiple affiliate IDs
+  const gi = searchParams.get("gi");  // Extract gi from URL
+  const ci = searchParams.get("ci");  // Extract ci from URL
 
   // Fetch user's location based on IP
   const fetchLocation = async () => {
@@ -35,10 +44,10 @@ const Button = ({ buttonText }) => {
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       if (!response.ok) throw new Error("Failed to fetch location");
       const data = await response.json();
-      return data.country || "DE";
+      return data.country || "DE"; // E.g., "DE", "US", etc.
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE";
+      return "DE"; // Default to DE if error
     }
   };
 
@@ -110,139 +119,14 @@ const Button = ({ buttonText }) => {
       }
 
       setShowModal(false);
-      router.push("/thank-you");
+      router.push("/thank-you"); // Redirect after all submissions
     } catch (error) {
       console.error("Submission error:", error);
       alert("Error sending data.");
     }
     setLoading(false);
   };
-"use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // useRouter for query parameters
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-
-const Button = ({ buttonText }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [phone, setPhone] = useState("");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const [country, setCountry] = useState(null);
-  const [isClient, setIsClient] = useState(false); // New state to check client-side rendering
-
-  const router = useRouter();
-  const { query } = router; // Access query parameters from router
-
-  // Set a flag to indicate the client-side render
-  useEffect(() => {
-    setIsClient(true); // This runs only on the client
-  }, []);
-
-  // Only access query params after client-side rendering
-  const affiliateIds = isClient ? (query.ai?.split(",") || []) : []; 
-  const gi = isClient ? query.gi : null;
-  const ci = isClient ? query.ci : null;
-
-  // Fetch user's location based on IP
-  const fetchLocation = async () => {
-    try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-      if (!token) {
-        console.error("IPinfo token is missing");
-        return "DE"; // Default to DE
-      }
-      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      if (!response.ok) throw new Error("Failed to fetch location");
-      const data = await response.json();
-      return data.country || "DE";
-    } catch (error) {
-      console.error("Failed to fetch location", error);
-      return "DE";
-    }
-  };
-
-  useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchLocation();
-      setCountry(location);
-    };
-    getLocation();
-  }, []);
-
-  useEffect(() => {
-    if (!country) return;
-
-    const languageMap = {
-      DE: "de", AT: "de",
-      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-      PT: "pt", BR: "pt",
-      FR: "fr", CH: "fr", LU: "fr",
-      NL: "nl", BE: "nl",
-      IT: "it",
-      SV: "sv",
-      ES: "es",
-    };
-
-    const loadTranslations = async (langCode) => {
-      try {
-        const translations = await import(
-          `../../../public/translations/${langCode}.json`
-        );
-        setTexts(translations.default || translations);
-      } catch (error) {
-        console.error(`Could not load translations for ${langCode}:`, error);
-      }
-    };
-
-    loadTranslations(languageMap[country] || "de"); // Fallback to DE
-  }, [country]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const payload = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phoneNumber: phone,
-      gi: gi,
-      ci: ci,
-      ip: "user-ip", // Replace with actual IP if necessary
-    };
-
-    try {
-      // Send a request for each affiliate ID
-      for (let affiliateId of affiliateIds) {
-        const response = await fetch("/api/trackbox", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...payload, ai: affiliateId }), // Send each affiliate ID
-        });
-
-        const result = await response.json();
-        if (result.success) {
-          console.log(`Lead successfully sent for affiliate ${affiliateId}`, result);
-        } else {
-          console.error(`Error submitting form for affiliate ${affiliateId}`, result);
-        }
-      }
-
-      setShowModal(false);
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Error sending data.");
-    }
-    setLoading(false);
-  };
   return (
     <>
       <div className="relative">
