@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // Use useRouter instead of useSearchParams
+import { useRouter } from "next/navigation";  // Using useRouter instead of useSearchParams
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -18,10 +18,10 @@ const Button = ({ buttonText }) => {
   const [country, setCountry] = useState(null);
 
   const router = useRouter();
-  const { query } = router; // Access query parameters from router
+  const { query } = router; // Using useRouter to access query params
 
-  // Access the query parameters from the router
-  const affiliateIds = query.ai?.split(",") || []; // Handle multiple affiliate IDs
+  // Access query parameters
+  const affiliateIds = query.ai?.split(",") || [];  // Handle multiple affiliate IDs
   const gi = query.gi;
   const ci = query.ci;
 
@@ -118,6 +118,11 @@ const Button = ({ buttonText }) => {
     }
     setLoading(false);
   };
+
+  return (
+    // Your modal form JSX code remains unchanged
+  );
+};
 
   return (
     <>
