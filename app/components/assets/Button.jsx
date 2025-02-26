@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";  // Use next/navigation to get query params
+import { useRouter, useSearchParams } from "next/navigation"; // Use next/navigation to get query params
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -29,11 +29,11 @@ const Button = ({ buttonText }) => {
 
   // Get query parameters from URL (useSearchParams hook)
   const searchParams = useSearchParams();
-  const affiliateId = searchParams.get("ai");  // Extract affiliate ID from URL
+  const affiliateIds = searchParams.get("ai")?.split(",") || [];  // Handle multiple affiliate IDs
   const gi = searchParams.get("gi");  // Extract gi from URL
   const ci = searchParams.get("ci");  // Extract ci from URL
 
-  // 1. Fetch user’s location from IPinfo
+  // Fetch user's location based on IP
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
@@ -51,7 +51,6 @@ const Button = ({ buttonText }) => {
     }
   };
 
-  // 2. On component mount, get country
   useEffect(() => {
     const getLocation = async () => {
       const location = await fetchLocation();
@@ -60,7 +59,6 @@ const Button = ({ buttonText }) => {
     getLocation();
   }, []);
 
-  // 3. Dynamically load translations based on the user’s country
   useEffect(() => {
     if (!country) return;
 
@@ -86,10 +84,9 @@ const Button = ({ buttonText }) => {
       }
     };
 
-    loadTranslations(languageMap[country] || "de"); // fallback to DE
+    loadTranslations(languageMap[country] || "de"); // Fallback to DE
   }, [country]);
 
-  // 4. Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -99,28 +96,30 @@ const Button = ({ buttonText }) => {
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
-      ai: affiliateId,  // Pass affiliate ID dynamically
-      gi: gi,  // Pass gi dynamically
-      ci: ci,  // Pass ci dynamically
-      ip: "user-ip", // or pass real IP if needed
+      gi: gi,
+      ci: ci,
+      ip: "user-ip", // Replace with actual IP if necessary
     };
 
     try {
-      const response = await fetch("/api/trackbox", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      // Send a request for each affiliate ID
+      for (let affiliateId of affiliateIds) {
+        const response = await fetch("/api/trackbox", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...payload, ai: affiliateId }), // Send each affiliate ID
+        });
 
-      const result = await response.json();
-      if (result.success) {
-        console.log("Lead successfully sent!", result);
-        setShowModal(false);
-        // ✅ Redirect to thank you page
-        router.push("/thank-you");
-      } else {
-        alert("Error submitting form. Please try again.");
+        const result = await response.json();
+        if (result.success) {
+          console.log(`Lead successfully sent for affiliate ${affiliateId}`, result);
+        } else {
+          console.error(`Error submitting form for affiliate ${affiliateId}`, result);
+        }
       }
+
+      setShowModal(false);
+      router.push("/thank-you"); // Redirect after all submissions
     } catch (error) {
       console.error("Submission error:", error);
       alert("Error sending data.");
