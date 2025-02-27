@@ -162,7 +162,7 @@ function Home() {
 
   <div className="relative z-[1000]">
 
-  <Button buttonText={texts.online?.downloadButton || "Download"} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
+  <Button buttonText={texts.online?.downloadButton} />
 
     <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
       <img
@@ -399,7 +399,7 @@ function Home() {
 
    
     <div className="relative z-[1000] text-[#000]">
-      <Button buttonText={texts.online?.downloadButton1 || "Download 1"} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
+      <Button buttonText={texts.online?.downloadButton1} />
       <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
           <img
           src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -814,7 +814,7 @@ function Home() {
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
-      <Button buttonText={texts.online?.downloadButton2 || "Download 2"} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
+      <Button buttonText={texts.online?.downloadButton2} />
       <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
           <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -855,7 +855,7 @@ function Home() {
 
     </div>
     <div className="relative z-[1000] text-[#000] block md:hidden"> 
-    <Button buttonText={texts.online?.downloadButton3 || "Download 3"} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
+    <Button buttonText={texts.online?.downloadButton2} />
     <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
