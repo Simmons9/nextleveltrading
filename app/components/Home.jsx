@@ -8,19 +8,31 @@ import Datenschutz from "./assets/Datenschutz";
 import Impressum from "./assets/Impressum";
 import Risikohinweis from "./assets/Risikohinweis";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation"; // ✅ Extract query parameters properly
+import { useRouter } from "next/navigation"; // ✅ Use useRouter()
 
 function Home() {
+  const router = useRouter();
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
-  const searchParams = useSearchParams(); // ✅ Extract URL query parameters once
+  const [affiliateParams, setAffiliateParams] = useState({
+    ai: "2958033", // Default affiliate ID
+    gi: "22",
+    ci: "4",
+  });
 
-  // ✅ Extract affiliate ID, gi, and ci from the URL
-  const ai = searchParams.get("ai") || "2958033"; // Default if not provided
-  const gi = searchParams.get("gi") || "22";
-  const ci = searchParams.get("ci") || "4";
+  // ✅ Extract query parameters on client side after mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      setAffiliateParams({
+        ai: params.get("ai") || "2958033",
+        gi: params.get("gi") || "22",
+        ci: params.get("ci") || "4",
+      });
+    }
+  }, []);
 
   const fetchLocation = async () => {
     try {
@@ -150,7 +162,7 @@ function Home() {
 
   <div className="relative z-[1000]">
 
-  <Button buttonText={texts.online?.downloadButton} />
+  <Button buttonText={texts.online?.downloadButton} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
 
     <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
       <img
@@ -387,11 +399,11 @@ function Home() {
 
    
     <div className="relative z-[1000] text-[#000]">
-    <Button buttonText={texts.online?.downloadButton1} />
-    <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
+      <Button buttonText={texts.online?.downloadButton1} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
+      <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
           <img
-        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
-        alt="Avatar"
+          src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+          alt="Avatar"
             width={114}
             height={30.19}
           />
@@ -399,7 +411,7 @@ function Home() {
           <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
           </div>
         </div>
-</div>
+      </div>
   </>
 )}
 
@@ -802,7 +814,7 @@ function Home() {
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
-      <Button buttonText={texts.online?.downloadButton2} />
+      <Button buttonText={texts.online?.downloadButton2} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
       <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
           <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -843,7 +855,7 @@ function Home() {
 
     </div>
     <div className="relative z-[1000] text-[#000] block md:hidden"> 
-    <Button buttonText={texts.online?.downloadButton2} />
+    <Button buttonText={texts.online?.downloadButton2} ai={affiliateParams.ai} gi={affiliateParams.gi} ci={affiliateParams.ci} />
     <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
