@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation"; // ✅ Use useSearchParams()
+import { useState } from "react";
+import { useRouter } from "next/navigation"; 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const Button = ({ buttonText }) => {
+const Button = ({ buttonText, ai, gi, ci }) => { // ✅ Receive ai, gi, ci as props from Home.js
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -15,58 +15,43 @@ const Button = ({ buttonText }) => {
   });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams(); // ✅ Extract query params correctly
-
-  // ✅ Extract Affiliate ID, gi, and ci from the URL
-  const affiliateIds = searchParams.get("ai") ? searchParams.get("ai").split(",") : ["2958033"]; // Default affiliate ID
-  const gi = searchParams.get("gi") || "22"; // Default gi
-  const ci = searchParams.get("ci") || "4";  // Default ci
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
+    // ✅ Prepare data payload including ai, gi, and ci
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
+      ai: ai,  // ✅ Correctly using affiliate ID from Home.js
       gi: gi,
       ci: ci,
     };
 
     try {
-      let autologinUrl = null;
+      const response = await fetch("/api/trackbox", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      // ✅ Send request for each affiliate ID
-      for (let affiliateId of affiliateIds) {
-        const response = await fetch("/api/trackbox", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...payload, ai: affiliateId }), // Send each affiliate ID
-        });
+      const result = await response.json();
 
-        const result = await response.json();
-        if (result.success) {
-          console.log(`✅ Lead successfully sent for affiliate ${affiliateId}`, result);
+      if (result.success) {
+        console.log("✅ Lead successfully sent!", result);
 
-          // ✅ Extract the autologin URL (if available)
-          if (result.autologinUrl) {
-            autologinUrl = result.autologinUrl; // Store the autologin link
-          }
+        // ✅ Redirect to autologin URL if available
+        if (result.autologinUrl) {
+          console.log("🔗 Redirecting to Autologin URL:", result.autologinUrl);
+          window.location.href = result.autologinUrl; // Redirect user to autologin
         } else {
-          console.error(`❌ Error submitting form for affiliate ${affiliateId}`, result);
+          router.push("/thank-you"); // Fallback redirect
         }
-      }
-
-      setShowModal(false);
-
-      // ✅ Redirect to autologin if available, otherwise go to thank you page
-      if (autologinUrl) {
-        console.log("🔗 Redirecting to Autologin URL:", autologinUrl);
-        window.location.href = autologinUrl; // Redirect user to autologin
       } else {
-        router.push("/thank-you"); // Fallback redirect
+        alert("Error submitting form. Please try again.");
       }
     } catch (error) {
       console.error("❌ Submission error:", error);

@@ -1,25 +1,26 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Button from './assets/Button';
-import Cards from './assets/Cards';
-import Tag from './assets/Tag';
-import Datenschutz from './assets/Datenschutz';
-import Impressum from './assets/Impressum';
-import Risikohinweis from './assets/Risikohinweis';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import useGeolocation from '../hooks/useGeolocation';
+import React, { useState, useEffect } from "react";
+import Button from "./assets/Button";
+import Cards from "./assets/Cards";
+import Tag from "./assets/Tag";
+import Datenschutz from "./assets/Datenschutz";
+import Impressum from "./assets/Impressum";
+import Risikohinweis from "./assets/Risikohinweis";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation"; // ✅ Extract query parameters properly
 
 function Home() {
   const [showColumns, setShowColumns] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
+  const searchParams = useSearchParams(); // ✅ Extract URL query parameters once
 
-
+  // ✅ Extract affiliate ID, gi, and ci from the URL
+  const ai = searchParams.get("ai") || "2958033"; // Default if not provided
+  const gi = searchParams.get("gi") || "22";
+  const ci = searchParams.get("ci") || "4";
 
   const fetchLocation = async () => {
     try {
@@ -33,56 +34,59 @@ function Home() {
     }
   };
 
-  // Function to dynamically load language translations
-   useEffect(() => {
-      const getLocation = async () => {
-        const location = await fetchLocation();
-        setCountry(location);
-      };
-  
-      getLocation();
-    }, []);
-  
-    useEffect(() => {
-      if (!country) return;
-  
-      const languageMap = {
-        DE: "de", AT: "de",
-        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-        PT: "pt", BR: "pt",
-        FR: "fr", CH: "fr", LU: "fr",
-        NL: "nl", BE: "nl",
-        IT: "it",
-        SV: "sv",
-        ES: "es",
-      };
-  
-      const loadTranslations = async (langCode) => {
-        try {
-          const translations = await import(`../../public/translations/${langCode}.json`);
-          setTexts(translations.default || translations);
-        } catch (error) {
-          console.error(`Could not load translations for ${langCode}:`, error);
-        }
-      };
-  
-      loadTranslations(languageMap[country] || "de"); // Default to German if no match
-  
-    }, [country]);
-    
+  useEffect(() => {
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
+    };
+    getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (!country) return;
+
+    const languageMap = {
+      DE: "de",
+      AT: "de",
+      US: "en",
+      GB: "en",
+      CA: "en",
+      AU: "en",
+      NZ: "en",
+      PT: "pt",
+      BR: "pt",
+      FR: "fr",
+      CH: "fr",
+      LU: "fr",
+      NL: "nl",
+      BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+
+    const loadTranslations = async (langCode) => {
+      try {
+        const translations = await import(
+          `../../public/translations/${langCode}.json`
+        );
+        setTexts(translations.default || translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+
+    loadTranslations(languageMap[country] || "de");
+  }, [country]);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-
-  const handleShowColumns = () => {
-    setShowColumns(true); 
-  };
-
   const handleToggleColumns = () => {
-    setShowColumns(prevState => !prevState);
+    setShowColumns((prevState) => !prevState);
   };
+  
   return (
     <main className="relative" style={{ fontFamily: "'Outfit', sans-serif" }}>
         <div className="light-bg"  style={{ fontFamily: "'Outfit', sans-serif" }}>
