@@ -14,31 +14,28 @@ export async function POST(req) {
     if (!TRACKBOX_USERNAME || !TRACKBOX_PASSWORD || !TRACKBOX_API_KEY) {
       return new Response(
         JSON.stringify({ success: false, message: "Missing API credentials" }),
-        {
-          status: 500,
-          headers: { "Content-Type": "application/json" },
-        }
+        { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    // Extract affiliate ID and other params from the request body
+    // Extract affiliate ID from the request body (passed from frontend)
     const affiliateAi = body.ai || "2958033";  // Default affiliate ID if none is passed
-    const giParam = body.gi || "22";  // Default gi if none is passed
-    const ciParam = body.ci || "4";  // Default ci if none is passed
+    const giParam = body.gi || "22";  
+    const ciParam = body.ci || "4";  
 
     // Prepare Data Payload
     const payload = {
-      ai: affiliateAi, // Dynamic affiliate ID
+      ai: affiliateAi, // Send affiliate ID dynamically
       ci: ciParam,
       gi: giParam,
-      userip: body.userip || "0.0.0.0",  // Default user IP
+      userip: body.userip || "0.0.0.0",
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Aa123456789!",  // Default password
+      password: body.password || "Aa123456789!",  
       phone: body.phoneNumber,
-      so: body.so || "NextLevelTrading",  // Source (optional)
-      lg: body.lg || "EN",  // Language (optional)
+      so: body.so || "NextLevelTrading",  
+      lg: body.lg || "EN",  
     };
 
     // Call Trackbox API
@@ -54,20 +51,22 @@ export async function POST(req) {
     });
 
     const data = await response.json();
+
+    // Extract the autologin link from the API response
+    const autologinUrl = data?.extras?.redirect?.url || null;
+
     return new Response(
-      JSON.stringify({ success: response.ok, data }),
-      {
-        status: response.status,
-        headers: { "Content-Type": "application/json" },
-      }
+      JSON.stringify({
+        success: response.ok,
+        data,
+        autologinUrl, // Send autologin URL to frontend
+      }),
+      { status: response.status, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
     return new Response(
       JSON.stringify({ success: false, message: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 }

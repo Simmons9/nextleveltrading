@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";  // Using useRouter instead of useSearchParams
+import { useRouter, useSearchParams } from "next/navigation"; // ✅ Use useSearchParams()
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -14,70 +14,13 @@ const Button = ({ buttonText }) => {
     email: "",
   });
   const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const [country, setCountry] = useState(null);
-
   const router = useRouter();
-  const { query } = router; // Using useRouter to access query params
+  const searchParams = useSearchParams(); // ✅ Extract query params correctly
 
-  // Access query parameters
-  const affiliateIds = query.ai?.split(",") || [];  // Handle multiple affiliate IDs
-  const gi = query.gi;
-  const ci = query.ci;
-
-  // Fetch user's location based on IP
-  const fetchLocation = async () => {
-    try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-      if (!token) {
-        console.error("IPinfo token is missing");
-        return "DE"; // Default to DE
-      }
-      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      if (!response.ok) throw new Error("Failed to fetch location");
-      const data = await response.json();
-      return data.country || "DE"; // E.g., "DE", "US", etc.
-    } catch (error) {
-      console.error("Failed to fetch location", error);
-      return "DE"; // Default to DE if error
-    }
-  };
-
-  useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchLocation();
-      setCountry(location);
-    };
-    getLocation();
-  }, []);
-
-  useEffect(() => {
-    if (!country) return;
-
-    const languageMap = {
-      DE: "de", AT: "de",
-      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-      PT: "pt", BR: "pt",
-      FR: "fr", CH: "fr", LU: "fr",
-      NL: "nl", BE: "nl",
-      IT: "it",
-      SV: "sv",
-      ES: "es",
-    };
-
-    const loadTranslations = async (langCode) => {
-      try {
-        const translations = await import(
-          `../../../public/translations/${langCode}.json`
-        );
-        setTexts(translations.default || translations);
-      } catch (error) {
-        console.error(`Could not load translations for ${langCode}:`, error);
-      }
-    };
-
-    loadTranslations(languageMap[country] || "de"); // Fallback to DE
-  }, [country]);
+  // ✅ Extract Affiliate ID, gi, and ci from the URL
+  const affiliateIds = searchParams.get("ai") ? searchParams.get("ai").split(",") : ["2958033"]; // Default affiliate ID
+  const gi = searchParams.get("gi") || "22"; // Default gi
+  const ci = searchParams.get("ci") || "4";  // Default ci
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,11 +33,12 @@ const Button = ({ buttonText }) => {
       phoneNumber: phone,
       gi: gi,
       ci: ci,
-      ip: "user-ip", // Replace with actual IP if necessary
     };
 
     try {
-      // Send a request for each affiliate ID
+      let autologinUrl = null;
+
+      // ✅ Send request for each affiliate ID
       for (let affiliateId of affiliateIds) {
         const response = await fetch("/api/trackbox", {
           method: "POST",
@@ -104,25 +48,32 @@ const Button = ({ buttonText }) => {
 
         const result = await response.json();
         if (result.success) {
-          console.log(`Lead successfully sent for affiliate ${affiliateId}`, result);
+          console.log(`✅ Lead successfully sent for affiliate ${affiliateId}`, result);
+
+          // ✅ Extract the autologin URL (if available)
+          if (result.autologinUrl) {
+            autologinUrl = result.autologinUrl; // Store the autologin link
+          }
         } else {
-          console.error(`Error submitting form for affiliate ${affiliateId}`, result);
+          console.error(`❌ Error submitting form for affiliate ${affiliateId}`, result);
         }
       }
 
       setShowModal(false);
-      router.push("/thank-you");
+
+      // ✅ Redirect to autologin if available, otherwise go to thank you page
+      if (autologinUrl) {
+        console.log("🔗 Redirecting to Autologin URL:", autologinUrl);
+        window.location.href = autologinUrl; // Redirect user to autologin
+      } else {
+        router.push("/thank-you"); // Fallback redirect
+      }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("❌ Submission error:", error);
       alert("Error sending data.");
     }
     setLoading(false);
   };
-
-  return (
-    // Your modal form JSX code remains unchanged
-  );
-};
 
   return (
     <>
