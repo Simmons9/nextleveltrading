@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts }) => {
+const Button = ({ buttonText, ai, gi, ci }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -13,9 +14,65 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
     lastName: "",
     email: "",
   });
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
+
+
+  const fetchLocation = async () => {
+    try {
+      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      const data = await response.json();
+      return data.country; 
+    } catch (error) {
+      console.error("Failed to fetch location", error);
+      return "DE"; 
+    }
+  };
+
+
+  const [loading, setLoading] = useState(false);
+  const [texts, setTexts] = useState({});
+  const router = useRouter();
+  const [country, setCountry] = useState(null);
+
+  // Function to dynamically load translations
+  useEffect(() => {
+      const getLocation = async () => {
+        const location = await fetchLocation();
+        setCountry(location);
+      };
+  
+      getLocation();
+    }, []);
+  
+    useEffect(() => {
+      if (!country) return;
+  
+      const languageMap = {
+        DE: "de", AT: "de",
+        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
+        PT: "pt", BR: "pt",
+        FR: "fr", CH: "fr", LU: "fr",
+        NL: "nl", BE: "nl",
+        IT: "it",
+        SV: "sv",
+        ES: "es",
+      };
+  
+      const loadTranslations = async (langCode) => {
+        try {
+          const translations = await import(`../../../public/translations/${langCode}.json`);
+          setTexts(translations.default || translations);
+        } catch (error) {
+          console.error(`Could not load translations for ${langCode}:`, error);
+        }
+      };
+  
+      loadTranslations(languageMap[country] || "de"); 
+  
+    }, [country]);
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -33,22 +90,25 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
     try {
       const response = await fetch("/api/trackbox", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
-
       if (result.success) {
-        if (result.autologinUrl) {
-          window.location.href = result.autologinUrl;
-        } else {
+        console.log("Lead successfully sent!", result);
+        setShowModal(false);
+
+        // Redirect to thank you page after submission
+ 
           router.push("/thank-you");
-        }
       } else {
         alert("Error submitting form. Please try again.");
       }
     } catch (error) {
+      console.error("Submission error:", error);
       alert("Error sending data.");
     }
     setLoading(false);
@@ -68,34 +128,35 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] backdrop-blur-md p-5">
           <div className="bg-white relative rounded-[20px] p-8 w-full max-w-lg lg:mx-0 z-[1001]">
-            <button
-              className="absolute top-4 right-4"
-              onClick={() => setShowModal(false)}
-              aria-label="Close"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
+          <button
+      className="absolute top-4 right-4"
+      onClick={() => setShowModal(false)}
+      aria-label="Close"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
 
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
-              {texts.online?.justOneStep || "Nur noch ein Schritt..."}
+              {texts.online?.justOneStep}
             </h1>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="firstName"
-                placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
+                placeholder={texts.online?.firstNamePlaceholder}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.firstName}
                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
@@ -105,7 +166,7 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
               <input
                 type="text"
                 name="lastName"
-                placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
+                placeholder={texts.online?.lastNamePlaceholder}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.lastName}
                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
@@ -115,7 +176,7 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
               <input
                 type="email"
                 name="email"
-                placeholder={texts.online?.emailPlaceholder || "Email..."}
+                placeholder={texts.online?.emailPlaceholder}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -139,7 +200,7 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
                   }}
                   inputProps={{
                     required: true,
-                    placeholder: texts.online?.telefonnumer || "Telefonnummer",
+                    placeholder: texts.online?.telefonnumer,
                   }}
                 />
               </div>
@@ -149,7 +210,7 @@ const Button = ({ buttonText, ai, gi, ci, texts }) => {
                 className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
               >
                 <div className="btn-text w-full text-center">
-                  {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
+                  {loading ? "Submitting..." : texts.online?.secureAccess}
                 </div>
               </button>
             </form>
