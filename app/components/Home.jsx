@@ -17,35 +17,19 @@ function Home() {
   const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
   const [affiliateParams, setAffiliateParams] = useState({
-    ai: "2958033", // Default affiliate ID
+    ai: "2958033",
     gi: "22",
     ci: "4",
-<<<<<<< HEAD
   });
 
   // ✅ Extract query parameters on client side after mount
-=======
-    altid: null, // Default for altid
-    oi: null,    // Default for oi
-  });
-
-  // Extract query parameters on client side after mount
->>>>>>> parent of 0550070 (live)
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       setAffiliateParams({
-<<<<<<< HEAD
         ai: params.get("ai") || "2958033",
         gi: params.get("gi") || "22",
         ci: params.get("ci") || "4",
-=======
-        ai: params.get("ai") || "2958033", // Default if not present
-        gi: params.get("gi") || "22",      // Default
-        ci: params.get("ci") || "4",       // Default
-        altid: params.get("altid") || null, // Handle altid if needed
-        oi: params.get("oi") || null,       // Handle oi if needed
->>>>>>> parent of 0550070 (live)
       });
     }
   }, []);
@@ -55,10 +39,10 @@ function Home() {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       const data = await response.json();
-      return data.country; // Returns country code (e.g., "DE", "US")
+      return data.country;
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE"; // Default to German if error occurs
+      return "DE";
     }
   };
 
@@ -178,7 +162,15 @@ function Home() {
 
   <div className="relative z-[1000]">
 
-  <Button buttonText={texts.online?.downloadButton} />
+  <Button
+      buttonText={texts.online?.downloadButton || "Loading..."} // Fallback to "Download" if not found
+      ai={affiliateParams.ai}
+      gi={affiliateParams.gi}
+      ci={affiliateParams.ci}
+      altid={affiliateParams.altid}
+      oi={affiliateParams.oi}
+    />
+
 
     <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
       <img
@@ -415,7 +407,15 @@ function Home() {
 
    
     <div className="relative z-[1000] text-[#000]">
-      <Button buttonText={texts.online?.downloadButton1} />
+    <Button
+      buttonText={texts.online?.downloadButton1 || "Loading..."} // Fallback to "Download" if not found
+      ai={affiliateParams.ai}
+      gi={affiliateParams.gi}
+      ci={affiliateParams.ci}
+      altid={affiliateParams.altid}
+      oi={affiliateParams.oi}
+    />
+
       <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
           <img
           src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -830,7 +830,15 @@ function Home() {
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
-      <Button buttonText={texts.online?.downloadButton2} />
+      <Button
+      buttonText={texts.online?.downloadButton2 || "Loading..."} // Fallback to "Download" if not found
+      ai={affiliateParams.ai}
+      gi={affiliateParams.gi}
+      ci={affiliateParams.ci}
+      altid={affiliateParams.altid}
+      oi={affiliateParams.oi}
+    />
+
       <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
           <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -871,7 +879,15 @@ function Home() {
 
     </div>
     <div className="relative z-[1000] text-[#000] block md:hidden"> 
-    <Button buttonText={texts.online?.downloadButton2} />
+    <Button
+      buttonText={texts.online?.downloadButton3 || "Loading..."} // Fallback to "Download" if not found
+      ai={affiliateParams.ai}
+      gi={affiliateParams.gi}
+      ci={affiliateParams.ci}
+      altid={affiliateParams.altid}
+      oi={affiliateParams.oi}
+    />
+
     <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
