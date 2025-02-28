@@ -9,6 +9,7 @@ import Impressum from "./assets/Impressum";
 import Risikohinweis from "./assets/Risikohinweis";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 
 function Home() {
   const router = useRouter();
@@ -107,25 +108,29 @@ function Home() {
   <nav className="flex justify-between items-center  h-full px-4">
     <div className="left-imagess">
     <a href="/">
-  <img
+  <Image
     src="/images/logo-blakc.svg"
     alt="Logo"
-    className="w-[120px] h-auto sm:w-[140px]"  
+    width={120} 
+    height={0} 
+    className="h-auto sm:w-[140px]"
   />
 </a>
     </div>
 
     <div className="right-images flex items-center">
-      <img
-        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
-        alt="Avatar"
-        className="w-[118px] sm:w-[114px] lg:mr-0 mr-[-5rem]"  
-      />
-      <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
-      <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
-         </div>
-
-    </div>
+  <Image
+    src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+    alt="Avatar"
+    width={118} 
+    height={0} 
+    className="h-auto sm:w-[114px] lg:mr-0 mr-[-5rem]"
+  />
+  
+  <div className="text-nav ml-4 text-black text-[12px] md:text-[12px]">
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
+  </div>
+</div>
   </nav>
 </header>
 
@@ -172,18 +177,20 @@ function Home() {
     />
 
 
-    <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
-      <img
-        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
-        alt="Avatar"
-        width={114}
-        height={30.19}
-      />
-      <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
-      <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads }} />
-        
-      </div>
-    </div>
+
+<div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
+  <Image
+    src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+    alt="Avatar"
+    width={114}
+    height={30}
+    className="h-auto"
+  />
+  <div className="text-people ml-4 text-black text-[12px] sm:text-[10px]">
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads }} />
+  </div>
+</div>
+
   </div>
 
 
@@ -193,19 +200,23 @@ function Home() {
 
         
 
-<img
-  className="absolute top-[5rem] md:top-[3.8rem] inset-0 w-full h-[500px] sm:h-[500px] md:h-[600px] object-cover z-10 opacity-100 bg-gray-80"
+  <Image
   src="/images/66d7215fe0a981366df06f3c_Group 2087326459-p-2600.png"
   alt="Large banner"
+  width={2600}
+  height={600}
+  className="absolute top-[5rem] md:top-[3.8rem] inset-0 w-full h-[500px] sm:h-[500px] md:h-[600px] object-cover z-10 opacity-100 bg-gray-80"
 />
 
 
 
 <div className="relative z-10 mt-[2rem] sm:mt-[3rem] fadeInUp flex justify-center" style={{ animationDelay: "0.9s" }}>
-  <img
-    className="images1 h-auto object-cover relative w-[50%] sm:w-[60%] md:w-[70%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]" // Adjusted width for mobile
+  <Image
+    className="images1 h-auto object-cover relative w-[50%] sm:w-[60%] md:w-[70%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]"
     src="/images/image1.png"
     alt="New Image"
+    width={800} 
+    height={600} 
     loading="lazy"
   />
 
@@ -224,14 +235,17 @@ function Home() {
 
 
 
-<div className="grid grid-cols-2 sm:w-[80%] md:grid-cols-6 md:w-[70%]  lg:w-[190%] xl:w-[73%] m-auto">
-  <img className="h-[3rem] w-full object-contain" src="/images/l1.png" alt="" />
-  <img className="h-[3rem] w-full object-contain" src="/images/l2.png" alt="" />
-  <img className="h-[3rem] w-full object-contain" src="/images/l3.png" alt="" />
-  <img className="h-[3rem] w-full object-contain" src="/images/l4.png" alt="" />
-  <img className="h-[3rem] w-full object-contain" src="/images/l5.png" alt="" />
-  <img className="h-[3rem] w-full object-contain" src="/images/l6.png" alt="" />
+
+
+<div className="grid grid-cols-2 sm:w-[80%] md:grid-cols-6 md:w-[70%] lg:w-[190%] xl:w-[73%] m-auto">
+  <Image className="h-[3rem] w-full object-contain" src="/images/l1.png" alt="Logo 1" width={100} height={48} />
+  <Image className="h-[3rem] w-full object-contain" src="/images/l2.png" alt="Logo 2" width={100} height={48} />
+  <Image className="h-[3rem] w-full object-contain" src="/images/l3.png" alt="Logo 3" width={100} height={48} />
+  <Image className="h-[3rem] w-full object-contain" src="/images/l4.png" alt="Logo 4" width={100} height={48} />
+  <Image className="h-[3rem] w-full object-contain" src="/images/l5.png" alt="Logo 5" width={100} height={48} />
+  <Image className="h-[3rem] w-full object-contain" src="/images/l6.png" alt="Logo 6" width={100} height={48} />
 </div>
+
 
 <div className="Tradingdeine w-full h-auto mt-[5rem] px-4 mb-[5rem] flex flex-col items-center">
   <h1 className="w-[23.9rem] sm:w-[42.24rem] font-bold text-[34px] sm:text-[45px] tracking-[.4px] leading-[1.2] text-center fadeInUp" style={{ animationDelay: "0.9s" }}>
@@ -279,8 +293,8 @@ function Home() {
 
            
             <div className="icon-create w-[24px] h-[24px]">
-                <img src="/images/66bdc762139d5d2dbcb2c74c_Add box.png" alt="" />
-            </div>
+          <Image src="/images/66bdc762139d5d2dbcb2c74c_Add box.png" alt="Add Box" width={24} height={24} />
+</div>
         </div>
     </div>
 )}
@@ -290,11 +304,14 @@ function Home() {
       <div className="flex flex-wrap justify-center gap-3">
         {/* Column 1 */}
         <div className="column w-full md:w-[40rem] h-auto p-[20px] bg-[#fefefe08] mb-[2.5rem] md:mb-3 sm:mb-[3rem] relative rounded-[10px]" style={{ border: '1px solid #ffffff0d' }}>
-    <img
-        className="w-full h-auto object-cover sm:h-[250px] md:h-auto" 
-        src="/images/66d70f4263b1d68278be1fe5_Group 2087326667.png"
-        alt="" 
-    />
+        <Image
+  className="w-full h-auto object-cover sm:h-[250px] md:h-auto"
+  src="/images/66d70f4263b1d68278be1fe5_Group 2087326667.png"
+  alt=""
+  width={800} 
+  height={400} 
+  layout="responsive" 
+/>
 <div className="on_the_trader relative z-[20] mt-[3rem] md:mt-0"> 
 <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
 {texts.online?.chapter4}
@@ -319,10 +336,14 @@ function Home() {
 
         {/* Column 2 */}
         <div className="column w-full md:w-[40rem] h-auto p-[15px] bg-[#fefefe08] mb-[1.9rem] md:mb-3 mobile:mb-[3rem] relative rounded-[10px]" style={{ border: '1px solid #ffffff0d' }}>
-          <img
-            className="imgtog5 w-auto h-auto"
-            src="/images/66bdcaea1657996322be914b_U.avif"
-            alt="" />
+        <Image
+          className="imgtog5 w-auto h-auto"
+          src="/images/66bdcaea1657996322be914b_U.avif"
+          alt=""
+          width={500} 
+          height={500} 
+          layout="intrinsic" 
+        />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter5}
@@ -347,10 +368,14 @@ function Home() {
 
         {/* Column 3 */}
         <div className="column w-full md:w-[40rem] h-auto p-[15px] bg-[#fefefe08] mb-[1.9rem] md:mb-3 mobile:mb-[3rem] relative rounded-[10px]" style={{ border: '1px solid #ffffff0d' }}>
-          <img
-            className="imgtog5 w-auto h-auto"
-            src="/images/66d70fe18435ec9fd92ece3a_Group%202087326431.png"
-            alt="" />
+        <Image
+          className="imgtog5 w-auto h-auto"
+          src="/images/66d70fe18435ec9fd92ece3a_Group%202087326431.png"
+          alt=""
+          width={500} 
+          height={500} 
+          layout="intrinsic" 
+        />
           <div className="on_the_trader relative z-[20] mt-[-1.7rem] md:mt-[-8.7rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter6}
@@ -376,10 +401,14 @@ function Home() {
 
         {/* Column 4 */}
         <div className="column w-full md:w-[40rem] h-auto p-[15px] bg-[#fefefe08] mb-3 relative rounded-[10px]" style={{ border: '1px solid #ffffff0d' }}>
-          <img
-            className="imgtog5 w-auto h-auto"
-            src="/images/66bdcaea186d4f1e46c729f4_Frame%202087326564.avif"
-            alt="" />
+        <Image
+          className="imgtog5 w-auto h-auto"
+          src="/images/66bdcaea186d4f1e46c729f4_Frame%202087326564.avif"
+          alt=""
+          width={500} 
+          height={500} 
+          layout="intrinsic" 
+        />
           <div className="on_the_trader relative z-[20] mt-[1rem] md:mt-[-3rem] ">
           <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
           {texts.online?.chapter7}
@@ -416,17 +445,19 @@ function Home() {
       oi={affiliateParams.oi}
     />
 
-      <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
-          <img
-          src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
-          alt="Avatar"
-            width={114}
-            height={30.19}
-          />
-          <div className="text-people ml-4 text-white text-[12px]  sm:text-[10px]">
-          <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
-          </div>
-        </div>
+
+<div className="flex items-center justify-center mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
+  <Image
+    src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+    alt="Avatar"
+    width={114}
+    height={30.19}
+  />
+  <div className="text-people ml-4 text-white text-[12px] sm:text-[10px]">
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.downloads || "Loading downloads..." }} />
+  </div>
+</div>
+
       </div>
   </>
 )}
@@ -479,12 +510,14 @@ function Home() {
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.satisfied}</span>
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.participants}</span>
     
-    <img
-      src="/images/image2.png"
-      alt=""
-      className="mt-[1rem] object-cover bg-contain bg-repeat w-[27rem] h-[10.6rem] "
-      style={{ backgroundImage: '100%' }}
-    />
+    <Image
+  src="/images/image2.png"
+  alt=""
+  className="mt-[1rem] object-cover bg-contain bg-repeat"
+  width={432} 
+  height={170} 
+  style={{ backgroundImage: '100%' }}
+/>
     
     <div
       className="trader_block-overlay"
@@ -505,18 +538,26 @@ function Home() {
     <span className="text-[#0ec661] relative z-10">{texts.online?.topExperts}</span> 
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem] relative z-10">{texts.online?.onTeam}</span>
     
-    <img
-      src="/images/image3.png"
-      alt=""
-      className=" w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
-      style={{ backgroundImage: '100%' }}
-    />
-    <img
-      src=""
-      alt=""
-      className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[0.2rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
-      style={{ backgroundImage: '100%' }}
-    />
+
+    <Image
+  src="/images/image3.png"
+  alt=""
+  className="hidden md:block w-auto h-[200px] object-cover z-0 bg-contain bg-repeat ml-[-2rem] md:mr-2 mt-[-2.3rem] md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
+  style={{ backgroundImage: '100%' }}
+  width={820} 
+  height={300} 
+/>
+
+<Image
+  src="/images/image3.png" 
+  alt=""
+  className="block md:hidden w-auto h-auto object-cover z-0 bg-contain mt-[0.2rem] bg-repeat ml-[-1rem] md:mr-2 md:mt-[-6.3rem] md:w-[820.33px] md:h-[300px]"
+  style={{ backgroundImage: '100%' }}
+  width={820} 
+  height={300}
+/>
+
+
 
     {/* <div
       className="trader_block-overlay"
@@ -569,12 +610,15 @@ function Home() {
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.conducted}</span>
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trades}</span>
     
-    <img
-      src="/images/6601dc8887b1e34f1fff3f5f_frame-numbers-p-500.webp"
-      alt=""
-      className="mt-[2rem]  object-cover bg-contain bg-repeat w-[27rem] h-[10.1rem] "
-      style={{ backgroundImage: '100%' }}
-    />
+    <Image
+  src="/images/6601dc8887b1e34f1fff3f5f_frame-numbers-p-500.webp"
+  alt=""
+  className="mt-[2rem] object-cover bg-contain bg-repeat w-[27rem] h-[10.1rem]"
+  style={{ backgroundImage: '100%' }}
+  width={540}
+  height={202}
+/>
+
     
     <div
       className="trader_block-overlay"
@@ -592,13 +636,15 @@ function Home() {
     <span className="text-[#0ec661]">{texts.online?.fifteenYears}</span> 
     {/* <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.trading}</span> */}
     <span className="block text-[28px] tracking-[.35px] leading-[100%] font-[600] mt-[0.5rem]">{texts.online?.experience}</span>
-    
-    <img
-      src="/images/6601dc8_Frame-p-500.png"
-      alt="aae"
-      className="mt-[4.1rem] object-cover bg-contain bg-repeat w-[28rem] h-[11.1rem] "
-      style={{ backgroundImage: '100%' }}
-    />
+    <Image
+  src="/images/6601dc8_Frame-p-500.png"
+  alt="aae"
+  className="mt-[4.1rem] object-cover bg-contain bg-repeat w-[28rem] h-[11.1rem]"
+  style={{ backgroundImage: '100%' }}
+  width={560}
+  height={222}
+/>
+
     
     <div
       className="trader_block-overlay"
@@ -660,55 +706,70 @@ function Home() {
         <ul className="list-inside list-none m-5 md:m-10 text-[16px] text-[#728291]">
         <li className="flex mt-6">
         <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-      <img 
-        src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
-        alt="check icon" 
-        className="absolute  w-[15px] h-[15px]"
-      />
+        <Image
+          src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png"
+          alt="check icon"
+          className="absolute w-[15px] h-[15px]"
+          width={15}
+          height={15}
+/>
+
     </span>
     {texts.online?.notInterested}
 
     </li>
   <li className="flex mt-8">
   <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-  <img 
-        src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
-        alt="check icon" 
-        className="absolute  w-[15px] h-[15px]"
-      />
+  <Image
+      src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png"
+      alt="check icon"
+      className="absolute w-[15px] h-[15px]"
+      width={15}
+      height={15}
+    />
+
     </span>
     {texts.online?.notWillingToLearn}
 
     </li>
   <li className="flex mt-8">
   <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-  <img 
-        src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
-        alt="check icon" 
-        className="absolute  w-[15px] h-[15px]"
-      />
+  <Image
+  src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png"
+  alt="check icon"
+  className="absolute w-[15px] h-[15px]"
+  width={15}
+  height={15}
+/>
+
     </span>
     {texts.online?.noFinancialGoals}
 
     </li>
   <li className="flex mt-8">
   <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-  <img 
-        src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
-        alt="check icon" 
-        className="absolute  w-[15px] h-[15px]"
-      />
+  <Image
+  src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png"
+  alt="check icon"
+  className="absolute w-[15px] h-[15px]"
+  width={15}
+  height={15}
+/>
+
     </span>
     {texts.online?.noMoneyToInvest}
 
     </li>
   <li className="flex mt-8">
   <span className="relative bg-[#f3ecea] rounded-full w-[30px] h-[30px] mr-2 flex items-center justify-center">
-  <img 
-        src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png" 
-        alt="check icon" 
-        className="absolute  w-[15px] h-[15px]"
-      />
+  <Image
+  src="/images/66bd20b15f0d9108f1af0809_Group%202087326444.png"
+  alt="check icon"
+  className="absolute w-[15px] h-[15px]"
+  width={15}
+  height={15}
+/>
+
     </span>
     {texts.online?.noTimeToInvest}
 
@@ -723,9 +784,18 @@ function Home() {
 
 <div className="part5 w-full h-auto bg-[#041212] rounded-[20px] flex flex-col lg:flex-row justify-center items-center mt-[4rem] md:mt-[6rem] mb-10 px-4 lg:px-0">
   
-  <div className="left-img w-full lg:w-[34rem] mt-[1.5rem] h-auto lg:mt-[6rem] mb-[2rem] lg:mb-[6rem]">
-    <img src="/images/image4.png" alt="dada" loading='lazy' className="w-full lg:w-auto" />
-  </div>
+<div className="left-img w-full lg:w-[34rem] mt-[1.5rem] h-auto lg:mt-[6rem] mb-[2rem] lg:mb-[6rem]">
+  <Image
+    src="/images/image4.png"
+    alt="dada"
+    loading="lazy"
+    className="w-full lg:w-auto"
+    width={500} // Specify the width in pixels
+    height={300} // Specify the height in pixels
+  />
+</div>
+
+
 
   <div className="hidden md:block text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
     <h1 className='text-[28px] lg:text-[40px] font-bold leading-[1.2] mb-5 text-center lg:text-left'>
@@ -737,11 +807,17 @@ function Home() {
         </span>
     </h1>
 
-    <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
-    <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
+    <div className="descript lg:w-[50rem] text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
+  <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
 
-      <img className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0' src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif" alt="Tim Signature" />
-    </div>
+  <Image
+    className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0'
+    src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif"
+    alt="Tim Signature"
+    width={155} // Specify the width in pixels
+    height={50} // Specify the height in pixels
+  />
+</div>
   </div>
 
   <div className="block md:hidden text text-[#ffff] lg:mt-5 lg:ml-[7rem]">
@@ -753,11 +829,17 @@ function Home() {
       {texts.online?.completelyFree}      </span>
     </h1>
 
-    <div className="descript lg:w-[50rem]  text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
-    <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
+    <div className="descript lg:w-[50rem] text-[#788886] text-[16px] lg:text-[16px] tracking-[-.32px] leading-[1.5] text-center lg:text-left">
+  <span dangerouslySetInnerHTML={{ __html: texts.online?.dayTradingTrainingDescription }} />
 
-      <img className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0' src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif" alt="Tim Signature" />
-    </div>
+  <Image
+    className='w-[155px] lg:w-[154px] mb-[4rem] mx-auto lg:mx-0'
+    src="/images/66bd24f909b20f8f904dba08_tim%20signature.avif"
+    alt="Tim Signature"
+    width={155} // Specify the width in pixels
+    height={50} // Specify the height in pixels
+  />
+</div>
   </div>
 </div>
 
@@ -839,17 +921,19 @@ function Home() {
       oi={affiliateParams.oi}
     />
 
-      <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
-          <img
-        src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
-        alt="Avatar"
-            width={114}
-            height={30.19}
-          />
-          <div className="text-people ml-3 mt-1 text-black text-[12px]  sm:text-[11px]">
-          <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
-          </div>
-        </div>
+
+<div className="flex items-center justify-start mb-[2rem] mt-[2rem] sm:mt-[1rem]">
+  <Image
+    src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
+    alt="Avatar"
+    width={114}
+    height={30.19}
+  />
+  <div className="text-people ml-3 mt-1 text-black text-[12px] sm:text-[11px]">
+    <div dangerouslySetInnerHTML={{ __html: texts.online?.orders }} />
+  </div>
+</div>
+
         
 </div>
 
@@ -888,7 +972,7 @@ function Home() {
       oi={affiliateParams.oi}
     />
 
-    <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
+<div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
         alt="Avatar"
@@ -915,14 +999,14 @@ function Home() {
 
 {/* Left Images */}
 <div className="left-images mb-[3rem]">
-<a href="/">
-  <img
-    src="/images/logo-white.svg"
-    alt="Logo"
-    width={140}
-    height={32}
-  />
-</a>
+  <a href="/">
+    <Image
+      src="/images/logo-white.svg"
+      alt="Logo"
+      width={140}
+      height={32}
+    />
+  </a>
 </div>
 
 {/* Right List */}

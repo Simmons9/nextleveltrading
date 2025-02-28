@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
 
 const fetchLocation = async () => {
   try {
@@ -90,10 +91,12 @@ const CardSection = () => {
           className="w-full md:w-[48%] lg:w-[39rem] h-auto flex flex-col sm:flex-row items-center bg-[#fff] p-4 sm:p-[30px] rounded-[10px] fadeRight opacity-0"
           style={{ animationDelay: `${index * 0.5}s` }} 
         >
-          <img
+          <Image
             className="h-[130px] sm:h-[129px] w-[130px] sm:w-[120px] sm:mr-4"
             src={card.imgSrc}
             alt={card.title}
+            width={130}
+            height={130}
           />
           <div className="text-center sm:text-left">
             <div className="font-bold text-[24px] sm:text-[24px] leading-[1.2]">{card.title}</div>
