@@ -20,20 +20,16 @@ function Home() {
     ai: "2958033",
     gi: "22",
     ci: "4",
-    altid: null, // Default for altid
-    oi: null,    // Default for oi
   });
 
-  // Extract query parameters on client side after mount
+  // ✅ Extract query parameters on client side after mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       setAffiliateParams({
-        ai: params.get("ai") || "2958033", // Default if not present
-        gi: params.get("gi") || "22",      // Default
-        ci: params.get("ci") || "4",       // Default
-        altid: params.get("altid") || null, // Handle altid if needed
-        oi: params.get("oi") || null,       // Handle oi if needed
+        ai: params.get("ai") || "2958033",
+        gi: params.get("gi") || "22",
+        ci: params.get("ci") || "4",
       });
     }
   }, []);
