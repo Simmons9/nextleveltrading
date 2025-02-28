@@ -8,7 +8,7 @@ import Datenschutz from "./assets/Datenschutz";
 import Impressum from "./assets/Impressum";
 import Risikohinweis from "./assets/Risikohinweis";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // ✅ Use useRouter()
+import { useRouter } from "next/navigation"; 
 
 function Home() {
   const router = useRouter();
