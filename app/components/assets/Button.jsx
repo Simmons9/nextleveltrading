@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive texts as a prop
+const Button = ({ buttonText, ai, gi, ci, altid, oi }) => { 
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -20,13 +20,13 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
     e.preventDefault();
     setLoading(true);
 
-    // Prepare data payload including ai, gi, ci, altid, oi
+
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
-      ai: ai,  // Correctly using affiliate ID from Home.js
+      ai: ai,  // ✅ Correctly using affiliate ID from Home.js
       gi: gi,
       ci: ci,
       altid: altid,  // Additional affiliate data
@@ -45,7 +45,7 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
       if (result.success) {
         console.log("✅ Lead successfully sent!", result);
 
-        // Redirect to autologin URL if available
+        // ✅ Redirect to autologin URL if available
         if (result.autologinUrl) {
           console.log("🔗 Redirecting to Autologin URL:", result.autologinUrl);
           window.location.href = result.autologinUrl; // Redirect user to autologin
@@ -97,13 +97,13 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
             </button>
 
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
-              {texts?.online?.justOneStep || "Nur noch ein Schritt..."}
+              {texts.online?.justOneStep || "Nur noch ein Schritt..."}
             </h1>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="firstName"
-                placeholder={texts?.online?.firstNamePlaceholder || "First name..."}
+                placeholder={texts.online?.firstNamePlaceholder || "Emri..."}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.firstName}
                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
@@ -113,7 +113,7 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
               <input
                 type="text"
                 name="lastName"
-                placeholder={texts?.online?.lastNamePlaceholder || "Last Name..."}
+                placeholder={texts.online?.lastNamePlaceholder || "Mbiemri..."}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.lastName}
                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
@@ -123,7 +123,7 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
               <input
                 type="email"
                 name="email"
-                placeholder={texts?.online?.emailPlaceholder || "Email..."}
+                placeholder={texts.online?.emailPlaceholder || "Email..."}
                 className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[18px]"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -147,7 +147,7 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
                   }}
                   inputProps={{
                     required: true,
-                    placeholder: texts?.online?.telefonnumer || "Telefonnummer",
+                    placeholder: texts.online?.telefonnumer || "Telefonnummer",
                   }}
                 />
               </div>
@@ -157,7 +157,7 @@ const Button = ({ buttonText, ai, gi, ci, altid, oi, texts }) => {  // Receive t
                 className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
               >
                 <div className="btn-text w-full text-center">
-                  {loading ? "Submitting..." : texts?.online?.secureAccess || "Secure Access"}
+                  {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
                 </div>
               </button>
             </form>
