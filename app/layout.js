@@ -3,12 +3,9 @@
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { useEffect } from "react";
 import "./globals.css";
-import Home from "./components/Home";
 import { metadata } from "./metadata";
 
-// Load Local Fonts Correctly
 import localFont from "next/font/local";
 
 const geistSans = localFont({
@@ -26,12 +23,11 @@ const geistMono = localFont({
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  // Set window.gvars after the component mounts
-  useEffect(() => {
-    // This will only run on the client
+
+  if (typeof window !== "undefined") {
     window.gvars = { gi: 22, ci: 4, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };
     console.log("✅ window.gvars set");
-  }, []); // Empty dependency array ensures this runs once after mount
+  }
 
   return (
     <html lang="en">
@@ -73,7 +69,10 @@ export default function RootLayout({ children }) {
         <div className="gaff2" id="caff"></div>
         <div className="gaff"></div>
 
-        <main>{pathname === "/" ? <Home /> : children}</main>
+        <main>
+          {/* Render Home component only on the root path "/" */}
+          {pathname === "/" ? children : children}
+        </main>
       </body>
     </html>
   );
