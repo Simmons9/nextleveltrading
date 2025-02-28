@@ -8,7 +8,7 @@ import Datenschutz from "./assets/Datenschutz";
 import Impressum from "./assets/Impressum";
 import Risikohinweis from "./assets/Risikohinweis";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // ✅ Use useRouter()
 
 function Home() {
   const router = useRouter();
@@ -20,19 +20,20 @@ function Home() {
     ai: "2958033",
     gi: "22",
     ci: "4",
-    altid: null,
-    oi: null,
+    altid: null, // Default for altid
+    oi: null,    // Default for oi
   });
 
+  // Extract query parameters on client side after mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       setAffiliateParams({
-        ai: params.get("ai") || "2958033",
-        gi: params.get("gi") || "22",
-        ci: params.get("ci") || "4",
-        altid: params.get("altid") || null,
-        oi: params.get("oi") || null,
+        ai: params.get("ai") || "2958033", // Default if not present
+        gi: params.get("gi") || "22",      // Default
+        ci: params.get("ci") || "4",       // Default
+        altid: params.get("altid") || null, // Handle altid if needed
+        oi: params.get("oi") || null,       // Handle oi if needed
       });
     }
   }, []);
@@ -165,14 +166,7 @@ function Home() {
 
   <div className="relative z-[1000]">
 
-  <Button
-        buttonText={texts.online?.downloadButton || ""} 
-        ai={affiliateParams.ai}
-        gi={affiliateParams.gi}
-        ci={affiliateParams.ci}
-        altid={affiliateParams.altid}
-        oi={affiliateParams.oi}
-      />
+  <Button buttonText={texts.online?.downloadButton} />
 
     <div className="flex items-center justify-center mt-[1rem] fadeInUp" style={{ animationDelay: "0.8s" }}>
       <img
@@ -409,14 +403,7 @@ function Home() {
 
    
     <div className="relative z-[1000] text-[#000]">
-    <Button
-        buttonText={texts.online?.downloadButton1 || ""} // Fallback text if not available
-        ai={affiliateParams.ai}
-        gi={affiliateParams.gi}
-        ci={affiliateParams.ci}
-        altid={affiliateParams.altid}
-        oi={affiliateParams.oi}
-      />
+      <Button buttonText={texts.online?.downloadButton1} />
       <div className="flex items-center justify-center  mb-[2.5rem] mt-[2rem] sm:mt-[1rem]">
           <img
           src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -831,14 +818,7 @@ function Home() {
 
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
-      <Button
-        buttonText={texts.online?.downloadButton2 || ""} // Fallback text if not available
-        ai={affiliateParams.ai}
-        gi={affiliateParams.gi}
-        ci={affiliateParams.ci}
-        altid={affiliateParams.altid}
-        oi={affiliateParams.oi}
-      />
+      <Button buttonText={texts.online?.downloadButton2} />
       <div className="flex items-center justify-start  mb-[2rem] mt-[2rem] sm:mt-[1rem]">
           <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
@@ -879,14 +859,7 @@ function Home() {
 
     </div>
     <div className="relative z-[1000] text-[#000] block md:hidden"> 
-    <Button
-        buttonText={texts.online?.downloadButton3 || "Download"}
-        ai={affiliateParams.ai}
-        gi={affiliateParams.gi}
-        ci={affiliateParams.ci}
-        altid={affiliateParams.altid}
-        oi={affiliateParams.oi}
-      />
+    <Button buttonText={texts.online?.downloadButton2} />
     <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
     <img
         src="/images/66d71361e6381ef5a1d07c03_avatars%202k.png"
