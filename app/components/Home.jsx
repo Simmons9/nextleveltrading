@@ -17,19 +17,35 @@ function Home() {
   const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
   const [affiliateParams, setAffiliateParams] = useState({
-    ai: "2958033",
+    ai: "2958033", // Default affiliate ID
     gi: "22",
     ci: "4",
+<<<<<<< HEAD
   });
 
   // ✅ Extract query parameters on client side after mount
+=======
+    altid: null, // Default for altid
+    oi: null,    // Default for oi
+  });
+
+  // Extract query parameters on client side after mount
+>>>>>>> parent of 0550070 (live)
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       setAffiliateParams({
+<<<<<<< HEAD
         ai: params.get("ai") || "2958033",
         gi: params.get("gi") || "22",
         ci: params.get("ci") || "4",
+=======
+        ai: params.get("ai") || "2958033", // Default if not present
+        gi: params.get("gi") || "22",      // Default
+        ci: params.get("ci") || "4",       // Default
+        altid: params.get("altid") || null, // Handle altid if needed
+        oi: params.get("oi") || null,       // Handle oi if needed
+>>>>>>> parent of 0550070 (live)
       });
     }
   }, []);
@@ -39,10 +55,10 @@ function Home() {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       const data = await response.json();
-      return data.country;
+      return data.country; // Returns country code (e.g., "DE", "US")
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE";
+      return "DE"; // Default to German if error occurs
     }
   };
 
