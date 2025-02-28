@@ -905,7 +905,10 @@ function Home() {
 
       <div className="description lg:w-[37rem] text-[15px] md:text-[16px] text-[#728291] leading-relaxed mt-3">
       {/* {texts.online?.transformYourselfToAdvanced} <br className="hidden md:inline" /> */}
-      <div className='hidden md:inline ' dangerouslySetInnerHTML={{ __html: texts.online?.transformYourselfToAdvanced  }} />
+      <div className='hidden md:inline'
+       dangerouslySetInnerHTML={{ __html: texts.online?.transformYourselfToAdvanced  }} />
+
+       
 
       
        </div>
@@ -913,7 +916,7 @@ function Home() {
       {/* Button Section */}
       <div className="relative z-[1000] text-[#000] hidden md:block">
       <Button
-      buttonText={texts.online?.downloadButton2 || "Loading..."} // Fallback to "Download" if not found
+      buttonText={texts.online?.downloadButton2} // Fallback to "Download" if not found
       ai={affiliateParams.ai}
       gi={affiliateParams.gi}
       ci={affiliateParams.ci}
@@ -964,7 +967,7 @@ function Home() {
     </div>
     <div className="relative z-[1000] text-[#000] block md:hidden"> 
     <Button
-      buttonText={texts.online?.downloadButton3 || "Loading..."} // Fallback to "Download" if not found
+      buttonText={texts.online?.downloadButton2} // Fallback to "Download" if not found
       ai={affiliateParams.ai}
       gi={affiliateParams.gi}
       ci={affiliateParams.ci}
