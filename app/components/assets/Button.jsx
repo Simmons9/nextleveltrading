@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const Button = ({ buttonText, ai, gi, ci }) => { // ✅ Receive ai, gi, ci as props from Home.js
+const Button = ({ buttonText, ai, gi, ci, altid, oi }) => { 
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const Button = ({ buttonText, ai, gi, ci }) => { // ✅ Receive ai, gi, ci as pr
     e.preventDefault();
     setLoading(true);
 
-    // ✅ Prepare data payload including ai, gi, and ci
+
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
@@ -29,6 +29,8 @@ const Button = ({ buttonText, ai, gi, ci }) => { // ✅ Receive ai, gi, ci as pr
       ai: ai,  // ✅ Correctly using affiliate ID from Home.js
       gi: gi,
       ci: ci,
+      altid: altid,  // Additional affiliate data
+      oi: oi,        // Additional affiliate data
     };
 
     try {
@@ -74,26 +76,25 @@ const Button = ({ buttonText, ai, gi, ci }) => { // ✅ Receive ai, gi, ci as pr
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] backdrop-blur-md p-5">
           <div className="bg-white relative rounded-[20px] p-8 w-full max-w-lg lg:mx-0 z-[1001]">
-          <button
-      className="absolute top-4 right-4"
-      onClick={() => setShowModal(false)}
-      aria-label="Close"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-
+            <button
+              className="absolute top-4 right-4"
+              onClick={() => setShowModal(false)}
+              aria-label="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-500 hover:text-gray-700 transition-all"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
 
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
               {texts.online?.justOneStep || "Nur noch ein Schritt..."}
