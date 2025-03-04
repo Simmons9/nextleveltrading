@@ -16,7 +16,7 @@ function Home() {
   const [texts, setTexts] = useState({});
   const [affiliateParams, setAffiliateParams] = useState({
     ai: "2958033",
-    gi: "22",
+    gi: "23",
     ci: "4",
     altid: "",
     oi: "",
@@ -33,7 +33,7 @@ function Home() {
       const newParams = {
         ai: params.get("ai") || "2958033",
         altid: params.get("altid") || "",
-        gi: params.get("gi") || "22",
+        gi: params.get("gi") || "23",
         oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
       };
