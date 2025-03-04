@@ -111,7 +111,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
       alert("Error sending data.");
     }
     setLoading(false);
-
+  };
   return (
     <>
       <div className="relative">
