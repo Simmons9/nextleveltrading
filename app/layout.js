@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   // Set window.gvars after the component mounts
   useEffect(() => {
     // This will only run on the client
-    window.gvars = { gi: 23, ci: 4, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958103 };
+    window.gvars = { gi: 23, ci: 4, wl: 17, rd: 2, ap: 0, ae: 0, lg: "en", ai: 2958033 };
     console.log("✅ window.gvars set");
   }, []); // Empty dependency array ensures this runs once after mount
 
