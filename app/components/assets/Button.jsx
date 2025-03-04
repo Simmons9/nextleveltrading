@@ -14,65 +14,63 @@ const Button = ({ buttonText, ai, gi, ci }) => {
     lastName: "",
     email: "",
   });
-
-
+  const [loading, setLoading] = useState(false);
+  const [texts, setTexts] = useState({});
+  const [country, setCountry] = useState(null);
+  const router = useRouter();
 
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       const data = await response.json();
-      return data.country; 
+      return data.country;
     } catch (error) {
       console.error("Failed to fetch location", error);
-      return "DE"; 
+      return "DE";
     }
   };
 
-
-  const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const router = useRouter();
-  const [country, setCountry] = useState(null);
-
-  // Function to dynamically load translations
   useEffect(() => {
-      const getLocation = async () => {
-        const location = await fetchLocation();
-        setCountry(location);
-      };
-  
-      getLocation();
-    }, []);
-  
-    useEffect(() => {
-      if (!country) return;
-  
-      const languageMap = {
-        DE: "de", AT: "de",
-        US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-        PT: "pt", BR: "pt",
-        FR: "fr", CH: "fr", LU: "fr",
-        NL: "nl", BE: "nl",
-        IT: "it",
-        SV: "sv",
-        ES: "es",
-      };
-  
-      const loadTranslations = async (langCode) => {
-        try {
-          const translations = await import(`../../../public/translations/${langCode}.json`);
-          setTexts(translations.default || translations);
-        } catch (error) {
-          console.error(`Could not load translations for ${langCode}:`, error);
-        }
-      };
-  
-      loadTranslations(languageMap[country] || "de"); 
-  
-    }, [country]);
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
+    };
+    getLocation();
+  }, []);
 
-  // Handle form submission
+  useEffect(() => {
+    if (!country) return;
+    const languageMap = {
+      DE: "de",
+      AT: "de",
+      US: "en",
+      GB: "en",
+      CA: "en",
+      AU: "en",
+      NZ: "en",
+      PT: "pt",
+      BR: "pt",
+      FR: "fr",
+      CH: "fr",
+      LU: "fr",
+      NL: "nl",
+      BE: "nl",
+      IT: "it",
+      SV: "sv",
+      ES: "es",
+    };
+    const loadTranslations = async (langCode) => {
+      try {
+        const translations = await import(`../../../public/translations/${langCode}.json`);
+        setTexts(translations.default || translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
+    loadTranslations(languageMap[country] || "de");
+  }, [country]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -100,10 +98,7 @@ const Button = ({ buttonText, ai, gi, ci }) => {
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
-
-        // Redirect to thank you page after submission
- 
-          router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         alert("Error submitting form. Please try again.");
       }

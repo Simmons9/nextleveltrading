@@ -2,36 +2,33 @@
 
 import React, { useState, useEffect } from "react";
 import Button from "./assets/Button";
-import Cards from "./assets/Cards";
-import Tag from "./assets/Tag";
-import Datenschutz from "./assets/Datenschutz";
-import Impressum from "./assets/Impressum";
-import Risikohinweis from "./assets/Risikohinweis";
-import Link from "next/link";
-import { useRouter } from "next/navigation"; 
 import Image from "next/image";
 
 function Home() {
-  const router = useRouter();
-  const [showColumns, setShowColumns] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
   const [country, setCountry] = useState(null);
   const [texts, setTexts] = useState({});
   const [affiliateParams, setAffiliateParams] = useState({
     ai: "2958033",
+    altid: "",
     gi: "22",
+    oi: "",
     ci: "4",
   });
 
-  // ✅ Extract query parameters on client side after mount
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      setAffiliateParams({
+      const search = window.location.search;
+      console.log("window.location.search:", search);
+      const params = new URLSearchParams(search);
+      const newParams = {
         ai: params.get("ai") || "2958033",
+        altid: params.get("altid") || "",
         gi: params.get("gi") || "22",
+        oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
-      });
+      };
+      console.log("Updating affiliateParams to:", newParams);
+      setAffiliateParams(newParams);
     }
   }, []);
 
@@ -174,6 +171,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      texts={texts}
     />
 
 
@@ -443,6 +441,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      texts={texts}
     />
 
 
@@ -922,6 +921,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      texts={texts}
     />
 
 
@@ -973,6 +973,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      texts={texts}
     />
 
 <div className="flex items-center justify-start mb-[4rem] mt-[2rem] sm:mt-[1rem]">
