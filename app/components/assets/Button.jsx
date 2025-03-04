@@ -62,7 +62,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
     const loadTranslations = async (langCode) => {
       try {
         const translations = await import(`../../../public/translations/${langCode}.json`);
-        setTexts(translations.default || translations);
+        setLocalTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
       }
@@ -93,12 +93,16 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
+    
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
-        router.push("/thank-you");
+        if (result.autologinUrl) {
+          window.location.href = result.autologinUrl;
+        } else {
+          router.push("/thank-you");
+        }
       } else {
         alert("Error submitting form. Please try again.");
       }
@@ -107,7 +111,6 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
       alert("Error sending data.");
     }
     setLoading(false);
-  };
 
   return (
     <>
@@ -180,7 +183,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
 
               <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
                 <PhoneInput
-                  country={"de"}
+                  country={country ? country.toLowerCase() : "de"}
                   value={phone}
                   onChange={setPhone}
                   inputStyle={{
