@@ -32,7 +32,7 @@ export async function POST(req) {
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Aa123456789!",
+      password: body.password || "Qbwriu48",
       phone: body.phoneNumber,
       so: body.so || "NextLevelTrading",
       lg: body.lg || "EN",
