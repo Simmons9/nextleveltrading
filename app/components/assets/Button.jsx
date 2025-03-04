@@ -6,7 +6,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci }) => {
+const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -15,8 +15,7 @@ const Button = ({ buttonText, ai, gi, ci }) => {
     email: "",
   });
   const [loading, setLoading] = useState(false);
-  const [texts, setTexts] = useState({});
-  const [country, setCountry] = useState(null);
+  const [country, setCountry] = useState(null); // if needed
   const router = useRouter();
 
   const fetchLocation = async () => {
@@ -80,17 +79,17 @@ const Button = ({ buttonText, ai, gi, ci }) => {
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: phone,
-      ai: ai,
-      gi: gi,
-      ci: ci,
+      ai,
+      gi,
+      ci,
+      altid,
+      oi,
     };
 
     try {
       const response = await fetch("/api/trackbox", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
@@ -205,7 +204,7 @@ const Button = ({ buttonText, ai, gi, ci }) => {
                 className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
               >
                 <div className="btn-text w-full text-center">
-                  {loading ? "Submitting..." : texts.online?.secureAccess}
+                  {loading ? "Submitting..." : texts.online?.secureAccess || "Secure Access"}
                 </div>
               </button>
             </form>
