@@ -16,11 +16,14 @@ function Home() {
   const [texts, setTexts] = useState({});
   const [affiliateParams, setAffiliateParams] = useState({
     ai: "2958033",
-    altid: "",
     gi: "22",
-    oi: "",
     ci: "4",
+    altid: "",
+    oi: "",
   });
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [showColumns, setShowColumns] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -61,7 +64,6 @@ function Home() {
 
   useEffect(() => {
     if (!country) return;
-
     const languageMap = {
       DE: "de",
       AT: "de",
@@ -81,18 +83,14 @@ function Home() {
       SV: "sv",
       ES: "es",
     };
-
     const loadTranslations = async (langCode) => {
       try {
-        const translations = await import(
-          `../../public/translations/${langCode}.json`
-        );
+        const translations = await import(`../../public/translations/${langCode}.json`);
         setTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
       }
     };
-
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
@@ -288,35 +286,41 @@ function Home() {
 <Tag />
 
 {!showColumns && (
-    <div className="w-full h-auto mt-10 flex justify-center mb-[1.5rem] md:mb-[4rem]">
-        <div
-            onClick={handleToggleColumns}
-            className="button flex items-center justify-between w-[20rem] bg-[#69bc8f26] font-[600] rounded-[10px] p-[20px] m-auto cursor-pointer"
-            style={{ border: '1px solid rgba(255, 255, 255, 0.05)' }}
-        >
-            <p className="mr-2"> {texts.online?.Mehr}</p>
-
-           
-            <div className="icon-create w-[24px] h-[24px]">
-          <Image src="/images/66bdc762139d5d2dbcb2c74c_Add box.png" alt="Add Box" width={24} height={24} />
-</div>
-        </div>
+  <div className="w-full h-auto mt-10 flex justify-center mb-[1.5rem] md:mb-[4rem]">
+    <div
+      onClick={handleToggleColumns}
+      className="button flex items-center justify-between w-[20rem] bg-[#69bc8f26] font-[600] rounded-[10px] p-[20px] m-auto cursor-pointer"
+      style={{ border: "1px solid rgba(255, 255, 255, 0.05)" }}
+    >
+      <p className="mr-2">{texts.online?.Mehr || "Mehr"}</p>
+      <div className="icon-create w-[24px] h-[24px]">
+        <Image
+          src="/images/66bdc762139d5d2dbcb2c74c_Add box.png"
+          alt="Add Box"
+          width={24}
+          height={24}
+        />
+      </div>
     </div>
+  </div>
 )}
 {showColumns && (
   <>
     <div className="column-add px-5">
       <div className="flex flex-wrap justify-center gap-3">
         {/* Column 1 */}
-        <div className="column w-full md:w-[40rem] h-auto p-[20px] bg-[#fefefe08] mb-[2.5rem] md:mb-3 sm:mb-[3rem] relative rounded-[10px]" style={{ border: '1px solid #ffffff0d' }}>
-        <Image
-  className="w-full h-auto object-cover sm:h-[250px] md:h-auto"
-  src="/images/66d70f4263b1d68278be1fe5_Group 2087326667.png"
-  alt=""
-  width={800} 
-  height={400} 
-  layout="responsive" 
-/>
+        <div
+          className="column w-full md:w-[40rem] h-auto p-[20px] bg-[#fefefe08] mb-[2.5rem] md:mb-3 sm:mb-[3rem] relative rounded-[10px]"
+          style={{ border: "1px solid #ffffff0d" }}
+        >
+          <Image
+            className="w-full h-auto object-cover sm:h-[250px] md:h-auto"
+            src="/images/66d70f4263b1d68278be1fe5_Group 2087326667.png"
+            alt=""
+            width={800}
+            height={400}
+            layout="responsive"
+          />
 <div className="on_the_trader relative z-[20] mt-[3rem] md:mt-0"> 
 <div className="tag text-[12px] text-[#041212] uppercase bg-[#14f97b] font-bold leading-[1] p-[10px] w-[3.5rem] rounded-2xl">
 {texts.online?.chapter4}
@@ -1035,17 +1039,17 @@ function Home() {
   <ul className="list-none flex space-x-4 md:space-x-8 text-[#fff] text-[14px] md:text-[14px] mt-[2.5rem] mb-[2.5rem] font-[500] tracking-[.175px]">
       <li>
         <Link href="/legal/datenschutz" className="hover:text-green-500">
-          {texts.online?.privacyPolicy || 'Loading...'}
+          
         </Link>
       </li>
       <li>
         <Link href="/legal/impressum" className="hover:text-green-500">
-          {texts.online?.imprint || 'Loading...'}
+          
         </Link>
       </li>
       <li>
         <Link href="/legal/risikohinweis" className="hover:text-green-500">
-          {texts.online?.riskNotice || 'Loading...'}
+          
         </Link>
       </li>
     </ul>

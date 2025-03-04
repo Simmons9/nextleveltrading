@@ -73,12 +73,13 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+  const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
 
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phoneNumber: phone,
+      phoneNumber: formattedPhone,
       ai,
       gi,
       ci,
