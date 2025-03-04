@@ -2,6 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Button from "./assets/Button";
+import Cards from "./assets/Cards";
+import Tag from "./assets/Tag";
+import Datenschutz from "./assets/Datenschutz";
+import Impressum from "./assets/Impressum";
+import Risikohinweis from "./assets/Risikohinweis";
+import Link from "next/link";
+import { useRouter } from "next/navigation"; 
 import Image from "next/image";
 
 function Home() {
