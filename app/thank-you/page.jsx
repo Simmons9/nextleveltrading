@@ -21,11 +21,20 @@ export default function ThankYouPage() {
     };
 
     const languageMap = {
-      DE: "de", AT: "de",
-      US: "en", GB: "en", CA: "en", AU: "en", NZ: "en",
-      PT: "pt", BR: "pt",
-      FR: "fr", CH: "fr", LU: "fr",
-      NL: "nl", BE: "nl",
+      DE: "de",
+      AT: "de",
+      US: "en",
+      GB: "en",
+      CA: "en",
+      AU: "en",
+      NZ: "en",
+      PT: "pt",
+      BR: "pt",
+      FR: "fr",
+      CH: "fr",
+      LU: "fr",
+      NL: "nl",
+      BE: "nl",
       IT: "it",
       SV: "sv",
       ES: "es",
@@ -41,41 +50,19 @@ export default function ThankYouPage() {
   return (
     <>
       <Head>
-        {/* Meta Pixel Code */}
+        {/* Conversion Pixel (Lead) Only */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            !function(f,b,e,v,n,t,s){
-              if(f.fbq)return;n=f.fbq=function(){
-                n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)
-              };
-              if(!f._fbq)f._fbq=n;
-              n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];
-              t=b.createElement(e);t.async=!0;
-              t.src=v;
-              s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)
-            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '417146658918283');
-            fbq('track', 'PageView');
-            fbq('track', 'Lead');
-          `,
+              if (window.fbq) {
+                fbq('track', 'Lead');
+              }
+            `,
           }}
         />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=417146658918283&ev=PageView&noscript=1"
-          />
-        </noscript>
-        {/* End Meta Pixel Code */}
       </Head>
       <div className="flex flex-col justify-center items-center h-screen text-center">
-        {/* ✅ Animated Checkmark */}
+        {/* Animated Checkmark */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-24 w-24 text-green-500 animate-checkmark"
@@ -88,8 +75,7 @@ export default function ThankYouPage() {
         >
           <polyline points="20 6 9 17 4 12" />
         </svg>
-
-        {/* ✅ Thank You Message */}
+        {/* Thank You Message */}
         <h1 className="text-4xl font-bold text-green-600 mt-6">
           {texts?.thankYou || "Thank You!"}
         </h1>
