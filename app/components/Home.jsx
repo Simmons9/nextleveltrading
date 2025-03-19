@@ -20,6 +20,7 @@ function Home() {
     ci: "4",
     altid: "",
     oi: "",
+    rd: "3",
   });
   const [activeIndex, setActiveIndex] = useState(null);
   const [showColumns, setShowColumns] = useState(false);
@@ -36,6 +37,7 @@ function Home() {
         gi: params.get("gi") || "23",
         oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
+        rd: params.get('rd') || "3",
       };
       console.log("Updating affiliateParams to:", newParams);
       setAffiliateParams(newParams);
@@ -176,6 +178,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      rd={affiliateParams.rd}
       texts={texts}
     />
 
@@ -452,6 +455,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      rd={affiliateParams.rd}
       texts={texts}
     />
 
@@ -932,6 +936,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      rd={affiliateParams.rd}
       texts={texts}
     />
 
@@ -984,6 +989,7 @@ function Home() {
       ci={affiliateParams.ci}
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
+      rd={affiliateParams.rd}
       texts={texts}
     />
 

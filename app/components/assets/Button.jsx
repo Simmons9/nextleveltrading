@@ -6,7 +6,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
+const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -85,6 +85,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi }) => {
       ci,
       altid,
       oi,
+      rd,
     };
 
     try {
