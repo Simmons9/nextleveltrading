@@ -20,7 +20,7 @@ function Home() {
     ci: "4",
     altid: "",
     oi: "",
-    rd: "3",
+    rd: "",
   });
   const [activeIndex, setActiveIndex] = useState(null);
   const [showColumns, setShowColumns] = useState(false);

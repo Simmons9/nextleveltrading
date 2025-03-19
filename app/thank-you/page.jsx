@@ -41,25 +41,43 @@ export default function ThankYouPage() {
     };
 
     loadTranslations(languageMap[country] || "de");
+  }, [country]);
 
-    // Auto redirect to home after 5 seconds
-    const timeout = setTimeout(() => router.push("/"), 5000);
-    return () => clearTimeout(timeout);
-  }, [country, router]);
+  useEffect(() => {
+    // Check for an autologin URL in the query parameter "reU"
+    const params = new URLSearchParams(window.location.search);
+    const redirectUrl = params.get("reU");
+    if (redirectUrl) {
+      // Redirect after 2.5 seconds
+      setTimeout(() => {
+        window.location.href = redirectUrl;
+      }, 2500);
+    }
+  }, []);
 
   return (
     <>
       <Head>
-        {/* Conversion Pixel (Lead) Only */}
+        {/* Conversion Pixel (Lead) Only with a 2.5 second delay */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if (window.fbq) {
-                fbq('track', 'Lead');
-              }
+              setTimeout(() => {
+                if (window.fbq) {
+                  fbq('track', 'Lead');
+                }
+              }, 2500);
             `,
           }}
         />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=417146658918283&ev=Lead&noscript=1"
+          />
+        </noscript>
       </Head>
       <div className="flex flex-col justify-center items-center h-screen text-center">
         {/* Animated Checkmark */}
