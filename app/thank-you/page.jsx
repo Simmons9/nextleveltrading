@@ -1,11 +1,11 @@
 "use client";
 
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useGeolocation from "../hooks/useGeolocation";
 
-export default function ThankYouPage() {
+function ThankYouContent() {
   const [texts, setTexts] = useState({});
   const country = useGeolocation();
   const router = useRouter();
@@ -123,5 +123,13 @@ export default function ThankYouPage() {
         alt="Affiliate Deposite Pixel"
       />
     </>
+  );
+}
+
+export default function ThankYouPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThankYouContent />
+    </Suspense>
   );
 }
