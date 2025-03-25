@@ -96,16 +96,22 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
       const response = await fetch("/api/trackbox", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload), 
+        body: JSON.stringify(payload),
       });
     
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
-        
-        // Always redirect to Thank You page, passing the autologin URL and rd if available
-        const thankYouUrl = `/thank-you?reU=${encodeURIComponent(result.autologinUrl || "")}&rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+
+        // Build the redirect URL to the Thank You Page
+        let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+
+        // If autologinUrl exists, pass it in the query params
+        if (result.autologinUrl) {
+          thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
+        }
+
         router.push(thankYouUrl);
       } else {
         alert("Error submitting form. Please try again.");
@@ -115,7 +121,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
       alert("Error sending data.");
     }
     setLoading(false);
-  };
+};
 
   return (
     <>
