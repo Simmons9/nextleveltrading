@@ -21,6 +21,8 @@ function Home() {
     altid: "",
     oi: "",
     rd: "3",
+    sxid: "",  // Internal Click ID for Alpha Network
+    extid: "", // External Click ID for Alpha Network
   });
   const [activeIndex, setActiveIndex] = useState(null);
   const [showColumns, setShowColumns] = useState(false);
@@ -38,6 +40,8 @@ function Home() {
         oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
         rd: params.get('rd') || "3",
+        sxid: params.get("sxid") || "", 
+        extid: params.get("extid") || "",
       };
       console.log("Updating affiliateParams to:", newParams);
       setAffiliateParams(newParams);
@@ -179,6 +183,8 @@ function Home() {
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
       rd={affiliateParams.rd}
+      sxid={affiliateParams.sxid}  // 🔹 Pass new sxid parameter
+      extid={affiliateParams.extid} // 🔹 Pass new extid parameter
       texts={texts}
     />
 
@@ -456,6 +462,8 @@ function Home() {
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
       rd={affiliateParams.rd}
+      sxid={affiliateParams.sxid}  // 🔹 Pass new sxid parameter
+      extid={affiliateParams.extid} // 🔹 Pass new extid parameter
       texts={texts}
     />
 
@@ -937,6 +945,8 @@ function Home() {
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
       rd={affiliateParams.rd}
+      sxid={affiliateParams.sxid}  // 🔹 Pass new sxid parameter
+      extid={affiliateParams.extid} // 🔹 Pass new extid parameter
       texts={texts}
     />
 
@@ -990,6 +1000,8 @@ function Home() {
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
       rd={affiliateParams.rd}
+      sxid={affiliateParams.sxid}  // 🔹 Pass new sxid parameter
+      extid={affiliateParams.extid} // 🔹 Pass new extid parameter
       texts={texts}
     />
 

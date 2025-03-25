@@ -2,14 +2,16 @@
 
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useGeolocation from "../hooks/useGeolocation";
 
 export default function ThankYouPage() {
   const [texts, setTexts] = useState({});
   const country = useGeolocation();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
+  // Load translations based on the detected country.
   useEffect(() => {
     const loadTranslations = async (langCode) => {
       try {
@@ -43,22 +45,30 @@ export default function ThankYouPage() {
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
+  // Autologin redirect: Check for autologin URL in the query parameter "reU"
   useEffect(() => {
-    // Check for an autologin URL in the query parameter "reU"
-    const params = new URLSearchParams(window.location.search);
-    const redirectUrl = params.get("reU");
+    const redirectUrl = searchParams.get("reU");
     if (redirectUrl) {
-      // Redirect after 2.5 seconds
       setTimeout(() => {
         window.location.href = redirectUrl;
       }, 2500);
     }
-  }, []);
+  }, [searchParams]);
+
+  // Extract additional parameters for affiliate pixels:
+  const sxid = searchParams.get("sxid") || "";
+  const extid = searchParams.get("extid") || "";
+  const rd = searchParams.get("rd") || ""; // If rd is not passed, you can default it to "3" if needed
+  const countryCode = country ? country.toLowerCase() : "de";
+
+  // Build affiliate pixel URLs based on the provided format:
+  const affiliateLeadPixelUrl = `http://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+  const affiliateDepositePixelUrl = `http://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
 
   return (
     <>
       <Head>
-        {/* Conversion Pixel (Lead) Only with a 2.5 second delay */}
+        {/* (Optional) Facebook Conversion Pixel: Only conversion event here (Lead) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -101,6 +111,17 @@ export default function ThankYouPage() {
           {texts?.submissionSuccess || "Your submission was successful."}
         </p>
       </div>
+      {/* Affiliate Conversion Pixels (Invisible Images) */}
+      <img
+        src={affiliateLeadPixelUrl}
+        style={{ display: "none" }}
+        alt="Affiliate Lead Pixel"
+      />
+      <img
+        src={affiliateDepositePixelUrl}
+        style={{ display: "none" }}
+        alt="Affiliate Deposite Pixel"
+      />
     </>
   );
 }

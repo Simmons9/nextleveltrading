@@ -6,7 +6,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd }) => {
+const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({
@@ -88,25 +88,25 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd }) => {
       altid,
       oi,
       rd,
+      sxid,
+      extid,
     };
 
     try {
       const response = await fetch("/api/trackbox", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(payload), 
       });
     
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
         setShowModal(false);
+        
         // Always redirect to Thank You page, passing the autologin URL and rd if available
-        if (result.autologinUrl) {
-          router.push(`/thank-you?reU=${encodeURIComponent(result.autologinUrl)}&rd=${encodeURIComponent(rd)}`);
-        } else {
-          router.push("/thank-you");
-        }
+        const thankYouUrl = `/thank-you?reU=${encodeURIComponent(result.autologinUrl || "")}&rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+        router.push(thankYouUrl);
       } else {
         alert("Error submitting form. Please try again.");
       }
