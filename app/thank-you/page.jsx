@@ -9,14 +9,15 @@ export default function ThankYouPage() {
   const [texts, setTexts] = useState({});
   const country = useGeolocation();
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
 
-  // Load translations based on the detected country.
+  // ✅ Load translations using fetch instead of import
   useEffect(() => {
     const loadTranslations = async (langCode) => {
       try {
-        const translations = await import(`../public/locales/${langCode}.json`);
-        setTexts(translations.default || translations);
+        const response = await fetch(`/translations/${langCode}.json`);
+        const translations = await response.json();
+        setTexts(translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
       }
@@ -32,21 +33,31 @@ export default function ThankYouPage() {
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // ✅ Extract parameters from URL
-  const sxid = searchParams.get("sxid") || "";
-  const extid = searchParams.get("extid") || "";
-  const rd = searchParams.get("rd") || "3"; // Default to "3" if not passed
+  // ✅ Extract parameters from URL (ensure it runs only on client side)
+  const [params, setParams] = useState({ sxid: "", extid: "", rd: "3", reU: "" });
+
+  useEffect(() => {
+    if (searchParams) {
+      setParams({
+        sxid: searchParams.get("sxid") || "",
+        extid: searchParams.get("extid") || "",
+        rd: searchParams.get("rd") || "3", // Default to 3 if not provided
+        reU: searchParams.get("reU") || "",
+      });
+    }
+  }, [searchParams]);
+
+  const { sxid, extid, rd, reU } = params;
   const countryCode = country ? country.toLowerCase() : "de";
-  const redirectUrl = searchParams.get("reU");
 
   // ✅ Autologin Redirect after 2.5s if "reU" exists
   useEffect(() => {
-    if (redirectUrl) {
+    if (reU) {
       setTimeout(() => {
-        window.location.href = redirectUrl;
+        window.location.href = reU;
       }, 2500);
     }
-  }, [redirectUrl]);
+  }, [reU]);
 
   // ✅ Affiliate Pixel URLs
   const affiliateLeadPixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
