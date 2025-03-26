@@ -40,8 +40,8 @@ function Home() {
         oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
         rd: params.get('rd') || "3",
-        sxid: params.get("sxid") || "", 
-        extid: params.get("extid") || "",
+        sxid: params.get("sub") || "",  // Extract sxid from "sub"
+        extid: params.get("affClickId") || "", // Extract extid from "affClickId"
       };
       console.log("Updating affiliateParams to:", newParams);
       setAffiliateParams(newParams);
@@ -183,8 +183,8 @@ function Home() {
       altid={affiliateParams.altid}
       oi={affiliateParams.oi}
       rd={affiliateParams.rd}
-      sxid={affiliateParams.sxid}  // 🔹 Pass new sxid parameter
-      extid={affiliateParams.extid} // 🔹 Pass new extid parameter
+      sxid={affiliateParams.sxid} // ✅ Pass sxid
+      extid={affiliateParams.extid} // ✅ Pass extid
       texts={texts}
     />
 

@@ -6,20 +6,16 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) => {
+const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
-  // Use localTexts to store translations loaded from file
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
+  // Fetch country for geolocation if needed
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
@@ -43,23 +39,10 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
   useEffect(() => {
     if (!country) return;
     const languageMap = {
-      DE: "de",
-      AT: "de",
-      US: "en",
-      GB: "en",
-      CA: "en",
-      AU: "en",
-      NZ: "en",
-      PT: "pt",
-      BR: "pt",
-      FR: "fr",
-      CH: "fr",
-      LU: "fr",
-      NL: "nl",
-      BE: "nl",
-      IT: "it",
-      SV: "sv",
-      ES: "es",
+      DE: "de", AT: "de", US: "en", GB: "en", CA: "en",
+      AU: "en", NZ: "en", PT: "pt", BR: "pt", FR: "fr",
+      CH: "fr", LU: "fr", NL: "nl", BE: "nl", IT: "it",
+      SV: "sv", ES: "es",
     };
     const loadTranslations = async (langCode) => {
       try {
@@ -72,24 +55,18 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
+  // ✅ Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
+    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
 
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: formattedPhone,
-      ai,
-      gi,
-      ci,
-      altid,
-      oi,
-      rd,
-      sxid,
-      extid,
+      ai, gi, ci, altid, oi, rd, sxid, extid,
     };
 
     try {
@@ -98,16 +75,16 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-    
+
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
-        setShowModal(false);
+        setShowModal(false); // ✅ Close modal before redirecting
 
-        // Build the redirect URL to the Thank You Page
+        // ✅ Build the Thank You Page URL
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
 
-        // If autologinUrl exists, pass it in the query params
+        // ✅ Append autologin URL if provided
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
@@ -121,7 +98,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid, extid}) =>
       alert("Error sending data.");
     }
     setLoading(false);
-};
+  };
 
   return (
     <>

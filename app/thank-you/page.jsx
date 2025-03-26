@@ -1,11 +1,11 @@
 "use client";
 
 import Head from "next/head";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useGeolocation from "../hooks/useGeolocation";
 
-function ThankYouContent() {
+export default function ThankYouPage() {
   const [texts, setTexts] = useState({});
   const country = useGeolocation();
   const router = useRouter();
@@ -15,7 +15,7 @@ function ThankYouContent() {
   useEffect(() => {
     const loadTranslations = async (langCode) => {
       try {
-        const translations = await import(`/public/translations/${langCode}.json`);
+        const translations = await import(`../public/locales/${langCode}.json`);
         setTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
@@ -23,51 +23,40 @@ function ThankYouContent() {
     };
 
     const languageMap = {
-      DE: "de",
-      AT: "de",
-      US: "en",
-      GB: "en",
-      CA: "en",
-      AU: "en",
-      NZ: "en",
-      PT: "pt",
-      BR: "pt",
-      FR: "fr",
-      CH: "fr",
-      LU: "fr",
-      NL: "nl",
-      BE: "nl",
-      IT: "it",
-      SV: "sv",
-      ES: "es",
+      DE: "de", AT: "de", US: "en", GB: "en", CA: "en",
+      AU: "en", NZ: "en", PT: "pt", BR: "pt", FR: "fr",
+      CH: "fr", LU: "fr", NL: "nl", BE: "nl", IT: "it",
+      SV: "sv", ES: "es",
     };
 
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // Autologin redirect: Check for autologin URL in the query parameter "reU"
+  // ✅ Extract parameters from URL
+  const sxid = searchParams.get("sxid") || "";
+  const extid = searchParams.get("extid") || "";
+  const rd = searchParams.get("rd") || "3"; // Default to "3" if not passed
+  const countryCode = country ? country.toLowerCase() : "de";
+  const redirectUrl = searchParams.get("reU");
+
+  // ✅ Autologin Redirect after 2.5s if "reU" exists
   useEffect(() => {
-    const redirectUrl = searchParams.get("reU");
     if (redirectUrl) {
       setTimeout(() => {
         window.location.href = redirectUrl;
       }, 2500);
     }
-  }, [searchParams]);
+  }, [redirectUrl]);
 
-  // Extract additional parameters for affiliate pixels:
-  const sxid = searchParams.get("sxid") || "";
-  const extid = searchParams.get("extid") || "";
-  const rd = searchParams.get("rd") || ""; // If rd is not passed, you can default it to "3" if needed
-  const countryCode = country ? country.toLowerCase() : "de";
-
-  // Build affiliate pixel URLs based on the provided format:
+  // ✅ Affiliate Pixel URLs
   const affiliateLeadPixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
-const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+
+  const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+
   return (
     <>
       <Head>
-        {/* (Optional) Facebook Conversion Pixel: Only conversion event here (Lead) */}
+        {/* ✅ Facebook Pixel for "Lead" Event */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -88,8 +77,9 @@ const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom
           />
         </noscript>
       </Head>
+
       <div className="flex flex-col justify-center items-center h-screen text-center">
-        {/* Animated Checkmark */}
+        {/* ✅ Animated Checkmark */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-24 w-24 text-green-500 animate-checkmark"
@@ -102,7 +92,8 @@ const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom
         >
           <polyline points="20 6 9 17 4 12" />
         </svg>
-        {/* Thank You Message */}
+
+        {/* ✅ Thank You Message */}
         <h1 className="text-4xl font-bold text-green-600 mt-6">
           {texts?.thankYou || "Thank You!"}
         </h1>
@@ -110,25 +101,10 @@ const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom
           {texts?.submissionSuccess || "Your submission was successful."}
         </p>
       </div>
-      {/* Affiliate Conversion Pixels (Invisible Images) */}
-      <img
-        src={affiliateLeadPixelUrl}
-        style={{ display: "none" }}
-        alt="Affiliate Lead Pixel"
-      />
-      <img
-        src={affiliateDepositePixelUrl}
-        style={{ display: "none" }}
-        alt="Affiliate Deposite Pixel"
-      />
-    </>
-  );
-}
 
-export default function ThankYouPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ThankYouContent />
-    </Suspense>
+      {/* ✅ Affiliate Conversion Pixels (Invisible Images) */}
+      <img src={affiliateLeadPixelUrl} style={{ display: "none" }} alt="Affiliate Lead Pixel" />
+      <img src={affiliateDepositePixelUrl} style={{ display: "none" }} alt="Affiliate Deposite Pixel" />
+    </>
   );
 }
