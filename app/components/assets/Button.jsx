@@ -60,35 +60,44 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     e.preventDefault();
     setLoading(true);
     const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
-
+  
+    // ✅ Get the user's IP address using ipinfo.io
+    let userIp = "0.0.0.0";
+    try {
+      const ipResponse = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
+      const ipData = await ipResponse.json();
+      userIp = ipData.ip || "0.0.0.0";
+    } catch (error) {
+      console.warn("IP fetch failed, using default 0.0.0.0");
+    }
+  
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
       phoneNumber: formattedPhone,
       ai, gi, ci, altid, oi, rd, sxid, extid,
+      userip: userIp, // ✅ Inject user's IP here
     };
-
+  
     try {
       const response = await fetch("/api/trackbox", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
+  
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
-        setShowModal(false); // ✅ Close modal before redirecting
-
-        // ✅ Build the Thank You Page URL
+        setShowModal(false);
+  
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-
-        // ✅ Append autologin URL if provided
+  
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
-
+  
         router.push(thankYouUrl);
       } else {
         alert("Error submitting form. Please try again.");
@@ -97,6 +106,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       console.error("Submission error:", error);
       alert("Error sending data.");
     }
+  
     setLoading(false);
   };
 
