@@ -6,51 +6,32 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({
-  buttonText,
-  ai,
-  gi,
-  ci,
-  texts,
-  altid,
-  oi,
-  rd,
-  sxid = "",
-  extid = "",
-}) => {
+const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
-  // Fetch country for geolocation if needed
-  const fetchLocation = async () => {
-    try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      const data = await response.json();
-      return data.country;
-    } catch (error) {
-      console.error("Failed to fetch location", error);
-      return "DE";
-    }
-  };
-
+  // ✅ Fetch country (for translations)
   useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchLocation();
-      setCountry(location);
+    const fetchLocation = async () => {
+      try {
+        const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+        const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+        const data = await response.json();
+        setCountry(data.country);
+      } catch (error) {
+        console.error("Failed to fetch location", error);
+        setCountry("DE");
+      }
     };
-    getLocation();
+    fetchLocation();
   }, []);
 
+  // ✅ Load translations
   useEffect(() => {
     if (!country) return;
     const languageMap = {
@@ -70,23 +51,30 @@ const Button = ({
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // ✅ Handle Form Submission
+  // ✅ Handle Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Format phone
-    const area_code = `+${phone.slice(0, phone.length - 9)}`;
-    const local_phone = phone.slice(-9); // last 9 digits typically safe format
+    // Validate phone
+    if (!phone || phone.length < 7) {
+      alert("Please enter a valid phone number.");
+      setLoading(false);
+      return;
+    }
 
-    // ✅ Get user's IP address
+    // Extract area code & phone number
+    const area_code = `+${phone.slice(0, phone.length - 9)}`;
+    const local_phone = phone.slice(-9); // last 9 digits
+
+    // Get user's IP
     let userIp = "0.0.0.0";
     try {
       const res = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
       const ipData = await res.json();
       userIp = ipData.ip || "0.0.0.0";
     } catch (err) {
-      console.warn("Unable to fetch IP. Using default.");
+      console.warn("IP fetch failed, using default.");
     }
 
     const payload = {
@@ -108,18 +96,17 @@ const Button = ({
 
       const result = await response.json();
       if (result.success) {
-        console.log("Lead successfully sent!", result);
+        console.log("✅ Lead successfully sent!", result);
         setShowModal(false);
 
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
 
         router.push(thankYouUrl);
       } else {
-        alert("Error submitting form. Please try again.");
+        alert("❌ Error submitting form. Please check your info.");
       }
     } catch (error) {
       console.error("Submission error:", error);
