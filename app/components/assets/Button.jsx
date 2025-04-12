@@ -15,23 +15,26 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
-  // ✅ Fetch country (for translations)
+  const fetchLocation = async () => {
+    try {
+      const token = process.env.IPINFO_TOKEN;
+      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      const data = await response.json();
+      return data.country;
+    } catch (error) {
+      console.error("Failed to fetch location", error);
+      return "DE";
+    }
+  };
+
   useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-        const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-        const data = await response.json();
-        setCountry(data.country);
-      } catch (error) {
-        console.error("Failed to fetch location", error);
-        setCountry("DE");
-      }
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
     };
-    fetchLocation();
+    getLocation();
   }, []);
 
-  // ✅ Load translations
   useEffect(() => {
     if (!country) return;
     const languageMap = {
@@ -51,30 +54,24 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // ✅ Handle Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Validate phone
-    if (!phone || phone.length < 7) {
-      alert("Please enter a valid phone number.");
-      setLoading(false);
-      return;
-    }
+    // ✅ Split phone into area_code and local number
+    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
+    const digits = formattedPhone.replace(/\D/g, "");
+    const area_code = "+" + digits.slice(0, 2); // You can adjust this depending on your expected formats
+    const local_phone = digits.slice(2);
 
-    // Extract area code & phone number
-    const area_code = `+${phone.slice(0, phone.length - 9)}`;
-    const local_phone = phone.slice(-9); // last 9 digits
-
-    // Get user's IP
+    // ✅ Get user IP
     let userIp = "0.0.0.0";
     try {
-      const res = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
+      const res = await fetch(`https://ipinfo.io/json?token=${process.env.IPINFO_TOKEN}`);
       const ipData = await res.json();
       userIp = ipData.ip || "0.0.0.0";
     } catch (err) {
-      console.warn("IP fetch failed, using default.");
+      console.warn("Unable to fetch IP. Using default.");
     }
 
     const payload = {
@@ -96,17 +93,18 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
 
       const result = await response.json();
       if (result.success) {
-        console.log("✅ Lead successfully sent!", result);
+        console.log("Lead successfully sent!", result);
         setShowModal(false);
 
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
 
         router.push(thankYouUrl);
       } else {
-        alert("❌ Error submitting form. Please check your info.");
+        alert("Error submitting form. Please try again.");
       }
     } catch (error) {
       console.error("Submission error:", error);

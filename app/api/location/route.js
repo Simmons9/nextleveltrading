@@ -1,6 +1,6 @@
 export async function GET() {
     try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN; // Get token from Vercel Environment Variables
+      const token = process.env.IPINFO_TOKEN; // Get token from Vercel Environment Variables
       if (!token) {
         console.error("❌ Missing API Token in Vercel Environment Variables.");
         return new Response(JSON.stringify({ error: "Missing API Token" }), {

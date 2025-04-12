@@ -50,7 +50,7 @@ function Home() {
 
   const fetchLocation = async () => {
     try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      const token = process.env.IPINFO_TOKEN;
       const response = await fetch(`https://ipinfo.io/json?token=${token}`);
       const data = await response.json();
       return data.country;
