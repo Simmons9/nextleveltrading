@@ -2,28 +2,34 @@
 
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import useGeolocation from "../hooks/useGeolocation";
 
 export default function ThankYouPage() {
   const [texts, setTexts] = useState({});
+  const [params, setParams] = useState({
+    sxid: "",
+    extid: "",
+    rd: "3",
+    reU: "",
+  });
+
   const country = useGeolocation();
-  const router = useRouter();
-  const searchParams = useSearchParams();
 
-  // Load translations based on the detected country.
+  // ✅ Parse URL query parameters from window.location
   useEffect(() => {
-    const loadTranslations = async (langCode) => {
-      try {
-        const response = await fetch(`/translations/${langCode}.json`);
-const translations = await response.json();
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      setParams({
+        sxid: urlParams.get("sxid") || "",
+        extid: urlParams.get("extid") || "",
+        rd: urlParams.get("rd") || "3",
+        reU: urlParams.get("reU") || "",
+      });
+    }
+  }, []);
 
-        setTexts(translations.default || translations);
-      } catch (error) {
-        console.error(`Could not load translations for ${langCode}:`, error);
-      }
-    };
-
+  // ✅ Load translations based on geolocation
+  useEffect(() => {
     const languageMap = {
       DE: "de", AT: "de", US: "en", GB: "en", CA: "en",
       AU: "en", NZ: "en", PT: "pt", BR: "pt", FR: "fr",
@@ -31,34 +37,39 @@ const translations = await response.json();
       SV: "sv", ES: "es",
     };
 
-    loadTranslations(languageMap[country] || "de");
+    const loadTranslations = async (langCode) => {
+      try {
+        const res = await fetch(`/translations/${langCode}.json`);
+        const data = await res.json();
+        setTexts(data);
+      } catch (err) {
+        console.error("Could not load translations:", err);
+      }
+    };
+
+    if (country) {
+      loadTranslations(languageMap[country] || "de");
+    }
   }, [country]);
 
-  // ✅ Extract parameters from URL
-  const sxid = searchParams.get("sxid") || "";
-  const extid = searchParams.get("extid") || "";
-  const rd = searchParams.get("rd") || "3"; // Default to "3" if not passed
+  const { sxid, extid, rd, reU } = params;
   const countryCode = country ? country.toLowerCase() : "de";
-  const redirectUrl = searchParams.get("reU");
 
-  // ✅ Autologin Redirect after 2.5s if "reU" exists
+  // ✅ Auto-redirect if reU exists
   useEffect(() => {
-    if (redirectUrl) {
+    if (reU) {
       setTimeout(() => {
-        window.location.href = redirectUrl;
+        window.location.href = reU;
       }, 2500);
     }
-  }, [redirectUrl]);
+  }, [reU]);
 
-  // ✅ Affiliate Pixel URLs
-  const affiliateLeadPixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
-
-  const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+  const leadPixel = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+  const depositPixel = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
 
   return (
     <>
       <Head>
-        {/* ✅ Facebook Pixel for "Lead" Event */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -81,7 +92,6 @@ const translations = await response.json();
       </Head>
 
       <div className="flex flex-col justify-center items-center h-screen text-center">
-        {/* ✅ Animated Checkmark */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-24 w-24 text-green-500 animate-checkmark"
@@ -94,8 +104,6 @@ const translations = await response.json();
         >
           <polyline points="20 6 9 17 4 12" />
         </svg>
-
-        {/* ✅ Thank You Message */}
         <h1 className="text-4xl font-bold text-green-600 mt-6">
           {texts?.thankYou || "Thank You!"}
         </h1>
@@ -104,9 +112,9 @@ const translations = await response.json();
         </p>
       </div>
 
-      {/* ✅ Affiliate Conversion Pixels (Invisible Images) */}
-      <img src={affiliateLeadPixelUrl} style={{ display: "none" }} alt="Affiliate Lead Pixel" />
-      <img src={affiliateDepositePixelUrl} style={{ display: "none" }} alt="Affiliate Deposite Pixel" />
+      {/* Tracking pixels */}
+      <img src={leadPixel} style={{ display: "none" }} alt="Lead Pixel" />
+      <img src={depositPixel} style={{ display: "none" }} alt="Deposit Pixel" />
     </>
   );
 }
