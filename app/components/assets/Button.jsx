@@ -15,7 +15,6 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
-  // Fetch country for geolocation if needed
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
@@ -55,29 +54,34 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // ✅ Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
 
-    // ✅ Get user's IP address
+    // ✅ Split phone into area_code and local number
+    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
+    const digits = formattedPhone.replace(/\D/g, "");
+    const area_code = "+" + digits.slice(0, 2); // You can adjust this depending on your expected formats
+    const local_phone = digits.slice(2);
+
+    // ✅ Get user IP
     let userIp = "0.0.0.0";
     try {
-      const ipResponse = await fetch("https://api.ipify.org?format=json");
-      const ipData = await ipResponse.json();
+      const res = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
+      const ipData = await res.json();
       userIp = ipData.ip || "0.0.0.0";
-    } catch (error) {
-      console.warn("Failed to fetch IP address.");
+    } catch (err) {
+      console.warn("Unable to fetch IP. Using default.");
     }
 
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phoneNumber: formattedPhone,
       ai, gi, ci, altid, oi, rd, sxid, extid,
-      userip: userIp, // ✅ Include IP here
+      area_code,
+      phone: local_phone,
+      _ip: userIp,
     };
 
     try {
@@ -90,12 +94,10 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       const result = await response.json();
       if (result.success) {
         console.log("Lead successfully sent!", result);
-        setShowModal(false); // ✅ Close modal before redirecting
+        setShowModal(false);
 
-        // ✅ Build the Thank You Page URL
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
 
-        // ✅ Append autologin URL if provided
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
@@ -108,6 +110,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       console.error("Submission error:", error);
       alert("Error sending data.");
     }
+
     setLoading(false);
   };
 
