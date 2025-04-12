@@ -15,7 +15,9 @@ export default function ThankYouPage() {
   useEffect(() => {
     const loadTranslations = async (langCode) => {
       try {
-        const translations = await import(`../public/locales/${langCode}.json`);
+        const response = await fetch(`/translations/${langCode}.json`);
+const translations = await response.json();
+
         setTexts(translations.default || translations);
       } catch (error) {
         console.error(`Could not load translations for ${langCode}:`, error);
