@@ -15,24 +15,19 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
-  const fetchLocation = async () => {
-    try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      const data = await response.json();
-      return data.country;
-    } catch (error) {
-      console.error("Failed to fetch location", error);
-      return "DE";
-    }
-  };
-
+  // Get geolocation for translations
   useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchLocation();
-      setCountry(location);
+    const fetchLocation = async () => {
+      try {
+        const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+        const res = await fetch(`https://ipinfo.io/json?token=${token}`);
+        const data = await res.json();
+        setCountry(data.country || "DE");
+      } catch {
+        setCountry("DE");
+      }
     };
-    getLocation();
+    fetchLocation();
   }, []);
 
   useEffect(() => {
@@ -54,34 +49,41 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
+  // ✅ Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // ✅ Split phone into area_code and local number
-    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
-    const digits = formattedPhone.replace(/\D/g, "");
-    const area_code = "+" + digits.slice(0, 2); // You can adjust this depending on your expected formats
-    const local_phone = digits.slice(2);
+    // ✅ Format phone: remove leading '+' and spaces
+    const formattedPhone = phone.startsWith("+") ? phone.replace(/\+/g, "").replace(/\s/g, "") : phone;
 
-    // ✅ Get user IP
+    // ✅ Get public IP address
     let userIp = "0.0.0.0";
     try {
-      const res = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
-      const ipData = await res.json();
+      const ipRes = await fetch("https://api.ipify.org?format=json");
+      const ipData = await ipRes.json();
       userIp = ipData.ip || "0.0.0.0";
     } catch (err) {
-      console.warn("Unable to fetch IP. Using default.");
+      console.warn("Failed to get IP, defaulting to 0.0.0.0");
     }
 
     const payload = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      ai, gi, ci, altid, oi, rd, sxid, extid,
-      area_code,
-      phone: local_phone,
-      _ip: userIp,
+      phone: formattedPhone, // ✅ Required by Trackbox
+      ai,
+      gi,
+      ci,
+      altid,
+      oi,
+      rd,
+      sxid,
+      extid,
+      userip: userIp,
+      password: "Qbwriu48",
+      so: "NextLevelTrading",
+      lg: "EN",
     };
 
     try {
@@ -97,7 +99,6 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
         setShowModal(false);
 
         let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-
         if (result.autologinUrl) {
           thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
         }
@@ -110,9 +111,9 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       console.error("Submission error:", error);
       alert("Error sending data.");
     }
-
     setLoading(false);
   };
+
 
   return (
     <>
