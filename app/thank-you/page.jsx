@@ -41,7 +41,7 @@ export default function ThankYouPage() {
       setParams({
         sxid: searchParams.get("sxid") || "",
         extid: searchParams.get("extid") || "",
-        rd: searchParams.get("rd") || "3", // Default to 3 if not provided
+        rd: searchParams.get("rd") || "", // Default to 3 if not provided
         reU: searchParams.get("reU") || "",
       });
     }
