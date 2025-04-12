@@ -2,34 +2,27 @@
 
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import useGeolocation from "../hooks/useGeolocation";
 
 export default function ThankYouPage() {
   const [texts, setTexts] = useState({});
-  const [params, setParams] = useState({
-    sxid: "",
-    extid: "",
-    rd: "3",
-    reU: "",
-  });
-
   const country = useGeolocation();
+  const router = useRouter();
+  const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
 
-  // ✅ Parse URL query parameters from window.location
+  // ✅ Load translations using fetch instead of import
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const urlParams = new URLSearchParams(window.location.search);
-      setParams({
-        sxid: urlParams.get("sxid") || "",
-        extid: urlParams.get("extid") || "",
-        rd: urlParams.get("rd") || "3",
-        reU: urlParams.get("reU") || "",
-      });
-    }
-  }, []);
+    const loadTranslations = async (langCode) => {
+      try {
+        const response = await fetch(`/translations/${langCode}.json`);
+        const translations = await response.json();
+        setTexts(translations);
+      } catch (error) {
+        console.error(`Could not load translations for ${langCode}:`, error);
+      }
+    };
 
-  // ✅ Load translations based on geolocation
-  useEffect(() => {
     const languageMap = {
       DE: "de", AT: "de", US: "en", GB: "en", CA: "en",
       AU: "en", NZ: "en", PT: "pt", BR: "pt", FR: "fr",
@@ -37,25 +30,27 @@ export default function ThankYouPage() {
       SV: "sv", ES: "es",
     };
 
-    const loadTranslations = async (langCode) => {
-      try {
-        const res = await fetch(`/translations/${langCode}.json`);
-        const data = await res.json();
-        setTexts(data);
-      } catch (err) {
-        console.error("Could not load translations:", err);
-      }
-    };
-
-    if (country) {
-      loadTranslations(languageMap[country] || "de");
-    }
+    loadTranslations(languageMap[country] || "de");
   }, [country]);
+
+  // ✅ Extract parameters from URL (ensure it runs only on client side)
+  const [params, setParams] = useState({ sxid: "", extid: "", rd: "3", reU: "" });
+
+  useEffect(() => {
+    if (searchParams) {
+      setParams({
+        sxid: searchParams.get("sxid") || "",
+        extid: searchParams.get("extid") || "",
+        rd: searchParams.get("rd") || "3", // Default to 3 if not provided
+        reU: searchParams.get("reU") || "",
+      });
+    }
+  }, [searchParams]);
 
   const { sxid, extid, rd, reU } = params;
   const countryCode = country ? country.toLowerCase() : "de";
 
-  // ✅ Auto-redirect if reU exists
+  // ✅ Autologin Redirect after 2.5s if "reU" exists
   useEffect(() => {
     if (reU) {
       setTimeout(() => {
@@ -64,12 +59,15 @@ export default function ThankYouPage() {
     }
   }, [reU]);
 
-  const leadPixel = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
-  const depositPixel = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+  // ✅ Affiliate Pixel URLs
+  const affiliateLeadPixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=lead&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
+
+  const affiliateDepositePixelUrl = `https://contactapi.static.fyi/tracking/custom-conversion/alpha/?event=deposite&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}&country=${encodeURIComponent(countryCode)}&offer=7`;
 
   return (
     <>
       <Head>
+        {/* ✅ Facebook Pixel for "Lead" Event */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -92,6 +90,7 @@ export default function ThankYouPage() {
       </Head>
 
       <div className="flex flex-col justify-center items-center h-screen text-center">
+        {/* ✅ Animated Checkmark */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-24 w-24 text-green-500 animate-checkmark"
@@ -104,6 +103,8 @@ export default function ThankYouPage() {
         >
           <polyline points="20 6 9 17 4 12" />
         </svg>
+
+        {/* ✅ Thank You Message */}
         <h1 className="text-4xl font-bold text-green-600 mt-6">
           {texts?.thankYou || "Thank You!"}
         </h1>
@@ -112,9 +113,9 @@ export default function ThankYouPage() {
         </p>
       </div>
 
-      {/* Tracking pixels */}
-      <img src={leadPixel} style={{ display: "none" }} alt="Lead Pixel" />
-      <img src={depositPixel} style={{ display: "none" }} alt="Deposit Pixel" />
+      {/* ✅ Affiliate Conversion Pixels (Invisible Images) */}
+      <img src={affiliateLeadPixelUrl} style={{ display: "none" }} alt="Affiliate Lead Pixel" />
+      <img src={affiliateDepositePixelUrl} style={{ display: "none" }} alt="Affiliate Deposite Pixel" />
     </>
   );
 }
