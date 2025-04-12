@@ -6,15 +6,31 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
+const Button = ({
+  buttonText,
+  ai,
+  gi,
+  ci,
+  texts,
+  altid,
+  oi,
+  rd,
+  sxid = "",
+  extid = "",
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
+  // Fetch country for geolocation if needed
   const fetchLocation = async () => {
     try {
       const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
@@ -54,17 +70,16 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
+  // ✅ Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // ✅ Split phone into area_code and local number
-    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
-    const digits = formattedPhone.replace(/\D/g, "");
-    const area_code = "+" + digits.slice(0, 2); // You can adjust this depending on your expected formats
-    const local_phone = digits.slice(2);
+    // Format phone
+    const area_code = `+${phone.slice(0, phone.length - 9)}`;
+    const local_phone = phone.slice(-9); // last 9 digits typically safe format
 
-    // ✅ Get user IP
+    // ✅ Get user's IP address
     let userIp = "0.0.0.0";
     try {
       const res = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`);
