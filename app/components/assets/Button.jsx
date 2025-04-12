@@ -15,19 +15,24 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
   const [localTexts, setLocalTexts] = useState(texts || {});
   const router = useRouter();
 
-  // Get geolocation for translations
+  const fetchLocation = async () => {
+    try {
+      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
+      const data = await response.json();
+      return data.country;
+    } catch (error) {
+      console.error("Failed to fetch location", error);
+      return "DE";
+    }
+  };
+
   useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-        const res = await fetch(`https://ipinfo.io/json?token=${token}`);
-        const data = await res.json();
-        setCountry(data.country || "DE");
-      } catch {
-        setCountry("DE");
-      }
+    const getLocation = async () => {
+      const location = await fetchLocation();
+      setCountry(location);
     };
-    fetchLocation();
+    getLocation();
   }, []);
 
   useEffect(() => {
@@ -49,71 +54,62 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-  // ✅ Handle Form Submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    // ✅ Format phone: remove leading '+' and spaces
-    const formattedPhone = phone.startsWith("+") ? phone.replace(/\+/g, "").replace(/\s/g, "") : phone;
+  // ✅ Ensure phone has "+" prefix
+  const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
 
-    // ✅ Get public IP address
-    let userIp = "0.0.0.0";
-    try {
-      const ipRes = await fetch("https://api.ipify.org?format=json");
-      const ipData = await ipRes.json();
-      userIp = ipData.ip || "0.0.0.0";
-    } catch (err) {
-      console.warn("Failed to get IP, defaulting to 0.0.0.0");
-    }
+  // ✅ Get user's IP address
+  let userIp = "0.0.0.0";
+  try {
+    const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
+    const ipData = await res.json();
+    userIp = ipData.ip || "0.0.0.0";
+  } catch (err) {
+    console.warn("Unable to fetch IP. Using default.");
+  }
 
-    const payload = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formattedPhone, // ✅ Required by Trackbox
-      ai,
-      gi,
-      ci,
-      altid,
-      oi,
-      rd,
-      sxid,
-      extid,
-      userip: userIp,
-      password: "Qbwriu48",
-      so: "NextLevelTrading",
-      lg: "EN",
-    };
-
-    try {
-      const response = await fetch("/api/trackbox", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        console.log("Lead successfully sent!", result);
-        setShowModal(false);
-
-        let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-        if (result.autologinUrl) {
-          thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
-        }
-
-        router.push(thankYouUrl);
-      } else {
-        alert("Error submitting form. Please try again.");
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Error sending data.");
-    }
-    setLoading(false);
+  const payload = {
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    phone: formattedPhone,        // ✅ Full number including country code
+    ai, gi, ci, altid, oi, rd, sxid, extid,
+    userip: userIp,               // ✅ Sent in correct key as per Trackbox docs
+    so: "NextLevelTrading",
+    lg: "EN",
   };
 
+  try {
+    const response = await fetch("/api/trackbox", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      console.log("Lead successfully sent!", result);
+      setShowModal(false);
+
+      let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+      if (result.autologinUrl) {
+        thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
+      }
+
+      router.push(thankYouUrl);
+    } else {
+      alert("Error submitting form. Please try again.");
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    alert("Error sending data.");
+  }
+
+  setLoading(false);
+};
 
   return (
     <>
