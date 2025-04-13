@@ -58,7 +58,6 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     e.preventDefault();
     setLoading(true);
   
-    // ✅ Format phone number to include "+"
     const formattedPhone = phone;
   
     // ✅ Get user IP
@@ -75,14 +74,14 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phone: formattedPhone, // ✅ Final formatted number
+      phone: formattedPhone, 
       ai, gi, ci, altid, oi, rd, sxid, extid,
       userip: userIp,
       so: "NextLevelTrading",
       lg: "EN",
     };
   
-    console.log("Submitting payload:", payload); // ✅ Debug line
+    console.log("Submitting payload:", payload); 
   
     try {
       const response = await fetch("/api/trackbox", {
