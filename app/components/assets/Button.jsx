@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { parsePhoneNumberFromString } from "libphonenumber-js";
 import useGeolocation from "../../hooks/useGeolocation";
 
 const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
@@ -59,21 +58,9 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     e.preventDefault();
     setLoading(true);
   
-    let formattedPhone = phone;
 
-    try {
-      const phoneNumber = parsePhoneNumberFromString(phone);
+      const phoneNumber = phone;
   
-      if (phoneNumber && phoneNumber.isValid()) {
-        const countryCode = phoneNumber.countryCallingCode;         // e.g. 44
-        const nationalNumber = phoneNumber.nationalNumber;         // e.g. 7914150094
-        formattedPhone = `${countryCode}0${nationalNumber}`;       // e.g. 4407914150094
-      } else {
-        console.warn("Phone number is invalid or couldn't be parsed.");
-      }
-    } catch (err) {
-      console.error("Phone parsing error:", err.message);
-    }
   
     // ✅ Get user IP
     let userIp = "0.0.0.0";
@@ -89,7 +76,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phone: formattedPhone, 
+      phone: phoneNumber, 
       ai, gi, ci, altid, oi, rd, sxid, extid,
       userip: userIp,
       so: "NextLevelTrading",
