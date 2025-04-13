@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
     firstName: formData.firstName,
     lastName: formData.lastName,
     email: formData.email,
-    phone: phone,        // ✅ Full number including country code
+    phone,       // ✅ Full number including country code
     ai, gi, ci, altid, oi, rd, sxid, extid,
     userip: userIp,               // ✅ Sent in correct key as per Trackbox docs
     so: "NextLevelTrading",
@@ -177,7 +177,10 @@ const handleSubmit = async (e) => {
                 <PhoneInput
                   country={country ? country.toLowerCase() : "de"}
                   value={phone}
-                  onChange={(value) => setPhone("+" + value)}
+                  onChange={(value) => {
+                    const cleaned = value.replace(/^(\+)+/, ""); // Remove leading +
+                    setPhone("+" + cleaned); // Ensure only one +
+                  }}
                   inputStyle={{
                     width: "90%",
                     backgroundColor: "#edf1f6",
