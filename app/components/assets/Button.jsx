@@ -59,17 +59,21 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     e.preventDefault();
     setLoading(true);
   
-    const phoneNumber = parsePhoneNumberFromString(phone);
+    let formattedPhone = phone;
 
-        let formattedPhone = phone; // fallback
-
-        if (phoneNumber && phoneNumber.isValid()) {
-          const countryCode = phoneNumber.countryCallingCode;     // e.g. "44"
-          const nationalNumber = phoneNumber.nationalNumber;      // e.g. "7012259886"
-          formattedPhone = `${countryCode}0${nationalNumber}`;    // e.g. "4407012259886"
-        } else {
-          console.warn("Phone number is invalid or couldn't be parsed.");
-        }
+    try {
+      const phoneNumber = parsePhoneNumberFromString(phone);
+  
+      if (phoneNumber && phoneNumber.isValid()) {
+        const countryCode = phoneNumber.countryCallingCode;         // e.g. 44
+        const nationalNumber = phoneNumber.nationalNumber;         // e.g. 7914150094
+        formattedPhone = `${countryCode}0${nationalNumber}`;       // e.g. 4407914150094
+      } else {
+        console.warn("Phone number is invalid or couldn't be parsed.");
+      }
+    } catch (err) {
+      console.error("Phone parsing error:", err.message);
+    }
   
     // ✅ Get user IP
     let userIp = "0.0.0.0";
