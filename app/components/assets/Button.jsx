@@ -58,8 +58,6 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setLoading(true);
 
-  // ✅ Ensure phone has "+" prefix
-  const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
 
   // ✅ Get user's IP address
   let userIp = "0.0.0.0";
@@ -75,7 +73,7 @@ const handleSubmit = async (e) => {
     firstName: formData.firstName,
     lastName: formData.lastName,
     email: formData.email,
-    phone: formattedPhone,        // ✅ Full number including country code
+    phone: phone,        // ✅ Full number including country code
     ai, gi, ci, altid, oi, rd, sxid, extid,
     userip: userIp,               // ✅ Sent in correct key as per Trackbox docs
     so: "NextLevelTrading",
@@ -179,7 +177,7 @@ const handleSubmit = async (e) => {
                 <PhoneInput
                   country={country ? country.toLowerCase() : "de"}
                   value={phone}
-                  onChange={setPhone}
+                  onChange={(value) => setPhone("+" + value)}
                   inputStyle={{
                     width: "90%",
                     backgroundColor: "#edf1f6",
