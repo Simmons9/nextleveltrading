@@ -59,8 +59,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     setLoading(true);
   
 
-    const phoneNumber = phone.startsWith("+") ? phone.slice(1) : phone;
-
+    const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
   
   
     // ✅ Get user IP
@@ -77,7 +76,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phone: phoneNumber, 
+      phone: formattedPhone, 
       ai, gi, ci, altid, oi, rd, sxid, extid,
       userip: userIp,
       so: "NextLevelTrading",
