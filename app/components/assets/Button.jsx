@@ -59,7 +59,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     setLoading(true);
   
     // ✅ Format phone number to include "+"
-    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
+    const formattedPhone = phone;
   
     // ✅ Get user IP
     let userIp = "0.0.0.0";
