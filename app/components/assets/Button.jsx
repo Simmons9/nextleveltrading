@@ -59,7 +59,7 @@ const handleSubmit = async (e) => {
   setLoading(true);
 
   // ✅ Ensure phone has "+" prefix
-  const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
+  const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
 
   // ✅ Get user's IP address
   let userIp = "0.0.0.0";
