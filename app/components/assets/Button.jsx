@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 import useGeolocation from "../../hooks/useGeolocation";
 
 const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
@@ -58,7 +59,17 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     e.preventDefault();
     setLoading(true);
   
-    const formattedPhone = phone;
+    const phoneNumber = parsePhoneNumberFromString(phone);
+
+        let formattedPhone = phone; // fallback
+
+        if (phoneNumber && phoneNumber.isValid()) {
+          const countryCode = phoneNumber.countryCallingCode;     // e.g. "44"
+          const nationalNumber = phoneNumber.nationalNumber;      // e.g. "7012259886"
+          formattedPhone = `${countryCode}0${nationalNumber}`;    // e.g. "4407012259886"
+        } else {
+          console.warn("Phone number is invalid or couldn't be parsed.");
+        }
   
     // ✅ Get user IP
     let userIp = "0.0.0.0";
