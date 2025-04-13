@@ -54,60 +54,65 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     loadTranslations(languageMap[country] || "de");
   }, [country]);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-
-
-  // ✅ Get user's IP address
-  let userIp = "0.0.0.0";
-  try {
-    const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
-    const ipData = await res.json();
-    userIp = ipData.ip || "0.0.0.0";
-  } catch (err) {
-    console.warn("Unable to fetch IP. Using default.");
-  }
-
-  const payload = {
-    firstName: formData.firstName,
-    lastName: formData.lastName,
-    email: formData.email,
-    phone,       // ✅ Full number including country code
-    ai, gi, ci, altid, oi, rd, sxid, extid,
-    userip: userIp,               // ✅ Sent in correct key as per Trackbox docs
-    so: "NextLevelTrading",
-    lg: "EN",
-  };
-
-  try {
-    const response = await fetch("/api/trackbox", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      console.log("Lead successfully sent!", result);
-      setShowModal(false);
-
-      let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-      if (result.autologinUrl) {
-        thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
-      }
-
-      router.push(thankYouUrl);
-    } else {
-      alert("Error submitting form. Please try again.");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    // ✅ Format phone number to include "+"
+    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
+  
+    // ✅ Get user IP
+    let userIp = "0.0.0.0";
+    try {
+      const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
+      const ipData = await res.json();
+      userIp = ipData.ip || "0.0.0.0";
+    } catch (err) {
+      console.warn("Unable to fetch IP. Using default.");
     }
-  } catch (error) {
-    console.error("Submission error:", error);
-    alert("Error sending data.");
-  }
-
-  setLoading(false);
-};
+  
+    const payload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formattedPhone, // ✅ Final formatted number
+      ai, gi, ci, altid, oi, rd, sxid, extid,
+      userip: userIp,
+      so: "NextLevelTrading",
+      lg: "EN",
+    };
+  
+    console.log("Submitting payload:", payload); // ✅ Debug line
+  
+    try {
+      const response = await fetch("/api/trackbox", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+  
+      const result = await response.json();
+      if (result.success) {
+        console.log("Lead successfully sent!", result);
+        setShowModal(false);
+  
+        let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
+        if (result.autologinUrl) {
+          thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
+        }
+  
+        router.push(thankYouUrl);
+      } else {
+        alert("Error submitting form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Error sending data.");
+    }
+  
+    setLoading(false);
+  };
+  
 
   return (
     <>
@@ -177,10 +182,7 @@ const handleSubmit = async (e) => {
                 <PhoneInput
                   country={country ? country.toLowerCase() : "de"}
                   value={phone}
-                  onChange={(value) => {
-                    const cleaned = value.replace(/^(\+)+/, ""); // Remove leading +
-                    setPhone("+" + cleaned); // Ensure only one +
-                  }}
+                  onChange={(value) => setPhone(value)} // ✅ Do NOT add "+"
                   inputStyle={{
                     width: "90%",
                     backgroundColor: "#edf1f6",
@@ -193,7 +195,7 @@ const handleSubmit = async (e) => {
                   }}
                   inputProps={{
                     required: true,
-                    placeholder: localTexts.online?.telefonnumer,
+                    placeholder: localTexts.online?.telefonnumer || "Phone Number",
                   }}
                 />
               </div>
