@@ -59,7 +59,7 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     setLoading(true);
   
 
-    const sanitizedPhone = phone.startsWith("+") ? phone.slice(1) : phone;
+    const phoneNumber = phone.startsWith("+") ? phone.slice(1) : phone;
 
   
   
