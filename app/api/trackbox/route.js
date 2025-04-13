@@ -33,7 +33,7 @@ export async function POST(req) {
       lastname: body.lastName,
       email: body.email,
       password: body.password || "Qbwriu48",
-      phone: body.phoneNumber,
+      phone: body.phone,
       so: body.so || "NextLevelTrading",
       lg: body.lg || "EN",
     };
