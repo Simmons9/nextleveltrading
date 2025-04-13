@@ -59,7 +59,8 @@ const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid
     setLoading(true);
   
 
-      const phoneNumber = phone;
+    const sanitizedPhone = phone.startsWith("+") ? phone.slice(1) : phone;
+
   
   
     // ✅ Get user IP
