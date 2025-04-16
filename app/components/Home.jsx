@@ -4,9 +4,6 @@ import React, { useState, useEffect } from "react";
 import Button from "./assets/Button";
 import Cards from "./assets/Cards";
 import Tag from "./assets/Tag";
-import Datenschutz from "./assets/Datenschutz";
-import Impressum from "./assets/Impressum";
-import Risikohinweis from "./assets/Risikohinweis";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; 
 import Image from "next/image";
@@ -39,7 +36,7 @@ function Home() {
         gi: params.get("gi") || "23",
         oi: params.get("oi") || "",
         ci: params.get("ci") || "4",
-        rd: params.get('rd') || "3",
+        rd: params.get("rd") || "3",
         sxid: params.get("sub") || "",  // Extract sxid from "sub"
         extid: params.get("affClickId") || "", // Extract extid from "affClickId"
       };
@@ -60,16 +57,38 @@ function Home() {
     }
   };
 
+  // Load default translations immediately
+  useEffect(() => {
+    const loadDefault = async () => {
+      const translations = await import(`../../public/translations/de.json`);
+      setTexts(translations.default || translations);
+    };
+    loadDefault();
+  }, []);
+
+  // Get location and cache in localStorage if not already
   useEffect(() => {
     const getLocation = async () => {
+      const cachedCountry = localStorage.getItem("userCountry");
+  
+      if (cachedCountry) {
+        setCountry(cachedCountry); // e ngarkon menjëherë
+      }
+  
       const location = await fetchLocation();
-      setCountry(location);
+  
+      if (!cachedCountry || cachedCountry !== location) {
+        setCountry(location);
+        localStorage.setItem("userCountry", location);
+      }
     };
     getLocation();
   }, []);
 
+  // Load correct translation after country is set
   useEffect(() => {
     if (!country) return;
+
     const languageMap = {
       DE: "de",
       AT: "de",
@@ -89,6 +108,7 @@ function Home() {
       SV: "sv",
       ES: "es",
     };
+
     const loadTranslations = async (langCode) => {
       try {
         const translations = await import(`../../public/translations/${langCode}.json`);
@@ -97,7 +117,11 @@ function Home() {
         console.error(`Could not load translations for ${langCode}:`, error);
       }
     };
-    loadTranslations(languageMap[country] || "de");
+
+    const selectedLang = languageMap[country] || "de";
+    if (selectedLang !== "de") {
+      loadTranslations(selectedLang);
+    }
   }, [country]);
 
   const toggleAccordion = (index) => {
@@ -107,6 +131,13 @@ function Home() {
   const handleToggleColumns = () => {
     setShowColumns((prevState) => !prevState);
   };
+
+
+
+
+
+
+
   
   return (
     <main className="relative" style={{ fontFamily: "'Outfit', sans-serif" }}>
