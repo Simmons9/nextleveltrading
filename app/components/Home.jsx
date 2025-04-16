@@ -60,7 +60,7 @@ function Home() {
   // Load default translations immediately
   useEffect(() => {
     const loadDefault = async () => {
-      const translations = await import(`../../public/translations/de.json`);
+      const translations = await import(`../../public/translations/en.json`);
       setTexts(translations.default || translations);
     };
     loadDefault();
