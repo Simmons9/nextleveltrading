@@ -1,8 +1,11 @@
+// app/api/affise/route.js
+
 export const runtime = "edge";
 
 export async function POST(req) {
   try {
     const body = await req.json();
+    console.log("Received payload:", body); // ✅ DEBUG: Kontrollo çfarë merr API
 
     const {
       clickid,
@@ -10,6 +13,10 @@ export async function POST(req) {
       lastName,
       email,
       phone,
+      sub1,
+      sub2, 
+      sub3,
+      sub4
     } = body;
 
     if (!clickid) {
@@ -22,24 +29,62 @@ export async function POST(req) {
       );
     }
 
-    // ✅ Krijo URL-n për postback me sub1 - sub4 (siç kërkon Affise)
-    const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(clickid)}&sub1=${encodeURIComponent(firstName || "")}&sub2=${encodeURIComponent(lastName || "")}&sub3=${encodeURIComponent(email || "")}&sub4=${encodeURIComponent(phone || "")}`;
+    // ✅ PËRDOR SUB1-SUB4 NGA BODY OSE FALLBACK NË FIRSTNAME, LASTNAME, EMAIL, PHONE
+    const finalSub1 = sub1 || firstName || "";
+    const finalSub2 = sub2 || lastName || "";
+    const finalSub3 = sub3 || email || "";
+    const finalSub4 = sub4 || phone || "";
+
+    // ✅ DEBUG: Kontrollo vlerat para se t'i dërgosh
+    console.log("Final sub values:", {
+      sub1: finalSub1,
+      sub2: finalSub2,
+      sub3: finalSub3,
+      sub4: finalSub4
+    });
+
+    // ✅ SIGUROHU QË TË DHËNAT NDIHEN DREJT
+    if (!finalSub1 || !finalSub2 || !finalSub3 || !finalSub4) {
+      console.warn("Some sub values are empty!", {
+        sub1: finalSub1,
+        sub2: finalSub2,
+        sub3: finalSub3,
+        sub4: finalSub4
+      });
+    }
+
+    // Construct postback URL with sub parameters
+    const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(
+      clickid
+    )}&sub1=${encodeURIComponent(finalSub1)}&sub2=${encodeURIComponent(finalSub2)}&sub3=${encodeURIComponent(finalSub3)}&sub4=${encodeURIComponent(finalSub4)}`;
 
     console.log("Calling Affise Postback URL:", postbackUrl);
 
-    // ✅ Dërgo te Affise
     const affiseRes = await fetch(postbackUrl);
     const postbackText = await affiseRes.text();
 
     if (affiseRes.ok) {
       return new Response(
-        JSON.stringify({ success: true, message: postbackText }),
+        JSON.stringify({ 
+          success: true, 
+          message: postbackText,
+          // ✅ KTHE PËRSËRI TË DHËNAT PËR DEBUG
+          sentData: {
+            clickid,
+            sub1: finalSub1,
+            sub2: finalSub2,
+            sub3: finalSub3,
+            sub4: finalSub4
+          },
+          postbackUrl // ✅ KTHE URL-në për të parë se çfarë u dërgua
+        }),
         {
           status: 200,
           headers: { "Content-Type": "application/json" },
         }
       );
     } else {
+      console.error("Affise rejected the postback:", postbackText);
       return new Response(
         JSON.stringify({ success: false, message: postbackText }),
         {
@@ -48,8 +93,8 @@ export async function POST(req) {
         }
       );
     }
-
   } catch (error) {
+    console.error("Affise API Error:", error);
     return new Response(
       JSON.stringify({ success: false, message: error.message }),
       {

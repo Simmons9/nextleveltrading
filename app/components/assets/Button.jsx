@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
@@ -15,6 +14,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
     clickid: "",
   });
   const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [country, setCountry] = useState(null);
   const [localTexts, setLocalTexts] = useState({});
   const router = useRouter();
@@ -48,40 +48,51 @@ const Button = ({ buttonText, rd, extid = "" }) => {
       .catch((e) => console.error("Translation load error", e));
   }, [country]);
 
- useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  const clickidFromUrl = params.get("clickid");
-  const storedClickid = localStorage.getItem("affise_clickid");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const clickidFromUrl = params.get("clickid");
+    const storedClickid = localStorage.getItem("affise_clickid");
+    
+    if (clickidFromUrl) {
+      // Ruaj të gjithë parametrat
+      localStorage.setItem("affise_clickid", clickidFromUrl);
+      ["pid", "offer_id", "ip", "geo", "ua", "sub1", "sub2", "sub3", "sub4"].forEach((key) => {
+        const value = params.get(key);
+        if (value !== null) localStorage.setItem(`affise_${key}`, value);
+      });
+      setFormData((prev) => ({ ...prev, clickid: clickidFromUrl }));
+      
+      // Pastro URL-në
+      window.history.replaceState({}, "", window.location.origin + window.location.pathname);
+    } else if (!storedClickid) {
+      // Redirecto te Affise
+      window.location.href = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
+      return;
+    } else {
+      // Vendos nga localStorage
+      setFormData((prev) => ({ ...prev, clickid: storedClickid }));
+    }
+    
+    setIsLoading(false);
+  }, []);
 
-  if (clickidFromUrl) {
-    // ✅ Ruaj të gjithë parametrat
-    localStorage.setItem("affise_clickid", clickidFromUrl);
-    ["pid", "offer_id", "ip", "geo", "ua", "sub1", "sub2", "sub3"].forEach((key) => {
-      const value = params.get(key);
-      if (value !== null) localStorage.setItem(`affise_${key}`, value);
-    });
-
-    setFormData((prev) => ({ ...prev, clickid: clickidFromUrl }));
-
-    // ✅ Pastro URL direkt pas ruajtjes (shfaqet vetëm për 1 moment)
-    window.history.replaceState({}, "", window.location.origin + window.location.pathname);
-  } else if (!storedClickid) {
-    // ❌ Nëse s’ka fare clickid as në URL e as në storage — redirecto te Affise
-    window.location.href = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
-  } else {
-    // ✅ Vendos nga localStorage
-    setFormData((prev) => ({ ...prev, clickid: storedClickid }));
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-}, []);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+    
     const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
-    let userIp = "0.0.0.0";
+    
+    // ✅ RUAJ TË DHËNAT E FORMËS NË LOCALSTORAGE SI SUB1-SUB4
+    localStorage.setItem("affise_sub1", formData.firstName);
+    localStorage.setItem("affise_sub2", formData.lastName);
+    localStorage.setItem("affise_sub3", formData.email);
+    localStorage.setItem("affise_sub4", formattedPhone);
 
+    let userIp = "0.0.0.0";
     try {
       const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
       const ipData = await res.json();
@@ -90,18 +101,36 @@ const Button = ({ buttonText, rd, extid = "" }) => {
       console.warn("IP fetch failed.");
     }
 
+    // ✅ SIGUROHU QË TË DHËNAT NUK JANË ZBRAZË
+    const cleanFirstName = (formData.firstName || "").trim();
+    const cleanLastName = (formData.lastName || "").trim();
+    const cleanEmail = (formData.email || "").trim(); 
+    const cleanPhone = formattedPhone || "";
+
     const payload = {
       clickid: formData.clickid || localStorage.getItem("affise_clickid") || "",
       pid: "2",
       offer_id: "1",
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formattedPhone,
+      firstName: cleanFirstName,
+      lastName: cleanLastName,
+      email: cleanEmail,
+      phone: cleanPhone,
       userip: userIp,
+      // ✅ DËRGO EDHE TË DHËNAT SI SUB PARAMETERS
+      sub1: cleanFirstName,
+      sub2: cleanLastName,
+      sub3: cleanEmail,
+      sub4: cleanPhone,
     };
 
     console.log("Sending to Affise:", payload);
+    console.log("Form data check:", {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: phone,
+      formattedPhone: formattedPhone
+    });
 
     try {
       const res = await fetch("/api/affise", {
@@ -109,8 +138,8 @@ const Button = ({ buttonText, rd, extid = "" }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
       const result = await res.json();
+      
       if (result.success) {
         setShowModal(false);
         let url = `/thank-you?rd=${encodeURIComponent(rd)}&clickid=${encodeURIComponent(formData.clickid)}&extid=${encodeURIComponent(extid)}`;
@@ -122,7 +151,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
       console.error("Submission error:", err);
       alert("Failed to send data.");
     }
-
+    
     setLoading(false);
   };
 
@@ -159,9 +188,11 @@ const Button = ({ buttonText, rd, extid = "" }) => {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
+            
             <h1 className="form text-[24px] text-center font-bold mb-6 leading-[1.5]">
               {localTexts.online?.justOneStep}
             </h1>
+            
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -172,6 +203,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 required
               />
+              
               <input
                 type="text"
                 name="lastName"
@@ -181,6 +213,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 required
               />
+              
               <input
                 type="email"
                 name="email"
@@ -190,11 +223,12 @@ const Button = ({ buttonText, rd, extid = "" }) => {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
+              
               <div className="block w-full mb-4 rounded-[10px] bg-[#edf1f6] p-[15px] relative z-[1001]">
                 <PhoneInput
                   country={country ? country.toLowerCase() : "de"}
                   value={phone}
-                  onChange={(value) => setPhone(value)} // ✅ Do NOT add "+"
+                  onChange={(value) => setPhone(value)}
                   inputStyle={{
                     width: "90%",
                     backgroundColor: "#edf1f6",
@@ -211,6 +245,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
                   }}
                 />
               </div>
+              
               <button
                 type="submit"
                 className="button1 bg-[#13f97b] mt-[2rem] h-20 w-full rounded-lg p-4 cursor-pointer flex items-center justify-between text-[16px] font-[600] transition-all duration-500 ease-in-out hover:scale-105 relative overflow-hidden"
@@ -226,12 +261,8 @@ const Button = ({ buttonText, rd, extid = "" }) => {
 
       <style jsx>{`
         @keyframes moveInteraction {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
         .animate-interaction {
           animation: moveInteraction 3s linear infinite;
@@ -240,9 +271,7 @@ const Button = ({ buttonText, rd, extid = "" }) => {
           backdrop-filter: blur(10px);
           background-image: linear-gradient(#f6f8fb80, #f6f8fbe6);
         }
-        .custom-checkbox {
-          display: none;
-        }
+        .custom-checkbox { display: none; }
         .custom-checkbox + label {
           display: flex;
           align-items: center;
