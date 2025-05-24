@@ -59,6 +59,26 @@ const Button = ({ buttonText, rd, extid = "" }) => {
     }
   }, []);
 
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const clickid = params.get("clickid");
+  const storedClickId = localStorage.getItem("affise_clickid");
+
+  // Nëse s'ka clickid në URL dhe as në localStorage, bëj redirect
+  if (!clickid && !storedClickId) {
+    const affiseLink = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
+    window.location.href = affiseLink;
+  }
+
+  // Nëse ka clickid në URL, ruaje
+  if (clickid) {
+    localStorage.setItem("affise_clickid", clickid);
+  }
+}, []);
+
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
