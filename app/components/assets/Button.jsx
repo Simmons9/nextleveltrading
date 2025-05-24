@@ -19,7 +19,6 @@ const Button = ({ buttonText, rd, extid = "" }) => {
   const [localTexts, setLocalTexts] = useState({});
   const router = useRouter();
 
-  // Get user country
   useEffect(() => {
     const fetchLocation = async () => {
       try {
@@ -35,7 +34,6 @@ const Button = ({ buttonText, rd, extid = "" }) => {
     fetchLocation();
   }, []);
 
-  // Load translations
   useEffect(() => {
     if (!country) return;
     const langMap = {
@@ -50,34 +48,29 @@ const Button = ({ buttonText, rd, extid = "" }) => {
       .catch((e) => console.error("Translation load error", e));
   }, [country]);
 
-  // Extract clickid from URL
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const clickid = params.get("clickid");
-    if (clickid) {
-      setFormData((prev) => ({ ...prev, clickid }));
+    const clickidFromUrl = params.get("clickid");
+    const storedClickid = localStorage.getItem("affise_clickid");
+
+    if (clickidFromUrl) {
+      localStorage.setItem("affise_clickid", clickidFromUrl);
+      if (params.get("pid")) localStorage.setItem("affise_pid", params.get("pid"));
+      if (params.get("offer_id")) localStorage.setItem("affise_offer_id", params.get("offer_id"));
+      if (params.get("ip")) localStorage.setItem("affise_ip", params.get("ip"));
+      if (params.get("geo")) localStorage.setItem("affise_geo", params.get("geo"));
+      if (params.get("ua")) localStorage.setItem("affise_ua", params.get("ua"));
+
+      setFormData((prev) => ({ ...prev, clickid: clickidFromUrl }));
+
+      const cleanUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, "", cleanUrl);
+    } else if (!storedClickid) {
+      window.location.href = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
+    } else {
+      setFormData((prev) => ({ ...prev, clickid: storedClickid }));
     }
   }, []);
-
-useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  const clickid = params.get("clickid");
-  const storedClickId = localStorage.getItem("affise_clickid");
-
-  // Nëse s'ka clickid në URL dhe as në localStorage, bëj redirect
-  if (!clickid && !storedClickId) {
-    const affiseLink = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
-    window.location.href = affiseLink;
-  }
-
-  // Nëse ka clickid në URL, ruaje
-  if (clickid) {
-    localStorage.setItem("affise_clickid", clickid);
-  }
-}, []);
-
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,7 +88,7 @@ useEffect(() => {
     }
 
     const payload = {
-      clickid: formData.clickid,
+      clickid: formData.clickid || localStorage.getItem("affise_clickid") || "",
       pid: "2",
       offer_id: "1",
       firstName: formData.firstName,
@@ -129,7 +122,6 @@ useEffect(() => {
 
     setLoading(false);
   };
-  
 
   return (
     <>
