@@ -1,5 +1,3 @@
-// app/api/affise/route.js
-
 export const runtime = "edge";
 
 export async function POST(req) {
@@ -11,7 +9,7 @@ export async function POST(req) {
       firstName,
       lastName,
       email,
-      phone
+      phone,
     } = body;
 
     if (!clickid) {
@@ -24,13 +22,12 @@ export async function POST(req) {
       );
     }
 
-    // Construct postback URL with sub parameters
-    const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(
-      clickid
-    )}&sub1=${encodeURIComponent(firstName || "")}&sub2=${encodeURIComponent(lastName || "")}&sub3=${encodeURIComponent(email || "")}&sub4=${encodeURIComponent(phone || "")}`;
+    // ✅ Krijo URL-n për postback me sub1 - sub4 (siç kërkon Affise)
+    const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(clickid)}&sub1=${encodeURIComponent(firstName || "")}&sub2=${encodeURIComponent(lastName || "")}&sub3=${encodeURIComponent(email || "")}&sub4=${encodeURIComponent(phone || "")}`;
 
     console.log("Calling Affise Postback URL:", postbackUrl);
 
+    // ✅ Dërgo te Affise
     const affiseRes = await fetch(postbackUrl);
     const postbackText = await affiseRes.text();
 
@@ -51,6 +48,7 @@ export async function POST(req) {
         }
       );
     }
+
   } catch (error) {
     return new Response(
       JSON.stringify({ success: false, message: error.message }),

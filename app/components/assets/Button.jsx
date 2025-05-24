@@ -48,29 +48,32 @@ const Button = ({ buttonText, rd, extid = "" }) => {
       .catch((e) => console.error("Translation load error", e));
   }, [country]);
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const clickidFromUrl = params.get("clickid");
-    const storedClickid = localStorage.getItem("affise_clickid");
+ useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const clickidFromUrl = params.get("clickid");
+  const storedClickid = localStorage.getItem("affise_clickid");
 
-    if (clickidFromUrl) {
-      localStorage.setItem("affise_clickid", clickidFromUrl);
-      if (params.get("pid")) localStorage.setItem("affise_pid", params.get("pid"));
-      if (params.get("offer_id")) localStorage.setItem("affise_offer_id", params.get("offer_id"));
-      if (params.get("ip")) localStorage.setItem("affise_ip", params.get("ip"));
-      if (params.get("geo")) localStorage.setItem("affise_geo", params.get("geo"));
-      if (params.get("ua")) localStorage.setItem("affise_ua", params.get("ua"));
+  if (clickidFromUrl) {
+    // ✅ Ruaj të gjithë parametrat
+    localStorage.setItem("affise_clickid", clickidFromUrl);
+    ["pid", "offer_id", "ip", "geo", "ua", "sub1", "sub2", "sub3"].forEach((key) => {
+      const value = params.get(key);
+      if (value !== null) localStorage.setItem(`affise_${key}`, value);
+    });
 
-      setFormData((prev) => ({ ...prev, clickid: clickidFromUrl }));
+    setFormData((prev) => ({ ...prev, clickid: clickidFromUrl }));
 
-      const cleanUrl = window.location.origin + window.location.pathname;
-      window.history.replaceState({}, "", cleanUrl);
-    } else if (!storedClickid) {
-      window.location.href = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
-    } else {
-      setFormData((prev) => ({ ...prev, clickid: storedClickid }));
-    }
-  }, []);
+    // ✅ Pastro URL direkt pas ruajtjes (shfaqet vetëm për 1 moment)
+    window.history.replaceState({}, "", window.location.origin + window.location.pathname);
+  } else if (!storedClickid) {
+    // ❌ Nëse s’ka fare clickid as në URL e as në storage — redirecto te Affise
+    window.location.href = "https://alphanetwork.trk2afse.com/click?pid=2&offer_id=1";
+  } else {
+    // ✅ Vendos nga localStorage
+    setFormData((prev) => ({ ...prev, clickid: storedClickid }));
+  }
+}, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
