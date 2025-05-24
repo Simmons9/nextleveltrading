@@ -10,32 +10,28 @@ export async function POST(req) {
     const TRACKBOX_API_KEY = process.env.TRACKBOX_API_KEY;
 
     if (!TRACKBOX_USERNAME || !TRACKBOX_PASSWORD || !TRACKBOX_API_KEY) {
-      return new Response(
-        JSON.stringify({ success: false, message: "Missing API credentials" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ success: false, message: "Missing API credentials" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const affiliateAi = body.ai || "2958033";
-    const giParam = body.gi || "22";
-    const ciParam = body.ci || "4";
-    const altidParam = body.altid || "";
-    const oiParam = body.oi || "";
-
     const payload = {
-      ai: affiliateAi,
-      gi: giParam,
-      ci: ciParam,
-      altid: altidParam,
-      oi: oiParam,
+      ai: body.ai || "2958033",
+      gi: body.gi || "22",
+      ci: body.ci || "4",
+      altid: body.altid || "",
+      oi: body.oi || "",
       userip: body.userip || "0.0.0.0",
       firstname: body.firstName,
       lastname: body.lastName,
       email: body.email,
-      password: body.password || "Qbwriu48",
       phone: body.phone,
+      password: body.password || "Qbwriu48",
       so: body.so || "NextLevelTrading",
       lg: body.lg || "EN",
+      subid: body.sxid || "", // clickid
+      extid: body.extid || "",
     };
 
     const response = await fetch(TRACKBOX_API_URL, {
@@ -52,18 +48,14 @@ export async function POST(req) {
     const data = await response.json();
     const autologinUrl = data?.extras?.redirect?.url || null;
 
-    return new Response(
-      JSON.stringify({
-        success: response.ok,
-        data,
-        autologinUrl,
-      }),
-      { status: response.status, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ success: response.ok, data, autologinUrl }), {
+      status: response.status,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
-    return new Response(
-      JSON.stringify({ success: false, message: error.message }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ success: false, message: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

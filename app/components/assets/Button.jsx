@@ -4,113 +4,109 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import useGeolocation from "../../hooks/useGeolocation";
 
-const Button = ({ buttonText, ai, gi, ci, texts, altid, oi, rd, sxid = "", extid = "" }) => {
+const Button = ({ buttonText, rd, extid = "" }) => {
   const [showModal, setShowModal] = useState(false);
   const [phone, setPhone] = useState("");
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    clickid: "",
+  });
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
-  const [localTexts, setLocalTexts] = useState(texts || {});
+  const [localTexts, setLocalTexts] = useState({});
   const router = useRouter();
 
-  const fetchLocation = async () => {
-    try {
-      const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
-      const response = await fetch(`https://ipinfo.io/json?token=${token}`);
-      const data = await response.json();
-      return data.country;
-    } catch (error) {
-      console.error("Failed to fetch location", error);
-      return "DE";
-    }
-  };
-
+  // Get user country
   useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchLocation();
-      setCountry(location);
+    const fetchLocation = async () => {
+      try {
+        const token = process.env.NEXT_PUBLIC_IPINFO_TOKEN;
+        const res = await fetch(`https://ipinfo.io/json?token=${token}`);
+        const data = await res.json();
+        setCountry(data.country || "DE");
+      } catch (err) {
+        console.error("Failed to get location", err);
+        setCountry("DE");
+      }
     };
-    getLocation();
+    fetchLocation();
   }, []);
 
+  // Load translations
   useEffect(() => {
     if (!country) return;
-    const languageMap = {
+    const langMap = {
       DE: "de", AT: "de", US: "en", GB: "en", CA: "en",
       AU: "en", NZ: "en", PT: "pt", BR: "pt", FR: "fr",
       CH: "fr", LU: "fr", NL: "nl", BE: "nl", IT: "it",
       SV: "sv", ES: "es",
     };
-    const loadTranslations = async (langCode) => {
-      try {
-        const translations = await import(`../../../public/translations/${langCode}.json`);
-        setLocalTexts(translations.default || translations);
-      } catch (error) {
-        console.error(`Could not load translations for ${langCode}:`, error);
-      }
-    };
-    loadTranslations(languageMap[country] || "de");
+    const lang = langMap[country] || "en";
+    import(`../../../public/translations/${lang}.json`)
+      .then((t) => setLocalTexts(t.default || t))
+      .catch((e) => console.error("Translation load error", e));
   }, [country]);
+
+  // Extract clickid from URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const clickid = params.get("clickid");
+    if (clickid) {
+      setFormData((prev) => ({ ...prev, clickid }));
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
 
-    const formattedPhone = phone.startsWith('+') ? phone : `+${phone}`;
-  
-  
-    // ✅ Get user IP
+    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
     let userIp = "0.0.0.0";
+
     try {
       const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
       const ipData = await res.json();
       userIp = ipData.ip || "0.0.0.0";
     } catch (err) {
-      console.warn("Unable to fetch IP. Using default.");
+      console.warn("IP fetch failed.");
     }
-  
+
     const payload = {
+      clickid: formData.clickid,
+      pid: "2",
+      offer_id: "1",
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phone: formattedPhone, 
-      ai, gi, ci, altid, oi, rd, sxid, extid,
+      phone: formattedPhone,
       userip: userIp,
-      so: "NextLevelTrading",
-      lg: "EN",
     };
-  
-    console.log("Submitting payload:", payload); 
-  
+
+    console.log("Sending to Affise:", payload);
+
     try {
-      const response = await fetch("/api/trackbox", {
+      const res = await fetch("/api/affise", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-  
-      const result = await response.json();
+
+      const result = await res.json();
       if (result.success) {
-        console.log("Lead successfully sent!", result);
         setShowModal(false);
-  
-        let thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&sxid=${encodeURIComponent(sxid)}&extid=${encodeURIComponent(extid)}`;
-        if (result.autologinUrl) {
-          thankYouUrl += `&reU=${encodeURIComponent(result.autologinUrl)}`;
-        }
-  
-        router.push(thankYouUrl);
+        let url = `/thank-you?rd=${encodeURIComponent(rd)}&clickid=${encodeURIComponent(formData.clickid)}&extid=${encodeURIComponent(extid)}`;
+        router.push(url);
       } else {
-        alert("Error submitting form. Please try again.");
+        alert("Affise rejected submission.");
       }
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Error sending data.");
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("Failed to send data.");
     }
-  
+
     setLoading(false);
   };
   
