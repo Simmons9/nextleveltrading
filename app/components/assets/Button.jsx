@@ -81,79 +81,89 @@ const Button = ({ buttonText, rd, extid = "" }) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
-    
-    // ✅ RUAJ TË DHËNAT E FORMËS NË LOCALSTORAGE SI SUB1-SUB4
-    localStorage.setItem("affise_sub1", formData.firstName);
-    localStorage.setItem("affise_sub2", formData.lastName);
-    localStorage.setItem("affise_sub3", formData.email);
-    localStorage.setItem("affise_sub4", formattedPhone);
+  e.preventDefault();
+  setLoading(true);
 
-    let userIp = "0.0.0.0";
-    try {
-      const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
-      const ipData = await res.json();
-      userIp = ipData.ip || "0.0.0.0";
-    } catch (err) {
-      console.warn("IP fetch failed.");
-    }
+  const formattedPhone = phone.startsWith("+") ? phone : `+${phone}`;
 
-    // ✅ SIGUROHU QË TË DHËNAT NUK JANË ZBRAZË
-    const cleanFirstName = (formData.firstName || "").trim();
-    const cleanLastName = (formData.lastName || "").trim();
-    const cleanEmail = (formData.email || "").trim(); 
-    const cleanPhone = formattedPhone || "";
+  // ✅ RUAJ TË DHËNAT NË LOCALSTORAGE (opsionale për rikthim më vonë)
+  localStorage.setItem("affise_sub1", formData.firstName);
+  localStorage.setItem("affise_sub2", formData.lastName);
+  localStorage.setItem("affise_sub3", formData.email);
+  localStorage.setItem("affise_sub4", formattedPhone);
 
-    const payload = {
-      clickid: formData.clickid || localStorage.getItem("affise_clickid") || "",
-      pid: "2",
-      offer_id: "1",
-      firstName: cleanFirstName,
-      lastName: cleanLastName,
-      email: cleanEmail,
-      phone: cleanPhone,
-      userip: userIp,
-      // ✅ DËRGO EDHE TË DHËNAT SI SUB PARAMETERS
-      sub1: cleanFirstName,
-      sub2: cleanLastName,
-      sub3: cleanEmail,
-      sub4: cleanPhone,
-    };
+  // ✅ MERR IP e përdoruesit
+  let userIp = "0.0.0.0";
+  try {
+    const res = await fetch("https://ipinfo.io/json?token=" + process.env.NEXT_PUBLIC_IPINFO_TOKEN);
+    const ipData = await res.json();
+    userIp = ipData.ip || "0.0.0.0";
+  } catch (err) {
+    console.warn("IP fetch failed.");
+  }
 
-    console.log("Sending to Affise:", payload);
-    console.log("Form data check:", {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: phone,
-      formattedPhone: formattedPhone
+  // ✅ PASTRO VLERAT NGA FORMULARI
+  const cleanFirstName = (formData.firstName || "").trim();
+  const cleanLastName = (formData.lastName || "").trim();
+  const cleanEmail = (formData.email || "").trim(); 
+  const cleanPhone = formattedPhone || "";
+
+  const clickid =
+    formData.clickid ||
+    localStorage.getItem("affise_clickid") ||
+    "";
+
+  // ❌ MOS VAZHDO NËSE MUNGON CLICKID
+  if (!clickid) {
+    alert("Missing clickid – nuk mund të vazhdohet.");
+    setLoading(false);
+    return;
+  }
+
+  // ✅ PËRGATIT PAYLOAD
+  const payload = {
+    clickid,
+    pid: "2",
+    offer_id: "1",
+    firstName: cleanFirstName,
+    lastName: cleanLastName,
+    email: cleanEmail,
+    phone: cleanPhone,
+    userip: userIp,
+    // SUB parametra – për custom_field në Affise
+    sub1: cleanFirstName,
+    sub2: cleanLastName,
+    sub3: cleanEmail,
+    sub4: cleanPhone,
+  };
+
+  console.log("📦 Sending to Affise:", payload);
+
+  try {
+    const res = await fetch("/api/affise", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
-    try {
-      const res = await fetch("/api/affise", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const result = await res.json();
-      
-      if (result.success) {
-        setShowModal(false);
-        let url = `/thank-you?rd=${encodeURIComponent(rd)}&clickid=${encodeURIComponent(formData.clickid)}&extid=${encodeURIComponent(extid)}`;
-        router.push(url);
-      } else {
-        alert("Affise rejected submission.");
-      }
-    } catch (err) {
-      console.error("Submission error:", err);
-      alert("Failed to send data.");
+    const result = await res.json();
+
+    if (result.success) {
+      setShowModal(false);
+      const thankYouUrl = `/thank-you?rd=${encodeURIComponent(rd)}&clickid=${encodeURIComponent(clickid)}&extid=${encodeURIComponent(extid)}`;
+      router.push(thankYouUrl);
+    } else {
+      console.error("❌ Affise rejected submission:", result.message);
+      alert("Affise rejected submission.");
     }
-    
-    setLoading(false);
-  };
+  } catch (err) {
+    console.error("🚨 Submission error:", err);
+    alert("Failed to send data.");
+  }
+
+  setLoading(false);
+};
+
 
   return (
     <>
