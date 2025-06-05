@@ -54,35 +54,39 @@ export async function POST(req) {
     }
 
     // Construct postback URL with sub parameters
-    const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(
-      clickid
-    )}&sub1=${encodeURIComponent(finalSub1)}&sub2=${encodeURIComponent(finalSub2)}&sub3=${encodeURIComponent(finalSub3)}&sub4=${encodeURIComponent(finalSub4)}`;
+    // const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(
+    //   clickid
+    // )}&sub1=${encodeURIComponent(finalSub1)}&sub2=${encodeURIComponent(finalSub2)}&sub3=${encodeURIComponent(finalSub3)}&sub4=${encodeURIComponent(finalSub4)}`;
+
+const postbackUrl = `https://offers-alphanetwork.affise.com/postback?clickid=${encodeURIComponent(
+  clickid
+)}&custom_field1=${encodeURIComponent(finalSub1)}&custom_field2=${encodeURIComponent(finalSub2)}&custom_field3=${encodeURIComponent(finalSub3)}&custom_field4=${encodeURIComponent(finalSub4)}`;
+
+
 
     console.log("Calling Affise Postback URL:", postbackUrl);
 
     const affiseRes = await fetch(postbackUrl);
     const postbackText = await affiseRes.text();
+if (affiseRes.ok) {
+  return new Response(
+    JSON.stringify({ 
+      success: true, 
+      message: postbackText,
+   sentData: {
+  clickid,
+  custom_field1: finalSub1,
+  custom_field2: finalSub2,
+  custom_field3: finalSub3,
+  custom_field4: finalSub4
+},
+    }),
+    {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
-    if (affiseRes.ok) {
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          message: postbackText,
-          // ✅ KTHE PËRSËRI TË DHËNAT PËR DEBUG
-          sentData: {
-            clickid,
-            sub1: finalSub1,
-            sub2: finalSub2,
-            sub3: finalSub3,
-            sub4: finalSub4
-          },
-          postbackUrl // ✅ KTHE URL-në për të parë se çfarë u dërgua
-        }),
-        {
-          status: 200,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
     } else {
       console.error("Affise rejected the postback:", postbackText);
       return new Response(
