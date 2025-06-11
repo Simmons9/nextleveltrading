@@ -5,7 +5,7 @@ export const runtime = "edge";
 export async function POST(req) {
   try {
     const body = await req.json();
-    console.log("Received payload:", body); // ✅ DEBUG: Kontrollo çfarë merr API
+    console.log("Received payload:", body);
 
     const {
       clickid,
@@ -29,13 +29,11 @@ export async function POST(req) {
       );
     }
 
-    // ✅ PËRDOR SUB1-SUB4 NGA BODY OSE FALLBACK NË FIRSTNAME, LASTNAME, EMAIL, PHONE
     const finalSub1 = sub1 || firstName || "";
     const finalSub2 = sub2 || lastName || "";
     const finalSub3 = sub3 || email || "";
     const finalSub4 = sub4 || phone || "";
 
-    // ✅ DEBUG: Kontrollo vlerat para se t'i dërgosh
     console.log("Final sub values:", {
       sub1: finalSub1,
       sub2: finalSub2,
@@ -43,7 +41,6 @@ export async function POST(req) {
       sub4: finalSub4
     });
 
-    // ✅ SIGUROHU QË TË DHËNAT NDIHEN DREJT
     if (!finalSub1 || !finalSub2 || !finalSub3 || !finalSub4) {
       console.warn("Some sub values are empty!", {
         sub1: finalSub1,
